@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GameController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Abrir nuevo enlace a menu juegos y juegos
+Route::get("/juegos/matching", function(){
+    return view("home");
+})->name("matching");
+
+Route::get("/juegos/buscaminas", function(){
+    return view("matching");
+})->name("buscaminas");
+
+Route::get("/juegos",[GameController::class,"show"]);
+
+

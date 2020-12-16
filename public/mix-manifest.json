@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/game-page.css": "/css/game-page.css",
+    "/js/game-card-controller.js": "/js/game-card-controller.js"
 }
