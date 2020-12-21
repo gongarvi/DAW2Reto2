@@ -23,7 +23,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 //Abrir nuevo enlace a menu juegos y juegos
 Route::get("/juegos/matching", function(){
     return view("home");
@@ -40,8 +39,4 @@ Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
-
-
-
-
 
