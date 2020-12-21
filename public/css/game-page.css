@@ -1,11 +1,9 @@
 .card {
     background-color: transparent;
     margin:auto;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
     height: 100%;
-    padding: 0%;
+    padding: 0;
     border: none;
 
 
@@ -13,8 +11,6 @@
 
 /* This container is needed to position the front and back side */
 .card-body {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
     height: 100%;
     text-align: center;
@@ -54,23 +50,17 @@
 .card-back {
     color: rgb(0, 0, 0);
     transform: rotateY(180deg);
-    -webkit-text-emphasis: none;
-            text-emphasis: none;
+    text-emphasis: none;
     text-decoration: none;
     background-color: rgba(167, 167, 167, 0.95);
     /* backdrop-filter: blur(10px); */
 
 }
-.card-back>div{
-    padding: 5%;
-}
 img{
     border-radius: inherit;
     width: auto;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
     z-index: 0;
-    padding:0.5px;
+    padding:1px;
     position: relative;
 }
