@@ -14,27 +14,27 @@ class GameController extends Controller
             array(
                 "nombre"=>"matching",
                 "descripcion"=>"En este juego deberas unir las mujeres con su profesión o su logro",
-                "imagen"=>"resources/assets/Fotos_Juegos/matching.png"
+                "imagen"=>""//"assets/Fotos_Juegos/matching.png"
             ),
             array(
                 "nombre"=>"puzzle",
                 "descripcion"=>"En este juego deberas unir las distintas piezas que juntas mostraran a una mujer",
-                "imagen"=>"resources/assets/Fotos_Juegos/puzzle.png"
+                "imagen"=>""//"assets/Fotos_Juegos/puzzle.png"
             ),
             array(
                 "nombre"=>"buscaminas",
                 "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
-                "imagen"=>"resources/assets/Fotos_Juegos/buscaminas.png"
+                "imagen"=>""//"assets/Fotos_Juegos/buscaminas.pngresources/assets/Fotos_Juegos/buscaminas.png"
             ),
             array(
                 "nombre"=>"Quien quiere ser millonaria?",
                 "descripcion"=>"En este juego deberas responder las preguntas de las distintas mujeres.",
-                "imagen"=>"resources/assets/Fotos_Juegos/quiz.png"
+                "imagen"=>""//"assets/Fotos_Juegos/quiz.png"
             ),
             array(
                 "nombre"=>"3 en raya",
                 "descripcion"=>"En este juego deberas ganar una partida de 3 en raya contra una inteligente maquina",
-                "imagen"=>"resources/assets/Fotos_Juegos/images.png"
+                "imagen"=>""//assets/Fotos_Juegos/images.png"
             )
         );
     }
