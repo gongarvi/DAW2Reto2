@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers; 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\modoHistoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+//Esta sera la ruta al controllador de la pestaña del modo historia
+Route::get('/modoHistoria', [modoHistoriaController::class, 'getmodoHistoria']);
