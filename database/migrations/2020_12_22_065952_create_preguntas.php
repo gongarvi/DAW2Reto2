@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use League\CommonMark\Reference\Reference;
 
-class CreateQuestions extends Migration
+class CreatePreguntas extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +13,11 @@ class CreateQuestions extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
-            $table->id('id_preguntas');
-            $table->string('pregunta');
-            $table->string('respuesta'); 
-            $table->foreign('mujer')->references('id_mujer')->on('womens');
+        Schema::create('preguntas', function (Blueprint $table) {
+            $table->integer('id')->autoIncrement();
+            $table->string('pregunta'); 
+            $table->integer('mujer');
+            $table->foreign('mujer')->references('id')->on('mujeres');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateQuestions extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('preguntas');
     }
 }
