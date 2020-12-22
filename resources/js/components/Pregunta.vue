@@ -7,12 +7,12 @@
             <span class="w-100"></span>
         </div>
         <div class="row mt-5">
-            <Respuesta v-for="(respuesta,index) in respuestas" 
+            <Respuesta v-for="(respuesta,index) in respuestas"
                 :correcta="respuesta.correcta" :respuesta="respuesta.respuesta"
                 v-bind:key="index"/>
         </div>
     </div>
-    
+
 </template>
 <script>
 import Respuesta from './Respuesta.vue'
@@ -34,7 +34,7 @@ export default {
             if(this.respondido){
                 this.$children.forEach((respuesta)=>{
                     respuesta.bloquear();
-                    setTimeout(()=>{respuesta.corregir()},5000);
+                    setTimeout(()=>{respuesta.corregir()},4000);
                 });
                 setTimeout(()=>{
                     this.respondido=false;
@@ -42,7 +42,7 @@ export default {
                         respuesta.reiniciar();
                     });
                     this.$parent.siguientePregunta(this.acertado);
-                },7500);
+                },6500);
             }
         }
     }

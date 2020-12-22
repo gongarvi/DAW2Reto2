@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
           respuesta.bloquear();
           setTimeout(function () {
             respuesta.corregir();
-          }, 5000);
+          }, 4000);
         });
         setTimeout(function () {
           _this.respondido = false;
@@ -237,7 +237,7 @@ __webpack_require__.r(__webpack_exports__);
           });
 
           _this.$parent.siguientePregunta(_this.acertado);
-        }, 7500);
+        }, 6500);
       }
     }
   }
@@ -331,7 +331,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.pregunta[data-v-62ed4956]{\r\n    background-color: rgb(0, 2, 99);\n}\nh3[data-v-62ed4956]{\r\n    color: white;\n}\n.row>span[data-v-62ed4956]{\r\n    height: 2px;\r\n    background-color: white;\n}\r\n", ""]);
+exports.push([module.i, "\n.pregunta[data-v-62ed4956]{\n    background-color: rgb(0, 2, 99);\n}\nh3[data-v-62ed4956]{\n    color: white;\n}\n.row>span[data-v-62ed4956]{\n    height: 2px;\n    background-color: white;\n}\n", ""]);
 
 // exports
 
@@ -1517,19 +1517,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "ayudas" } }, [
-      _c(
-        "button",
-        { staticClass: "btn btn-info m-auto", attrs: { id: "50" } },
-        [_c("span", [_vm._v("50/50")])]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-info m-5", attrs: { id: "publico" } },
-        [_c("span", [_vm._v("Publico")])]
-      )
-    ])
+    return _c(
+      "div",
+      { staticClass: "text-center m-5", attrs: { id: "ayudas" } },
+      [
+        _c(
+          "button",
+          { staticClass: "btn btn-info mx-4", attrs: { id: "50" } },
+          [_c("span", [_vm._v("50/50")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-info mx-4", attrs: { id: "publico" } },
+          [_c("span", [_vm._v("Publico")])]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true

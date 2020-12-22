@@ -6,6 +6,7 @@
 
 @section("content")
     <div id="juego">
+        <img class="text-center m-auto" src="{{asset("image/logo.png")}}">
         <millonario/>
     </div>
     <script src="{{asset("js/millonario.js")}}"></script>

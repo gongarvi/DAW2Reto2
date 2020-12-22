@@ -1,11 +1,11 @@
 <template>
     <div id="millonario">
         <Pregunta :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
-        <div id="ayudas">
-          <button id="50" class="btn btn-info m-auto">
+        <div id="ayudas" class="text-center m-5">
+          <button id="50" class="btn btn-info mx-4">
             <span>50/50</span>
           </button>
-          <button id="publico" class="btn btn-info m-5">
+          <button id="publico" class="btn btn-info mx-4">
             <span>Publico</span>
           </button>
         </div>
