@@ -1,0 +1,23 @@
+
+@font-face{
+    font-family: logo;
+    src: url('Bleeding_Cowboys.ttf');
+}
+h1{color: rrgba(0,0,0,0.555); display: flex; justify-content: center; font-family: logo;}
+.carosel{background: grey; height: 300px; margin-top: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.principal{display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 20px; }
+.contenedor{border: 2px solid purple; height: 200px; margin: 0 auto; display: flex; flex-direction: row; justify-content: space-around; align-items: center; }
+.item{width: 100px; background-image: url("../image/interogante.jpg"); background-size: 35px; background-position: 10px 20px; background-repeat: no-repeat; height: 50px; 
+    border: 1px solid black;  cursor: pointer;  display: inline-block; margin: 10px;}
+.checked-item{ background-image: url("../image/verificado.jpg"); border: 2px solid green;}
+.sin-fondo-item{ background-image:none;}
+.numero-carta{float: left; font-size: 30px; line-height: 2; display: block; width: 100%; text-align: center;}
+#victoria, #derrota{position: fixed; top: 0; bottom: 0;left: 0;right: 0; background: #000000ad;} 
+#mensaje-victoria,#mensaje-derrota{
+    min-height: 400px; background: white;top: 20%; position: relative; max-width: 600px; margin: 0 auto;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 20px; border: 1px solid purple;
+    background-color: darkgrey; 
+ }
+.ocultar-mensaje{display: none;}
+.btn{width: 120px; height: 30px; margin-bottom: 5px; background: greenyellow; border: 1px solid black;
+    font-weight: bold; cursor: pointer;}
