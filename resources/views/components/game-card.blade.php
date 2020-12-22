@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <div class="card-front">
-            <img src="{{$juego['imagen']}}" alt="Imagen {{$juego['nombre']}}" onerror="javascript:this.src='image/placeholder.png'">
+            <img style="width:75%;height:auto;" src="{{$juego['imagen']}}" alt="Imagen {{$juego['nombre']}}" onerror="javascript:this.src='image/placeholder.png'">
         </div>
         <div class="card-back">
             <a href="{{"juegos/".$juego["nombre"]}}">
