@@ -20,6 +20,11 @@ class GameController extends Controller
                 "nombre"=>"buscaminas",
                 "descripcion"=>"Debes unir las mujeres con su profesión o su logro",
                 "imagen"=>""
+            ),
+            array(
+                "nombre"=>"millonario",
+                "descripcion"=>"Debes unir las mujeres con su profesión o su logro",
+                "imagen"=>""
             )
         );
     }
