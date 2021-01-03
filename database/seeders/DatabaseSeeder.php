@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
             $especialidad = new Especialidades();
             $especialidad->id=$importData[0];
             $especialidad->nombre=$importData[1];
+            $especialidad->color=$importData[2];
             $especialidad->save();
         }        
      

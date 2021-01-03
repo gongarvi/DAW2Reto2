@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\MujeresController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers; 
@@ -36,7 +37,31 @@ Route::get("/juegos/buscaminas", function(){
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
-Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
+Route::get("/mujeres",[MujeresController::class,"show"])->name("mujeres");
+
+    // Las pruebas de sayeeda
+
+    // Route::resource('/mujeres','MujeresController');
+
+    // Route::get('/mujeres', function () {
+    //     $mujeres = DB::table('mujeres')->get();
+
+    //     $products = Productos::join('Categorias','idCategoria', '=', 'Categorias.id')
+    //     ->select('Productos.id','Productos.nombre','Categorias.nombre as NombreCategoria')
+    //     ->get();
+
+    //     return view('mujeres', ['mujeres' => $mujeres]);
+    // })->name('mujeres');
+
+    // Route::get('/mujeres', function(){
+    //     $mujeres =DB::table('mujeres', 'especialidades')
+    //     ->join('mujeres.especialidad', '=', 'especialidades.id')
+    //     ->select(' mujeres.apellidos, especialidades.Nombre ')
+    //     ->get();
+    //     return view('mujeres', ['mujeres' => $mujeres]);
+    // })->name('mujeres');
+
+    // Acaban las pruebas de sayeeda
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 

@@ -16,6 +16,7 @@ class CreateEspecialidades extends Migration{
         Schema::create('especialidades', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('Nombre');
+            $table->string('Color');
             $table->timestamps();
         });
 
