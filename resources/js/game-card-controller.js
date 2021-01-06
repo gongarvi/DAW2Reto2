@@ -5,5 +5,9 @@ const vue=new Vue({
             console.log(event);
             event.target.src = "image/placeholder.png"
         },
+        pulsarcarta(){
+            var Especialidad = document.getElementById("selectEspecialidad").value;
+            window.location.href = '/juegos/puzzle/'+Especialidad;
+        },      
     },
 });

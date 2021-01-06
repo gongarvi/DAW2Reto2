@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\View\Components\GameCard;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\DB;
 
 class GameController extends Controller
 {
     private array $juegos;
+    private array $especialidades;
+    
     public function __construct(){
         //TODO Eliminar cuando se recoja de la BBDD
         $this->juegos = array(
@@ -42,9 +45,28 @@ class GameController extends Controller
                 "imagen"=>"assets/Fotos_Juegos/images.png"
             ),
         );
+
+    }
+
+    public function cargarEspecialidades(){
+        $tabla = DB::table('especialidades')->get();
+        return $tabla;
+    }
+    public function cargarMujeresRandom($especialidad){
+        if ($especialidad == 10){
+            $tablaMujer = DB::table('mujeres')->get();
+        }else{
+            $tablaMujer = DB::table('mujeres')->limit(3)->select('*')->where('especialidad', '=', $especialidad)->inRandomOrder()->get();
+        }
+
+        return $tablaMujer;
     }
     public function show(){
         Blade::component('game-card', GameCard::class);
-        return view("game", ["juegos"=>$this->juegos]);
+        return view("game", ["juegos"=>$this->juegos,"especialidades"=>self::cargarEspecialidades()]);
+    }
+
+    public function ruleta($Especialidad){
+        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad)]);
     }
 }
