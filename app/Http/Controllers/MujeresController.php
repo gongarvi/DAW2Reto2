@@ -14,9 +14,9 @@ class MujeresController extends Controller
         ->join('especialidades', 'especialidades.id', '=' , 'mujeres.especialidad')
         ->select('*')
         ->get();
-        $especialidades=DB::table('especialidades')
-        ->get();
 
-        return view('mujeres',["mujeres"=>$mujeres], ["especialidades"=>$especialidades]); 
+        return $mujeres;
+
+        // return view('mujeres',["mujeres"=>$mujeres], ["especialidades"=>$especialidades]); 
     }
 }

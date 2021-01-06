@@ -14,38 +14,8 @@
   </span>
 </a>
 
-<div class="container-fluid" id="app">
-    <div class="row">
-
-        <aside class="col-sm-4 col-md-4 col-lg-2 text-white text-center">
-
-            <form class="form-inline active-purple-4 mt-3 mb-3">
-                <input class="form-control form-control-sm mr-2 w-75" type="text" placeholder="Buscar.."
-                    aria-label="Buscar">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </form>
-
-            <h5>Especialidades:</h5>
-            @foreach($especialidades as $especialidad)
-            <div style="background-color: {!! $especialidad->color !!};" title="Filtrar por esta especialidad">
-                <p class="m-2 text-light">{!! $especialidad->Nombre !!}</p>
-            </div>
-            @endforeach
-    
-        </aside>
-
-        <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-row flex-wrap text-center">
-            @foreach($mujeres as $mujer)
-            <div class="cards p-2 m-2 rounded text-light" style="background-color: {!! $mujer->color !!};" title="Click para Saber mas sobre ella">
-                <img src="..\public\assets\Fotos_mujeres\{!! $mujer->foto !!}" class="img-fluid" alt="Foto">
-                <p>{!! $mujer->nombre !!} {!! $mujer->apellidos !!}</p>
-                <!-- <p id="especialidad">{!! $mujer->Nombre !!}</p> -->
-                <i class="fa fa-trash-o" @click="eliminarMujer()"></i>
-            </div>
-            @endforeach
-        </main>
-
-    </div>
+<div id="app">
+    <mujeres-component></mujeres-component>
 </div>
 
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>

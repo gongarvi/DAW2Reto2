@@ -8,12 +8,10 @@ use DB;
 class EspecialidadesController extends Controller
 {
     //
-    public function show(){
+   // la funcion para join de las tablas "Mujeres" y "Especialidades"
+   public function show(){
         $especialidades=DB::table('especialidades')
-        ->join('mujeres', 'especialidades.id', '=' , 'mujeres.especialidad')
-        ->select('*')
         ->get();
-
-        return view('especialidades',["especialidades"=>$especialidades]);
+        return $especialidades;
     }
 }
