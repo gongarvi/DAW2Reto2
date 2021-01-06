@@ -29,8 +29,7 @@ window.onload = function () {
                                '<h4>Descripcion --> '+pepe[foto].descripcion+'</h4><br>'+
                                '<button class="bg-danger text-white"> JUGAR</button>';
             document.body.appendChild(divDatos);
-            
+            //http://localhost/DAW2Reto2/public/juegos/ruleta/8
         }
-   
     }
 }
