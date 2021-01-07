@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Especialidades extends Model
+class Especialidad extends Model
 {
     use HasFactory;
-
+    protected $table = "especialidades";
     protected $fillable = [
         'id',
         'nombre',

@@ -4,7 +4,10 @@
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/APIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/APIService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Especialidad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Especialidad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Mujer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mujer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +187,7 @@
       <workItem from="1608274673725" duration="3477000" />
       <workItem from="1608533680201" duration="3814000" />
       <workItem from="1608632983152" duration="8754000" />
-      <workItem from="1610002646090" duration="6597000" />
+      <workItem from="1610002646090" duration="10946000" />
     </task>
     <servers />
   </component>

@@ -45,9 +45,9 @@ class APIService extends Controller
 
         }
         if($result!=[]){
-            $result = response("Se han podido devolver preguntas",201)->json($result);
+            $result = response()->json($result);
         }else{
-            $result = response("No se han podido devolver preguntas",500);
+            $result = response("No se an podido devolver datos o no existen",500);
         }
         return $result;
     }

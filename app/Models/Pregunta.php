@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-<<<<<<< HEAD
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,25 +17,20 @@ class Pregunta extends Authenticatable
     ];
 
     public static function getPreguntasAleatorias(){
-        return self::all()->random(10);return self::all()->random(10);
+        $array=self::all();
+        $count=count($array);
+        if($count>=10){
+            $count=10;
+        }
+        return $array->random($count);
     }
 
     public static function getPreguntasAleatoriasPorEspecialidad($especialidad){
-        return self::with("Mujer")->where("especialidad","==",$especialidad)->get("id,pregunta");
+        $array=self::with("Mujer")->where("especialidad","==",$especialidad)->get("id,pregunta");
+        $count=count($array);
+        if($count>=10){
+            $count=10;
+        }
+        return $array->random(($count));
     }
-=======
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-
-class Preguntas extends Model
-{
-    use HasFactory;
-
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
->>>>>>> 93f96a639b110aba0b69d55f1036725326d168dd
 }
