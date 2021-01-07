@@ -18,4 +18,5 @@ use \App\Http\Controllers\APIService;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get("preguntas",[APIService::class,"getPreguntas"]);
+
+Route::apiResource("preguntas",APIService::class);
