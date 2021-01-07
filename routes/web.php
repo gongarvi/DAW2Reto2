@@ -32,6 +32,10 @@ Route::get("/juegos/buscaminas", function(){
     return view("home");
 })->name("buscaminas");
 
+Route::get("/juegos/millonario", function(){
+    return view("millonario");
+})->name("buscaminas");
+
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
 Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
