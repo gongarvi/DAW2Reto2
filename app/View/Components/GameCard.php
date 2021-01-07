@@ -4,8 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class GameCard extends Component
-{
+class GameCard extends Component{
     private array $juego;
     /**
      * Create a new component instance.
@@ -22,8 +21,7 @@ class GameCard extends Component
      *
      * @return \Illuminate\Contracts\View\View|string
      */
-    public function render()
-    {
+    public function render(){
         return view('components.game-card',["juego"=>$this->juego]);
     }
     public function comprobarImagen($image):bool{
@@ -32,6 +30,5 @@ class GameCard extends Component
         } else {
             return false;
         }
-
     }
 }

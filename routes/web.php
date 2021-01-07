@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\MujeresController;
+use App\Http\Controllers\EspecialidadesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers; 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\modoHistoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,11 +25,11 @@ Route::get('', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Abrir nuevo enlace a menu juegos y juegos
 Route::get("/juegos/matching", function(){
-    return view("home");
+    return view("matching");
 })->name("matching");
 
 Route::get("/juegos/buscaminas", function(){
@@ -38,7 +42,12 @@ Route::get("/juegos/millonario", function(){
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
-Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
+Route::get('/mujeres', function () {
+    return view('mujeres');
+})->name("mujeres");
+
+Route::get("/mujeres/info",[MujeresController::class,"show"])->name("mujeres.info");
+Route::get("/especialidades/info",[EspecialidadesController::class,"show"])->name("especialidades.info");
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
