@@ -11,10 +11,13 @@
                 </a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link m-auto text-light" href="{{route("juegos")}}">Features</a>
+                <a class="nav-link m-auto text-light" href="{{route("home")}}">Inicio</a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link text-light" href="{{route("mujeres")}}">Pricing</a>
+                <a class="nav-link text-light" href="{{route("mujeres")}}">Mujeres</a>
+            </li>
+            <li class="nav-item m-auto mx-lg-0">
+                <a  class="nav-link text-light" href="{{route("juegos")}}">Modo Historia</a>
             </li>
         </ul>
     </div>
