@@ -13,13 +13,10 @@ class GameController extends Controller
         $this->juegos = array(
             array(
                 "nombre"=>"matching",
-<<<<<<< HEAD
                 "descripcion"=>"En este juego deberas unir las mujeres con su nombre o su profesion",
-                "imagen"=>"resources/assets/Fotos_Juegos/matching.png"
-=======
+                "imagen"=>"resources/assets/Fotos_Juegos/matching.png",
                 "descripcion"=>"En este juego deberas unir las mujeres con su profesión o su logro",
                 "imagen"=>"assets/Fotos_Juegos/matching.png"
->>>>>>> 314d53b66ceee3f72f00f6bfb387f04cc842b6bd
             ),
             array(
                 "nombre"=>"puzzle",

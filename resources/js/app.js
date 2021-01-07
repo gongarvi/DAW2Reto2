@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('mujeres-component', require('./components/mujeres.vue').default);
 Vue.component('match-component', require('./components/Match.vue').default);
+Vue.component('example2-component', require('./components/ExampleComponent2.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -10,6 +10,7 @@
     <p id="logo">Desayunos feministas</p>
 @endsection
 @section("content")
+   
     <div class="container container-fluid">
         <div class="row m-auto">
             <div class="col-12 col-lg-4 p-0 text-center">
