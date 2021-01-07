@@ -42,7 +42,7 @@ Route::get('/mujeres', function () {
     return view('mujeres');
 })->name("mujeres");
 
-Route::get("/mujeres/info",[MujeresController::class,"show"])->name("mujeres.info");
+Route::apiResource("/mujeres/info",MujeresController::class);
 Route::get("/especialidades/info",[EspecialidadesController::class,"show"])->name("especialidades.info");
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");

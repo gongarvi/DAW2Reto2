@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Mujeres extends Model
+class Mujer extends Model
 {
     use HasFactory;
-
+    protected $table = 'mujeres';
     protected $fillable = [
-        'id_mujer',
+        'id',
         'nombre',
         'password',
     ];
