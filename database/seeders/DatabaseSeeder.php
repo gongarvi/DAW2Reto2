@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
         $file = fopen('public\assets\CSVs\mujeres.csv', "r");
         $data = array();
         $i = 0;
-        while (($filedata = fgetcsv($file, 1000, ";")) !== FALSE) {
+        while (($filedata = fgetcsv($file, 1000, ';')) !== FALSE) {
             $num = count($filedata );
             // Skip first row (Remove below comment if you want to skip the first row)
             if($i == 0){
