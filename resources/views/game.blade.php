@@ -14,8 +14,8 @@
         </select>
     <div  id="game-cards-controller" class="container" >
         <ul class="row" >
-            @foreach($juegos as $juego)
-                <li @click="pulsarcarta()" class="list-group-item bg-transparent border-0 col-xs-12 col-sm-4">
+            @foreach($juegos as $jueg=>$juego)
+                <li @click="pulsarcarta()"  class="list-group-item bg-transparent border-0 col-xs-12 col-sm-4">
                     <x-gamecard :juego="$juego"></x-gamecard>
                     
                 </li>

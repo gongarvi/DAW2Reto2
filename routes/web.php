@@ -30,11 +30,10 @@ Route::get("/juegos/matching", function(){
     return view("home");
 })->name("matching");
 
-Route::get("/juegos/buscaminas", function(){
-    return view("home");
-})->name("buscaminas");
+Route::get("/juegos/buscaminas", function(){return view("home");})->name("buscaminas");
 
-Route::get('/juegos/ruleta/{especialidad}', [GameController::class,'ruleta']);
+Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
+
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
@@ -43,4 +42,3 @@ Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
-

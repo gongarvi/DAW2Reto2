@@ -3,12 +3,10 @@ window.onload = function () {
     var ejecutandose =1;
     var mujerSeleccionada;
     var procesoID = window.setInterval(funcionRuleta, intervaloTiempo);
-
-
     function funcionRuleta(){
-        arraySoloIds = Object.keys(pepe);
-        foto =  arraySoloIds[Math.floor(Math.random()*(arraySoloIds.length))];
-        document.getElementById("fotoRuleta").src= "../../assets/Fotos_mujeres/"+pepe[foto].foto;
+        arraySoloIds = Object.keys(Mujer);
+        mujerSeleccionada =  arraySoloIds[Math.floor(Math.random()*(arraySoloIds.length))];
+        document.getElementById("fotoRuleta").src= "../../../assets/Fotos_mujeres/"+Mujer[mujerSeleccionada].foto;
         if(intervaloTiempo >500){
             clearInterval(procesoID);
             ejecutandose=0;
@@ -21,15 +19,35 @@ window.onload = function () {
             $("#fotoRuleta").animate({left: "-=30%"}, 1000);
             const divDatos = document.createElement('div');
             divDatos.className="float-right w-50 bg-secondary text-white rounded";
-            divDatos.innerHTML = '<h4>Nombre --> '+pepe[foto].nombre+' <br>'+
-                               '<h4>Apellidos --> '+pepe[foto].apellidos+'</h4> <br>'+
-                               '<h4>Nacionalidad-->'+pepe[foto].nacionalidad+'</h4> <br>'+
-                               '<h4>Nacimiento --> '+pepe[foto].nacimiento+'</h4><br>'+
-                               '<h4>Fallecimieto --> '+pepe[foto].fallecimiento+'</h4><br>'+
-                               '<h4>Descripcion --> '+pepe[foto].descripcion+'</h4><br>'+
-                               '<button class="bg-danger text-white"> JUGAR</button>';
+            divDatos.innerHTML = '<h4>Nombre --> '+Mujer[mujerSeleccionada].nombre+' <br>'+
+                               '<h4>Apellidos --> '+Mujer[mujerSeleccionada].apellidos+'</h4> <br>'+
+                               '<h4>Nacionalidad-->'+Mujer[mujerSeleccionada].nacionalidad+'</h4> <br>'+
+                               '<h4>Nacimiento --> '+Mujer[mujerSeleccionada].nacimiento+'</h4><br>'+
+                               '<h4>Fallecimieto --> '+Mujer[mujerSeleccionada].fallecimiento+'</h4><br>'+
+                               '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
+                               if(juego == "puzzle" || juego=="buscaminas"){
+                                divDatos.innerHTML += '<button id="boton" class="bg-danger text-white"> JUGAR</button>';
+                               }else{
+                                divDatos.innerHTML +='<button id="boton" class="bg-danger text-white"> SIGUIENTE </button>';
+                               }
+                               
             document.body.appendChild(divDatos);
+            function irAjuego(){
+                aviso = document.getElementById("boton").innerHTML;
+                alert(aviso);
+            }
+            document.getElementById("boton").addEventListener("click",irAjuego,true);
             //http://localhost/DAW2Reto2/public/juegos/ruleta/8
         }
+        
+    
+        
+        
     }
+    function irAjuego(){
+        aviso = document.getElementById("boton").value;
+        alert(aviso);
+    }
+    document.getElementById("boton").addEventListener("click",irAjuego,true);
+    
 }

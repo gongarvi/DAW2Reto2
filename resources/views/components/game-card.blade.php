@@ -10,7 +10,7 @@
         <div class="card-back">
             <a href="{{"juegos/".$juego["nombre"]}}">
                 <div class="w-100 h-100 p-3 p-lg-5">
-                    <h5 class="card-title">{{ucfirst($juego["nombre"])}}</h5>
+                    <h5 id="nombreJuego"class="card-title">{{ucfirst($juego["nombre"])}}</h5>
                     <p class="card-text">{{$juego["descripcion"]}}</p>
                 </div>
             </a>

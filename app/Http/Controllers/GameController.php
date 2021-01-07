@@ -71,8 +71,8 @@ class GameController extends Controller
         Blade::component('game-card', GameCard::class);
         return view("game", ["juegos"=>$this->juegos,"especialidades"=>self::cargarEspecialidades()]);
     }
-
-    public function ruleta($Especialidad){
-        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad)]);
+ 
+    public function ruleta($Especialidad,$juego){
+        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego]);
     }
 }
