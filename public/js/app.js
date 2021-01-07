@@ -1977,10 +1977,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       busqueda: '',
+      nombre: '',
       arraymujeres: [],
       arrayespecialidades: [],
       activeColor: 'red'
@@ -2000,7 +2004,7 @@ __webpack_require__.r(__webpack_exports__);
       var me = this;
       var url = "especialidades/info";
       axios.get(url).then(function (response) {
-        me.arrayespecialidades = response.data + activeColor;
+        me.arrayespecialidades = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -2010,10 +2014,6 @@ __webpack_require__.r(__webpack_exports__);
       alert("arrayespecialidades.Nombre");
     }
   },
-  mounted: function mounted() {
-    this.cargarMujeres();
-    this.cargarEspecialidades();
-  },
   computed: {
     buscarMujer: function buscarMujer() {
       var _this = this;
@@ -2022,6 +2022,10 @@ __webpack_require__.r(__webpack_exports__);
         return mujer.nombre.toUpperCase().includes(_this.busqueda.toUpperCase());
       });
     }
+  },
+  mounted: function mounted() {
+    this.cargarMujeres();
+    this.cargarEspecialidades();
   }
 });
 
@@ -37687,11 +37691,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control form-control-sm mr-2 w-75",
-                attrs: {
-                  type: "search",
-                  placeholder: "Buscar..",
-                  "aria-label": "Buscar"
-                },
+                attrs: { type: "search", placeholder: "Buscar.." },
                 domProps: { value: _vm.busqueda },
                 on: {
                   input: function($event) {
@@ -37703,10 +37703,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("i", {
-                staticClass: "fa fa-search",
-                attrs: { "aria-hidden": "true" }
-              })
+              _c("i", { staticClass: "fa fa-search" })
             ]
           ),
           _vm._v(" "),
@@ -37719,8 +37716,8 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "w-100 m-1 bg-dark",
-                  style: { color: _vm.activeColor },
+                  staticClass: "w-100 m-1",
+                  style: { color: especialidad.color },
                   on: { click: _vm.filtrarMujeres }
                 },
                 [_vm._v(" " + _vm._s(especialidad.Nombre))]
@@ -37738,8 +37735,8 @@ var render = function() {
             "col-sm-8 col-md-8 col-lg-10 d-flex flex-row flex-wrap text-center"
         },
         _vm._l(_vm.buscarMujer, function(mujer) {
-          return _c("div", { key: mujer.id, staticClass: "m-2 bg-dark" }, [
-            _c("img", { attrs: { src: "../Fotos_mujeres" + mujer.foto } }),
+          return _c("div", { staticClass: "m-2 bg-dark" }, [
+            _c("img", { attrs: { src: "assets/Fotos_mujeres/" + mujer.foto } }),
             _vm._v(" "),
             _c("p", { staticClass: "m-2 text-light" }, [
               _vm._v(" " + _vm._s(mujer.foto))
