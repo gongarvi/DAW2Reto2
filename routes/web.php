@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\MujeresController;
+use App\Http\Controllers\EspecialidadesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers; 
@@ -36,7 +38,12 @@ Route::get("/juegos/buscaminas", function(){
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
-Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
+Route::get('/mujeres', function () {
+    return view('mujeres');
+})->name("mujeres");
+
+Route::get("/mujeres/info",[MujeresController::class,"show"])->name("mujeres.info");
+Route::get("/especialidades/info",[EspecialidadesController::class,"show"])->name("especialidades.info");
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 

@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-
+        @yield('cabecera')
     </header>
     <main>
         @yield("content")

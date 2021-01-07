@@ -6,7 +6,7 @@
 
 @endsection
 @section("header")
-    <img src="image/femenina.png" alt="feminina">
+    <img src="image/feminina.png" alt="feminina">
     <p id="logo">Desayunos feministas</p>
 @endsection
 @section("content")
