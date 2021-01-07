@@ -12,31 +12,37 @@ class GameController extends Controller
         //TODO Eliminar cuando se recoja de la BBDD
         $this->juegos = array(
             array(
+                "id"=>"1",
                 "nombre"=>"matching",
                 "descripcion"=>"En este juego deberas unir las mujeres con su profesión o su logro",
                 "imagen"=>"assets/Fotos_Juegos/matching.png"
             ),
             array(
+                "id"=>"2",
                 "nombre"=>"puzzle",
                 "descripcion"=>"En este juego deberas unir las distintas piezas que juntas mostraran a una mujer",
                 "imagen"=>"assets/Fotos_Juegos/puzzle.png"
             ),
             array(
+                "id"=>"3",
                 "nombre"=>"buscaminas",
                 "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
                 "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),
             array(
+                "id"=>"4",
                 "nombre"=>"Quien quiere ser millonaria?",
                 "descripcion"=>"En este juego deberas responder las preguntas de las distintas mujeres.",
                 "imagen"=>"assets/Fotos_Juegos/quiz.png"
             ),
             array(
+                "id"=>"Final",
                 "nombre"=>"3 en raya",
                 "descripcion"=>"En este juego deberas ganar una partida de 3 en raya contra una inteligente maquina",
                 "imagen"=>"assets/Fotos_Juegos/images.png"
             ),
             array(
+                "id"=>"Extra",
                 "nombre"=>"3 en raya Diablo",
                 "descripcion"=>"En este juego deberas ganar una partida de 3 en raya contra una inteligente maquina",
                 "imagen"=>"assets/Fotos_Juegos/images.png"
