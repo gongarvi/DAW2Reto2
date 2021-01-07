@@ -14,5 +14,5 @@
             @endforeach
         </ul>
     </div>
-    <script src="{{asset("js/game-card-controller.js")}}"></script>
+
 @endsection

@@ -29,11 +29,15 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Abrir nuevo enlace a menu juegos y juegos
 Route::get("/juegos/matching", function(){
-    return view("home");
+    return view("matching");
 })->name("matching");
 
 Route::get("/juegos/buscaminas", function(){
     return view("home");
+})->name("buscaminas");
+
+Route::get("/juegos/millonario", function(){
+    return view("millonario");
 })->name("buscaminas");
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");

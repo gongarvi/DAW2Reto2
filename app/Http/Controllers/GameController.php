@@ -23,6 +23,16 @@ class GameController extends Controller
             ),
             array(
                 "nombre"=>"buscaminas",
+<<<<<<< HEAD
+                "descripcion"=>"Debes unir las mujeres con su profesión o su logro",
+                "imagen"=>""
+            ),
+            array(
+                "nombre"=>"millonario",
+                "descripcion"=>"Debes unir las mujeres con su profesión o su logro",
+                "imagen"=>""
+            )
+=======
                 "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
                 "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),
@@ -41,6 +51,7 @@ class GameController extends Controller
                 "descripcion"=>"En este juego deberas ganar una partida de 3 en raya contra una inteligente maquina",
                 "imagen"=>"assets/Fotos_Juegos/images.png"
             ),
+>>>>>>> 93f96a639b110aba0b69d55f1036725326d168dd
         );
     }
     public function show(){
