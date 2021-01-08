@@ -5,9 +5,8 @@ const vue=new Vue({
             console.log(event);
             event.target.src = "image/placeholder.png"
         },
-        pulsarcarta(){
+        pulsarboton: function(nombreJuego){
             var Especialidad = document.getElementById("selectEspecialidad").value;
-            var nombreJuego=document.getElementById("nombreJuego").innerHTML;
             window.location.href = '/DAW2Reto2/public/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
         },      
     },

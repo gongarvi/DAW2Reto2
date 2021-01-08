@@ -25,16 +25,36 @@ window.onload = function () {
                                '<h4>Nacimiento --> '+Mujer[mujerSeleccionada].nacimiento+'</h4><br>'+
                                '<h4>Fallecimieto --> '+Mujer[mujerSeleccionada].fallecimiento+'</h4><br>'+
                                '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
-                               if(juego == "puzzle" || juego=="buscaminas"){
-                                divDatos.innerHTML += '<button id="boton" class="bg-danger text-white"> JUGAR</button>';
+                               numeroVueltas = localStorage.getItem("vueltas");
+                               if((juego == "Puzzle" && numeroVueltas<=1) || (juego=="uscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
+                                    (juego == "3 en raya" || numeroVueltas==3)){
+                                divDatos.innerHTML += '<button id="boton" class="bg-danger text-white">JUGAR</button>';
                                }else{
                                 divDatos.innerHTML +='<button id="boton" class="bg-danger text-white"> SIGUIENTE </button>';
                                }
                                
             document.body.appendChild(divDatos);
             function irAjuego(){
-                aviso = document.getElementById("boton").innerHTML;
-                alert(aviso);
+                var accion = document.getElementById("boton").innerHTML;
+                if (accion != "JUGAR"){
+                    var mujeresSeleccionadasJuego = JSON.parse(localStorage.getItem('mujeres')) ;
+                    if(mujeresSeleccionadasJuego ==null){
+                        mujeresSeleccionadasJuego = new Array();
+                        mujeresSeleccionadasJuego.push(Mujer[mujerSeleccionada]);
+                        localStorage.setItem("mujeres", JSON.stringify(mujeresSeleccionadasJuego));
+                        localStorage.setItem("vueltas", 1);
+                    }else {
+                        mujeresSeleccionadasJuego.push(Mujer[mujerSeleccionada]);
+                        localStorage.setItem("mujeres", JSON.stringify(mujeresSeleccionadasJuego));  
+                        numeroVueltas =  localStorage.getItem("vueltas");
+                        numeroVueltas += 1;
+                        localStorage.setItem("vueltas",numeroVueltas);
+                    }
+                }else{
+                    alert("Entro a jugar")
+                    localStorage.removeItem("vueltas");
+                }
+
             }
             document.getElementById("boton").addEventListener("click",irAjuego,true);
             //http://localhost/DAW2Reto2/public/juegos/ruleta/8
@@ -44,6 +64,7 @@ window.onload = function () {
         
         
     }
+    
     function irAjuego(){
         aviso = document.getElementById("boton").value;
         alert(aviso);
