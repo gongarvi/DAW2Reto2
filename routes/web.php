@@ -6,6 +6,7 @@ use App\Http\Controllers\EspecialidadesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers; 
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\modoHistoriaController;
 /*
@@ -28,8 +29,12 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Abrir nuevo enlace a menu juegos y juegos
+function cargarMujeres(){
+    $tablaMujer = DB::table('mujeres')->limit(12)->get();
+    return $tablaMujer;
+}
 Route::get("/juegos/matching", function(){
-    return view("matching");
+    return view("matching",["mujeres"=>self::cargarMujeres()]);
 })->name("matching");
 
 Route::get("/juegos/buscaminas", function(){

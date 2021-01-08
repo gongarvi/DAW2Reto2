@@ -16,9 +16,18 @@
 <div id="app">
     <example-component></example-component>
     <example2-component></example2-component>
-</div>
-<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+       
+       
 
-<script src="{{asset("js/app.js")}}"></script>
+<div id="app">
+    <match></match>
+</div>
 
 @endsection
+<script>
+    var mujercitas;
+    mujercitas = <?php echo(json_encode($mujeres))?>
+</script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+<script src="resources\js\match.js"></script>

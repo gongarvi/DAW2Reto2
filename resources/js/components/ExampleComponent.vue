@@ -11,13 +11,37 @@
                 </div>
             </div>
         </div>
+  
+    <div class="contenedor">
+        <section v-for="mujer in mujeres">
+            {{mujer.nombre}}
+        </section> 
     </div>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+       data(){
+           return {
+               mujeres:[]
+           }
+       },
+       methods:{
+           carga(){
+               let me = this;
+               let url = "mujeres.info";
+               axios
+                    .get(url)
+                    .then(function(response){
+                        me.mujeres = response.data;
+                    })
+                    .catch(function (error){
+                        console.log(error);
+                    });
+           }
+       },
+       mounted(){
+           this.carga();
+       }
     }
 </script>
