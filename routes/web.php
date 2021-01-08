@@ -53,3 +53,4 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
+

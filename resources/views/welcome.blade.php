@@ -10,6 +10,7 @@
     <p id="logo">Desayunos feministas</p>
 @endsection
 @section("content")
+   
     <div class="container container-fluid">
         <div class="row m-auto">
             <div class="col-12 col-lg-4 p-0 text-center">
@@ -27,9 +28,10 @@
         </div>
         <div class="row mt-5">
             <div class="col-12 text-justify">
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                <p>Usted usuario, queremos darte la bienvenida a nuestro sitio web, suponiendo que es la primera vez que entras aquí y no sabes de qué trata la web y quiénes somos, no te preocupes en seguida te lo aclaramos.</p>
+                <p>Cabe destacar de inicio que somos una asociación feminista (Desayunos Feministas) ubicada en Santander, una de nuestras misiones es recopilar información sobre las mujeres que han trabajado en varios ámbitos y han destacado por sus ideologías, carácter…y que a nivel social son poco conocidas.</p>
+                <p>Y a raíz de esto hemos creado este sitio web para dar visibilidad a esas mujeres, la web incluye una variedad juegos con la información de las damas.</p>
+                <p>Que lo disfrutes</p>
             </div>
         </div>
     </div>

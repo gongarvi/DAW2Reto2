@@ -13,6 +13,8 @@ class GameController extends Controller
         $this->juegos = array(
             array(
                 "nombre"=>"matching",
+                "descripcion"=>"En este juego deberas unir las mujeres con su nombre o su profesion",
+                "imagen"=>"resources/assets/Fotos_Juegos/matching.png",
                 "descripcion"=>"En este juego deberas unir las mujeres con su profesión o su logro",
                 "imagen"=>"assets/Fotos_Juegos/matching.png"
             ),
@@ -58,4 +60,5 @@ class GameController extends Controller
         Blade::component('game-card', GameCard::class);
         return view("game", ["juegos"=>$this->juegos]);
     }
+    
 }
