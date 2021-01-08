@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Especialidad;
 
 use Illuminate\Http\Request;
 use DB;
@@ -8,10 +9,8 @@ use DB;
 class EspecialidadesController extends Controller
 {
     //
-   // la funcion para join de las tablas "Mujeres" y "Especialidades"
-   public function show(){
-        $especialidades=DB::table('especialidades')
-        ->get();
-        return $especialidades;
+   // la funcion para join de las tabla "Especialidades"
+    public function index(){
+        return Especialidad::all();
     }
 }

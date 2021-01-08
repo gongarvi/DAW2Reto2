@@ -5,7 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Especialidad;
 class Mujer extends Model
 {
     use HasFactory;
@@ -21,4 +21,7 @@ class Mujer extends Model
         'foto',
         'descripcion'
     ];
+    public function especialidad(){
+        return $this->belongsTo(Especialidad::class,"especialidad","id");
+    }
 }

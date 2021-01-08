@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Especialidades;
-use App\Models\Mujeres;
+use App\Models\Especialidad;
+use App\Models\Mujer;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
 
         // Insert to MySQL database
         foreach($data as $importData){
-            $especialidad = new Especialidades();
+            $especialidad = new Especialidad();
             $especialidad->id=$importData[0];
             $especialidad->nombre=$importData[1];
             $especialidad->color=$importData[2];
@@ -73,11 +73,11 @@ class DatabaseSeeder extends Seeder
 
         // Insert to MySQL database
         foreach($data as $importData){
-            $mujer = new Mujeres();
+            $mujer = new Mujer();
             $mujer->nombre=$importData[0];
             $mujer->apellidos=$importData[1];
             $mujer->nacimiento=$importData[2];
-            $mujer->fallecimiento=$importData[3];
+            $mujer->fallecido=$importData[3];
             $mujer->especialidad=$importData[4];
             $mujer->descripcion=$importData[5];
             $mujer->foto=$importData[6];
