@@ -4,8 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// Introducción de bootstrap al proyecto
 require('./bootstrap');
 
+<<<<<<< HEAD
+=======
 window.Vue = require('vue');
 
 /**
@@ -33,3 +36,4 @@ Vue.component('match', require('./components/Match.vue').default);
 const app = new Vue({
     el: '#app',
 });
+>>>>>>> 93f96a639b110aba0b69d55f1036725326d168dd
