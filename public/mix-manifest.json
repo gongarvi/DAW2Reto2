@@ -1,7 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/millonario.js": "/js/millonario.js"
-    "/js/matching.js": "/js/matching.js"
-
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/match.js": "/js/match.js",
+    "/js/millonario.js": "/js/millonario.js",
+    "/js/mujeres.js": "/js/mujeres.js"
 }

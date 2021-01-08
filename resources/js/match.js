@@ -1,36 +1,64 @@
  //alert(mujercitas[1].nombre);
+
  var nombres = [];
  var fotos = [];
- var descripcion = [];
-for(i=0; i<mujercitas.length; i++){
-    //document.write(mujercitas[i].nombre);
-    nombres.push(mujercitas[i].nombre);
-    fotos.push(mujercitas[i].foto);
-    descripcion.push(mujercitas[i].nombre);
-} 
+ //var descripcion = [];
+ 
 
+//Parte del Juego
 var juego = (function(){
+    
+    for(i=0; i<mujercitas.length; i++){
+        //document.write(mujercitas[i].nombre);
+        nombres.push(mujercitas[i].nombre);
+        fotos.push(mujercitas[i].foto);
+        //descripcion.push(mujercitas[i].nombre);
+    } 
+    //Array completo de animales
+        //animales = ['gato.jpg','oveja.jpg','pato.jpg','perro.png','vaca.jpg','caballo.jpg'];
+    //Array completo de los nombres de los animales
+        //nombres = ['gato','oveja','pato','perro','vaca','caballo'];
+    //Numero de elementos del array de animales
+    numElementosMujeres = nombres.length-1;
+    
+    //Declaro nuevos array vacios con los que voy a trabajar
+    imagenes = new Array();
+    arraydescripcion = new Array();
+    arraynombres = new Array();
+    do{
+        index = Math.floor(Math.random() * (numElementosMujeres-0+1)) + 0;
+        //Lleno los array pero antes compruebo si todavia no tienen elementos
+        if(imagenes.indexOf(animales[index])==-1){
+            
+            imagenes.push(fotos[index]);
+            arraynombres.push(nombres[index]);
+            arraydescripcion.push(nombres[index]);
+        }
+    }
+    while(imagenes.length<3)
+    
     var vidas = 4,
     lista1,lista2;
+        
     //Funcion para crear las cartas
     crearCartas = function(){
-
         try{
+
             var contenedor = document.querySelector(".contenedor");
             var item_html = '<div class="item" onclick="juego.clic(this)" data-baraja="{baraja}" data-indice="{indice}"></div>';
           
-            lista1 = distribuirCartas(nombres);
-            lista2 = (fotos);
+            lista1 = distribuirCartas(arraynombres);
+            lista2 = (imagenes);
 
             var cartas_html = "";
-            for(var i = 0; i<nombres.length; i++){
+            for(var i = 0; i<arraynombres.length; i++){
                 //aqui creamos las cartas ocultas y sustituimos sus indices con los nombres de los animales
                 cartas_html += item_html.replace("{baraja}", 1).replace("{indice}",lista1[i]);
             }
             for(x = 0; x < fotos.length; x++){
                 //aqui creamos las cartas con fotos de los animales e indices sus nombres
                 var item_html = '<img class="item" onclick="juego.clic(this)" data-baraja="{baraja}" data-indice="{indice}" src="../image/'+imagenes[x]+'" >';
-                cartas_html += item_html.replace("{baraja}", 2).replace("{indice}",descripcion[x]);
+                cartas_html += item_html.replace("{baraja}", 2).replace("{indice}",arraydescripcion[x]);
             }
             contenedor.innerHTML = cartas_html;
              
@@ -38,8 +66,8 @@ var juego = (function(){
             console.log(error);
         }
     },
-     //Funcion para ejecutar la accion por cada click que hacemos
-     clic = function(element){
+    //Funcion para ejecutar la accion por cada click que hacemos
+    clic = function(element){
         try{
 
             var cartas_activas = document.querySelectorAll(".sin-fondo-item");
@@ -71,7 +99,7 @@ var juego = (function(){
                    
             }
                 //Si todas cartas estan verificadas, nos saca el mensaje de victoria
-            if( document.querySelectorAll(".checked-item").length == (nombres.length)*2 ){
+            if( document.querySelectorAll(".checked-item").length == (arraynombres.length)*2 ){
                     var mensaje = document.querySelector("#contenedor-mensaje-victoria");
                 if(mensaje.classList.contains("ocultar-mensaje")){
                     mensaje.classList.remove("ocultar-mensaje");
@@ -100,7 +128,7 @@ var juego = (function(){
         }catch(error){
             console.log(error);
         }
-    },
+    }
     //Funcion para repartir las cartas aleatoriamente
     distribuirCartas = function(arr) {
         try{
@@ -116,9 +144,12 @@ var juego = (function(){
              console.log(error);
         }
      },
-     init = function(){
+    //Funcion para muestrar la hora
+    
+    init = function(){
         try{
-           
+          
+            iniciarHora();
             crearCartas();
             var botones = document.querySelectorAll(".btn");
             for(var i = 0; i<botones.length; i++){
@@ -131,6 +162,7 @@ var juego = (function(){
             console.log(error);
         }
     };
+
     return{
         init: init,
         clic: clic
