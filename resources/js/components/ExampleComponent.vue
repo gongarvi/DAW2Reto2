@@ -13,9 +13,7 @@
         </div>
   
     <div class="contenedor">
-        <section v-for="mujer in mujeres">
-            {{mujer.nombre}}
-        </section> 
+        
     </div>
 </template>
 
