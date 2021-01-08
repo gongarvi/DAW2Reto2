@@ -12,7 +12,17 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/millonario.js', 'public/js')
+
 .js('resources/js/matching.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps()
+
     .sass('resources/sass/app.scss', 'public/css');
+/*
+mix.webpackConfig({
+    output: {
+        chunkFilename: 'js/chunks/[name].js',
+    },
+});
+*/

@@ -21,6 +21,7 @@
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="../public/js/mujeres.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js"></script>
     <script>
         $(document).ready(function(){ //Hacia arriba
             irArriba();
