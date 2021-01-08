@@ -7,8 +7,6 @@
 // Introducción de bootstrap al proyecto
 require('./bootstrap');
 
-<<<<<<< HEAD
-=======
 window.Vue = require('vue');
 
 /**
@@ -22,7 +20,6 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('mujeres-component', require('./components/mujeres.vue').default);
 Vue.component('match-component', require('./components/Match.vue').default);
 
@@ -35,4 +32,3 @@ Vue.component('match-component', require('./components/Match.vue').default);
 const app = new Vue({
     el: '#app',
 });
->>>>>>> 93f96a639b110aba0b69d55f1036725326d168dd

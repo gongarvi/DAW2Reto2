@@ -331,7 +331,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.pregunta[data-v-62ed4956]{\n    background-color: rgb(0, 2, 99);\n}\nh3[data-v-62ed4956]{\n    color: white;\n}\n.row>span[data-v-62ed4956]{\n    height: 2px;\n    background-color: white;\n}\n", ""]);
+exports.push([module.i, "\n.pregunta[data-v-62ed4956]{\r\n    background-color: rgb(0, 2, 99);\n}\nh3[data-v-62ed4956]{\r\n    color: white;\n}\n.row>span[data-v-62ed4956]{\r\n    height: 2px;\r\n    background-color: white;\n}\r\n", ""]);
 
 // exports
 
@@ -14037,7 +14037,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\reto\resources\js\millonario.js */"./resources/js/millonario.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\millonario.js */"./resources/js/millonario.js");
 
 
 /***/ })
