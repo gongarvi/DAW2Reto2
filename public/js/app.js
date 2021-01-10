@@ -1999,7 +1999,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2046,11 +2045,11 @@ __webpack_require__.r(__webpack_exports__);
 
       // alert(especialdidad);
       // if(this.especialdidad==""){
-      //     return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
+      // return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase() && mujer.especialdidad.nombre==this.especialdidad));
       // }
       // else{
       return this.arraymujeres.filter(function (mujer) {
-        return mujer.nombre.toUpperCase().includes(_this.busqueda.toUpperCase() && mujer.especialdidad.nombre == _this.especialdidad);
+        return mujer.nombre.toUpperCase().includes(_this.busqueda.toUpperCase());
       }); // }
     }
   },
@@ -6502,7 +6501,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.make-me-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0; \n    padding: 0 0px;\n}\n", ""]);
+exports.push([module.i, "\n.make-me-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0; \n    padding: 0 0px;\n}\n.card{\n  transition: all 200ms;\n}\n.card:hover{\n  box-shadow: 5px 10px 18px #808080;\n}\n", ""]);
 
 // exports
 
@@ -38421,13 +38420,31 @@ var render = function() {
               {
                 key: mujer.id,
                 staticClass: "card m-2",
-                staticStyle: { width: "13rem" },
-                style: { backgroundColor: mujer.especialidad.color }
+                staticStyle: { width: "18rem" },
+                style: { backgroundColor: mujer.especialidad.color },
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": "#myModal",
+                  title: "Saber mas."
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.MostrarMujer(
+                      mujer.nombre,
+                      mujer.apellidos,
+                      mujer.nacimiento,
+                      mujer.fallecido,
+                      mujer.nacionalidad,
+                      mujer.especialidad.nombre,
+                      mujer.descripcion
+                    )
+                  }
+                }
               },
               [
                 _c("img", {
                   staticClass: "card-img-top",
-                  staticStyle: { height: "13rem" },
+                  staticStyle: { height: "18rem" },
                   attrs: {
                     alt: "foto",
                     src: "assets/Fotos_mujeres/" + mujer.foto
@@ -38435,39 +38452,13 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
-                  _c("h5", { staticClass: "card-title" }, [
+                  _c("h3", { staticClass: "card-title" }, [
                     _vm._v(_vm._s(mujer.nombre))
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(_vm._s(mujer.apellidos))
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-light",
-                      attrs: {
-                        "data-toggle": "modal",
-                        "data-target": "#myModal",
-                        title: "Saber mas."
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.MostrarMujer(
-                            mujer.nombre,
-                            mujer.apellidos,
-                            mujer.nacimiento,
-                            mujer.fallecido,
-                            mujer.nacionalidad,
-                            mujer.especialidad.nombre,
-                            mujer.descripcion
-                          )
-                        }
-                      }
-                    },
-                    [_vm._v("Saber mas")]
-                  )
+                  ])
                 ])
               ]
             )
