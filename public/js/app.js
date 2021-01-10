@@ -6502,7 +6502,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.make-me-sticky {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0; \n        padding: 0 0px;\n}\n.card{\n        transition: all 1s;\n}\n.card:hover{\n        box-shadow: 2px 2px 5px 5px #808080;\n}\n.img-mujeres{\n\t    box-shadow: 0 8px 6px -6px black;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* *{\n        font-family: 'Times New Roman', Times, serif;\n    } */\n.make-me-sticky {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0; \n        padding: 0 0px;\n}\n.card{\n        transition: all 1s;\n}\n.card:hover{\n        box-shadow: 2px 2px 5px 5px #808080;\n}\n.img-mujeres{\n\t    box-shadow: 0 8px 6px -6px black;\n}\n", ""]);
 
 // exports
 
@@ -38453,11 +38453,11 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
-                  _c("h3", { staticClass: "card-title" }, [
+                  _c("h4", { staticClass: "card-title" }, [
                     _vm._v(_vm._s(mujer.nombre))
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "card-text" }, [
+                  _c("h5", { staticClass: "card-text" }, [
                     _vm._v(_vm._s(mujer.apellidos))
                   ])
                 ])

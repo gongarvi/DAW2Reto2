@@ -27,8 +27,8 @@
                 <div class="card m-2" style="width: 18rem;" v-for="mujer in buscarMujer" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
                     <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
                     <div class="card-body">
-                        <h3 class="card-title">{{mujer.nombre}}</h3>
-                        <p class="card-text">{{mujer.apellidos}}</p>
+                        <h4 class="card-title">{{mujer.nombre}}</h4>
+                        <h5 class="card-text">{{mujer.apellidos}}</h5>
                     </div>
                 </div>
 
@@ -122,6 +122,9 @@
     }
 </script>
 <style>
+    /* *{
+        font-family: 'Times New Roman', Times, serif;
+    } */
     .make-me-sticky {
         position: -webkit-sticky;
         position: sticky;
