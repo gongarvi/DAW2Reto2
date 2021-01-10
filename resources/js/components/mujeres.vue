@@ -25,7 +25,7 @@
             <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
 
                 <div class="card m-2" style="width: 18rem;" v-for="mujer in buscarMujer" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
-                    <img class="card-img-top" style="height: 18rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
+                    <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
                     <div class="card-body">
                         <h3 class="card-title">{{mujer.nombre}}</h3>
                         <p class="card-text">{{mujer.apellidos}}</p>
@@ -93,6 +93,7 @@
                     });
             },
             filtrarMujeres(especialdidad) {
+                alert(especialdidad);
                 buscarMujer(especialdidad);
             },
             MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion){
@@ -128,9 +129,15 @@
         padding: 0 0px;
     }
     .card{
-      transition: all 200ms;
+        transition: all 1s;
     }
     .card:hover{
-      box-shadow: 5px 10px 18px #808080;
+        box-shadow: 2px 2px 5px 5px #808080;
+    }
+    .img-mujeres{
+        -webkit-box-shadow: 0 8px 6px -6px black;
+	    -moz-box-shadow: 0 8px 6px -6px black;
+	    box-shadow: 0 8px 6px -6px black;
+
     }
 </style>

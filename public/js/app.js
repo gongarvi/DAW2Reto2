@@ -2029,6 +2029,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     filtrarMujeres: function filtrarMujeres(especialdidad) {
+      alert(especialdidad);
       buscarMujer(especialdidad);
     },
     MostrarMujer: function MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion) {
@@ -6501,7 +6502,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.make-me-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0; \n    padding: 0 0px;\n}\n.card{\n  transition: all 200ms;\n}\n.card:hover{\n  box-shadow: 5px 10px 18px #808080;\n}\n", ""]);
+exports.push([module.i, "\n.make-me-sticky {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0; \n        padding: 0 0px;\n}\n.card{\n        transition: all 1s;\n}\n.card:hover{\n        box-shadow: 2px 2px 5px 5px #808080;\n}\n.img-mujeres{\n\t    box-shadow: 0 8px 6px -6px black;\n}\n", ""]);
 
 // exports
 
@@ -38443,7 +38444,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "card-img-top",
+                  staticClass: "card-img-top img-mujeres",
                   staticStyle: { height: "18rem" },
                   attrs: {
                     alt: "foto",
