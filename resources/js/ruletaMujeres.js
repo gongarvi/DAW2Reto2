@@ -12,7 +12,7 @@ window.onload = function () {
             ejecutandose=0;
         }else{
             clearInterval(procesoID);
-            intervaloTiempo =intervaloTiempo+10;
+            intervaloTiempo =intervaloTiempo+30;
             procesoID = window.setInterval(funcionRuleta, intervaloTiempo);
         }
         if(ejecutandose ==0){
