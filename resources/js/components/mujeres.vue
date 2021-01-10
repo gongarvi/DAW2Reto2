@@ -5,34 +5,53 @@
 
             <aside class="col-sm-4 col-md-4 col-lg-2 text-white text-center">
 
-                <form class="form-inline active-purple-4 mt-3 mb-3 ml-2">
-                    <input class="form-control form-control-sm mr-2 w-75" type="search" v-model="busqueda" placeholder="Buscar..">
-                    <i class="fa fa-search"></i>
-                </form>
+                <div class="make-me-sticky mt-2">
+                    
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1 amber-border" type="search" v-model="busqueda"  placeholder="Buscar.." aria-label="Buscar">
+                        <div class="input-group-append">
+                            <span class="input-group-text amber lighten-3" id="basic-text1"><i class="fa fa-search text-grey"
+                                aria-hidden="true"></i></span>
+                        </div>
+                    </div>
 
-                <div v-for="especialidad in arrayespecialidades" :key="especialidad.id">
-                    <button v-bind:style="{ backgroundColor: especialidad.color }" class="btn w-100 m-1" @click="filtrarMujeres(especialdidad.nombre)"> {{  especialidad.nombre }}</button>
+                    <div v-for="especialidad in arrayespecialidades" :key="especialidad.id" >
+                        <button v-bind:style="{ backgroundColor: especialidad.color }" class="btn w-100 mt-2" @click="filtrarMujeres(especialidad.nombre)"> {{  especialidad.nombre }}</button>
+                    </div>
+
                 </div>
-            
-        
+               
             </aside>
-            <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap text-center">
-                <div class="card m-2" style="width: 18rem;" v-for="mujer in buscarMujer" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }">
-                    <img class="card-img-top" style="height: 18rem;" alt="Card image cap" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
+            <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
+
+                <div class="card m-2" style="width: 13rem;" v-for="mujer in buscarMujer" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }">
+                    <img class="card-img-top" style="height: 13rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
                     <div class="card-body">
                         <h5 class="card-title">{{mujer.nombre}}</h5>
                         <p class="card-text">{{mujer.apellidos}}</p>
-                        <button @click="MostrarMujer(mujer.id)" class="btn btn-primary">Saber mas</button>
+                        <button @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" class="btn btn-light" data-toggle="modal" data-target="#myModal" title="Saber mas.">Saber mas</button>
                     </div>
                 </div>
-                <div id="contenedor-mensaje-victoria" class="ocultar-mensaje">
-                <div id="mensaje-victoria">
-                    <h3>Felicidades!!!</h3>
-                    <h4>Has completado el nivel</h4>
-                    <img src="img/felicitar.gif">
-                    <a href="#">Seguir Jugando</a>
-                </div>   
-            </div>
+
+                 <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                            <h4 class="modal-title"></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="vida-mujer"></p>
+                                <p id="nacionalidad-mujer"></p>
+                                <p id="especialidad-mujer"></p>
+                                <p id="descripcion-mujer"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>
@@ -75,24 +94,25 @@
                     });
             },
             filtrarMujeres(especialdidad) {
-                // this, hace referencia a la instancia Vue
-                especialidadSeleccionada=especialdidad;
+                buscarMujer(especialdidad);
             },
-            MostrarMujer(idMujer){
-                // alert(idMujer);
-                var mensaje = document.querySelector("#contenedor-mensaje-victoria");
-                if(mensaje.classList.contains("ocultar-mensaje")){
-                    mensaje.classList.remove("ocultar-mensaje");
-                }
+            MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion){
+                document.getElementsByClassName("modal-title")[0].innerHTML=nombre+" "+apellidos;
+                document.getElementById("vida-mujer").innerHTML=nacimiento+" - "+fallecido;
+                document.getElementById("nacionalidad-mujer").innerHTML="<b>Nacionalidad:</b> "+nacionalidad;
+                document.getElementById("especialidad-mujer").innerHTML="<b>Especialidad:</b> "+especialidad;
+                document.getElementById("descripcion-mujer").innerHTML="<b>Descripcion:</b> "+descripcion;
             }
         },
         computed: {
             buscarMujer(especialdidad) {
-                // if(this.especialdidad!=""){
-                //     return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase() && mujer.especialdidad.nombre==this.especialdidad));
+                // alert(especialdidad);
+                // if(this.especialdidad==""){
+                //     return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
                 // }
                 // else{
-                    return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
+                    
+                    return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase() && mujer.especialdidad.nombre==this.especialdidad));
                 // }
             }
         },
@@ -103,29 +123,10 @@
     }
 </script>
 <style>
-    #mensaje-victoria{
-        min-height: 400px; 
-        background: white;
-        top: 20%; 
-        position: relative; 
-        max-width: 600px; 
-        margin: 0 auto;
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        border-radius: 20px; 
-        border: 1px solid purple;
-        background-color: darkgrey; 
-    }
-    .ocultar-mensaje{
-        display: none;
-    }
-    #contenedor-mensaje-victoria{
-        position: fixed; 
+    .make-me-sticky {
+        position: -webkit-sticky;
+        position: sticky;
         top: 0; 
-        bottom: 0;
-        left: 0;
-        right: 0; 
-        background: #000000ad;} 
+        padding: 0 0px;
+    }
 </style>

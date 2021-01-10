@@ -1981,6 +1981,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2011,28 +2030,27 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     filtrarMujeres: function filtrarMujeres(especialdidad) {
-      // this, hace referencia a la instancia Vue
-      especialidadSeleccionada = especialdidad;
+      buscarMujer(especialdidad);
     },
-    MostrarMujer: function MostrarMujer(idMujer) {
-      // alert(idMujer);
-      var mensaje = document.querySelector("#contenedor-mensaje-victoria");
-
-      if (mensaje.classList.contains("ocultar-mensaje")) {
-        mensaje.classList.remove("ocultar-mensaje");
-      }
+    MostrarMujer: function MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion) {
+      document.getElementsByClassName("modal-title")[0].innerHTML = nombre + " " + apellidos;
+      document.getElementById("vida-mujer").innerHTML = nacimiento + " - " + fallecido;
+      document.getElementById("nacionalidad-mujer").innerHTML = "<b>Nacionalidad:</b> " + nacionalidad;
+      document.getElementById("especialidad-mujer").innerHTML = "<b>Especialidad:</b> " + especialidad;
+      document.getElementById("descripcion-mujer").innerHTML = "<b>Descripcion:</b> " + descripcion;
     }
   },
   computed: {
     buscarMujer: function buscarMujer(especialdidad) {
       var _this = this;
 
-      // if(this.especialdidad!=""){
-      //     return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase() && mujer.especialdidad.nombre==this.especialdidad));
+      // alert(especialdidad);
+      // if(this.especialdidad==""){
+      //     return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
       // }
       // else{
       return this.arraymujeres.filter(function (mujer) {
-        return mujer.nombre.toUpperCase().includes(_this.busqueda.toUpperCase());
+        return mujer.nombre.toUpperCase().includes(_this.busqueda.toUpperCase() && mujer.especialdidad.nombre == _this.especialdidad);
       }); // }
     }
   },
@@ -6484,7 +6502,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#mensaje-victoria{\n    min-height: 400px; \n    background: white;\n    top: 20%; \n    position: relative; \n    max-width: 600px; \n    margin: 0 auto;\n    display: flex; \n    flex-direction: column; \n    justify-content: center; \n    align-items: center; \n    border-radius: 20px; \n    border: 1px solid purple;\n    background-color: darkgrey;\n}\n.ocultar-mensaje{\n    display: none;\n}\n#contenedor-mensaje-victoria{\n    position: fixed; \n    top: 0; \n    bottom: 0;\n    left: 0;\n    right: 0; \n    background: #000000ad;} \n", ""]);
+exports.push([module.i, "\n.make-me-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0; \n    padding: 0 0px;\n}\n", ""]);
 
 // exports
 
@@ -38333,62 +38351,69 @@ var render = function() {
         { staticClass: "col-sm-4 col-md-4 col-lg-2 text-white text-center" },
         [
           _c(
-            "form",
-            { staticClass: "form-inline active-purple-4 mt-3 mb-3 ml-2" },
+            "div",
+            { staticClass: "make-me-sticky mt-2" },
             [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.busqueda,
-                    expression: "busqueda"
-                  }
-                ],
-                staticClass: "form-control form-control-sm mr-2 w-75",
-                attrs: { type: "search", placeholder: "Buscar.." },
-                domProps: { value: _vm.busqueda },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.busqueda = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("i", { staticClass: "fa fa-search" })
-            ]
-          ),
-          _vm._v(" "),
-          _vm._l(_vm.arrayespecialidades, function(especialidad) {
-            return _c("div", { key: especialidad.id }, [
               _c(
-                "button",
-                {
-                  staticClass: "btn w-100 m-1",
-                  style: { backgroundColor: especialidad.color },
-                  on: {
-                    click: function($event) {
-                      return _vm.filtrarMujeres(_vm.especialdidad.nombre)
+                "div",
+                { staticClass: "input-group md-form form-sm form-2 pl-0" },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.busqueda,
+                        expression: "busqueda"
+                      }
+                    ],
+                    staticClass: "form-control my-0 py-1 amber-border",
+                    attrs: {
+                      type: "search",
+                      placeholder: "Buscar..",
+                      "aria-label": "Buscar"
+                    },
+                    domProps: { value: _vm.busqueda },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.busqueda = $event.target.value
+                      }
                     }
-                  }
-                },
-                [_vm._v(" " + _vm._s(especialidad.nombre))]
-              )
-            ])
-          })
-        ],
-        2
+                  }),
+                  _vm._v(" "),
+                  _vm._m(0)
+                ]
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.arrayespecialidades, function(especialidad) {
+                return _c("div", { key: especialidad.id }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn w-100 mt-2",
+                      style: { backgroundColor: especialidad.color },
+                      on: {
+                        click: function($event) {
+                          return _vm.filtrarMujeres(especialidad.nombre)
+                        }
+                      }
+                    },
+                    [_vm._v(" " + _vm._s(especialidad.nombre))]
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
         "main",
-        {
-          staticClass:
-            "col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap text-center"
-        },
+        { staticClass: "col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap" },
         [
           _vm._l(_vm.buscarMujer, function(mujer) {
             return _c(
@@ -38396,15 +38421,15 @@ var render = function() {
               {
                 key: mujer.id,
                 staticClass: "card m-2",
-                staticStyle: { width: "18rem" },
+                staticStyle: { width: "13rem" },
                 style: { backgroundColor: mujer.especialidad.color }
               },
               [
                 _c("img", {
                   staticClass: "card-img-top",
-                  staticStyle: { height: "18rem" },
+                  staticStyle: { height: "13rem" },
                   attrs: {
-                    alt: "Card image cap",
+                    alt: "foto",
                     src: "assets/Fotos_mujeres/" + mujer.foto
                   }
                 }),
@@ -38421,10 +38446,23 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-light",
+                      attrs: {
+                        "data-toggle": "modal",
+                        "data-target": "#myModal",
+                        title: "Saber mas."
+                      },
                       on: {
                         click: function($event) {
-                          return _vm.MostrarMujer(mujer.id)
+                          return _vm.MostrarMujer(
+                            mujer.nombre,
+                            mujer.apellidos,
+                            mujer.nacimiento,
+                            mujer.fallecido,
+                            mujer.nacionalidad,
+                            mujer.especialidad.nombre,
+                            mujer.descripcion
+                          )
                         }
                       }
                     },
@@ -38435,7 +38473,7 @@ var render = function() {
             )
           }),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(1)
         ],
         2
       )
@@ -38447,21 +38485,55 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c(
+        "span",
+        {
+          staticClass: "input-group-text amber lighten-3",
+          attrs: { id: "basic-text1" }
+        },
+        [
+          _c("i", {
+            staticClass: "fa fa-search text-grey",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass: "ocultar-mensaje",
-        attrs: { id: "contenedor-mensaje-victoria" }
-      },
+      { staticClass: "modal fade", attrs: { id: "myModal", role: "dialog" } },
       [
-        _c("div", { attrs: { id: "mensaje-victoria" } }, [
-          _c("h3", [_vm._v("Felicidades!!!")]),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Has completado el nivel")]),
-          _vm._v(" "),
-          _c("img", { attrs: { src: "img/felicitar.gif" } }),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Seguir Jugando")])
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content text-dark" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c("h4", { staticClass: "modal-title" }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button", "data-dismiss": "modal" }
+                },
+                [_vm._v("×")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("p", { attrs: { id: "vida-mujer" } }),
+              _vm._v(" "),
+              _c("p", { attrs: { id: "nacionalidad-mujer" } }),
+              _vm._v(" "),
+              _c("p", { attrs: { id: "especialidad-mujer" } }),
+              _vm._v(" "),
+              _c("p", { attrs: { id: "descripcion-mujer" } })
+            ])
+          ])
         ])
       ]
     )
