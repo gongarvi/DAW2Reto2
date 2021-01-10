@@ -25,9 +25,9 @@ window.onload = function () {
                                '<h4>Nacimiento --> '+Mujer[mujerSeleccionada].nacimiento+'</h4><br>'+
                                '<h4>Fallecimieto --> '+Mujer[mujerSeleccionada].fallecimiento+'</h4><br>'+
                                '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
-                               numeroVueltas = localStorage.getItem("vueltas");
-                               if((juego == "Puzzle" && numeroVueltas<=1) || (juego=="uscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
-                                    (juego == "3 en raya" || numeroVueltas==3)){
+                               numeroVueltas = parseInt(localStorage.getItem("vueltas"));
+                               if((juego == "Puzzle" && isNaN(numeroVueltas)) || (juego=="Buscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
+                                    (juego == "3 en raya" && numeroVueltas==2)){
                                 divDatos.innerHTML += '<button id="boton" class="bg-danger text-white">JUGAR</button>';
                                }else{
                                 divDatos.innerHTML +='<button id="boton" class="bg-danger text-white"> SIGUIENTE </button>';
@@ -46,12 +46,19 @@ window.onload = function () {
                     }else {
                         mujeresSeleccionadasJuego.push(Mujer[mujerSeleccionada]);
                         localStorage.setItem("mujeres", JSON.stringify(mujeresSeleccionadasJuego));  
-                        numeroVueltas =  localStorage.getItem("vueltas");
+                        numeroVueltas = parseInt(localStorage.getItem("vueltas"));
                         numeroVueltas += 1;
                         localStorage.setItem("vueltas",numeroVueltas);
                     }
+                    location.reload();
                 }else{
-                    alert("Entro a jugar")
+                    var mujeresSeleccionadasJuego = JSON.parse(localStorage.getItem('mujeres')) ;
+                    if(mujeresSeleccionadasJuego ==null){
+                        mujeresSeleccionadasJuego = new Array();
+                    }
+                    mujeresSeleccionadasJuego.push(Mujer[mujerSeleccionada]);
+                    localStorage.setItem("mujeres", JSON.stringify(mujeresSeleccionadasJuego)); 
+                    alert(mujeresSeleccionadasJuego[0]);
                     localStorage.removeItem("vueltas");
                 }
 
