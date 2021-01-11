@@ -104,7 +104,7 @@ eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\reto\resources\js\game-card-controller.js */"./resources/js/game-card-controller.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\DAW2Reto2\resources\js\game-card-controller.js */"./resources/js/game-card-controller.js");
 
 
 /***/ })
