@@ -1,6 +1,5 @@
 <template>
     <div id="millonario">
-<<<<<<< HEAD
         <div id="principal" class="text-center p-5">
             <button id="aleatorio" class="btn btn-info" @click="preguntasAleatorias()">
                 <span>Juego Aleatorio</span>
@@ -19,26 +18,14 @@
         <div id="juego" v-if="!hidden">
             <Pregunta :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
             <div id="ayudas" class="text-center m-5">
-                <button id="50" class="btn btn-info mx-4">
+                <button id="50" class="btn btn-info mx-4" @click="botonAyuda50" :disabled="ayudaMitad">
                     <span>50/50</span>
                 </button>
-                <button id="publico" class="btn btn-info mx-4">
+                <button id="publico" class="btn btn-info mx-4" @click="botonAyudaPublico" :disabled="publico">
                     <span>Publico</span>
                 </button>
             </div>
-=======
-      <div id="juego">
-        <Pregunta :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas" v-ref:preguntas/>
-        <div id="ayudas" class="text-center m-5">
-          <button id="50" class="btn btn-info mx-4" @click="botonAyuda50" :disabled="ayudaMitad">
-            <span>50/50</span>
-          </button>
-          <button id="publico" class="btn btn-info mx-4" @click="botonAyudaPublico" :disabled="publico">
-            <span>Publico</span>
-          </button>
->>>>>>> b60a446295748d5ab647c4c6b3fa9129fa6f64b6
         </div>
-      </div>
       <div class="final w-100" :class="{'fin':fin}">
         <p class="w-100 text-justify m-2">
           Has conseguido responder correctamente un total de {{acertadas}} de {{preguntas.length}} preguntas.
@@ -57,20 +44,13 @@ export default {
   },
   data(){
     return{
-      preguntas:[{}],
-      respondidas:0,
-<<<<<<< HEAD
-      5050:false,
-      public:false,
       hidden:true,
       especializacion:1,
-      especialidades:[{}]
-=======
+      especialidades:[{}],
       ayudaMitad:false,
       publico:false,
       acertadas:0,
       fin:false
->>>>>>> b60a446295748d5ab647c4c6b3fa9129fa6f64b6
     }
   },
    beforeMount() {
@@ -116,7 +96,7 @@ export default {
       this.respondidas==0;
     },
     finalizar(){
-      
+
     },
     botonAyudaPublico(){
       if(!this.ayudaPublico)
@@ -135,15 +115,12 @@ export default {
 }
 </script>
 <style scoped>
-<<<<<<< HEAD
 #millonario{
     background-color: rgb(0, 2, 99);
 }
-=======
   .final{
     display: none;
     margin: auto;
   }
->>>>>>> b60a446295748d5ab647c4c6b3fa9129fa6f64b6
 </style>
 
