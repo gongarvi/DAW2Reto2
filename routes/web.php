@@ -5,7 +5,12 @@ use App\Http\Controllers\MujeresController;
 use App\Http\Controllers\EspecialidadesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers;
+=======
+use App\Http\Controllers; 
+
+>>>>>>> aa376b9d90afaa39abc2095a804b87dfba37e90e
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\modoHistoriaController;
 /*
