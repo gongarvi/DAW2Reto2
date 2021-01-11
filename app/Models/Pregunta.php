@@ -16,24 +16,15 @@ class Pregunta extends Model
     public function mujer(){
         return $this->belongsTo(Mujer::class);
     }
-    public static function getPreguntasAleatorias(){
-        $array=self::all();
-        $count=count($array);
-        if($count>=10){
-            $count=10;
-        }
-        return $array->random($count);
-    }
 
-    public static function getPreguntasAleatoriasPorEspecialidad($especialidad){
-        $array=self::with(array("mujer"=>function($query) use ($especialidad) {
-            $query->where("mujeres.especialidad",$especialidad);
+    public static function getPreguntaAleatoriaMujer($id_mujer){
+        $array=self::with(array("mujer"=>function($query) use ($id_mujer) {
+            $query->where("mujeres.id",$id_mujer);
             $query->get();
         }))->get();
-        $count=count($array);
-        if($count>=10){
-            $count=10;
+        if(count($array)<=0){
+            return null;
         }
-        return $array->random(($count));
+        return $array->random(1)->first();
     }
 }

@@ -45,7 +45,7 @@ export default {
   data(){
     return{
       hidden:true,
-        preguntas:[{}],
+      preguntas:[{}],
       especializacion:1,
       especialidades:[{}],
       ayudaMitad:false,
@@ -55,10 +55,15 @@ export default {
     }
   },
    beforeMount() {
-      window.axios.get(window.location.protocol+"//"+window.location.host+"/api/especialidades").then((response)=> {
-        this.especialidades=response.data;
-      }).catch((error)=>{
-          console.log(error);
+      let mujeres = localStorage.getItem("mujeres");
+      mujeres.foreach((mujer)=>{
+          window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas"+mujer.id)
+          .then((response)=>{
+            this.preguntas.push(response.data);
+          })
+          .catch((error)=>{
+
+          });
       });
    },
 
