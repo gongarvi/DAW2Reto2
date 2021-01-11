@@ -30,6 +30,10 @@ export default {
         }
     },
     watch:{
+        /*
+        * Cuando el jugador selecciona la respuesta el componente respuesta cambia el 
+        * atributo respodido a true y se ejecuta la funcion watch
+        */
         respondido:function(){
             if(this.respondido){
                 this.$children.forEach((respuesta)=>{
@@ -44,6 +48,28 @@ export default {
                     this.$parent.siguientePregunta(this.acertado);
                 },6500);
             }
+        }
+    },
+    methods:{
+        //El publico seleccina una respuesta, puede no ser la correcta
+        ayudaPublico(){
+            
+            this.$children[parseInt(Math.random(1,4))];
+        },
+        //Respuestas seleccionadas por el 50/50 una tiene que ser si o si la correcta
+        ayuda50(){
+            let correcto=0;
+            this.respuestas.forEach((respuesta,index)=>{
+                if(respuesta.correcta){
+                    correcto=index;
+                }
+            });
+            let respuestaAleatoria=0;
+            do{
+                respuestaAleatoria=parseInt(Math.random(0,3));
+            }while(correcto!=respuestaAleatoria);
+            this.respuetas[correcto].ayuda();
+            this.respuestas[respuestaAleatoria].ayuda();
         }
     }
 }
