@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Especialidad;
 class Mujer extends Model
 {
     use HasFactory;
-
     protected $table = "mujeres";
     protected $fillable = [
         'id',
@@ -20,7 +19,8 @@ class Mujer extends Model
         'especialidad',
         'foto',
         'descripcion'
-
     ];
-
+    public function especialidad(){
+        return $this->belongsTo(Especialidad::class,"especialidad","id");
+    }
 }

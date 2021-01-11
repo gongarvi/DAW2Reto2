@@ -18,7 +18,8 @@ class EspecialzacionesAPIController extends Controller
                 $result[]=
                     [
                         "id"=>$especialidad->id,
-                        "nombre"=>$especialidad->nombre
+                        "nombre"=>$especialidad->nombre,
+                        "color"=>$especialidad->color
                     ];
             }
         }

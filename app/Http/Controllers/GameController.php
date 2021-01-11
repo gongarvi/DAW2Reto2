@@ -32,7 +32,6 @@ class GameController extends Controller
             array(
                 "id"=>"3",
                 "nombre"=>"buscaminas",
-
                 "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
                 "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),

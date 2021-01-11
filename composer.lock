@@ -1058,10 +1058,14 @@
                 "source": "https://github.com/laravel/framework"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-01-05T15:43:10+00:00"
 =======
             "time": "2020-12-22T21:21:19+00:00"
 >>>>>>> origin/unai
+=======
+            "time": "2021-01-05T15:43:10+00:00"
+>>>>>>> 6f0407b7076e6b7a97d5e986c2438f2d3c894877
         },
         {
             "name": "laravel/tinker",
