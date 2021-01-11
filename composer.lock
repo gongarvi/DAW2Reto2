@@ -1057,7 +1057,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2021-01-05T15:43:10+00:00"
+=======
+            "time": "2020-12-22T21:21:19+00:00"
+>>>>>>> origin/unai
         },
         {
             "name": "laravel/tinker",

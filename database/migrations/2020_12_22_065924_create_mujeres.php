@@ -17,7 +17,7 @@ class CreateMujeres extends Migration{
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('nacimiento');
-            $table->string('fallecimiento');
+            $table->string('fallecido');
             $table->string('nacionalidad');
             $table->integer('especialidad');
             $table->foreign('especialidad')->references('id')->on('especialidades');

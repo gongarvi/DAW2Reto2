@@ -57,10 +57,10 @@
 
 }
 img{
-    border-radius: inherit;
+    /* border-radius: inherit;
     width: auto;
     height: fit-content;
     z-index: 0;
     padding:1px;
-    position: relative;
+    position: relative; */
 }

@@ -17,6 +17,8 @@ class GameController extends Controller
             array(
                 "id"=>"1",
                 "nombre"=>"matching",
+                "descripcion"=>"En este juego deberas unir las mujeres con su nombre o su profesion",
+                "imagen"=>"resources/assets/Fotos_Juegos/matching.png",
                 "descripcion"=>"En este juego deberas unir las mujeres con su profesión o su logro",
                 "imagen"=>"assets/Fotos_Juegos/matching.png"
             ),
@@ -29,12 +31,14 @@ class GameController extends Controller
             array(
                 "id"=>"3",
                 "nombre"=>"buscaminas",
+
                 "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
                 "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),
             array(
                 "id"=>"4",
-                "nombre"=>"Quien quiere ser millonaria?",
+                "nombre"=>"millonario",
+
                 "descripcion"=>"En este juego deberas responder las preguntas de las distintas mujeres.",
                 "imagen"=>"assets/Fotos_Juegos/quiz.png"
             ),
@@ -78,4 +82,5 @@ class GameController extends Controller
     public function puzzle(){
         return view("puzzle");
     }
+    
 }

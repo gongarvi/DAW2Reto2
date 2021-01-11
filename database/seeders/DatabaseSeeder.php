@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Especialidades;
-use App\Models\Mujeres;
+use App\Models\Especialidad;
+use App\Models\Mujer;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
     // los datos para la tabla de especialidades
     private function especialidades(){
-        
+
         $file = fopen('public\assets\CSVs\Especialidades.csv', "r");
         $data = array();
         $i = 0;
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             // Skip first row (Remove below comment if you want to skip the first row)
             if($i == 0){
                 $i++;
-                continue; 
+                continue;
             }
             for ($c=0; $c < $num; $c++) {
                $data[$i][] = $filedata [$c];
@@ -42,17 +42,18 @@ class DatabaseSeeder extends Seeder
 
         // Insert to MySQL database
         foreach($data as $importData){
-            $especialidad = new Especialidades();
+            $especialidad = new Especialidad();
             $especialidad->id=$importData[0];
             $especialidad->nombre=$importData[1];
+            $especialidad->color=$importData[2];
             $especialidad->save();
-        }        
-     
+        }
+
     }
 
     // los datos para la tabla de mujeres
     private function mujeres(){
-        
+
         $file = fopen('public\assets\CSVs\mujeres.csv', "r");
         $data = array();
         $i = 0;
@@ -61,7 +62,7 @@ class DatabaseSeeder extends Seeder
             // Skip first row (Remove below comment if you want to skip the first row)
             if($i == 0){
                 $i++;
-                continue; 
+                continue;
             }
             for ($c=0; $c < $num; $c++) {
                $data[$i][] = $filedata [$c];
@@ -72,17 +73,17 @@ class DatabaseSeeder extends Seeder
 
         // Insert to MySQL database
         foreach($data as $importData){
-            $mujer = new Mujeres();
+            $mujer = new Mujer();
             $mujer->nombre=$importData[0];
             $mujer->apellidos=$importData[1];
             $mujer->nacimiento=$importData[2];
-            $mujer->fallecimiento=$importData[3];
+            $mujer->fallecido=$importData[3];
             $mujer->especialidad=$importData[4];
             $mujer->descripcion=$importData[5];
             $mujer->foto=$importData[6];
             $mujer->nacionalidad=$importData[7];
             $mujer->save();
-        }        
-     
+        }
+
     }
 }

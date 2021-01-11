@@ -81,30 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/game-card-controller.js":
-/*!**********************************************!*\
-  !*** ./resources/js/game-card-controller.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var vue = new Vue({\n  el: \"#game-cards-controller\",\n  methods: {\n    checkImages: function checkImages(event) {\n      console.log(event);\n      event.target.src = \"image/placeholder.png\";\n    }\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvZ2FtZS1jYXJkLWNvbnRyb2xsZXIuanM/OGI5YSJdLCJuYW1lcyI6WyJ2dWUiLCJWdWUiLCJlbCIsIm1ldGhvZHMiLCJjaGVja0ltYWdlcyIsImV2ZW50IiwiY29uc29sZSIsImxvZyIsInRhcmdldCIsInNyYyJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBTUEsR0FBRyxHQUFDLElBQUlDLEdBQUosQ0FBUTtBQUNkQyxJQUFFLEVBQUMsd0JBRFc7QUFFZEMsU0FBTyxFQUFFO0FBQ0xDLGVBREssdUJBQ09DLEtBRFAsRUFDYztBQUNmQyxhQUFPLENBQUNDLEdBQVIsQ0FBWUYsS0FBWjtBQUNBQSxXQUFLLENBQUNHLE1BQU4sQ0FBYUMsR0FBYixHQUFtQix1QkFBbkI7QUFDSDtBQUpJO0FBRkssQ0FBUixDQUFWIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL2pzL2dhbWUtY2FyZC1jb250cm9sbGVyLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgdnVlPW5ldyBWdWUoe1xuICAgIGVsOlwiI2dhbWUtY2FyZHMtY29udHJvbGxlclwiLFxuICAgIG1ldGhvZHM6IHtcbiAgICAgICAgY2hlY2tJbWFnZXMoZXZlbnQpIHtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKGV2ZW50KTtcbiAgICAgICAgICAgIGV2ZW50LnRhcmdldC5zcmMgPSBcImltYWdlL3BsYWNlaG9sZGVyLnBuZ1wiXG4gICAgICAgIH0sXG4gICAgfSxcbn0pO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/game-card-controller.js\n");
-
-/***/ }),
-
-/***/ 1:
-/*!****************************************************!*\
-  !*** multi ./resources/js/game-card-controller.js ***!
-  \****************************************************/
+/***/ 2:
+/*!****************************************!*\
+  !*** multi ./resources/js/matching.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\reto\resources\js\game-card-controller.js */"./resources/js/game-card-controller.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\laravel\\reto\\resources\\js\\matching.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
