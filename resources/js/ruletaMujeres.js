@@ -27,7 +27,7 @@ window.onload = function () {
                                '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
                                numeroVueltas = parseInt(localStorage.getItem("vueltas"));
                                if((juego == "Puzzle" && isNaN(numeroVueltas)) || (juego=="Buscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
-                                    (juego == "3 en raya" && numeroVueltas==2)){
+                                    (juego == "3 en raya" && numeroVueltas==2) || (juego=="Quien quiere ser millonaria?" && numeroVueltas<=9)){
                                 divDatos.innerHTML += '<button id="boton" class="bg-danger text-white">JUGAR</button>';
                                }else{
                                 divDatos.innerHTML +='<button id="boton" class="bg-danger text-white"> SIGUIENTE </button>';
@@ -61,17 +61,11 @@ window.onload = function () {
                     alert(mujeresSeleccionadasJuego[0]);
                     localStorage.removeItem("vueltas");
                 }
-
             }
             document.getElementById("boton").addEventListener("click",irAjuego,true);
             //http://localhost/DAW2Reto2/public/juegos/ruleta/8
         }
-        
-    
-        
-        
-    }
-    
+    }    
     function irAjuego(){
         aviso = document.getElementById("boton").value;
         alert(aviso);

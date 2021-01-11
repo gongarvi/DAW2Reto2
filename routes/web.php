@@ -34,6 +34,7 @@ Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
+Route::get("/juegos/Puzzle",[GameController::class,"puzzle"])->name("Puzzle");
 
 
 Route::get("/mujeres",[GameController::class,"show"])->name("mujeres");
