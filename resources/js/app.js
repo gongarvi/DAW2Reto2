@@ -31,4 +31,14 @@ Vue.component('respuesta', require('./components/Respuesta').default);
 
 const app = new Vue({
     el: '#app',
+    methods: {
+        checkImages(event) {
+            console.log(event);
+            event.target.src = "image/placeholder.png"
+        },
+        pulsarboton: function(nombreJuego){
+            var Especialidad = document.getElementById("selectEspecialidad").value;
+            window.location.href = '/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
+        },
+    },
 });

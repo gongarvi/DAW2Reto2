@@ -2,6 +2,7 @@
 
 @section("head-extras")
     <link rel="stylesheet" href="{{ URL::asset('css/game-page.css') }}">
+
 @endsection
 
 @section("content")
@@ -22,8 +23,8 @@
         </ul>
 
     </div>
-    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js%22%3E"></script>
-    <script src="../resources/js/game-card-controller.js"></script>
+    <script src="{{asset("js/game-card-controller.js")}}"></script>
+
 
 @endsection
 
