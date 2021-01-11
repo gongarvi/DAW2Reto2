@@ -2,6 +2,7 @@
 
 @section("head-extras")
     <link rel="stylesheet" href="{{ URL::asset('css/game-page.css') }}">
+
 @endsection
 
 @section("content")
@@ -22,7 +23,8 @@
         </ul>
 
     </div>
-    <script src="../resources/js/game-card-controller.js"></script>
-    
+    <script src="{{asset("js/game-card-controller.js")}}"></script>
+
+
 @endsection
 
