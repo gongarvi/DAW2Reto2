@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\APIService;
+use \App\Http\Controllers\PreguntasAPIService;
+use \App\Http\Controllers\EspecialzacionesAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource("preguntas",APIService::class);
+Route::apiResource("preguntas",PreguntasAPIService::class);
+Route::apiResource("especialidades",EspecialzacionesAPIController::class);

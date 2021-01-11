@@ -3,9 +3,7 @@
 
 window.Vue = require('vue');
 
-Vue.component('millonario', require('./components/Millonario').default);
-Vue.component('pregunta', require('./components/Pregunta').default);
-Vue.component('respuesta', require('./components/Respuesta').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

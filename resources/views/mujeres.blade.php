@@ -17,8 +17,6 @@
 <div id="app">
     <mujeres-component></mujeres-component>
 </div>
-
-    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="../public/js/mujeres.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js"></script>
@@ -26,7 +24,7 @@
         $(document).ready(function(){ //Hacia arriba
             irArriba();
         });
-        
+
         function irArriba(){
             $('.ir-arriba').click(function(){ $('body,html').animate({ scrollTop:'0px' },1000); });
             $(window).scroll(function(){

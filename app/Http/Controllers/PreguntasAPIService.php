@@ -6,11 +6,8 @@ use App\Models\Pregunta;
 use App\Models\Respuesta;
 use Illuminate\Http\Request;
 
-class APIService extends Controller
+class PreguntasAPIService extends Controller
 {
-    public function __construct(){
-
-    }
     public function index(){
         $args="";
         $result = [];
@@ -47,7 +44,7 @@ class APIService extends Controller
         if($result!=[]){
             $result = response()->json($result);
         }else{
-            $result = response("No se an podido devolver datos o no existen",500);
+            $result = response("No se an podido devolver datos o no existen",404);
         }
         return $result;
     }
