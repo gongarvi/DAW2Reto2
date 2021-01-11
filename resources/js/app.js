@@ -17,19 +17,11 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('mujeres-component', require('./components/mujeres.vue').default);
-Vue.component('match-component', require('./components/Match.vue').default);
-<<<<<<< HEAD
 Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);
-=======
-Vue.component('example2-component', require('./components/ExampleComponent2.vue').default);
-
->>>>>>> b3dfe378147a1cc786aa03b6d51582edc585c9e2
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

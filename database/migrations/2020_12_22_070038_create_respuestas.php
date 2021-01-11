@@ -18,7 +18,7 @@ class CreateRespuestas extends Migration
             $table->integer('pregunta');
             $table->foreign('pregunta')->references('id')->on('preguntas'); // pregunta de la tabla de pregunta
             $table->string('respuesta');
-            $table->string('correcta');
+            $table->boolean('correcta');
             $table->timestamps();
         });
     }

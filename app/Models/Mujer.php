@@ -22,4 +22,5 @@ class Mujer extends Model
         'descripcion'
 
     ];
+
 }

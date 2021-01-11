@@ -31,7 +31,7 @@ export default {
     },
     watch:{
         /*
-        * Cuando el jugador selecciona la respuesta el componente respuesta cambia el 
+        * Cuando el jugador selecciona la respuesta el componente respuesta cambia el
         * atributo respodido a true y se ejecuta la funcion watch
         */
         respondido:function(){
@@ -53,7 +53,6 @@ export default {
     methods:{
         //El publico seleccina una respuesta, puede no ser la correcta
         ayudaPublico(){
-            
             this.$children[parseInt(Math.random(1,4))];
         },
         //Respuestas seleccionadas por el 50/50 una tiene que ser si o si la correcta

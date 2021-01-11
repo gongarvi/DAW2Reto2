@@ -45,6 +45,7 @@ export default {
   data(){
     return{
       hidden:true,
+        preguntas:[{}],
       especializacion:1,
       especialidades:[{}],
       ayudaMitad:false,
@@ -71,12 +72,8 @@ export default {
         });
     },
     preguntasEspecializacionAleatorias(){
-        window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas",{
-            params:{
-                especializacion:this.especializacion
-            }
-        }
-        ).then((response)=> {
+        window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas/"+this.especializacion)
+        .then((response)=> {
             this.data.preguntas=JSON.parse(response.data);
             console.log("entra");
         }).catch((error)=>{
