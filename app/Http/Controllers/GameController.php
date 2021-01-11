@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Especialidad;
 use App\View\Components\GameCard;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,7 @@ class GameController extends Controller
 {
     private array $juegos;
     private array $especialidades;
-    
+
     public function __construct(){
         //TODO Eliminar cuando se recoja de la BBDD
         $this->juegos = array(
@@ -59,7 +60,7 @@ class GameController extends Controller
     }
 
     public function cargarEspecialidades(){
-        $tabla = DB::table('especialidades')->get();
+        $tabla = Especialidad::all();
         return $tabla;
     }
     public function cargarMujeresRandom($especialidad){
@@ -75,12 +76,12 @@ class GameController extends Controller
         Blade::component('game-card', GameCard::class);
         return view("game", ["juegos"=>$this->juegos,"especialidades"=>self::cargarEspecialidades()]);
     }
- 
+
     public function ruleta($Especialidad,$juego){
         return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego,"especialidad"=>$Especialidad]);
     }
     public function puzzle(){
         return view("puzzle");
     }
-    
+
 }
