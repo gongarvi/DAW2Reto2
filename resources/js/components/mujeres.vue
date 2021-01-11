@@ -16,15 +16,16 @@
                     </div>
 
                     <div v-for="especialidad in arrayespecialidades" :key="especialidad.id" >
-                        <button v-bind:style="{ backgroundColor: especialidad.color }" class="btn w-100 mt-2" @click="filtrarMujeres(especialidad.nombre)"> {{  especialidad.nombre }}</button>
+                        <button v-bind:style="{ backgroundColor: especialidad.color }" class="btn w-100 mt-2 text-light" @click="filtrarMujeres(especialidad.nombre)"> {{  especialidad.nombre }}</button>
                     </div>
+                    <button class="btn btn-light w-100 mt-2" onclick="location.reload()">Todo</button>
 
                 </div>
                
             </aside>
             <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
 
-                <div class="card m-2" style="width: 18rem;" v-for="mujer in buscarMujer" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
+                <div class="card m-2" style="width: 18rem;" v-for="mujer in arrayMostrarMujeres" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
                     <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
                     <div class="card-body">
                         <h4 class="card-title">{{mujer.nombre}}</h4>
@@ -64,17 +65,19 @@
                 nombre: '',
                 arraymujeres:[],
                 arrayespecialidades:[],
-                especialidadSeleccionada:""
+                especialidadSeleccionada:"",
+                arrayMostrarMujeres:[]
             };
         },
         methods:{
             cargarMujeres() {
                 let me = this;
-                let url = "mujeres/info";
+                let url = "api/mujeres";
                 window.axios
                     .get(url)
                     .then(function (response) {
                     me.arraymujeres = response.data;
+                    me.arrayMostrarMujeres=response.data;
                     })
                     .catch(function (error) {
                     console.log(error);
@@ -82,7 +85,7 @@
             },
             cargarEspecialidades() {
                 let me = this;
-                let url = "especialidades/info";
+                let url = "api/especialidades";
                 window.axios
                     .get(url)
                     .then(function (response) {
@@ -93,8 +96,7 @@
                     });
             },
             filtrarMujeres(especialdidad) {
-                alert(especialdidad);
-                buscarMujer(especialdidad);
+                this.especialidadSeleccionada=especialdidad;
             },
             MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion){
                 document.getElementsByClassName("modal-title")[0].innerHTML=nombre+" "+apellidos;
@@ -102,17 +104,26 @@
                 document.getElementById("nacionalidad-mujer").innerHTML="<b>Nacionalidad:</b> "+nacionalidad;
                 document.getElementById("especialidad-mujer").innerHTML="<b>Especialidad:</b> "+especialidad;
                 document.getElementById("descripcion-mujer").innerHTML="<b>Descripcion:</b> "+descripcion;
+            },
+            buscarMujer() {
+                if(this.especialidadSeleccionada!=""){
+                    this.arrayMostrarMujeres=this.arraymujeres.filter((mujer) => 
+                    mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) && mujer.especialidad.nombre===this.especialidadSeleccionada);
+                }
+                else{
+                    this.arrayMostrarMujeres = this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
+                }
             }
         },
         computed: {
-            buscarMujer(especialdidad) {
-                // alert(especialdidad);
-                // if(this.especialdidad==""){
-                // return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase() && mujer.especialdidad.nombre==this.especialdidad));
-                // }
-                // else{
-                    return this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
-                // }
+           
+        },
+        watch:{
+            especialidadSeleccionada:function(){
+                this.buscarMujer();
+            },
+            busqueda:function(){
+                this.buscarMujer();
             }
         },
         mounted() {

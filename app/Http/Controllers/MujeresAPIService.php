@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mujer;
 
-class MujeresController extends Controller
+class MujeresAPIService extends Controller
 {
     // la funcion para join de las tablas "Mujeres" y "Especialidades"
     public function index(){
@@ -13,7 +13,7 @@ class MujeresController extends Controller
 
         // return view('mujeres',["mujeres"=>$mujeres], ["especialidades"=>$especialidades]); 
     }
-    public function mujer($id){
+    public function show($id){
         return Mujer::all()->where("id","==",$id);
     }
 }

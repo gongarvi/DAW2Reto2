@@ -46,7 +46,7 @@ Route::get('/mujeres', function () {
     return view('mujeres');
 })->name("mujeres");
 
-Route::apiResource("/mujeres/info",MujeresController::class);
+
 Route::apiResource("/especialidades/info",EspecialidadesController::class);
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");

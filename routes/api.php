@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\APIService;
+use \App\Http\Controllers\MujeresAPIService;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource("preguntas",APIService::class);
+Route::apiResource("/mujeres",MujeresAPIService::class);
