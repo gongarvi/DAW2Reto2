@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMujeres extends Migration
-{
+class CreateMujeres extends Migration{
     /**
      * Run the migrations.
      *
@@ -26,7 +25,6 @@ class CreateMujeres extends Migration
             $table->text('descripcion');
             $table->timestamps();
         });
-       
     }
 
     /**
@@ -34,8 +32,7 @@ class CreateMujeres extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
         Schema::dropIfExists('mujeres');
     }
 }
