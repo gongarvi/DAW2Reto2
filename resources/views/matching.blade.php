@@ -34,7 +34,7 @@
             <h3>Felicidades!!!</h3>
             <h4>Has completado el nivel</h4>
             <img src="..\assets\Fotos_mujeres\felicitar.gif">
-            <a href="">Seguir Jugando</a>
+            <a href="http://localhost/DAw2Reto2/public/juegos"><button class="btn btn-success">Seguir Jugando</button></a>
         </div>   
     </div>
 
@@ -42,7 +42,8 @@
         <div id="mensaje-derrota">
             <h3>Lo sentimos!!!</h3>
             <h4>No has podido completar el nivel, pero Ánimo</h4>
-            <button class="btn btn-primary">Otra partida</button>
+            <span class="icon-emoji-sad"></span>
+            <a href=""><button class="btn btn-primary">Otra partida</button></a>
         </div>   
     </div>
  
