@@ -3,10 +3,7 @@
 @section("head-extras")
     <link rel="stylesheet" href="{{ URL::asset('css/game-page.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/juegoPuzzle.css') }}">
-    <script src="{{ URL::asset('js/jsPuzzle.js' )}}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    
+    <script src="{{ URL::asset('js/jsPuzzle.js' )}}"></script>   
 @endsection
 
 
@@ -14,11 +11,22 @@
     <div id='content'>
         
     </div>
-    <script>
-        $(document).ready(function() {
-        var imagenUrl = "{{ URL::asset('assets/Fotos_mujeres/amalia_amaki.jpg') }}";
-        document.getElementsByClassName('pieza').style.backgroundImage = "url("+imagenUrl+")";
-        });
-    </script>
+<script>
+    var cambioImagen;
+    cambioImagen = setInterval('cambiarFoto()',10);
+    function cambiarFoto(){
+	var imagenUrl = "{{ URL::asset('assets/Fotos_mujeres/amalia_amaki.jpg') }}";
+    document.getElementsByClassName('pieza')[0].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[1].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[2].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[3].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[4].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[5].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[6].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[7].style.backgroundImage = "url("+imagenUrl+")";
+    document.getElementsByClassName('pieza')[8].style.backgroundImage = "url("+imagenUrl+")";
+	clearInterval(cambioImagen);
+    }
+</script>
 @endsection
 

@@ -1,7 +1,7 @@
 table{border:2px solid green; border-collapse:collapse;}
 
 td.pieza{
-    background-image:url(../assets/Fotos_mujeres/_Ayn_Rand.jpg);  
+    background-image:url(../assets/Fotos_mujeres/transparente.png);  
     background-repeat: no-repeat;
     transition:.3s ease-in-out; 
     -moz-transition:.3s ease-in-out; 

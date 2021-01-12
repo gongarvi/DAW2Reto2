@@ -10,8 +10,10 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/js/app.js', 'public/js')
+mix.autoload({
+    jquery: ['$', 'window.jQuery', 'jQuery'],
+    'popper.js/dist/umd/popper.js': ['Popper']})
+    .js('resources/js/app.js', 'public/js')
     .js('resources/js/jsPuzzle.js','public/js')
     .js('resources/js/game-card-controller.js','public/js')
     .js('resources/js/ruletaMujeres.js','public/js')

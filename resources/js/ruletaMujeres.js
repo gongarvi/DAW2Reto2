@@ -69,7 +69,7 @@ window.onload = function () {
     }
     function irAjuego(){
         aviso = document.getElementById("boton").value;
-        alert(aviso);
+        window.location.href = 'URL';
     }
     document.getElementById("boton").addEventListener("click",irAjuego,true);
 

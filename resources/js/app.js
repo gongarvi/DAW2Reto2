@@ -6,9 +6,11 @@
 
 // Introducción de bootstrap al proyecto
 require('./bootstrap');
-
+//registrar el $ 
+import $ from 'jquery';
+window.$ = window.jQuery = $;
 window.Vue = require('vue');
-
+$.noConflict()
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,6 +24,7 @@ Vue.component('mujeres-component', require('./components/mujeres.vue').default);
 Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);
+Vue.component('ruleta', require('./components/Ruleta').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
