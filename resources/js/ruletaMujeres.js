@@ -26,6 +26,7 @@ window.onload = function () {
                                '<h4>Nacimiento --> '+Mujer[mujerSeleccionada].nacimiento+'</h4><br>'+
                                '<h4>Fallecimieto --> '+Mujer[mujerSeleccionada].fallecimiento+'</h4><br>'+
                                '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
+
                                numeroVueltas = parseInt(localStorage.getItem("vueltas"));
                                if((juego == "Puzzle" && isNaN(numeroVueltas)) || (juego=="Buscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
                                     (juego == "3 en raya" && numeroVueltas==2) || (juego=="Millonario" && numeroVueltas<=9)){

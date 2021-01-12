@@ -17,5 +17,4 @@
 <div id="app">
     <mujeres-component></mujeres-component>
 </div>
-    <script src="{{asset("js/mujeres.js")}}"></script>
 @endsection

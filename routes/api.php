@@ -23,4 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource("preguntas",PreguntasAPIService::class);
 Route::apiResource("especialidades",EspecialzacionesAPIController::class);
-Route::apiResource("mujeres",MujeresAPIService::class);
+Route::get("mujeres",[MujeresAPIService::class,"index"]);
+Route::get("mujeres/{cantidad}/{especializacion}",[MujeresAPIService::class,"show"]);
+//Route::apiResource("mujeres",MujeresAPIService::class);
+

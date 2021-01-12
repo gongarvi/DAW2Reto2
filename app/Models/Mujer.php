@@ -23,4 +23,8 @@ class Mujer extends Model
     public function especialidad(){
         return $this->belongsTo(Especialidad::class,"especialidad","id");
     }
+
+    public static function getMujeresPorEspecializacion($especializacion){
+        return self::all()->where("especialidad",$especializacion);
+    }
 }
