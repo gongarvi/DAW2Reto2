@@ -17,10 +17,11 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('mujeres-component', require('./components/mujeres.vue').default);
+Vue.component('millonario', require('./components/Millonario').default);
+Vue.component('pregunta', require('./components/Pregunta').default);
+Vue.component('respuesta', require('./components/Respuesta').default);
 
 
 /**
@@ -31,4 +32,14 @@ Vue.component('mujeres-component', require('./components/mujeres.vue').default);
 
 const app = new Vue({
     el: '#app',
+    methods: {
+        checkImages(event) {
+            console.log(event);
+            event.target.src = "image/placeholder.png"
+        },
+        pulsarboton: function(nombreJuego){
+            var Especialidad = document.getElementById("selectEspecialidad").value;
+            window.location.href = '/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
+        },
+    },
 });
