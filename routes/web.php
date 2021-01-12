@@ -47,6 +47,7 @@ Route::get('/mujeres', function () {
 })->name("mujeres");
 
 Route::get("/mujeres/info",[MujeresController::class,"show"])->name("mujeres.info");
+
 Route::get("/especialidades/info",[EspecialidadesController::class,"show"])->name("especialidades.info");
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
