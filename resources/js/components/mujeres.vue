@@ -6,7 +6,7 @@
             <aside class="col-sm-4 col-md-4 col-lg-2 text-white text-center">
 
                 <div class="make-me-sticky mt-2">
-                    
+
                     <div class="input-group md-form form-sm form-2 pl-0">
                         <input class="form-control my-0 py-1 amber-border" type="search" v-model="busqueda"  placeholder="Buscar.." aria-label="Buscar">
                         <div class="input-group-append">
@@ -21,7 +21,7 @@
                     <button class="btn btn-light w-100 mt-2" onclick="location.reload()">Todo</button>
 
                 </div>
-               
+
             </aside>
             <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
 
@@ -76,8 +76,9 @@
                 window.axios
                     .get(url)
                     .then(function (response) {
-                    me.arraymujeres = response.data;
-                    me.arrayMostrarMujeres=response.data;
+                        me.arraymujeres = response.data;
+                        me.arrayMostrarMujeres=response.data;
+                        console.log(response.data);
                     })
                     .catch(function (error) {
                     console.log(error);
@@ -107,7 +108,7 @@
             },
             buscarMujer() {
                 if(this.especialidadSeleccionada!=""){
-                    this.arrayMostrarMujeres=this.arraymujeres.filter((mujer) => 
+                    this.arrayMostrarMujeres=this.arraymujeres.filter((mujer) =>
                     mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) && mujer.especialidad.nombre===this.especialidadSeleccionada);
                 }
                 else{
@@ -116,7 +117,7 @@
             }
         },
         computed: {
-           
+
         },
         watch:{
             especialidadSeleccionada:function(){
@@ -139,7 +140,7 @@
     .make-me-sticky {
         position: -webkit-sticky;
         position: sticky;
-        top: 0; 
+        top: 0;
         padding: 0 0px;
     }
     .card{

@@ -13,6 +13,7 @@ class Pregunta extends Model
         'pregunta',
         'mujer'
     ];
+
     public function mujer(){
         return $this->belongsTo(Mujer::class);
     }
