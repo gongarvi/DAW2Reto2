@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Abrir nuevo enlace a menu juegos y juegos
-Route::get("/juegos/matching", function(){ return view("home");})->name("matching");
+Route::get("/juegos/Matching", [GameController::class,"match"])->name("matching");
 
 Route::get("/juegos/buscaminas", function(){ return view("home");})->name("buscaminas");
 
