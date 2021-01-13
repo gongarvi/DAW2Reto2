@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\MujeresAPIService;
 use App\Http\Controllers\MujeresController;
 use App\Http\Controllers\EspecialidadesController;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\modoHistoriaController;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,3 +57,10 @@ Route::get("/especialidades/info",[EspecialidadesController::class,"show"])->nam
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
+
+Route::get("/mujeres/admin",[MujeresAPIService::class,"inicio"])->name("admin");
+Route::get("/mujeres/create",[MujeresAPIService::class,"create"])->name("crear");
+Route::get("/mujeres/store",[MujeresAPIService::class,"store"])->name("store");
+Route::get("/mujeres/edit",[MujeresAPIService::class,"edit"])->name("editar");
+Route::get("/mujeres/update",[MujeresAPIService::class,"update"])->name("actualizar");
+Route::get("/mujeres/destroy",[MujeresAPIService::class,"destroy"])->name("eliminar");
