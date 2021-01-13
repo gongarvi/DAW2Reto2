@@ -894,6 +894,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v8.22.0"
             "source": {
                 "type": "git",
@@ -904,6 +905,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/dcc4b0da849bc8a869af1cf126da00265bd1165d",
                 "reference": "dcc4b0da849bc8a869af1cf126da00265bd1165d",
+=======
+            "version": "v8.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "a61cab167c35f465a923737ee6e6fb99cd5fde88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a61cab167c35f465a923737ee6e6fb99cd5fde88",
+                "reference": "a61cab167c35f465a923737ee6e6fb99cd5fde88",
+>>>>>>> e45588ef2c50e6f680b755ce59c212fcc82c1207
                 "shasum": ""
             },
             "require": {
@@ -1057,7 +1070,19 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2021-01-12T15:30:54+00:00"
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "time": "2021-01-05T15:43:10+00:00"
+=======
+            "time": "2020-12-22T21:21:19+00:00"
+>>>>>>> origin/unai
+=======
+            "time": "2021-01-05T15:43:10+00:00"
+>>>>>>> 6f0407b7076e6b7a97d5e986c2438f2d3c894877
+>>>>>>> e45588ef2c50e6f680b755ce59c212fcc82c1207
         },
         {
             "name": "laravel/tinker",

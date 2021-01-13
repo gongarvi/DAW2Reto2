@@ -7,8 +7,6 @@
 // Introducción de bootstrap al proyecto
 require('./bootstrap');
 
-<<<<<<< HEAD
-=======
 window.Vue = require('vue');
 
 /**
@@ -19,13 +17,12 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('mujeres-component', require('./components/mujeres.vue').default);
-Vue.component('match-component', require('./components/Match.vue').default);
-Vue.component('example2-component', require('./components/ExampleComponent2.vue').default);
+Vue.component('millonario', require('./components/Millonario').default);
+Vue.component('pregunta', require('./components/Pregunta').default);
+Vue.component('respuesta', require('./components/Respuesta').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,5 +32,14 @@ Vue.component('example2-component', require('./components/ExampleComponent2.vue'
 
 const app = new Vue({
     el: '#app',
+    methods: {
+        checkImages(event) {
+            console.log(event);
+            event.target.src = "image/placeholder.png"
+        },
+        pulsarboton: function(nombreJuego){
+            var Especialidad = document.getElementById("selectEspecialidad").value;
+            window.location.href = '/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
+        },
+    },
 });
->>>>>>> 93f96a639b110aba0b69d55f1036725326d168dd
