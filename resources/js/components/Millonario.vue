@@ -1,21 +1,6 @@
 <template>
     <div id="millonario">
-        <div id="principal" class="text-center p-5">
-            <button id="aleatorio" class="btn btn-info" @click="preguntasAleatorias()">
-                <span>Juego Aleatorio</span>
-            </button>
-            <select v-model="especializacion">
-                <option
-                    v-for="(especialidad,index) in especialidades"
-                    :value="especialidad.id">
-                    {{especialidad.nombre}}
-                </option>
-            </select>
-            <button id="especializacion" class="btn btn-info" @click="preguntasEspecializacionAleatorias()">
-                <span>Juego por especialización</span>
-            </button>
-        </div>
-        <div id="juego" v-if="!hidden">
+        <div id="juego">
             <Pregunta :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
             <div id="ayudas" class="text-center m-5">
                 <button id="50" class="btn btn-info mx-4" @click="botonAyuda50" :disabled="ayudaMitad">
@@ -44,27 +29,30 @@ export default {
   },
   data(){
     return{
-      hidden:true,
       preguntas:[{}],
       especializacion:1,
       especialidades:[{}],
       ayudaMitad:false,
       publico:false,
+      fin:false,
       acertadas:0,
-      fin:false
+      respondidas:0
     }
   },
    beforeMount() {
-      let mujeres = localStorage.getItem("mujeres");
-      mujeres.foreach((mujer)=>{
-          window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas"+mujer.id)
-          .then((response)=>{
-            this.preguntas.push(response.data);
-          })
-          .catch((error)=>{
+      var mujeres = localStorage.getItem("mujeres");
+      if(mujeres!=null){
+          mujeres.forEach((mujer)=>{
+              window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas"+mujer.id)
+                  .then((response)=>{
+                      this.preguntas.push(response.data);
+                  })
+                  .catch((error)=>{
 
+                  });
           });
-      });
+      }
+
    },
 
   methods:{
@@ -98,7 +86,7 @@ export default {
       this.respondidas==0;
     },
     finalizar(){
-
+        //TODO
     },
     botonAyudaPublico(){
       if(!this.ayudaPublico)
