@@ -32,7 +32,7 @@
             <th>Fecha Muerte</th>
             <th>Nacionalidad</th>
             <th>Especialidad</th>
-            <th width="280px">Operaciones</th>
+            <th width="250px">Operaciones</th>
         </tr>
         @foreach($mujeres as $mujer)
             <tr>
@@ -55,12 +55,12 @@
         @endforeach
     </table>
     <div class="row">
-    <div class="col">
-        <div class="añadir">
-            <a class="btn btn-success" href="{{ route('crear')}}">Añadir Mujer</a>
+        <div class="col">
+            <div class="añadir">
+                <a class="btn btn-success" href="{{ route('crear')}}">Añadir Mujer</a>
+            </div>
         </div>
     </div>
-</div>
 </div>
 @if($mujeres->count())
        

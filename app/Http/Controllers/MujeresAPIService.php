@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Especialidad;
 use App\Models\Mujer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Validator;
+
 
 class MujeresAPIService extends Controller
 {
@@ -31,14 +34,42 @@ class MujeresAPIService extends Controller
     //Para insertar
     public function create()
     {
-        $especialidades = Especialidad::latest();
-        return view('admin.create',compact('especialidades'));
+        $especialidades = Especialidad::get();
+         return view('admin.create')->with('especialidades',$especialidades); 
+        //return view('admin.create')->with('mujeres',Mujer::all());
+        //return view('admin.create')
     }
 
-    public function store(Request $request)
+    public function insercion(Request $request)
     {
-        $request->validate([
-            'id' => 'required',
+
+         /* $validator = Validator::make($request->all(),[
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'nacimiento' => 'required',
+            'fallecido' => 'required',
+            'nacionalidad' => 'required',
+            'especialidad' => 'required', 
+            'foto' => 'image|mimes:jpeg,jpg,png,svg|max:5048',
+            'descripcion' => 'required',
+        ]);
+        if($validator->fails()){
+            return back()
+            ->withInput()
+            ->with('ErrorInsert','Rellena los campos')
+            ->withErrors($validator);
+        }else{
+            $imagen = $request->file('foto');
+            $nombre = time().'.'.$imagen->getClientOriginalExtension();
+            $destino = public_path('assets/Fotos_mujeres');
+            $request->img->move($destino,$nombre);
+            Mujer::create($request->all());
+
+        return redirect()->route('admin')
+            ->with('succes','Mujer insertada correctamente');
+        }  */
+        
+         $request->validate([
             'nombre' => 'required',
             'apellidos' => 'required',
             'nacimiento' => 'required',
@@ -48,19 +79,20 @@ class MujeresAPIService extends Controller
             'foto' => 'required',
             'descripcion' => 'required',
         ]);
-
+        $imagen = $request->file('foto')->store('public/assets/Fotos_mujeres');
+       
+        $url = Storage::url( $imagen);
+        echo($url);
         Mujer::create($request->all());
 
         return redirect()->route('admin')
-            ->with('succes','Mujer insertada correctamente');
+            ->with('succes','Mujer insertada correctamente');   
     }
 
     //Para actualizar
     public function edit(Mujer $mujer)
     {
-        
-        return view('admin.edit',compact('mujer'));
-
+        return view('admin.edit', compact('mujer'));
     }
 
     public function update(Request $request, Mujer $mujer)

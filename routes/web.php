@@ -3,6 +3,7 @@
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MujeresAPIService;
 use App\Http\Controllers\MujeresController;
+use App\Http\Controllers\EspecialzacionesAPIController;
 use App\Http\Controllers\EspecialidadesController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
@@ -60,7 +61,18 @@ Route::get("/logout",[GameController::class,"show"])->name("logout");
 
 Route::get("/mujeres/admin",[MujeresAPIService::class,"inicio"])->name("admin");
 Route::get("/mujeres/create",[MujeresAPIService::class,"create"])->name("crear");
-Route::get("/mujeres/store",[MujeresAPIService::class,"store"])->name("store");
+Route::get("/mujeres/insercion",[MujeresAPIService::class,"insercion"])->name("insercion");
 Route::get("/mujeres/edit",[MujeresAPIService::class,"edit"])->name("editar");
 Route::get("/mujeres/update",[MujeresAPIService::class,"update"])->name("actualizar");
 Route::get("/mujeres/destroy",[MujeresAPIService::class,"destroy"])->name("eliminar");
+
+
+Route::get("/especialidades/admin",[EspecialzacionesAPIController::class,"inicio"])->name("inicio");
+Route::get("/especialidades/create",[EspecialzacionesAPIController::class,"create"])->name("create");
+Route::get("/especialidades/store",[EspecialzacionesAPIController::class,"store"])->name("store");
+Route::get("/especialidades/edit",[EspecialzacionesAPIController::class,"edit"])->name("edit");
+Route::get("/especialidades/update",[EspecialzacionesAPIController::class,"update"])->name("update");
+Route::get("/especialidades/destroy",[EspecialzacionesAPIController::class,"destroy"])->name("destroy"); 
+
+/* Route::resource('especialidades','App\Http\Controllers\EspecialzacionesAPIController'); */
+

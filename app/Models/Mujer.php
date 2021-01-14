@@ -20,7 +20,5 @@ class Mujer extends Model
         'foto',
         'descripcion'
     ];
-    public function especialidad(){
-        return $this->belongsTo(Especialidad::class,"especialidad","id");
-    }
+ 
 }

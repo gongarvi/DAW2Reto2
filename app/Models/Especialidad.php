@@ -13,6 +13,6 @@ class Especialidad extends Model
     protected $fillable = [
         'id',
         'Nombre',
-        'color'
+        'Color'
     ];
 }

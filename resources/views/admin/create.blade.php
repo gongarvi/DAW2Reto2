@@ -35,7 +35,7 @@
     </div>
 @endif
 <div class="datos">
-    <form action="{{ route('store')}}" method="post">
+    <form action="{{ route('insercion')}}" method="get" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -56,14 +56,15 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <p>Nacionalidad:</p>
-                <input type="text" name="naciolnalidad" class="form-control">
+                <input type="text" name="nacionalidad" class="form-control">
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <p>Especialidad:</p>
                 <select name="especialidad" id="" class="form-control">
-                    @foreach ($especialidades as $especialidad)
-                        <option value="{{$especialidad->Nombre}}">{{$especialidad->Nombre}}</option>
-                    @endforeach
+                <option value="" selected>Seleccione Especialidad</option>
+                   @foreach($especialidades as $especialidad)
+                   <option value="{{$especialidad->id}}">{{$especialidad->Nombre}}</option>
+                   @endforeach
                 </select>
                 
             </div>
