@@ -17,7 +17,7 @@ class MujeresAPIService extends Controller
             if($especializacion!=0){
                 $mujeres=Mujer::getMujeresPorEspecializacion($especializacion);
             }else{
-                $mujeres=Mujer::all();
+                $mujeres=Mujer::getMujeresAleatorias();
             }
             $result=$mujeres->random($cantidad);
 

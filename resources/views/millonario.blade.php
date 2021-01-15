@@ -6,7 +6,9 @@
 
 @section("content")
     <div id="app">
-        <img class="text-center m-auto" src="{{asset("image/logo.png")}}">
+        <div class="logo text-center w-100">
+            <img class="text-center m-auto" src="{{asset("image/logo.png")}}">
+        </div>
         <millonario/>
     </div>
 @endsection

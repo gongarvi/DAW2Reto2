@@ -3,9 +3,35 @@
   <component name="ChangeListManager">
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EspecialzacionesAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EspecialzacionesAPIService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PreguntasAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PreguntasAPIService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Especialidad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Especialidad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Mujer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mujer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Respuesta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Respuesta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/preguntas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/preguntas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/respuestas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/respuestas.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/game-card-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game-card-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mujeres.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/ruletaMujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruletaMujeres.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Millonario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Millonario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Pregunta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Pregunta.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Respuesta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Respuesta.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/mujeres.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Mujeres.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/game-card-controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/ruletaMujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ruletaMujeres.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/millonario.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/millonario.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ruleta.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ruleta.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +215,8 @@
       <workItem from="1610348489552" duration="6353000" />
       <workItem from="1610360415965" duration="2970000" />
       <workItem from="1610434637665" duration="13948000" />
-      <workItem from="1610609047531" duration="193000" />
+      <workItem from="1610609047531" duration="16679000" />
+      <workItem from="1610694060246" duration="11307000" />
     </task>
     <servers />
   </component>

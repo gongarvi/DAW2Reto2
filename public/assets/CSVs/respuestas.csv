@@ -48,7 +48,7 @@ pregunta;respuesta;correcta
 12;Analisis  de estudios sociologicos;false
 12;Hospital psiquiatrico;false
 13;La importancia del sexo en la pareja;false
-13;Psicolgía infantil;false
+13;Psicolgía infantil;true
 13;La gravedad de las depresiones y ansiedad;false
 13;Las diferencias económicas entre los distintas clases sociales;false
 14;Historia monetaria del país;true
@@ -74,7 +74,7 @@ pregunta;respuesta;correcta
 19;Italia;false
 19;Grecia;true
 19;Austria;false
-19;Turquía;false
+19;Turquia;false
 20;Investigacion de la FED;false
 20;Investigacion del BCE;false
 20;Investigacion del Banco Mundial;true

@@ -58,10 +58,7 @@ class GameController extends Controller
 
     }
 
-    public function cargarEspecialidades(){
-        $tabla = Especialidad::all();
-        return $tabla;
-    }
+
     public function cargarMujeresRandom($especialidad){
         if ($especialidad == 10){
             $tablaMujer = DB::table('mujeres')->get();
@@ -73,7 +70,7 @@ class GameController extends Controller
     }
     public function show(){
         Blade::component('game-card', GameCard::class);
-        return view("game", ["juegos"=>$this->juegos,"especialidades"=>self::cargarEspecialidades()]);
+        return view("game", ["juegos"=>$this->juegos,"especialidades"=>$this->cargarEspecialidades()]);
     }
 
     public function ruleta($Especialidad,$juego){
@@ -83,4 +80,8 @@ class GameController extends Controller
         return view("puzzle");
     }
 
+    private function cargarEspecialidades(){
+        $tabla = Especialidad::all();
+        return $tabla;
+    }
 }

@@ -17,23 +17,24 @@ window.onload = function () {
             procesoID = window.setInterval(funcionRuleta, intervaloTiempo);
         }
         if(ejecutandose ==0){
-            $("#fotoRuleta").animate({left: "-=30%"}, 1000);
-            const divDatos = document.createElement('div');
-            divDatos.className="float-right w-50 bg-secondary text-white rounded";
-            divDatos.innerHTML = '<h4>Nombre --> '+Mujer[mujerSeleccionada].nombre+' <br>'+
-                               '<h4>Apellidos --> '+Mujer[mujerSeleccionada].apellidos+'</h4> <br>'+
-                               '<h4>Nacionalidad-->'+Mujer[mujerSeleccionada].nacionalidad+'</h4> <br>'+
-                               '<h4>Nacimiento --> '+Mujer[mujerSeleccionada].nacimiento+'</h4><br>'+
-                               '<h4>Fallecimieto --> '+Mujer[mujerSeleccionada].fallecimiento+'</h4><br>'+
-                               '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
+                $("#fotoRuleta").animate({left: "-=30%"}, 1000);
+                const divDatos = document.createElement('div');
+                divDatos.className="float-right w-50 bg-secondary text-white rounded";
+                divDatos.innerHTML = '<h4>Nombre --> '+Mujer[mujerSeleccionada].nombre+' <br>'+
+                    '<h4>Apellidos --> '+Mujer[mujerSeleccionada].apellidos+'</h4> <br>'+
+                    '<h4>Nacionalidad-->'+Mujer[mujerSeleccionada].nacionalidad+'</h4> <br>'+
+                    '<h4>Nacimiento --> '+Mujer[mujerSeleccionada].nacimiento+'</h4><br>'+
+                    '<h4>Fallecimieto --> '+Mujer[mujerSeleccionada].fallecimiento+'</h4><br>'+
+                    '<h4>Descripcion --> '+Mujer[mujerSeleccionada].descripcion+'</h4><br>';
 
-                               numeroVueltas = parseInt(localStorage.getItem("vueltas"));
-                               if((juego == "Puzzle" && isNaN(numeroVueltas)) || (juego=="Buscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
-                                    (juego == "3 en raya" && numeroVueltas==2) || (juego=="Millonario" && numeroVueltas<=9)){
-                                divDatos.innerHTML += '<button id="boton" class="bg-danger text-white">JUGAR</button>';
-                               }else{
-                                divDatos.innerHTML +='<button id="boton" class="bg-danger text-white"> SIGUIENTE </button>';
-                               }
+
+               numeroVueltas = parseInt(localStorage.getItem("vueltas"));
+               if((juego == "Puzzle" && isNaN(numeroVueltas)) || (juego=="Buscaminas" && numeroVueltas<=1) || (juego== "Matching" && numeroVueltas==5) ||
+                    (juego == "3 en raya" && numeroVueltas==2) || (juego=="Millonario" && numeroVueltas<=9)){
+                divDatos.innerHTML += '<button id="boton"  class="bg-danger text-white">JUGAR</button>';
+               }else{
+                divDatos.innerHTML +='<button id="boton" class="bg-danger text-white"> SIGUIENTE </button>';
+               }
 
             document.body.appendChild(divDatos);
             function irAjuego(){
