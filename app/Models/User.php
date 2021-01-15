@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Usuario extends Authenticatable
+class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -20,6 +20,9 @@ class Usuario extends Authenticatable
         'name',
         'email',
         'password',
+        'foto',
+        'progreso',
+        'administrador'
     ];
 
     /**
