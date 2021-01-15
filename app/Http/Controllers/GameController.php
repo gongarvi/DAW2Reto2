@@ -81,9 +81,6 @@ class GameController extends Controller
         return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego,"especialidad"=>$Especialidad]); 
        
     }
-    public function buscaminas(){
-        return view("buscaminas");
-    }
     public function puzzle(){
         return view("puzzle");
     }

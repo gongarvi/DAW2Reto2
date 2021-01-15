@@ -18,7 +18,7 @@
             </div>
             <div class="marcador segundos">{{segundosCifras}}</div>
         </div>
-        <div class="matriz" id="matrizid">
+        <div class="matriz" id="matrizid" v-bind:style="{ backgroundImage: 'url(' + foto + ')' }">
             <cuadro @onCambiarMinasRestantes="cambiarMinasRestantes" @onActivar="activarCuadro" :info="item"
                 v-for="(item, index) in cuadros" :key="index"
                 :style="'grid-row:'+item.fila + '; grid-colmun'+item.colmuna + ';'" />
@@ -26,6 +26,9 @@
     </div>
 </template>
 <script>
+    //select foto from mujeres order by RAND() limit 1
+    /*var imagen = "./assets/Fotos_mujeres/AnnOakley.jpg";
+   document.getElementsByClassName("matriz").style.backgroundImage = "url(" + imagen + ")";*/
     import Cuadro from './Cuadro.vue';
     export default {
         components: {
@@ -61,7 +64,8 @@
                 inicio: false,
                 timer: null,
                 jugando: false,
-                cuadrosRestantes: 0
+                cuadrosRestantes: 0,
+                foto:""
             }
         },
         computed: {
@@ -93,11 +97,17 @@
             this.nivelActual = this.nivelPrincipiante
             this.iniciarnivel()
         },
+        beforeMount(){
+            let mujeres=JSON.parse(localStorage.getItem("mujeres"));
+            if(mujeres!=null && mujeres.length>0){
+                this.foto=location.protocol+"/"+location.host+"/assets/Fotos_mujeres/"+mujeres[0].foto;
+            }
+        },
         methods: {
-            /*cambiarFoto() {
+           /* cambiarFoto() {
                 var imagen = "{{ URL::asset('assets/Fotos_mujeres/AnnOakley.jpg)}}";
-               // document.getElementById("matrizid").style.backgroundImage = "url(" + imagen + ")";
-                document.getElementsByClassName('matriz')[0].style.backgroundImage="url("+imagen+")";
+                document.getElementById("matrizid").style.backgroundImage = "url(" + imagen + ")";
+                //document.getElementsByClassName('matriz')[0].style.backgroundImage="url("+imagen+")";
             },*/
 
             detenertiempo() {
@@ -410,8 +420,7 @@
     }
 
     .matriz {
-        background-image: url("{{ URL::asset('assets/Fotos_mujeres/AnnOakley.jpg)}}");
-        /* background-image: url("assets/Fotos_mujeres/AnnOakley.jpg") ;*/
+        
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
