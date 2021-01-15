@@ -35,7 +35,7 @@
         </ul>
     </div>
 @endif
-{{$especialidad}}
+
 <div class="datos">
     <form action="{{ route('edit', $especialidad->id)}}" method="post">
         @csrf
@@ -44,13 +44,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <p>Nombre Especialidad</p>
-                    <input type="text" name="Nombre" value="{{$especialidad->Nombre}}" class="form-control">
+                    <input type="text" name="nombre" value="{{ $especialidad->nombre }}" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <p>Color</p>
-                    <input type="color" name="Color" id="color" class="form-control" value="{{$especialidad->Color}}">
+                    <input type="color" name="color" id="color" class="form-control" value="{{ $especialidad->color }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 guardar">

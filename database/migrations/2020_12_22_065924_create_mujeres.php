@@ -21,7 +21,7 @@ class CreateMujeres extends Migration{
             $table->string('nacionalidad');
             $table->integer('especialidad');
             $table->foreign('especialidad')->references('id')->on('especialidades');
-            $table->string('foto');
+            $table->longblob('foto');
             $table->text('descripcion');
             $table->timestamps();
         });

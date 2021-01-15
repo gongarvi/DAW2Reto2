@@ -63,14 +63,14 @@
                 <select name="especialidad" id="" class="form-control">
                 <option value="" selected>Seleccione Especialidad</option>
                    @foreach($especialidades as $especialidad)
-                   <option value="{{$especialidad->id}}">{{$especialidad->Nombre}}</option>
+                   <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
                    @endforeach
                 </select>
                 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <p>Foto:</p>
-                <input type="file" name="foto" class="form-control">
+                <input type="file" name="foto" class="form-control" accept="image/*">
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <p>Descripción:</p>

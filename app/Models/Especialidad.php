@@ -9,10 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Especialidad extends Model
 {
     use HasFactory;
-    protected $table = "especialidades";
+    protected $table = "especialidades";  
     protected $fillable = [
-        'id',
-        'Nombre',
-        'Color'
+        'nombre',
+        'color',
     ];
 }

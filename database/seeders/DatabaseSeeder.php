@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->especialidades();
+         $this->especialidades(); 
         $this->mujeres();
     }
 
     // los datos para la tabla de especialidades
-    private function especialidades(){
+     private function especialidades(){
 
         $file = fopen('public\assets\CSVs\Especialidades.csv', "r");
         $data = array();
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
         }
 
     }
-
+ 
     // los datos para la tabla de mujeres
     private function mujeres(){
 

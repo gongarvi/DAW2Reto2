@@ -67,12 +67,12 @@ Route::get("/mujeres/update",[MujeresAPIService::class,"update"])->name("actuali
 Route::get("/mujeres/destroy",[MujeresAPIService::class,"destroy"])->name("eliminar");
 
 
-Route::get("/especialidades/admin",[EspecialzacionesAPIController::class,"inicio"])->name("inicio");
-Route::get("/especialidades/create",[EspecialzacionesAPIController::class,"create"])->name("create");
-Route::get("/especialidades/store",[EspecialzacionesAPIController::class,"store"])->name("store");
-Route::get("/especialidades/edit",[EspecialzacionesAPIController::class,"edit"])->name("edit");
-Route::get("/especialidades/update",[EspecialzacionesAPIController::class,"update"])->name("update");
-Route::get("/especialidades/destroy",[EspecialzacionesAPIController::class,"destroy"])->name("destroy"); 
+Route::get("/especialidades/admin",[EspecialidadesController::class,"inicio"])->name("inicio");
+Route::get("/especialidades/create",[EspecialidadesController::class,"create"])->name("create");
+Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->name("store");
+Route::get("/especialidades/edit",[EspecialidadesController::class,"edit"])->name("edit");
+Route::get("/especialidades/update",[EspecialidadesController::class,"update"])->name("update");
+Route::get("/especialidades/destroy",[EspecialidadesController::class,"destroy"])->name("destroy"); 
 
 /* Route::resource('especialidades','App\Http\Controllers\EspecialzacionesAPIController'); */
 
