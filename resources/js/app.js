@@ -22,6 +22,9 @@ Vue.component('mujeres-component', require('./components/mujeres.vue').default);
 Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);
+Vue.component('buscaminas', require('./components/App').default);
+Vue.component('tablero', require('./components/Tablero').default);
+Vue.component('cuadro', require('./components/Cuadro').default);
 
 
 /**

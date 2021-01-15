@@ -32,8 +32,8 @@ class GameController extends Controller
             array(
                 "id"=>"3",
                 "nombre"=>"buscaminas",
-                "descripcion"=>"Debes unir las mujeres con su profesión o su logro",
-                "imagen"=>""
+                "descripcion"=>"Marca las minas para mostrar a la Mujer",
+                "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),
             array(
                 "id"=>"4",
@@ -77,7 +77,12 @@ class GameController extends Controller
     }
 
     public function ruleta($Especialidad,$juego){
-        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego,"especialidad"=>$Especialidad]);
+        
+        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego,"especialidad"=>$Especialidad]); 
+       
+    }
+    public function buscaminas(){
+        return view("buscaminas");
     }
     public function puzzle(){
         return view("puzzle");

@@ -5,7 +5,7 @@
                 <span>Juego Aleatorio</span>
             </button>
             <select v-model="especializacion">
-                <option
+                <option>
                     v-for="(especialidad,index) in especialidades"
                     :value="especialidad.id">
                     {{especialidad.nombre}}
