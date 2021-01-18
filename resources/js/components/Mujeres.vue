@@ -25,8 +25,10 @@
             </aside>
             <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
 
-                <div class="card m-2" style="width: 18rem;" v-for="mujer in arrayMostrarMujeres" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
-                    <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
+                <div class="card m-2" style="width: 18rem;" v-for="mujer in arrayMostrarMujeres" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }"
+                     @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)"
+                     data-toggle="modal" data-target="#myModal" title="Saber mas.">
+                    <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="(mujer.foto!=null && mujer.foto!=='')? 'assets/Fotos_mujeres/' + mujer.foto : 'image/placeholder-usuario.png'" />
                     <div class="card-body">
                         <h4 class="card-title">{{mujer.nombre}}</h4>
                         <h5 class="card-text">{{mujer.apellidos}}</h5>
@@ -109,10 +111,11 @@
             buscarMujer() {
                 if(this.especialidadSeleccionada!=""){
                     this.arrayMostrarMujeres=this.arraymujeres.filter((mujer) =>
-                    mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) && mujer.especialidad.nombre===this.especialidadSeleccionada);
+                        (mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) || mujer.apellidos.toUpperCase().includes(this.busqueda.toUpperCase()))
+                        && mujer.especialidad.nombre===this.especialidadSeleccionada);
                 }
                 else{
-                    this.arrayMostrarMujeres = this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()));
+                    this.arrayMostrarMujeres = this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) || mujer.apellidos.toUpperCase().includes(this.busqueda.toUpperCase()));
                 }
             },
             irArriba(){
