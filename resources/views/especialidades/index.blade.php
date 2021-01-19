@@ -31,11 +31,11 @@
     @foreach($especialidades as $especialidad)
         <tr>
             <td>{{$especialidad->id}}</td>
-            <td>{{$especialidad->nombre}}</td>
+            <td>{{$especialidad->nombreE}}</td>
             <td>{{$especialidad->color}}</td>
             <td>
-                <form action="{{ route('destroy', $especialidad->id) }}" method="GET">
-                    <a href="{{ route('edit', $especialidad->id) }}" class="btn btn-primary">Editar</a>
+                <form action="{{ route('eliminarEsp', $especialidad->id) }}" method="HEAD">
+                    <a href="{{ route('editarEsp', $especialidad->id) }}" class="btn btn-primary">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
@@ -47,7 +47,7 @@
     <div class="row">
         <div class="col">
             <div class="añadir">
-                <a class="btn btn-success" href="{{ route('create')}}">Añadir Especialidad</a>
+                <a class="btn btn-success" href="{{ route('insertarEsp')}}">Añadir Especialidad</a>
             </div>
         </div>
     </div>

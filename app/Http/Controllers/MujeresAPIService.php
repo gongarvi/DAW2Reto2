@@ -28,7 +28,7 @@ class MujeresAPIService extends Controller
     {
 
         $mujeres = Mujer::join('especialidades','especialidades.id','=','mujeres.especialidad')->select('*')->paginate(20);
-        return view('admin.inicio', compact('mujeres'))
+        return view('adminMujeres.inicio', compact('mujeres'))
             ->with('success', (request()->input('page', 1) - 1) * 20);
     }
 
@@ -36,34 +36,34 @@ class MujeresAPIService extends Controller
     public function create()
     {
         $especialidades = Especialidad::get();
-         return view('admin.create')->with('especialidades',$especialidades); 
+         return view('adminMujeres.createM')->with('especialidades',$especialidades); 
        
     }
 
     public function insercion(Request $request)
     {
 
-        $datos = $request->all();
-        
-        $file = $request->file('foto');
-        $nombre = $file->getClientOriginalName();
-
-        
-        Storage::disk('public')->put($nombre, File::get($file)); 
+        $request->all();
        
-        Mujer::create($datos->all());
+       if($request->hasFile('foto')){
+           $archivo = $request->file('foto');
+           $nombre = $request->file('foto');
+           Storage::disk('public')->put($nombre, File::get($archivo)); 
+       }
+        
+        Mujer::create($request->all());
         return redirect()->route('admin')
             ->with('success','La Mujer ha sido insertada correctamente');
                   
     }
 
     //Para actualizar
-    public function edit(Mujer $mujer)
+    public function editarMujer(Mujer $mujer)
     {
-        return view('admin.edit', compact('mujer'));
+        return view('adminMujeres.editM', compact('mujer'));
     }
 
-    public function update(Request $request, Mujer $mujer)
+    public function actualizarMujer(Request $request, Mujer $mujer)
     {
         $request->validate([
            
@@ -75,7 +75,7 @@ class MujeresAPIService extends Controller
             ->with('success','La Mujer  se ha modificado correctamente');
     }
         //Para borrar
-    public function destroy(Mujer $mujer)
+    public function eliminarMujer(Mujer $mujer)
     {
         $mujer->delete();
         return redirect()->route('admin')

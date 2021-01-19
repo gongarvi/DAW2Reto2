@@ -34,7 +34,7 @@
             <h3>Felicidades!!!</h3>
             <h4>Has completado el nivel</h4>
             <img src="..\assets\Fotos_mujeres\felicitar.gif">
-            <a href="http://localhost/DAw2Reto2/public/juegos"><button class="btn btn-success">Seguir Jugando</button></a>
+            <a href="{{ route('juegos') }}"><button class="btn btn-success">Seguir Jugando</button></a>
         </div>   
     </div>
 

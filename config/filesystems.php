@@ -39,9 +39,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path().'/assets/Fotos_mujeres',
-            /* 'url' => env('APP_URL').'/storage', */
-            'visibility' => 'public',
+            'root' => public_path().'\assets\Fotos_mujeres',
         ],
 
         's3' => [

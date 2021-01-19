@@ -35,7 +35,7 @@
     </div>
 @endif
 <div class="datos">
-    <form action="{{ route('insercion')}}" method="get" enctype="multipart/form-data">
+    <form action="{{ route('insercion')}}" method="HEAD" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -63,7 +63,7 @@
                 <select name="especialidad" id="" class="form-control">
                 <option value="" selected>Seleccione Especialidad</option>
                    @foreach($especialidades as $especialidad)
-                   <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
+                   <option value="{{$especialidad->id}}">{{$especialidad->nombreE}}</option>
                    @endforeach
                 </select>
                 

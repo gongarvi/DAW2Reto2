@@ -62,17 +62,17 @@ Route::get("/logout",[GameController::class,"show"])->name("logout");
 Route::get("/mujeres/admin",[MujeresAPIService::class,"inicio"])->name("admin");
 Route::get("/mujeres/create",[MujeresAPIService::class,"create"])->name("crear");
 Route::get("/mujeres/insercion",[MujeresAPIService::class,"insercion"])->name("insercion");
-Route::get("/mujeres/edit",[MujeresAPIService::class,"edit"])->name("editar");
-Route::get("/mujeres/update",[MujeresAPIService::class,"update"])->name("actualizar");
-Route::get("/mujeres/destroy",[MujeresAPIService::class,"destroy"])->name("eliminar");
+Route::get("/mujeres/editarMujer",[MujeresAPIService::class,"editarMujer"])->name("editarMujer");
+Route::get("/mujeres/actualizarMujer",[MujeresAPIService::class,"actualizarMujer"])->name("actualizarMujer");
+Route::get("/mujeres/eliminarMujer",[MujeresAPIService::class,"eliminarMujer"])->name("eliminarMujer");
 
 
 Route::get("/especialidades/admin",[EspecialidadesController::class,"inicio"])->name("inicio");
-Route::get("/especialidades/create",[EspecialidadesController::class,"create"])->name("create");
+Route::get("/especialidades/create",[EspecialidadesController::class,"insertarEsp"])->name("insertarEsp");
 Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->name("store");
-Route::get("/especialidades/edit",[EspecialidadesController::class,"edit"])->name("edit");
-Route::get("/especialidades/update",[EspecialidadesController::class,"update"])->name("update");
-Route::get("/especialidades/destroy",[EspecialidadesController::class,"destroy"])->name("destroy"); 
+Route::get("/especialidades/editarEsp",[EspecialidadesController::class,"editarEsp"])->name("editarEsp");
+Route::get("/especialidades/update",[EspecialidadesController::class,"actualizarEsp"])->name("actualizarEsp");
+Route::get("/especialidades/destroy",[EspecialidadesController::class,"eliminarEsp"])->name("eliminarEsp"); 
 
 /* Route::resource('especialidades','App\Http\Controllers\EspecialzacionesAPIController'); */
 

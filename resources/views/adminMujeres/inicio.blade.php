@@ -41,11 +41,11 @@
                 <td>{{$mujer->nacimiento}}</td>
                 <td>{{$mujer->fallecido}}</td>
                 <td>{{$mujer->nacionalidad}}</td>
-                <td>{{$mujer->Nombre}}</td>
+                <td>{{$mujer->nombreE}}</td>
                 <td>
-                    <form action="{{ route('eliminar',$mujer->id)}}" method="post">
+                    <form action="{{ route('eliminarMujer',$mujer->id)}}" method="post">
                         
-                        <a href="{{ route('editar',$mujer->id) }}" class="btn btn-primary">Editar</a>
+                        <a href="{{ route('editarMujer',$mujer->id) }}" class="btn btn-primary">Editar</a>
                     @csrf
                     @method('DELETE')
                         <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>

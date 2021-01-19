@@ -37,14 +37,14 @@
 @endif
 
 <div class="datos">
-    <form action="{{ route('edit', $especialidad->id)}}" method="post">
+    <form action="{{ route('editarEsp', $especialidad->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <p>Nombre Especialidad</p>
-                    <input type="text" name="nombre" value="{{ $especialidad->nombre }}" class="form-control">
+                    <input type="text" name="nombre" value="{{ $especialidad->nombreE }}" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

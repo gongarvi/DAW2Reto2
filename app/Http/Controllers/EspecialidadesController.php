@@ -24,7 +24,7 @@ class EspecialidadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function insertarEsp()
     {
         return view('especialidades.create');
     }
@@ -38,14 +38,14 @@ class EspecialidadesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
+            'nombreE' => 'required',
             'color' => 'required',
         ]);
 
         Especialidad::create($request->all());
 
         return redirect()->route('inicio')
-            ->with('succes','Especialidad insertada correctamente');
+            ->with('success','Especialidad insertada correctamente');
     }
 
     /**
@@ -65,7 +65,7 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function edit(Especialidad $especialidad)
+    public function editarEsp(Especialidad $especialidad)
     {
         return view('especialidades.edit',compact('especialidad'));
     }
@@ -77,7 +77,7 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especialidad $especialidad)
+    public function actualizarEsp(Request $request, Especialidad $especialidad)
     {
         $request->validate([
            
@@ -86,7 +86,7 @@ class EspecialidadesController extends Controller
             $especialidad->update($request->all());
     
             return redirect()->route('inicio')
-                ->with('succes','Especialidad  se ha modificado correctamente');
+                ->with('success','Especialidad  se ha modificado correctamente');
     }
 
     /**
@@ -95,10 +95,10 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Especialidad $especialidad)
+    public function eliminarEsp(Especialidad $especialidad)
     {
         $especialidad->delete();
         return redirect()->route('inicio')
-            ->with('succes','Especialidad  eliminada correctamente');
+            ->with('success','Especialidad  eliminada correctamente');
     }
 }

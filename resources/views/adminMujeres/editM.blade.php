@@ -38,7 +38,7 @@
 <div class="datos">
 
 
-    <form action="{{ route('actualizar',$mujer->id)}}" method="post">
+    <form action="{{ route('actualizarMujer',$mujer->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="row">

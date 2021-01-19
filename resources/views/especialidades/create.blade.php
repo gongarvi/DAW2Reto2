@@ -40,7 +40,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <p>Nombre Especialidad</p>
-            <input type="text" name="nombre" class="form-control">
+            <input type="text" name="nombreE" class="form-control">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <p>Color</p>
