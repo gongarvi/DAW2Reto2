@@ -86,6 +86,7 @@
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -110,13 +111,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /***/ }),
 
 /***/ 4:
+=======
+/***/ 3:
+>>>>>>> c0ca664fd53bf123d465304b4fab8f9d8b03e8ac
 /*!***************************************!*\
   !*** multi ./resources/js/mujeres.js ***!
   \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\Reto2-2DW3\DAW2Reto2\resources\js\mujeres.js */"./resources/js/mujeres.js");
+=======
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\laravel\\reto\\resources\\js\\mujeres.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+>>>>>>> c0ca664fd53bf123d465304b4fab8f9d8b03e8ac
 
 
 /***/ })

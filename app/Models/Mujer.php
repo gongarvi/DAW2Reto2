@@ -20,11 +20,48 @@ class Mujer extends Model
         'foto',
         'descripcion'
     ];
+<<<<<<< HEAD
     public function especialidad(){
         return $this->belongsTo(Especialidad::class,"especialidad","id");
     }
 
     public static function getMujeresPorEspecializacion($especializacion){
         return self::all()->where("especialidad",$especializacion);
+=======
+
+    public function especialidades()
+    {
+        return $this->belongsTo(Especialidad::class, "especialidad", "id");
+    }
+
+    public function preguntas()
+    {
+        return $this->hasMany(Pregunta::class, "mujer", "id");
+    }
+
+    public static function getMujeresPorEspecializacion($especializacion)
+    {
+        $mujeres = Mujer::with([
+            "preguntas" => function ($query) {
+                $query->whereNotNull("preguntas.mujer");
+            }])->where("especialidad", $especializacion)->where("foto","!=","")->get();
+        $mujeres = $mujeres->filter(function ($mujer) {
+            return count($mujer["preguntas"]) > 0;
+        });
+        echo count($mujeres);
+        return $mujeres;
+    }
+
+    public static function getMujeresAleatorias()
+    {
+        $mujeres = Mujer::with([
+            "preguntas" => function ($query) {
+                $query->whereNotNull("preguntas.mujer");
+            }])->where("foto","!=","")->get();
+        $mujeres = $mujeres->filter(function ($mujer) {
+            return count($mujer["preguntas"]) > 0;
+        });
+        return $mujeres;
+>>>>>>> c0ca664fd53bf123d465304b4fab8f9d8b03e8ac
     }
 }
