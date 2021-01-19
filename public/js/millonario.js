@@ -171,7 +171,11 @@ eval("window.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\DAW2Reto2\resources\js\millonario.js */"./resources/js/millonario.js");
+=======
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\millonario.js */"./resources/js/millonario.js");
+>>>>>>> c1ae454666f4ef54e6d333220ee2d44e66f83c36
 
 
 /***/ })

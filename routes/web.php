@@ -46,16 +46,15 @@ Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
 Route::get("/juegos/Puzzle",[GameController::class,"puzzle"])->name("Puzzle");
 
+Route::get("/juegos/UltimoNivel", function(){ 
+    return view("UltimoNivel");
+})->name("UltimoNivel");
+
 
 
 Route::get("/mujeres",function(){
     return view("mujeres");
 })->name("mujeres");
-
-Route::get("/mujeres/info",[MujeresController::class,"show"])->name("mujeres.info");
-
-Route::get("/especialidades/info",[EspecialidadesController::class,"show"])->name("especialidades.info");
-
 
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 

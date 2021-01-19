@@ -25,8 +25,8 @@
             </aside>
             <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
 
-                <div class="card m-2" style="width: 18rem;" v-for="mujer in arrayMostrarMujeres" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
-                    <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
+                <div class="card m-2" style="width: 13rem; height:18rem" v-for="mujer in arrayMostrarMujeres" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion, mujer.foto)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
+                    <img class="card-img-top img-mujeres" style="height: 13rem;" alt="foto" v-bind:src="'assets/Fotos_mujeres/' + mujer.foto" />
                     <div class="card-body">
                         <h4 class="card-title">{{mujer.nombre}}</h4>
                         <h5 class="card-text">{{mujer.apellidos}}</h5>
@@ -43,6 +43,7 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
+                                <img id="foto-modal" alt="Foto">
                                 <p id="vida-mujer"></p>
                                 <p id="nacionalidad-mujer"></p>
                                 <p id="especialidad-mujer"></p>
@@ -98,9 +99,10 @@
             filtrarMujeres(especialdidad) {
                 this.especialidadSeleccionada=especialdidad;
             },
-            MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion){
+            MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion, foto){
                 document.getElementsByClassName("modal-title")[0].innerHTML=nombre+" "+apellidos;
                 document.getElementById("vida-mujer").innerHTML=nacimiento+" - "+fallecido;
+                document.getElementById("foto-modal").src ="assets/Fotos_mujeres/"+foto;
                 document.getElementById("nacionalidad-mujer").innerHTML="<b>Nacionalidad:</b> "+nacionalidad;
                 document.getElementById("especialidad-mujer").innerHTML="<b>Especialidad:</b> "+especialidad;
                 document.getElementById("descripcion-mujer").innerHTML="<b>Descripcion:</b> "+descripcion;
@@ -152,6 +154,5 @@
         -webkit-box-shadow: 0 8px 6px -6px black;
 	    -moz-box-shadow: 0 8px 6px -6px black;
 	    box-shadow: 0 8px 6px -6px black;
-
     }
 </style>
