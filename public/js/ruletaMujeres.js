@@ -516,7 +516,7 @@ eval("__webpack_require__(/*! ./bootstrap */ \"./resources/js/bootstrap.js\");\n
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\reto\resources\js\ruletaMujeres.js */"./resources/js/ruletaMujeres.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Reto2-2DW3\DAW2Reto2\resources\js\ruletaMujeres.js */"./resources/js/ruletaMujeres.js");
 
 
 /***/ })
