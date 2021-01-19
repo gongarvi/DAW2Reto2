@@ -34,18 +34,18 @@
             <th>Especialidad</th>
             <th width="250px">Operaciones</th>
         </tr>
-        @foreach($mujeres as $mujer)
+        @foreach( $mujeres as $mujer )
             <tr>
                 <td>{{$mujer->nombre}}</td>
                 <td>{{$mujer->apellidos}}</td>
                 <td>{{$mujer->nacimiento}}</td>
                 <td>{{$mujer->fallecido}}</td>
                 <td>{{$mujer->nacionalidad}}</td>
-                <td>{{$mujer->nombreE}}</td>
+                <td>{{($mujer->especialidades!=null)?$mujer->especialidades->nombre:""}}</td>
                 <td>
                     <form action="{{ route('eliminarMujer',$mujer->id)}}" method="post">
                         
-                        <a href="{{ route('editarMujer',$mujer->id) }}" class="btn btn-primary">Editar</a>
+                        <a href="{{ route('editarMujer',$mujer->id)}}" class="btn btn-primary">Editar</a>
                     @csrf
                     @method('DELETE')
                         <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>

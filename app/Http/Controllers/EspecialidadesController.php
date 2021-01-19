@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Especialidad;
+use App\Models\Mujer;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 
 class EspecialidadesController extends Controller
@@ -38,7 +40,7 @@ class EspecialidadesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombreE' => 'required',
+            'nombre' => 'required',
             'color' => 'required',
         ]);
 
@@ -65,9 +67,10 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function editarEsp(Especialidad $especialidad)
+    public function editarEsp($id)
     {
-        return view('especialidades.edit',compact('especialidad'));
+
+        return view('especialidades.edit')->with('especialidad',Especialidad::all()->find($id));
     }
 
     /**
@@ -95,9 +98,10 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function eliminarEsp(Especialidad $especialidad)
+    public function eliminarEsp($id)
     {
-        $especialidad->delete();
+        
+        Especialidad::all()->find($id)->delete();
         return redirect()->route('inicio')
             ->with('success','Especialidad  eliminada correctamente');
     }

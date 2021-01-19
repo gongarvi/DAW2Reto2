@@ -29,6 +29,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('/panelControl', [HomeController::class, 'panelControl'])->name('panel');
+
 //Abrir nuevo enlace a menu juegos y juegos
 Route::get("/juegos/Matching", [GameController::class,"match"])->name("matching");
 
@@ -59,20 +61,21 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
-Route::get("/mujeres/admin",[MujeresAPIService::class,"inicio"])->name("admin");
-Route::get("/mujeres/create",[MujeresAPIService::class,"create"])->name("crear");
-Route::get("/mujeres/insercion",[MujeresAPIService::class,"insercion"])->name("insercion");
-Route::get("/mujeres/editarMujer",[MujeresAPIService::class,"editarMujer"])->name("editarMujer");
-Route::get("/mujeres/actualizarMujer",[MujeresAPIService::class,"actualizarMujer"])->name("actualizarMujer");
-Route::get("/mujeres/eliminarMujer",[MujeresAPIService::class,"eliminarMujer"])->name("eliminarMujer");
+Route::get("/mujeres/admin",[MujeresController::class,"inicio"])->name("admin");
+Route::get("/mujeres/create",[MujeresController::class,"create"])->name("crear");
+Route::post("/mujeres/insercion",[MujeresController::class,"insercion"])->name("insercion");
+Route::get("/mujeres/editarMujer/{id}",[MujeresController::class,"editarMujer"])->name("editarMujer");
+Route::put("/mujeres/actualizarMujer",[MujeresController::class,"actualizarMujer"])->name("actualizarMujer");
+Route::delete("/mujeres/eliminarMujer/{id}",[MujeresController::class,"eliminarMujer"])->name("eliminarMujer");
 
 
 Route::get("/especialidades/admin",[EspecialidadesController::class,"inicio"])->name("inicio");
 Route::get("/especialidades/create",[EspecialidadesController::class,"insertarEsp"])->name("insertarEsp");
 Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->name("store");
-Route::get("/especialidades/editarEsp",[EspecialidadesController::class,"editarEsp"])->name("editarEsp");
-Route::get("/especialidades/update",[EspecialidadesController::class,"actualizarEsp"])->name("actualizarEsp");
-Route::get("/especialidades/destroy",[EspecialidadesController::class,"eliminarEsp"])->name("eliminarEsp"); 
+Route::get("/especialidades/editar/{id}",[EspecialidadesController::class,"editarEsp"])->name("editarEspecialidad");
+Route::put("/especialidades/update",[EspecialidadesController::class,"actualizarEsp"])->name("actualizarEspecialidad");
+
+Route::delete("/especialidades/destroy/{id}",["middleware"=>"auth","uses"=>[EspecialidadesController::class,"eliminarEsp"]])->name("eliminarEspecialidad"); 
 
 /* Route::resource('especialidades','App\Http\Controllers\EspecialzacionesAPIController'); */
 

@@ -39,7 +39,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path().'\assets\Fotos_mujeres',
+            'root' => public_path().'\\assets\\Fotos_mujeres',
         ],
 
         's3' => [

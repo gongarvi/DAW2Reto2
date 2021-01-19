@@ -11,7 +11,8 @@ class Especialidad extends Model
     use HasFactory;
     protected $table = "especialidades";  
     protected $fillable = [
-        'nombreE',
+        "id",
+        'nombre',
         'color',
     ];
 }

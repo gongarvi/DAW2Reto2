@@ -36,8 +36,6 @@
 @endif
 
 <div class="datos">
-
-
     <form action="{{ route('actualizarMujer',$mujer->id)}}" method="post">
         @csrf
         @method('PUT')
@@ -75,7 +73,19 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <p>Especialidad:</p>
-                    <input type="text" name="especialidad" value="{{$mujer->Nombre}}" class="form-control">
+                    <select name="especialdiad" class="form-control" required>
+                    @if($mujer->especialdies==null)
+                    <option selected disabled value="">Selecciona una especialidad</option>
+                    @endif
+                        @foreach($especialidades as $especialidad)
+
+                            @if($mujer->especialdies!=null && $especialidad->id===$mujer->especialidades->id)
+                                <option selected value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
+                            @else
+                            <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
+                            @endif
+                        @endforeach
+                    </select>
                 </div>
             </div> 
             <div class="col-xs-12 col-sm-12 col-md-12">
