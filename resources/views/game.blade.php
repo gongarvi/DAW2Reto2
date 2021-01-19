@@ -9,11 +9,9 @@
     <!--Aqui vendran las categorias que se podran jugar-->
         <h2>Seleccione una tematica para jugarla, en caso de seleccionar Todas jugara con todas las categorias</h2>
         <select id="selectEspecialidad" class="d-flex justify-content-center" name="combo">
-            <option value="0">Todos</option>
-            @foreach($especialidades as $especialidad)
-                <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
+            @foreach($especialidades as $especiali=>$especialidad)
+                <option value="{{$especialidad->id}}">{{$especialidad->Nombre}}</option>
             @endforeach
-
         </select>
     <div  id="game-cards-controller" class="container" >
         <ul class="row" >
@@ -25,5 +23,8 @@
         </ul>
 
     </div>
+    <script src="{{asset("js/game-card-controller.js")}}"></script>
+
+
 @endsection
 

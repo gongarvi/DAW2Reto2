@@ -1,6 +1,6 @@
 <template>
     <div @click="responder" class="col-12 col-lg-6 w-100 mb-2 p-1" :class="[{'disabled': isDisabled},{'ayuda':ayuda}]">
-        <button class="btn w-100 h-100">
+        <button class="btn w-100" >
             {{respuesta}}
         </button>
     </div>
@@ -13,14 +13,14 @@ export default {
             isDisabled:false,
             interval:null,
             ayuda:false
-        }
+        }        
     },
     props: {
         respuesta:String,
         correcta:Boolean
     },
     methods:{
-        //Evento que se ejecuta al seleccionar la respuesta.
+        //Evento que se ejecuta al seleccionar la respuesta. 
         responder(){
             this.$parent.$data.respondido=true;
             this.$parent.$data.acertado=this.correcta;
@@ -62,8 +62,7 @@ export default {
             this.isDisabled=true;
         },
         //Ayuda del publico o 50/50
-        ayudar(){
-            console.log("Ayuda desbloqueada");
+        ayuda(){
             this.ayuda=true;
         }
     }
@@ -83,6 +82,6 @@ button{
     background-color: rgb(255, 59, 59);
 }
 .ayuda{
-    border: 4px solid rgb(144, 108, 36);
+    border: 2px solid rgb(144, 36, 117);
 }
 </style>

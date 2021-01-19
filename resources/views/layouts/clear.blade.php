@@ -17,7 +17,7 @@
     <header>
         @yield('cabecera')
     </header>
-    <main id="app" class="h-100">
+    <main id="app">
         @yield("content")
     </main>
     <footer>

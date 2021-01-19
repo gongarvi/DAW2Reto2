@@ -19,7 +19,10 @@ class Pregunta extends Model
     }
 
     public static function getPreguntaAleatoriaMujer($id_mujer){
-        $array=self::all()->where("mujer",$id_mujer);
+        $array=self::with(array("mujer"=>function($query) use ($id_mujer) {
+            $query->where("mujeres.id",$id_mujer);
+            $query->get();
+        }))->get();
         if(count($array)<=0){
             return null;
         }

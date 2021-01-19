@@ -15,14 +15,11 @@ class Respuesta extends Model
         'respuesta',
         'correcta',
     ];
-    protected $casts = [
-        'correcta' => 'boolean',
-    ];
     public function pregunta(){
         return $this->belongsTo(Pregunta::class);
     }
     public function toJsonArray(): array
     {
-        return ["respuesta"=>$this->respuesta,"correcta"=>$this->correcta];
+        return ["respueta"=>$this->respuesta,"correcta"=>$this->correcta];
     }
 }

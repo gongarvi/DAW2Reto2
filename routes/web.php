@@ -32,13 +32,12 @@ Route::get("/juegos/matching", function(){ return view("home");})->name("matchin
 
 Route::get("/juegos/buscaminas", function(){ return view("buscaminas");})->name("buscaminas");
 
-Route::get("/juegos/millonario", function(){
-    return view("millonario");
-})->name("millonario");
 
 Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
-
+Route::get("/juegos/millonario", function(){
+    return view("millonario");
+})->name("buscaminas");
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 

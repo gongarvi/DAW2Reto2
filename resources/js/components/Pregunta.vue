@@ -11,7 +11,6 @@
                 :correcta="respuesta.correcta" :respuesta="respuesta.respuesta"
                 v-bind:key="index"/>
         </div>
-        <div></div>
     </div>
 
 </template>
@@ -54,25 +53,22 @@ export default {
     methods:{
         //El publico seleccina una respuesta, puede no ser la correcta
         ayudaPublico(){
-            console.log("Ayuda publico");
-            this.$children[parseInt(Math.random()*3)].ayudar();
+            this.$children[parseInt(Math.random(1,4))];
         },
         //Respuestas seleccionadas por el 50/50 una tiene que ser si o si la correcta
         ayuda50(){
-            console.log("Ayuda 50");
             let correcto=0;
-            let respuestaAleatoria=0;
             this.respuestas.forEach((respuesta,index)=>{
                 if(respuesta.correcta){
                     correcto=index;
                 }
             });
+            let respuestaAleatoria=0;
             do{
-                respuestaAleatoria=parseInt(Math.random()*3);
-            }while(correcto==respuestaAleatoria);
-            console.log("correcto"+correcto+", Aleatorio"+respuestaAleatoria);
-            this.$children[correcto].ayudar();
-            this.$children[respuestaAleatoria].ayudar();
+                respuestaAleatoria=parseInt(Math.random(0,3));
+            }while(correcto!=respuestaAleatoria);
+            this.respuetas[correcto].ayuda();
+            this.respuestas[respuestaAleatoria].ayuda();
         }
     }
 }
