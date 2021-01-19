@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ControladorUsuarios;
 use App\Http\Controllers\MujeresAPIService;
 use App\Http\Controllers\MujeresController;
 use App\Http\Controllers\EspecialzacionesAPIController;
@@ -68,7 +69,7 @@ Route::put("/mujeres/actualizarMujer",[MujeresController::class,"actualizarMujer
 Route::delete("/mujeres/eliminarMujer/{id}",[MujeresController::class,"eliminarMujer"])->name("eliminarMujer");
 
 
-Route::get("/especialidades/admin",[EspecialidadesController::class,"inicio"])->name("inicio");
+Route::get("/especialidades/admin",[EspecialidadesController::class,"inicio"])->name("cargarEsp");
 Route::get("/especialidades/create",[EspecialidadesController::class,"insertarEsp"])->name("insertarEsp");
 Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->name("store");
 Route::get("/especialidades/editar/{id}",[EspecialidadesController::class,"editarEsp"])->name("editarEspecialidad");
@@ -76,5 +77,7 @@ Route::put("/especialidades/update",[EspecialidadesController::class,"actualizar
 
 Route::delete("/especialidades/destroy/{id}",["middleware"=>"auth","uses"=>[EspecialidadesController::class,"eliminarEsp"]])->name("eliminarEspecialidad"); 
 
+//Rutas para la administracion de los usuarios
+Route::get("/usuarios/admin",[ControladorUsuarios::class,"index"])->name("cargarusuarios");
 /* Route::resource('especialidades','App\Http\Controllers\EspecialzacionesAPIController'); */
 

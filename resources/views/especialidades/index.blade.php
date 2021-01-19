@@ -23,7 +23,7 @@
 @endif
 
 <div class="datos">
-<a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-primary">Volver al panel</button></a>
+<a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-info">Volver al panel</button></a>
  <table>
     <th>Id</th>
     <th>Nombre</th>

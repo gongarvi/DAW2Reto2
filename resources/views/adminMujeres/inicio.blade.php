@@ -14,7 +14,7 @@
 @section('content')
 <div class="">
     <h2>Gestion de Mujeres</h2>
-    <a href="{{ route ('panel')}}"><button class="btn-primary">Volver al panel</button></a>
+
 </div>
 
 
@@ -24,7 +24,7 @@
     </div>
 @endif
 <div class="datos">
-
+<a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-info">Volver al panel</button></a>
     <table class="">
         <tr>
             <th>Nombre</th>

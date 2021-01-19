@@ -19,6 +19,24 @@
             <li class="nav-item m-auto mx-lg-0">
                 <a class="nav-link text-light" href="{{route("juegos")}}">Modo Historia</a>
             </li>
+            
+            @php 
+                $logeado = Route::has('login');
+                $administrador = Auth::user()->administrador;
+            @endphp
+
+
+            
+            @if ($logeado ==1 && $administrador==1 )
+                <li class="nav-item m-auto mx-lg-0">
+                        <a class="nav-link text-light" href="{{route("panel")}}">Administrar</a>
+                </li>
+            @endif
+            
+                   
+               
+         
+            
         </ul>
     </div>
 

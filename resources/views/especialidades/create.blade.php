@@ -18,7 +18,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="volver">
-            <a class="btn btn-primary" href="{{ route('inicio')}}">Volver</a>
+            <a class="btn btn-primary" href="{{ route('cargarEsp')}}">Volver</a>
         </div>
     </div>
 </div>

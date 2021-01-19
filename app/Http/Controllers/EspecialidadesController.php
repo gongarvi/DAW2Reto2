@@ -15,7 +15,7 @@ class EspecialidadesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function inicio()
-    {
+    {   
         $especialidades = Especialidad::latest()->paginate(20);
         return view('especialidades.index', compact('especialidades'))
             ->with('success', (request()->input('page', 1) - 1) * 20);     
@@ -46,7 +46,7 @@ class EspecialidadesController extends Controller
 
         Especialidad::create($request->all());
 
-        return redirect()->route('inicio')
+        return redirect()->route('cargarEsp')
             ->with('success','Especialidad insertada correctamente');
     }
 
@@ -88,7 +88,7 @@ class EspecialidadesController extends Controller
     
             $especialidad->update($request->all());
     
-            return redirect()->route('inicio')
+            return redirect()->route('cargarEsp')
                 ->with('success','Especialidad  se ha modificado correctamente');
     }
 
@@ -102,7 +102,7 @@ class EspecialidadesController extends Controller
     {
         
         Especialidad::all()->find($id)->delete();
-        return redirect()->route('inicio')
+        return redirect()->route('cargarEsp')
             ->with('success','Especialidad  eliminada correctamente');
     }
 }
