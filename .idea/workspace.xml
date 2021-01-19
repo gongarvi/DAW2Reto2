@@ -4,24 +4,11 @@
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/app/Models/Mujer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mujer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mujeres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ruletaMujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruletaMujeres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/mujeres.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/mujeres.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/mujeres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/ruletaMujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ruletaMujeres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mujeres.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mujeres.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Mujeres.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Mujeres.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/clear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/clear.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" afterDir="false" />
->>>>>>> 08db98ef2f1d84ce8d8a3de71a0d969c345700bb
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,14 +191,10 @@
       <workItem from="1610002646090" duration="19177000" />
       <workItem from="1610348489552" duration="6353000" />
       <workItem from="1610360415965" duration="2970000" />
-<<<<<<< HEAD
-      <workItem from="1610434637665" duration="13684000" />
-=======
       <workItem from="1610434637665" duration="13948000" />
       <workItem from="1610609047531" duration="16679000" />
       <workItem from="1610694060246" duration="11987000" />
       <workItem from="1610953347247" duration="4077000" />
->>>>>>> 08db98ef2f1d84ce8d8a3de71a0d969c345700bb
     </task>
     <servers />
   </component>

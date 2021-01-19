@@ -104,7 +104,7 @@ eval("var select = false;\nvar c = \"inc\";\nvar pos_s = \"\";\nvar id_s = \"\";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Reto2-2DW3\DAW2Reto2\resources\js\jsPuzzle.js */"./resources/js/jsPuzzle.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\reto\resources\js\jsPuzzle.js */"./resources/js/jsPuzzle.js");
 
 
 /***/ })

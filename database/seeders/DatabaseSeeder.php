@@ -140,7 +140,13 @@ class DatabaseSeeder extends Seeder
             $respuesta = new Respuesta();
             $respuesta->pregunta=$importData[0];
             $respuesta->respuesta=$importData[1];
-            $respuesta->correcta=(boolean)$importData[2];
+            if($importData[2]==="true"||$importData[2]==="True"||$importData[2]==="t"||$importData[2]==="T"){
+
+                $respuesta->correcta=true;
+            }else{
+                $respuesta->correcta=false;
+            }
+            echo $respuesta->correcta . "\n";
             $respuesta->save();
 
         }

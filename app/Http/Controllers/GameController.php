@@ -32,7 +32,7 @@ class GameController extends Controller
             array(
                 "id"=>"3",
                 "nombre"=>"buscaminas",
-                "descripcion"=>"Marca las minas para mostrar a la Mujer",
+                "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
                 "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),
             array(
@@ -58,10 +58,7 @@ class GameController extends Controller
 
     }
 
-    public function cargarEspecialidades(){
-        $tabla = Especialidad::all();
-        return $tabla;
-    }
+
     public function cargarMujeresRandom($especialidad){
         if ($especialidad == 10){
             $tablaMujer = DB::table('mujeres')->get();
@@ -73,17 +70,18 @@ class GameController extends Controller
     }
     public function show(){
         Blade::component('game-card', GameCard::class);
-        return view("game", ["juegos"=>$this->juegos,"especialidades"=>self::cargarEspecialidades()]);
+        return view("game", ["juegos"=>$this->juegos,"especialidades"=>$this->cargarEspecialidades()]);
     }
 
     public function ruleta($Especialidad,$juego){
-        
-        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego,"especialidad"=>$Especialidad]); 
-       
+        return view("ruleta", ["senoras"=>self::cargarMujeresRandom($Especialidad),"juego"=>$juego,"especialidad"=>$Especialidad]);
     }
-    
     public function puzzle(){
         return view("puzzle");
     }
 
+    private function cargarEspecialidades(){
+        $tabla = Especialidad::all();
+        return $tabla;
+    }
 }
