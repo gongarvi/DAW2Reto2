@@ -7,7 +7,7 @@
         <ul class="navbar-nav ">
             <li class="nav-ite m-auto mx-lg-0">
                 <a class="navbar-brand m-auto text-light" href="{{route("inicio")}}">
-                    <img class="w-25 h-25 d-block mx-auto" src="{{asset("image/logo.png")}}" alt="Imagen corporativa">
+                    <img class="w-25 d-block mx-auto" src="{{asset("image/logo.png")}}" alt="Imagen corporativa">
                 </a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
@@ -56,8 +56,7 @@
                         Editar perfil
                     </a>
                     @endif
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         Cerrar sesion <i class="fa fa-sign-out text-grey"></i>
                     </a>
 

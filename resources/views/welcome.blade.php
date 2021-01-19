@@ -26,7 +26,7 @@
                         <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a></li>
                     @endif  
                     @else 
-                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("login")}}">Perfil de {{ Auth::user()->name }}</a></li>
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="perfil/{{ Auth::user()->id}}">Perfil de {{ Auth::user()->name }}</a></li>
                     @endguest
 
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>
@@ -48,8 +48,9 @@
                                 <h4 class="modal-title"></h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
-                                <div class="modal-body">
-                                    <h1>Inicia sesion para Jugar</h1>
+                                <div class="modal-body text-center">
+                                    <p class="ml-5">Para poder Jugar debes iniciar sesion o registrate</p>
+                                    <a class="btn btn-outline-dark w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a>
                                 </div>
                             </div>
                         </div>
