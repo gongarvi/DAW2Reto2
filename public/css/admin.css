@@ -1,9 +1,0 @@
-th{color: white; text-align: center; font-size: 1rem;}
-.datos{width: 80%; margin:0 auto; background: rgba(0,0,0,0.555)}
-table{margin: 0 auto; width: 80%;}
-form{margin: 0 auto; width: 60%; padding: 2%;}
-.añadir{display: flex; justify-content: center; margin: 1%;}
-td{ margin: 1%; background: rgba(236, 224, 224, 0.555); color: black; border: 1px solid white;}
-.volver{display: flex; justify-content: flex-end; margin-right: 5%;}
-.guardar{display: flex; justify-content: center; margin-top: 2%;}
-
