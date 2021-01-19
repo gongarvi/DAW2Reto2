@@ -1,33 +1,42 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Especialidad;
 use App\Models\Mujer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Symfony\Component\Console\Input\Input;
 
 class MujeresAPIService extends Controller
 {
     // la funcion para join de las tablas "Mujeres" y "Especialidades"
     public function index(){
-        $array=Mujer::with("especialidades")->get();
-        $result=[];
-        foreach ($array as $item){
-            $especialidad=array(
-                "nombre"=>$item["especialidades"]["nombre"],
-                "color"=>$item["especialidades"]["color"]
-            );
-            $mujer=array(
-                "nombre"=>$item["nombre"],
-                "apellidos"=>$item["apellidos"],
-                "nacionalidad"=>$item["nacionalidad"],
-                "nacimiento"=>$item["nacimiento"],
-                "fallecido"=>$item["fallecido"],
-                "especialidad"=>$especialidad,
-                "foto"=>$item["foto"],
-                "descripcion"=>$item["descripcion"]
-            );
-            $result[]=$mujer;
+        try{
+            $array=Mujer::with("especialidades")->get();
+            $result=[];
+            foreach ($array as $item){
+                $especialidad=array(
+                    "nombre"=>$item["especialidades"]["nombre"],
+                    "color"=>$item["especialidades"]["color"]
+                );
+                $mujer=array(
+                    "nombre"=>$item["nombre"],
+                    "apellidos"=>$item["apellidos"],
+                    "nacionalidad"=>$item["nacionalidad"],
+                    "nacimiento"=>$item["nacimiento"],
+                    "fallecido"=>$item["fallecido"],
+                    "especialidad"=>$especialidad,
+                    "foto"=>$item["foto"],
+                    "descripcion"=>$item["descripcion"]
+                );
+                $result[]=$mujer;
+            }
+            return response()->json($result);
         }
-        return response()->json($result);
+        catch(Exception $e){
+
+        }
     }
 
     public function show($cantidad, $especializacion){
@@ -48,4 +57,10 @@ class MujeresAPIService extends Controller
         }
         return $result;
     }
+
+    //Aqui empiezan las funciones para administrar a las mujeres desde la base de datos
+    //Para mostrar a las mujeres en general
+
+
+
 }

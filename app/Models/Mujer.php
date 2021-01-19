@@ -37,7 +37,7 @@ class Mujer extends Model
         $mujeres = Mujer::with([
             "preguntas" => function ($query) {
                 $query->whereNotNull("preguntas.mujer");
-            }])->where("especialidad", $especializacion)->get();
+            }])->where("especialidad", $especializacion)->where("foto","!=","")->get();
         $mujeres = $mujeres->filter(function ($mujer) {
             return count($mujer["preguntas"]) > 0;
         });
@@ -50,7 +50,7 @@ class Mujer extends Model
         $mujeres = Mujer::with([
             "preguntas" => function ($query) {
                 $query->whereNotNull("preguntas.mujer");
-            }])->get();
+            }])->where("foto","!=","")->get();
         $mujeres = $mujeres->filter(function ($mujer) {
             return count($mujer["preguntas"]) > 0;
         });

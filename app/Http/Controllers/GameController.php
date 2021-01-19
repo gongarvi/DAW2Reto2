@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Especialidad;
 use App\View\Components\GameCard;
 use Illuminate\Support\Facades\Blade;
@@ -67,6 +66,13 @@ class GameController extends Controller
         }
 
         return $tablaMujer;
+    }
+    function cargarMujeres(){
+        $tablaMujer = DB::table('mujeres')->limit(6)->get();
+        return $tablaMujer;
+    }
+    public function match(){
+        return view("matching", ["mujeres"=>self::cargarMujeres()]);
     }
     public function show(){
         Blade::component('game-card', GameCard::class);

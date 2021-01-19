@@ -2,6 +2,5 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/jsPuzzle.js": "/js/jsPuzzle.js",
-    "/js/mujeres.js": "/js/mujeres.js",
-    "/js/ruletaMujeres.js": "/js/ruletaMujeres.js"
+    "/js/match.js": "/js/match.js"
 }

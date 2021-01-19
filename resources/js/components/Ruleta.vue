@@ -34,7 +34,6 @@
             }
         },
         beforeMount() {
-
             let url=window.location.href.split("/");
             var especialidad=url[5];
             this.juego=url[6];
@@ -49,10 +48,10 @@
                     this.cantidadMinima=3;
                     break;
                 case "Puzzle":
-                    this.cantidadMinima=1;
+                    this.cantidadMinima=3;
                     break;
-                case "Matcihng":
-                    this.cantidadMinima=5;
+                case "Matching":
+                    this.cantidadMinima=6;
                     break;
             }
             if(isNaN(especialidad) && especialidad>0 && especialidad<9){
@@ -72,7 +71,6 @@
                 window.axios.get(window.location.protocol+"//"+window.location.host+"/api/mujeres/"+3+"/"+0)
                 .then((response)=>{
                     if(response.status==200){
-                        console.log(response.data);
                         this.mujeres=response.data;
                         this.girarRuleta();
 
@@ -108,34 +106,31 @@
                 },500);
                 setTimeout(()=>{
                     clearInterval(interval);
-                    this.verificarMujer();
-                    this.mujeresSeleccionadas.push(this.mujeres[this.index]);
-                    $("#infoMujer").show();
+                    if(!this.existeMujer(this.index)){
+                        this.mujeresSeleccionadas.push(this.mujeres[this.index]);
+                        $("#infoMujer").show();
+                    }else{
+                        this.obtenerMujeres();
+                    }
                 },2500);
             },
-            verificarMujer(){
-                if(this.mujeresSeleccionadas.indexOf(this.mujeres[this.index])!==-1){
-                    if(this.mujeres.length<this.index) {
-                        this.index=0;
-                    }
-                    else{
-                        this.index++;
-                    }
-                    this.verificarMujer();
+            existeMujer(){
+                if(this.mujeresSeleccionadas.filter(mujer=>mujer.id===this.mujeres[this.index].id).length>0) {
+                    return true;
                 }
+                return false;
             },
             jugar(){
                 localStorage.setItem("mujeres",JSON.stringify(this.mujeresSeleccionadas));
                 location.href=location.protocol+"//"+location.host+"/juegos/"+this.juego.toLowerCase();
             },
             siguiente(){
-                console.log("entra");
                 $("#infoMujer").hide();
                 this.obtenerMujeres();
             },
 
         },
-        mounted() {
+        mounted(){
             this.obtenerMujeres();
         }
     }
