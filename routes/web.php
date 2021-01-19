@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\modoHistoriaController;
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,6 @@ Route::get("/mujeres",function(){
     return view("mujeres");
 })->name("mujeres");
 
-Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
-Route::get("/logout",[GameController::class,"show"])->name("logout");
+
+Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");
