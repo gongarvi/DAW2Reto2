@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" style="height: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,14 +12,14 @@
     @yield("head-extras")
 
 </head>
-<body>
+<body style="height: 100%">
     <header>
 
     </header>
     <nav>
         @include("partials.menu")
     </nav>
-    <main id="app">
+    <main id="app" style="width:100%; height: 100%;">
         @yield("content")
     </main>
     <footer>
