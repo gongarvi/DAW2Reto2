@@ -1,5 +1,5 @@
-require('./bootstrap');
-window.onload = function () {
+
+export default function ruletaActivar() {
     var intervaloTiempo = 10;
     var ejecutandose =1;
     var mujerSeleccionada;

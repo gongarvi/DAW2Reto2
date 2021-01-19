@@ -7,10 +7,9 @@ use App\View\Components\GameCard;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
 
-class GameController extends Controller
-{
-    private array $juegos;
-    private array $especialidades;
+class GameController extends Controller{
+    public array $juegos;
+    public array $especialidades;
 
     public function __construct(){
         //TODO Eliminar cuando se recoja de la BBDD

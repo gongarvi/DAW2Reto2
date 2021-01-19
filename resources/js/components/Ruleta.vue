@@ -5,12 +5,23 @@
   </div>
 </template>
 <script>
+    import ruletaActivar from  '../ruletaMujeres.js';
     export default {
+        beforeMount(){
+            window.axios.get(window.location.protocol+"//"+window.location.host+"/api/Mujeres/{id}/{juego}",)
+          .then((response)=>{
+            this.preguntas.push(response.data);
+          })
+          .catch((error)=>{
+
+          });
+        },
         mounted() {
-            let scriptMujeres = document.createElement('script');
+            ruletaActivar();
+      /*       let scriptMujeres = document.createElement('script');
             console.log(window.location.protocol);
             scriptMujeres.setAttribute('src',window.location.protocol + '/js/ruletaMujeres.js');
-            document.head.appendChild(scriptMujeres);
+            document.head.appendChild(scriptMujeres); */
         }
     }
 </script>
