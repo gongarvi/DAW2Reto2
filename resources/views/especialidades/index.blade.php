@@ -14,6 +14,7 @@
 @section('content')
 <div class="">
     <h2>Gestion de Especialidades</h2>
+    
 </div>
 @if($message = Session::get('success'))
     <div class="alert alert-success">
@@ -22,7 +23,7 @@
 @endif
 
 <div class="datos">
-
+<a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-primary">Volver al panel</button></a>
  <table>
     <th>Id</th>
     <th>Nombre</th>

@@ -14,6 +14,7 @@
 @section('content')
 <div class="">
     <h2>Gestion de Mujeres</h2>
+    <a href="{{ route ('panel')}}"><button class="btn-primary">Volver al panel</button></a>
 </div>
 
 
