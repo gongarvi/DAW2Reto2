@@ -8,7 +8,6 @@ class MujeresAPIService extends Controller
 {
     // la funcion para join de las tablas "Mujeres" y "Especialidades"
     public function index(){
-
         $array=Mujer::with("especialidades")->get();
         $result=[];
         foreach ($array as $item){
