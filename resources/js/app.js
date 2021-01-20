@@ -18,10 +18,11 @@ window.Vue = require('vue');
  */
 
 
-Vue.component('mujeres-component', require('./components/mujeres.vue').default);
+Vue.component('mujeres-component', require('./components/Mujeres.vue').default);
 Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);
+Vue.component('ruleta', require('./components/Ruleta').default);
 
 
 /**

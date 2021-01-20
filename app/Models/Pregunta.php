@@ -13,15 +13,13 @@ class Pregunta extends Model
         'pregunta',
         'mujer'
     ];
+
     public function mujer(){
         return $this->belongsTo(Mujer::class);
     }
 
     public static function getPreguntaAleatoriaMujer($id_mujer){
-        $array=self::with(array("mujer"=>function($query) use ($id_mujer) {
-            $query->where("mujeres.id",$id_mujer);
-            $query->get();
-        }))->get();
+        $array=self::all()->where("mujer",$id_mujer);
         if(count($array)<=0){
             return null;
         }

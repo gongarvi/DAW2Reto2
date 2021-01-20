@@ -1,22 +1,7 @@
 <template>
     <div id="millonario">
-        <div id="principal" class="text-center p-5">
-            <button id="aleatorio" class="btn btn-info" @click="preguntasAleatorias()">
-                <span>Juego Aleatorio</span>
-            </button>
-            <select v-model="especializacion">
-                <option
-                    v-for="(especialidad,index) in especialidades"
-                    :value="especialidad.id">
-                    {{especialidad.nombre}}
-                </option>
-            </select>
-            <button id="especializacion" class="btn btn-info" @click="preguntasEspecializacionAleatorias()">
-                <span>Juego por especialización</span>
-            </button>
-        </div>
-        <div id="juego" v-if="!hidden">
-            <Pregunta :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
+        <div id="juego" v-if="!fin">
+            <Pregunta ref="pregunta" v-if="preguntas!=null && preguntas.length>0" :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
             <div id="ayudas" class="text-center m-5">
                 <button id="50" class="btn btn-info mx-4" @click="botonAyuda50" :disabled="ayudaMitad">
                     <span>50/50</span>
@@ -26,10 +11,10 @@
                 </button>
             </div>
         </div>
-      <div class="final w-100" :class="{'fin':fin}">
-        <p class="w-100 text-justify m-2">
+      <div class="final w-100" v-if="fin">
+        <h2 class="w-100 text-center m-2 p-5">
           Has conseguido responder correctamente un total de {{acertadas}} de {{preguntas.length}} preguntas.
-        </p>
+        </h2>
       </div>
     </div>
 </template>
@@ -44,27 +29,30 @@ export default {
   },
   data(){
     return{
-      hidden:true,
-      preguntas:[{}],
+      mujeres:[],
+      preguntas:[],
       especializacion:1,
-      especialidades:[{}],
       ayudaMitad:false,
       publico:false,
+      fin:false,
       acertadas:0,
-      fin:false
+      respondidas:0
     }
   },
    beforeMount() {
-      let mujeres = localStorage.getItem("mujeres");
-      mujeres.foreach((mujer)=>{
-          window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas"+mujer.id)
-          .then((response)=>{
-            this.preguntas.push(response.data);
-          })
-          .catch((error)=>{
+      this.mujeres = JSON.parse(localStorage.getItem("mujeres"));
+      if(this.mujeres!=null){
+          this.mujeres.forEach(mujer=>{
+              window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas/"+mujer.id)
+                  .then((response)=>{
+                      this.preguntas.push(response.data);
+                  })
+                  .catch((error)=>{
 
+                  });
           });
-      });
+      }
+
    },
 
   methods:{
@@ -90,7 +78,8 @@ export default {
       if(acertada){
         this.acertadas++;
       }
-      if(this.respondidas==this.preguntas.length){
+      if(this.respondidas>=this.preguntas.length){
+          console.log("entra");
         this.finalizar();
       }
     },
@@ -98,31 +87,30 @@ export default {
       this.respondidas==0;
     },
     finalizar(){
-
+        this.fin=true;
     },
     botonAyudaPublico(){
-      if(!this.ayudaPublico)
-      {
+      if(!this.ayudaPublico){
         this.publico=true;
-        this.$refs.preguntas.ayudaPublico();
+        this.$children[0].ayudaPublico();
       }
     },
     botonAyuda50(){
       if(!this.ayudaMitad){
         this.ayudaMitad=true;
-        this$refs.preguntas.ayuda50();
+        this.$children[0].ayuda50();
       }
     }
   }
 }
 </script>
 <style scoped>
-#millonario{
+#millonario {
     background-color: rgb(0, 2, 99);
 }
   .final{
-    display: none;
-    margin: auto;
+      color:white;
+      margin: auto;
   }
 </style>
 
