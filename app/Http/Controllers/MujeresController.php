@@ -111,7 +111,7 @@ class MujeresController extends Controller
         } 
        
         Mujer::create($data);
-        return redirect()->route('admin')
+        return redirect()->route('adminMujer')
             ->with('success','La Mujer ha sido insertada correctamente');
                   
         
@@ -133,7 +133,7 @@ class MujeresController extends Controller
          
         //$mujer->update($request->all());
         
-        return redirect()->route('admin')
+        return redirect()->route('adminMujer')
             ->with('success','La Mujer  se ha modificado correctamente');
     }
         //Para borrar
@@ -141,7 +141,7 @@ class MujeresController extends Controller
     {
         Mujer::all()->find($id)->delete();
         
-        return redirect()->route('admin')
+        return redirect()->route('adminMujer')
             ->with('success','Mujer eliminada correctamente');
     }
 }

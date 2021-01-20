@@ -49,7 +49,7 @@
     <div class="row">
         <div class="col">
             <div class="añadir">
-                <a class="btn btn-success" href="{{ route('insertarEsp')}}">Añadir Especialidad</a>
+                <a class="btn btn-success" href="{{ route('nuevaEspecialidad')}}">Añadir Especialidad</a>
             </div>
         </div>
     </div>

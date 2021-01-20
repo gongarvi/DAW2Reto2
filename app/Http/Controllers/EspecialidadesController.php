@@ -46,7 +46,7 @@ class EspecialidadesController extends Controller
 
         Especialidad::create($request->all());
 
-        return redirect()->route('cargarEsp')
+        return redirect()->route('adminEspecialidad')
             ->with('success','Especialidad insertada correctamente');
     }
 
@@ -88,7 +88,7 @@ class EspecialidadesController extends Controller
     
             $especialidad->update($request->all());
     
-            return redirect()->route('cargarEsp')
+            return redirect()->route('adminEspecialidad')
                 ->with('success','Especialidad  se ha modificado correctamente');
     }
 
@@ -102,7 +102,7 @@ class EspecialidadesController extends Controller
     {
         
         Especialidad::all()->find($id)->delete();
-        return redirect()->route('cargarEsp')
+        return redirect()->route('adminEspecialidad')
             ->with('success','Especialidad  eliminada correctamente');
     }
 }

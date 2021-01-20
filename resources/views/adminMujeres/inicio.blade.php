@@ -58,7 +58,7 @@
     <div class="row">
         <div class="col">
             <div class="añadir">
-                <a class="btn btn-success" href="{{ route('crear')}}">Añadir Mujer</a>
+                <a class="btn btn-success" href="{{ route('nuevaMujer')}}">Añadir Mujer</a>
             </div>
         </div>
     </div>

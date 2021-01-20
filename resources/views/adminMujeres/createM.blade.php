@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="volver">
-            <a class="btn btn-primary" href="{{ route('admin')}}">Volver</a>
+            <a class="btn btn-primary" href="{{ route('adminMujer')}}">Volver</a>
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
     </div>
 @endif
 <div class="datos">
-    <form action="{{ route('insercion')}}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('insertarMujer')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
