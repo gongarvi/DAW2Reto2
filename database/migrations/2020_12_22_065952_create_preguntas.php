@@ -14,9 +14,9 @@ class CreatePreguntas extends Migration
     public function up()
     {
         Schema::create('preguntas', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->id()->autoIncrement();
             $table->string('pregunta'); 
-            $table->integer('mujer');
+            $table->unsignedBigInteger('mujer');
             $table->foreign('mujer')->references('id')->on('mujeres');
             $table->timestamps();
         });

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Especialidad;
 use App\View\Components\GameCard;
 use Illuminate\Support\Facades\Blade;
@@ -31,7 +30,6 @@ class GameController extends Controller{
             array(
                 "id"=>"3",
                 "nombre"=>"buscaminas",
-
                 "descripcion"=>"En este juego deberas evitar las bombas para descubrir el rosotro de una mujer",
                 "imagen"=>"assets/Fotos_Juegos/buscaminas.png"
             ),
@@ -58,10 +56,7 @@ class GameController extends Controller{
 
     }
 
-    public function cargarEspecialidades(){
-        $tabla = Especialidad::all();
-        return $tabla;
-    }
+
     public function cargarMujeresRandom($especialidad){
         if ($especialidad == 10){
             $tablaMujer = DB::table('mujeres')->get();
@@ -71,9 +66,16 @@ class GameController extends Controller{
 
         return $tablaMujer;
     }
+    function cargarMujeres(){
+        $tablaMujer = DB::table('mujeres')->limit(6)->get();
+        return $tablaMujer;
+    }
+    public function match(){
+        return view("matching", ["mujeres"=>self::cargarMujeres()]);
+    }
     public function show(){
         Blade::component('game-card', GameCard::class);
-        return view("game", ["juegos"=>$this->juegos,"especialidades"=>self::cargarEspecialidades()]);
+        return view("game", ["juegos"=>$this->juegos,"especialidades"=>$this->cargarEspecialidades()]);
     }
 
     public function ruleta($Especialidad,$juego){
@@ -83,4 +85,8 @@ class GameController extends Controller{
         return view("puzzle");
     }
 
+    private function cargarEspecialidades(){
+        $tabla = Especialidad::all();
+        return $tabla;
+    }
 }
