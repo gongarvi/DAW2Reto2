@@ -73,6 +73,5 @@ class RegisterController extends Controller
             'foto' => '',
             'progreso' => 0
         ]);
-        
     }
 }

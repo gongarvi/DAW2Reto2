@@ -56,3 +56,5 @@ Route::get("/mujeres",function(){
 
 
 Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");
+Route::post("/actualizar/{id}",[UserController::class,"update"])->name("actualizar");
+
