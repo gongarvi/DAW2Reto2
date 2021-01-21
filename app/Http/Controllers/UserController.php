@@ -29,21 +29,26 @@ class UserController extends Controller{
                 unset($data["password"]);
                 unset($data["email"]);
                 $persona->update($data);
+                echo("Correcto hecho");
             }else{
                 return view('perfil.edit',['usuario'=>$persona])->with("error","No se han modificado los datos");
+                
             }
         }
         // para cambiar la contraseña
         elseif($request["funcion"]==="contrasena"){
             $request->validate([
-                'password_anterior' => ['confirmed', 'string', 'min:8', 'confirmed'],
-                'password_nueva' => ['confirmed', 'string', 'min:8', 'confirmed'],
-                'password_confirmar' => ['confirmed', 'string', 'min:8', 'confirmed'],
+                'password_actual' => ['required', 'string', 'min:8'],
+                'password_nueva' => ['required', 'string', 'min:8'],
+                'password_confirmar' => ['required', 'string', 'min:8']
             ]);
-            if($request->input('password_nueva')==$request->input('password_confirmar') ){
-                if(Hash::check($request->input('password_anterior'),$persona->password)){
+            
+            if(Hash::check($request->input('password_actual'),$persona->password)){
+                if($request->input('password_nueva')===$request->input('password_confirmar')){
                     $data["password"]=Hash::make($request->input('password_nueva'));
                     $persona->update($data);
+                    return redirect()->route('/perfil/'+$id)
+                        ->with('success', 'contraseña actualizado correctamente');
                 }else{
                     return view('perfil.edit',['perfil'=>$persona])->with("error","No se ha cambiado la contraseña");
                 }

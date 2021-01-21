@@ -12,7 +12,13 @@
     <div class="container container-fluid">
         <div style="background-color:rgba(0,0,0,0.555);">
             <div class="m-5"> 
+            @if($message =Session::get('success'))
+                <div class="alert alter-success">
+                    <p>{{$message}}</p>
+                </div>
+            @endif
                 <form action="/actualizar/{{$usuario->id}}" method="POST">
+                @csrf
                     <fieldset class="form-group">
                         <legend class="col-form-label col-sm-2 pt-0">Modificar datos</legend>
                         <input type="hidden" value="datos" name="funcion">
@@ -50,7 +56,9 @@
                     </fieldset>
                 </form>
 
-                <form action="/actualizar/{{$usuario->id}}" method="POST">
+                <form action="/actualizar/{{$usuario->id}}" method="post">
+                @method('POST')
+                @csrf
                     <fieldset class="form-group">
                         <legend class="col-form-label col-sm-2 pt-0">Cambiar contraseña</legend>
                         <input type="hidden" value="contrasena" name="funcion">
@@ -58,7 +66,7 @@
                             <div class="form-group"> 
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
-                                        <input  name="actual_password" placeholder="Contraseña actual" class="form-control"  type="password">
+                                        <input  name="password_actual" placeholder="Contraseña actual" class="form-control"  type="password">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +74,7 @@
                             <div class="form-group"> 
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
-                                        <input  name="new_password" placeholder="Contraseña nueva" class="form-control"  type="password">
+                                        <input  name="password_nueva" placeholder="Contraseña nueva" class="form-control"  type="password">
                                     </div>
                                 </div>
                             </div>
@@ -74,13 +82,13 @@
                             <div class="form-group"> 
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
-                                        <input  name="confirm_password" placeholder="Confirmar contraseña nueva" class="form-control"  type="password">
+                                        <input  name="password_confirmar" placeholder="Confirmar contraseña nueva" class="form-control"  type="password">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <input type="reset" class="btn btn-danger mb-2">
-                        <input type="submit" value="Actualizar Usuario" class="btn btn-primary mb-2">
+                        <input type="submit" value="Actualizar contraseña" class="btn btn-primary mb-2">
                     </fieldset>
                 </form>
             </div>
