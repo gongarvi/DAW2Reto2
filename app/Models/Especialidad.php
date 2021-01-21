@@ -12,7 +12,7 @@ class Especialidad extends Model
     protected $table = "especialidades";
     protected $fillable = [
         'id',
-        'Nombre',
+        'nombre',
         'color'
     ];
 }

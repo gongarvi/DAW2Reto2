@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->especialidades();
+         $this->especialidades(); 
         $this->mujeres();
         $this->preguntas();
         $this->respuestas();
     }
 
     // los datos para la tabla de especialidades
-    private function especialidades(){
+     private function especialidades(){
 
         $file = fopen('public\assets\CSVs\Especialidades.csv', "r");
         $data = array();
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
         }
 
     }
-
+ 
     // los datos para la tabla de mujeres
     private function mujeres(){
 
@@ -140,7 +140,13 @@ class DatabaseSeeder extends Seeder
             $respuesta = new Respuesta();
             $respuesta->pregunta=$importData[0];
             $respuesta->respuesta=$importData[1];
-            $respuesta->correcta=(boolean)$importData[2];
+            if($importData[2]==="true"||$importData[2]==="True"||$importData[2]==="t"||$importData[2]==="T"){
+
+                $respuesta->correcta=true;
+            }else{
+                $respuesta->correcta=false;
+            }
+            echo $respuesta->correcta . "\n";
             $respuesta->save();
 
         }

@@ -71,3 +71,6 @@ Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->n
 Route::get("/especialidades/editar/{id}",[EspecialidadesController::class,"editarEsp"])->name("editarEspecialidad");
 Route::put("/especialidades/update",[EspecialidadesController::class,"actualizarEsp"])->name("actualizarEspecialidad");
 Route::delete("/especialidades/destroy/{id}",["middleware"=>"auth","uses"=>[EspecialidadesController::class,"eliminarEsp"]])->name("eliminarEspecialidad");
+
+
+
