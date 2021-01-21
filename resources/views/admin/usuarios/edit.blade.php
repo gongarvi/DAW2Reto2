@@ -13,16 +13,16 @@
 
 @section('content')
 <div class="">
-    <h2>Nueva Especialidad</h2>
+    <h2>Editar Usuario</h2>
 </div>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="volver">
-            <a class="btn btn-primary" href="{{ route('adminEspecialidad')}}">Volver</a>
+            <a class="btn btn-primary" href="{{ route('usuarios.index')}}">Volver</a>
         </div>
     </div>
 </div>
-
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
@@ -35,22 +35,30 @@
 @endif
 
 <div class="datos">
-    <form action="{{ route('insertarEspecialidad')}}" method="HEAD">
-    @csrf
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <p>Nombre Especialidad</p>
-            <input type="text" name="nombre" class="form-control">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <p>Color</p>
-            <input type="color" name="color" id="color" class="form-control">
+    <h3 style="display: flex; justify-content:center;">Modificar los permisos de {{$user->name}}</h3>
+    <form action="{{route('usuarios.update', $user)}}" method="post">
+        @method('PATCH')
+        @csrf
+
+        <div  class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                @if($user->administrador)
+                    <input type="checkbox" name="administrador" value="0">
+                    <label for="">No Administrador</label>
+                @else
+                    <input type="checkbox" name="administrador" value="1">
+                    <label for="">Administrador</label>
+                @endif
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 guardar">
-                <button type="submit" class="btn btn-success">Añadir</button>
+                <button type="submit" class="btn btn-success">Guardar</button>
         </div>
-    </div>  
     </form>
 </div>
 
+
 @endsection
+
+
+

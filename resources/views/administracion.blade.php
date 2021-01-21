@@ -17,13 +17,13 @@
 <h1>PANEL DE ADMINISTRACION</h1>
 <ul class="panel">
     <li>
-        <a href="{{ route('adminMujer') }}"><h3>Mujeres</h3></a>
+        <a href="#"><h3>MUJERES</h3></a>
     </li>
     <li>
-        <a href="{{ route('adminEspecialidad') }}"><h3>Especialidades</h3></a>
+        <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>
     </li>
     <li>
-        <a href="#"><h3>USUARIOS</h3></a>
+        <a href="{{ route('usuarios.index') }}"><h3>USUARIOS</h3></a>
     </li>
 </ul>
 

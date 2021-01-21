@@ -63,19 +63,12 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
-Route::get("/mujeres/admin",[MujeresController::class,"inicio"])->name("adminMujer");
-Route::get("/mujeres/create",[MujeresController::class,"create"])->name("nuevaMujer");
-Route::post("/mujeres/insercion",[MujeresController::class,"insercion"])->name("insertarMujer");
-Route::get("/mujeres/editarMujer/{id}",[MujeresController::class,"editarMujer"])->name("editarMujer");
-Route::put("/mujeres/actualizarMujer",[MujeresController::class,"actualizarMujer"])->name("actualizarMujer");
-Route::delete("/mujeres/eliminarMujer/{id}",[MujeresController::class,"eliminarMujer"])->name("eliminarMujer");
 
-Route::get("/especialidades/admin",[EspecialidadesController::class,"inicio"])->name("adminEspecialidad");
-Route::get("/especialidades/create",[EspecialidadesController::class,"insertarEsp"])->name("nuevaEspecialidad");
-Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->name("insertarEspecialidad");
-Route::get("/especialidades/editar/{id}",[EspecialidadesController::class,"editarEsp"])->name("editarEspecialidad");
-Route::put("/especialidades/update",[EspecialidadesController::class,"actualizarEsp"])->name("actualizarEspecialidad");
-Route::delete("/especialidades/destroy/{id}",["middleware"=>"auth","uses"=>[EspecialidadesController::class,"eliminarEsp"]])->name("eliminarEspecialidad");
+//Rutas para la administracion de los usuarios
+Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
+
+//Rutas para la administracion de las especialidades
+Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
 
 
 

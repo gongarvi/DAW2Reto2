@@ -13,45 +13,52 @@
 
 @section('content')
 <div class="">
-    <h2>Gestion de Especialidades</h2>
-    
+    <h2>Gestion de Usuarios</h2>
+
 </div>
+
+
 @if($message = Session::get('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success mensaje">
         <p>{{$message}}</p>
     </div>
 @endif
 
 <div class="datos">
 <a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-info">Volver al panel</button></a>
- <table>
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Color</th>
-    <th>Operaciones</th>
-    @foreach($especialidades as $especialidad)
+  <table>
+    <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Administrador</th>
+        <th>Operaciones</th>
+    </tr>
+    @foreach($usuarios as $usuario)
         <tr>
-            <td>{{$especialidad->id}}</td>
-            <td>{{$especialidad->nombre}}</td>
-            <td>{{$especialidad->color}}</td>
+            <td>{{$usuario->name}}</td>
+            <td>{{$usuario->email}}</td>
+            <td>{{$usuario->administrador}}</td>
             <td>
-                <form action="{{ route('eliminarEspecialidad', $especialidad->id) }}" method="post">
-                
-                    <a href="{{ route('editarEspecialidad', $especialidad->id) }}" class="btn btn-primary">Editar</a>
+                <form action="{{ route('usuarios.destroy', $usuario->id)}}" method="post">
+                    <a href="{{ route('usuarios.edit',$usuario)}}" class="btn btn-info"><span class="icon-edit"></span></a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
-                </form>
+                </form>  
             </td>
         </tr>
     @endforeach
- </table>
-    <div class="row">
-        <div class="col">
-            <div class="añadir">
-                <a class="btn btn-success" href="{{ route('nuevaEspecialidad')}}">Añadir Especialidad</a>
-            </div>
+  </table>
+  <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            @if($usuarios->count())
+    
+                {{$usuarios->links('pagination::bootstrap-4')}}
+
+            @endif  
         </div>
     </div>
 </div>
+
+
 @endsection

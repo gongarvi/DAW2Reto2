@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class ControladorUsuarios extends Controller
 {
@@ -15,9 +14,9 @@ class ControladorUsuarios extends Controller
      */
     public function index()
     {
-        $usuarios = User::latest()->paginate(20);
-        return view('usuarios.index', compact('usuarios'))
-            ->with('success', (request()->input('page', 1) - 1) * 20);  
+        $usuarios = User::latest()->paginate(7);
+        return view('admin.usuarios.index')->with('usuarios',$usuarios)
+            ->with('success', (request()->input('page', 1) - 1) * 5);  
     }
 
     /**
@@ -27,7 +26,7 @@ class ControladorUsuarios extends Controller
      */
     public function create()
     {
-        //
+       /*  return view('admin.usuarios.create'); */
     }
 
     /**
@@ -38,7 +37,15 @@ class ControladorUsuarios extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* $request->validate([
+            'name' =>'required',
+            'email' => 'required',
+            'password' => 'required',
+            
+        ]);
+        User::create($request->all());
+        return redirect()->route('admin.usuarios.index')
+            ->with('succes', 'Usuario creado correctamente'); */
     }
 
     /**
@@ -58,9 +65,10 @@ class ControladorUsuarios extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($user_id)
     {
-        //
+        $user=User::all()->find($user_id);
+       return view('admin.usuarios.edit',compact("user"));
     }
 
     /**
@@ -70,9 +78,13 @@ class ControladorUsuarios extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $user_id)
     {
-        //
+      $user = User::find($user_id);
+      $user->administrador = $request->input('administrador');
+      $user->save();
+      return redirect()->route('usuarios.index')
+        ->with('success', 'Usuario Modificado correctamente');
     }
 
     /**
@@ -81,8 +93,12 @@ class ControladorUsuarios extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('usuarios.index')
+        ->with('success', 'Usuario Eliminado correctamente');
+
     }
 }

@@ -106,6 +106,8 @@ class MujeresController extends Controller
        if($request->hasFile('foto')){
            $archivo = $request->file('foto');
            $nombre = $archivo->getClientOriginalName();
+           //Este disk 'public' lo hemos configurado en el archivo 'config\filesystems.php'
+           //es ahi donde indicamos la carpeta donde queremos guardar los archivos cargados
            $path=Storage::disk('public')->put($nombre, $archivo); 
            $data["foto"]=$path;
         } 
