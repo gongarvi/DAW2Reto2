@@ -47,8 +47,6 @@ class UserController extends Controller{
                 if($request->input('password_nueva')===$request->input('password_confirmar')){
                     $data["password"]=Hash::make($request->input('password_nueva'));
                     $persona->update($data);
-                    return redirect()->route('/perfil/'+$id)
-                        ->with('success', 'contraseña actualizado correctamente');
                 }else{
                     return view('perfil.edit',['perfil'=>$persona])->with("error","No se ha cambiado la contraseña");
                 }
