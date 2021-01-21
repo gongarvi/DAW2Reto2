@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Especialidad;
 use App\Models\Mujer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MujeresController extends Controller
@@ -15,75 +14,12 @@ class MujeresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-
-        return Mujer::with("Especialidad")->get();
-
-        // return view('mujeres',["mujeres"=>$mujeres], ["especialidades"=>$especialidades]); 
-    }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function index()
     {
-        //
-    }
+        $mujeres = Mujer::with("especialidades")->paginate(10);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Mujer  $mujer
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return Mujer::all()->where("id","==",$id);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mujer  $mujer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Mujer $mujer)
-    {
-        
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mujer  $mujer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Mujer $mujer)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Mujer  $mujer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Mujer $mujer)
-    {
-        //
-    }
-    public function inicio()
-    {
-
-        $mujeres = Mujer::with('especialidades')->paginate(20);
-        
-        return view('adminMujeres.inicio')
-            ->with(["mujeres"=>$mujeres]);
-            //'success', (request()->input('page', 1) - 1) * 20
+        return view('admin.mujeres.index', compact('mujeres'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -93,55 +29,104 @@ class MujeresController extends Controller
      */
     public function create()
     {
-        
-        $especialidades = Especialidad::get();
-         return view('adminMujeres.createM')->with('especialidades',$especialidades); 
-       
+        $especialidades = Especialidad::all();
+        return view('admin.mujeres.create',compact("especialidades"));
     }
 
-    public function insercion(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
         $data=$request->all();
-        
-       if($request->hasFile('foto')){
-           $archivo = $request->file('foto');
-           $nombre = $archivo->getClientOriginalName();
-           $path=Storage::disk('public')->put($nombre, $archivo); 
-           $data["foto"]=$path;
-        } 
-       
+
+        if($request->hasFile('foto')){
+            $archivo = $request->file('foto');
+            $nombre = $archivo->getClientOriginalName();
+            $path=Storage::disk('public')->put($nombre, $archivo);
+            $data["foto"]=$path;
+        }else{
+            $data["foto"]="";
+        }
+
         Mujer::create($data);
-        return redirect()->route('admin')
-            ->with('success','La Mujer ha sido insertada correctamente');
-                  
-        
+
+        return redirect()->route('mujeres.index')
+            ->with('success','La mujer ha sido insertada correctamente');
+
+
     }
 
-    //Para actualizar
-    public function editarMujer($id)
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Mujer  $mujer
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Mujer $mujer)
     {
-
-       return view('adminMujeres.editM')->with(["mujer"=>Mujer::with("especialidades")->where("id",$id)->get()->first(),"especialidades"=>Especialidad::all()]);
-       
+        //Vacio, no lo necesitamos
     }
 
-    public function actualizarMujer(Request $request, Mujer $mujer)
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Mujer  $mujer
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($mujer_id)
     {
-        echo $mujer;
-        die;
-        Mujer::all()->where("id",$mujer->id)->first()->update($request->all());
-         
-        //$mujer->update($request->all());
-        
-        return redirect()->route('admin')
-            ->with('success','La Mujer  se ha modificado correctamente');
+        $mujer=Mujer::with("especialidades")->where("id",$mujer_id)->get()->first();
+        return view('admin.mujeres.edit',compact("mujer"))->with(["mujer"=>$mujer,"especialidades"=>Especialidad::all()]);
     }
-        //Para borrar
-    public function eliminarMujer($id)
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Mujer  $mujer
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $mujer_id)
     {
-        Mujer::all()->find($id)->delete();
-        
-        return redirect()->route('admin')
+        $request->validate([
+            "nombre"=>"required",
+            "apellidos"=>"required",
+            "nacionalidad"=>"required",
+            "especialidad"=>"required",
+            "descripcion"=>"required"
+        ]);
+        $mujer=Mujer::all()->find($mujer_id);
+        if($mujer!=null){
+            $data=$request->all();
+            if($request->hasFile('foto')){
+                $archivo = $request->file('foto');
+                $nombre = $archivo->getClientOriginalName();
+                $path=Storage::disk('public')->put($nombre, $archivo);
+                $data["foto"]=$path;
+            }else{
+                unset($mujer["foto"]);
+            }
+            $mujer->update($request->all());
+        }
+        return redirect()->route("mujeres.index")->with(["success"=>"Se ha actualizado la infomacion de".$mujer->nombre." ".$mujer->apellidos]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Mujer  $mujer
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($mujer_id)
+    {
+
+        Mujer::all()->find($mujer_id)->delete();
+
+        return redirect()->route('mujeres.index')
             ->with('success','Mujer eliminada correctamente');
     }
 }

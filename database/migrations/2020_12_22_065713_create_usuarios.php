@@ -13,16 +13,15 @@ class CreateUsuarios extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement(); // id del usuario
-            $table->string('nombre'); 
-            $table->string('apellidos');
-            $table->string('email')->unique();  
+        Schema::create('users', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->string('name');
+            $table->string('surname')->nullable();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable(); // para verificar el correo
             $table->string('password');
-            $table->string('foto');
-            $table->integer('progreso');
-            $table->boolean('administrador')->default(0); 
+            $table->string('foto')->nullable();
+            $table->boolean('administrador')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

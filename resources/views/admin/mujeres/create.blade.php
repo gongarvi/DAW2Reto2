@@ -1,14 +1,14 @@
 @extends("layouts.page")
 
 @section("head-extras")
-   
+
     <link rel="stylesheet" href="{{asset("css/mujeres.css")}}">
     <link rel="stylesheet" href="{{asset("css/matching.css")}}">
     <link rel="stylesheet" href="{{asset("css/admin.css")}}">
     <link rel="stylesheet" href="{{asset("css/iconos/style.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="volver">
-            <a class="btn btn-primary" href="{{ route('admin')}}">Volver</a>
+            <a class="btn btn-primary" href="{{ route('mujeres.index')}}">Volver</a>
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
     </div>
 @endif
 <div class="datos">
-    <form action="{{ route('insercion')}}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('mujeres.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -66,7 +66,7 @@
                    <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
                    @endforeach
                 </select>
-                
+
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <p>Foto:</p>

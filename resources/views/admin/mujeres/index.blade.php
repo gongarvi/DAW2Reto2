@@ -1,14 +1,13 @@
 @extends("layouts.page")
 
 @section("head-extras")
-   
+
     <link rel="stylesheet" href="{{asset("css/mujeres.css")}}">
     <link rel="stylesheet" href="{{asset("css/matching.css")}}">
     <link rel="stylesheet" href="{{asset("css/admin.css")}}">
     <link rel="stylesheet" href="{{asset("css/iconos/style.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
 @endsection
 
 @section('content')
@@ -22,9 +21,9 @@
         <p>{{$message}}</p>
     </div>
 @endif
-<div class="datos">
+<div class="datos container">
 
-    <table class="">
+    <table>
         <tr>
             <th>Nombre</th>
             <th>Apellidos</th>
@@ -43,28 +42,29 @@
                 <td>{{$mujer->nacionalidad}}</td>
                 <td>{{($mujer->especialidades!=null)?$mujer->especialidades->nombre:""}}</td>
                 <td>
-                    <form action="{{ route('eliminarMujer',$mujer->id)}}" method="post">
-                        
-                        <a href="{{ route('editarMujer',$mujer->id)}}" class="btn btn-primary">Editar</a>
-                    @csrf
-                    @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
+                    <form action="{{route("mujeres.destroy",$mujer)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <a href="{{route("mujeres.edit",$mujer)}}" class="btn btn-primary" title="show"><span class="icon-edit"></span></a>
+                        <button type="submit" title="delete" class="btn btn-danger"><span class="icon-trash"></span></button>
                     </form>
                 </td>
             </tr>
         @endforeach
     </table>
     <div class="row">
-        <div class="col">
-            <div class="añadir">
-                <a class="btn btn-success" href="{{ route('crear')}}">Añadir Mujer</a>
+        <div class="col text-center">
+            <a class="btn btn-success  my-5" href="{{route("mujeres.create")}}">Añadir Mujer</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col container">
+            <div class="m-auto  w-auto text-center">
+                @if($mujeres->count())
+                    {{ $mujeres->links('pagination::bootstrap-4') }}
+                @endif
             </div>
         </div>
     </div>
 </div>
-@if($mujeres->count())
-       
-       {{$mujeres->links()}}
-         
-@endif 
 @endsection

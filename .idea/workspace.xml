@@ -2,64 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MEMORIA.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/EspecialidadesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MujeresController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Julia Roberts.jpgjpg/087ocpqFDbSrbNctFolVW9HDgPH9oUzzSGnxsYXo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kate Winslet.jpgjpg/lRh7vjPETnusrRAudUcVXIQVoDfMiXUqqoKRgEp1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/php4E3.tmp/suOn4iIcXjFDkVCwoUEqZ5i1UFd9xIGupVTsSk53.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/cafe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/cafeF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/especialidades.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/match.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/match.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adminMujeres/createM.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adminMujeres/editM.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adminMujeres/inicio.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/administracion.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/especialidades/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/especialidades/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/especialidades/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EspecialzacionesAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EspecializacionesAPIService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Especialidad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Especialidad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Mujer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mujer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MujeresController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UsuarioFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UsuarioFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065713_create_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065713_create_usuarios.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065859_create_especialidades.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065859_create_especialidades.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/Especialidades.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/Especialidades.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/matching.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/matching.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/caballo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/corazon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/felicitar.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/felicitar.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/interogante.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/interogante.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/oveja.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/pato.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/perro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/vaca.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/verificado.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/verificado.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/millonario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/millonario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mujeres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/millonario.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/mujeres.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/mujeresPagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/ruletaMujeres.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/matching.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/matching.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065924_create_mujeres.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065924_create_mujeres.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065952_create_preguntas.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065952_create_preguntas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_070038_create_respuestas.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_070038_create_respuestas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminMujeres/createM.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/mujeres/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminMujeres/editM.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/mujeres/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminMujeres/inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/mujeres/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/administracion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/administracion.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +169,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\reto\resources\views\admin\mujeres" />
       <recent name="C:\xampp\htdocs\laravel\reto\resources\js" />
       <recent name="C:\xampp\htdocs\laravel\reto\resources\js\components" />
       <recent name="C:\xampp\htdocs\laravel\reto\resources\views\partials" />
@@ -246,7 +204,9 @@
       <workItem from="1610609047531" duration="16679000" />
       <workItem from="1610694060246" duration="11987000" />
       <workItem from="1610953347247" duration="4934000" />
-      <workItem from="1611047953375" duration="5111000" />
+      <workItem from="1611047953375" duration="6364000" />
+      <workItem from="1611133030839" duration="12325000" />
+      <workItem from="1611224648449" duration="4646000" />
     </task>
     <servers />
   </component>
