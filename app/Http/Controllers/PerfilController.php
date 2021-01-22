@@ -6,10 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller{
+class PerfilController extends Controller{
     public function edit($id){
         $persona = User::all()->find($id);
         return view('perfil.edit',['usuario'=>$persona]);
+    }
+
+    public function delete($id)
+    {
+        $persona = User::find($id);
+        
+        $persona->delete();
+        return redirect('');
     }
 
     public function update(Request $request, $id){ 

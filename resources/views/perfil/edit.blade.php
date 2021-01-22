@@ -1,6 +1,7 @@
 @extends("layouts.page")
 
 @section("head-extras")
+    <link rel="stylesheet" href="{{asset("css/formularios.css")}}">
 @endsection
 
 @section("content")
@@ -9,10 +10,16 @@
         <p>{{$error}}</p>
     @endforeach
 @endif
-    <div class="container container-fluid">
-        <div style="background-color:rgba(0,0,0,0.555);">
-            <div class="m-5"> 
-                <form action="/actualizar/{{$usuario->id}}" method="POST">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xs-6 col-xs-offset-3">
+            @if($message =Session::get('success'))
+                <div class="alert alter-success">
+                    <p>{{$message}}</p>
+                </div>
+            @endif
+                <form action="/actualizarPerfil/{{$usuario->id}}" method="POST">
+                @csrf
                     <fieldset class="form-group">
                         <legend class="col-form-label col-sm-2 pt-0">Modificar datos</legend>
                         <input type="hidden" value="datos" name="funcion">
@@ -50,7 +57,9 @@
                     </fieldset>
                 </form>
 
-                <form action="/actualizar/{{$usuario->id}}" method="POST">
+                <form action="/actualizarPerfil/{{$usuario->id}}" method="post">
+                @method('POST')
+                @csrf
                     <fieldset class="form-group">
                         <legend class="col-form-label col-sm-2 pt-0">Cambiar contraseña</legend>
                         <input type="hidden" value="contrasena" name="funcion">
@@ -82,6 +91,12 @@
                         <input type="reset" class="btn btn-danger mb-2">
                         <input type="submit" value="Actualizar Usuario" class="btn btn-primary mb-2">
                     </fieldset>
+                </form>
+
+                <form action="/eliminarPerfil/{{$usuario->id}}" method="post">
+                    @method('POST')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Eliminar mi cuenta</button>
                 </form>
             </div>
         </div>
