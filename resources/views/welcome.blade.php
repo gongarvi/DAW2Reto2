@@ -30,19 +30,8 @@
                     @endguest
 
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>
-<<<<<<< HEAD
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Juego</a></li> 
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("panel")}}">Panel de Control</a></li>      
-=======
-                
-                    @guest
-                    @if (Route::has('login'))
-                    <li class="list-group-item border-0 bg-transparent" data-toggle="modal" data-target="#myModal"><a class="btn btn-outline-light w-100">Jugar</a></li>
-                    @endif  
-                    @else 
-                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Juego</a></li>
-                    @endguest
->>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
                 </ul>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">

@@ -45,14 +45,7 @@ Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
 
 
-<<<<<<< HEAD
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
-=======
-Route::get("/juegos/UltimoNivel", function(){ 
-    return view("UltimoNivel");
-})->name("UltimoNivel");
-
->>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
 
 Route::get("/juegos/Puzzle",[GameController::class,"puzzle"])->name("Puzzle");
 
@@ -60,7 +53,6 @@ Route::get("/mujeres",function(){
     return view("mujeres");
 })->name("mujeres");
 
-<<<<<<< HEAD
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
@@ -85,10 +77,4 @@ Route::delete("/especialidades/destroy/{id}",["middleware"=>"auth","uses"=>[Espe
 
 
 
-=======
-
-
-Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");
-Route::post("/actualizar/{id}",[UserController::class,"update"])->name("actualizar");
->>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
 
