@@ -12,7 +12,7 @@
 @section("content")
     <div id="app">
         <h1>DESAYUNOS FEMINISTAS </h1></BR>
-        <h2 style="text-align:center">BUSCAMINAS</h2>
+        <h2>BUSCAMINAS</h2>
         <img class="text-center m-auto" src="{{asset("image/logo.png")}}" >
         <buscaminas/>
     </div>
