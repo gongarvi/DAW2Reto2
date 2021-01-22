@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link m-auto text-light" href="{{route("home")}}">Inicio</a>
+                <a class="nav-link m-auto text-light" href="{{route("inicio")}}">Inicio</a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
                 <a class="nav-link text-light" href="{{route("mujeres")}}">Mujeres</a>

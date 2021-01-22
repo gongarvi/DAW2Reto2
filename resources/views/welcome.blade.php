@@ -49,8 +49,9 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body text-center">
-                                    <p class="ml-5">Para poder Jugar debes iniciar sesion o registrate</p>
-                                    <a class="btn btn-outline-dark w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a>
+                                    <b>Para poder jugar debe iniciar sesion o registrarse</b>
+                                    
+                                    <a href="{{route("login")}}"><button type="submit" class="btn btn-primary mt-5">Iniciar sesion/Registrarse</button></a>
                                 </div>
                             </div>
                         </div>

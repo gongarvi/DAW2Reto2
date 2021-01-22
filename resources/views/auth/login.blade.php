@@ -41,7 +41,7 @@
                     </div>
 				</div>
 
-				<button type="submit" class="btn btn-primary">Sign Up</button>
+				<button type="submit" class="btn btn-primary">Entrar</button>
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
                         ¿Has olvidado la contraseña?
