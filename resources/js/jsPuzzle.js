@@ -19,7 +19,7 @@ var rompecabezas = {
 		dp.className = 'posic';
 		var ar = Math.sqrt(piezas);
 		var c = 0;
-		var tam_img = 300;
+		var tam_img = 500;
 		var pos_img = tam_img / ar;
 		for(var fil=1;fil<=ar;fil++){
 			var tr = document.createElement('tr');

@@ -6,11 +6,7 @@
     <script src="{{ URL::asset('js/jsPuzzle.js' )}}"></script>   
 @endsection
 
-@section("content")
-    <div id='content'>
-        
-    </div>
-    
+@section("content")   
 <script>
     var cambioImagen;
     cambioImagen = setInterval('cambiarFoto()',100);
