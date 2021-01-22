@@ -1,6 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+<<<<<<< HEAD
     "/js/jsPuzzle.js": "/js/jsPuzzle.js",
     "/js/match.js": "/js/match.js"
+=======
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/match.js": "/js/match.js",
+    "/js/millonario.js": "/js/millonario.js",
+    "/js/mujeres.js": "/js/mujeres.js"
+>>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
 }

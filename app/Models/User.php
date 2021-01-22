@@ -20,8 +20,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+<<<<<<< HEAD:app/Models/User.php
         'email',
         'foto',
+=======
+        'foto',
+        'progreso',
+>>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd:app/Models/Usuario.php
         'administrador'
     ];
 

@@ -104,7 +104,11 @@ eval("//alert(mujercitas[1].nombre);\nvar nombresM = [];\nvar fotosM = [];\n\nfo
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\Reto2-2DW3\DAW2Reto2\resources\js\match.js */"./resources/js/match.js");
+=======
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\match.js */"./resources/js/match.js");
+>>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
 
 
 /***/ })
