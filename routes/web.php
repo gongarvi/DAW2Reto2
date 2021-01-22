@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\modoHistoriaController;
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +55,7 @@ Route::get("/mujeres",function(){
 
 
 
-Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");
-Route::post("/actualizar/{id}",[UserController::class,"update"])->name("actualizar");
+Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
+Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
+Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
 
