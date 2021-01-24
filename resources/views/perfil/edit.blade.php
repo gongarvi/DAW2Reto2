@@ -76,12 +76,12 @@
                         <!-- Modal content-->
                         <div class="modal-content text-dark">
                             <div class="modal-header">
-                            <h4 class="modal-title"></h4>
+                            <h4 class="modal-title">Mensaje de confirmacion</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <b>¿Esta seguro que desea eliminar su usuario?</b>
-                                <button type="submit" class="btn btn-danger mt-5">Eliminar</button>
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
                             </div>
                         </div>
                     </div>
