@@ -93,7 +93,15 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\DAW2Reto2\resources\js\millonario.js */"./resources/js/millonario.js");
+=======
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\millonario.js */"./resources/js/millonario.js");
+>>>>>>> c1ae454666f4ef54e6d333220ee2d44e66f83c36
+=======
 !(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\laravel\\reto\\resources\\js\\millonario.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+>>>>>>> ba00824c6b278bcbb3cada9bd0a89f6e649fb3d8
 
 
 /***/ })

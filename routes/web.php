@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ControladorUsuarios;
 use App\Http\Controllers\MujeresAPIService;
 use App\Http\Controllers\EspecialidadesController;
 
@@ -43,6 +44,10 @@ Route::get("/juegos/millonario", function(){
 Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
 
+Route::get("/juegos/UltimoNivel", function(){ 
+    return view("UltimoNivel");
+})->name("UltimoNivel");
+
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
@@ -56,6 +61,7 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
+<<<<<<< HEAD
 Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
 /*
 Route::get("/mujeres/admin",[MujeresController::class,"inicio"])->name("adminMujer");
@@ -73,6 +79,14 @@ Route::get("/especialidades/store",[EspecialidadesController::class,"store"])->n
 Route::get("/especialidades/editar/{id}",[EspecialidadesController::class,"editarEsp"])->name("editarEspecialidad");
 Route::post("/especialidades/update",[EspecialidadesController::class,"actualizarEsp"])->name("actualizarEspecialidad");
 Route::delete("/especialidades/destroy/{id}",["middleware"=>"auth","uses"=>[EspecialidadesController::class,"eliminarEsp"]])->name("eliminarEspecialidad");
+=======
+
+//Rutas para la administracion de los usuarios
+Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
+
+//Rutas para la administracion de las especialidades
+Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
+>>>>>>> origin/OrdoAlogo
 
 
 

@@ -21,4 +21,5 @@
  .ocultar-mensaje{display: none;}
  .btn{ margin-bottom: 5px; font-weight: bold; cursor: pointer;}  
 .icon-emoji-sad{    font-size: 3rem; color: purple; margin-bottom: 1%;}
-     
+.instrucciones{display: flex; flex-direction: column; justify-content: center; margin: 0 auto; }
+.instrucciones ul{margin: 0 auto;}     

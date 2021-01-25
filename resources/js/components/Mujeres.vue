@@ -45,6 +45,7 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
+                                <img id="foto-modal" alt="Foto">
                                 <p id="vida-mujer"></p>
                                 <p id="nacionalidad-mujer"></p>
                                 <p id="especialidad-mujer"></p>
@@ -101,9 +102,10 @@
             filtrarMujeres(especialdidad) {
                 this.especialidadSeleccionada=especialdidad;
             },
-            MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion){
+            MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion, foto){
                 document.getElementsByClassName("modal-title")[0].innerHTML=nombre+" "+apellidos;
                 document.getElementById("vida-mujer").innerHTML=nacimiento+" - "+fallecido;
+                document.getElementById("foto-modal").src ="assets/Fotos_mujeres/"+foto;
                 document.getElementById("nacionalidad-mujer").innerHTML="<b>Nacionalidad:</b> "+nacionalidad;
                 document.getElementById("especialidad-mujer").innerHTML="<b>Especialidad:</b> "+especialidad;
                 document.getElementById("descripcion-mujer").innerHTML="<b>Descripcion:</b> "+descripcion;
@@ -174,6 +176,5 @@
         -webkit-box-shadow: 0 8px 6px -6px black;
 	    -moz-box-shadow: 0 8px 6px -6px black;
 	    box-shadow: 0 8px 6px -6px black;
-
     }
 </style>

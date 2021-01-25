@@ -20,8 +20,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+<<<<<<< HEAD:app/Models/User.php
         'email',
         'foto',
+=======
+        'foto',
+        'progreso',
+>>>>>>> origin/OrdoAlogo:app/Models/Usuario.php
         'administrador'
     ];
 
@@ -41,8 +46,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
+<<<<<<< HEAD:app/Models/User.php
         'email_verified_at' => 'datetime',
         'administrador'=> 'boolean'
+=======
+        'email_verified_at' => 'datetime','administrador'=>'boolean'
+>>>>>>> origin/OrdoAlogo:app/Models/Usuario.php
     ];
     public function isAdmin(){
         return $this->administrador;

@@ -13,6 +13,7 @@ class HomeController extends Controller{
     public function __construct()
     {
         $this->middleware('auth');
+       /*  $this->middleware('soloadmin',['only'=>'panelControl']); */
     }
 
     /**
@@ -21,7 +22,7 @@ class HomeController extends Controller{
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        return view('home');
+        return view('welcome');
     }
     public function panelControl(){
         return view('administracion');
