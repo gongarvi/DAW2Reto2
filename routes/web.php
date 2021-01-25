@@ -3,9 +3,9 @@
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ControladorUsuarios;
 use App\Http\Controllers\MujeresAPIService;
-use App\Http\Controllers\MujeresController;
-use App\Http\Controllers\EspecialzacionesAPIController;
 use App\Http\Controllers\EspecialidadesController;
+
+use App\Http\Controllers\MujeresController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
@@ -57,8 +57,6 @@ Route::get("/mujeres",function(){
     return view("mujeres");
 })->name("mujeres");
 
-
-
 Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
@@ -69,6 +67,7 @@ Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]
 
 //Rutas para la administracion de las especialidades
 Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
+
 
 
 
