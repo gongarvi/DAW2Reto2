@@ -1,5 +1,12 @@
-table{border:2px solid rgb(0, 0, 0); border-collapse:collapse; top:50em}
-
+table{margin-top:4em;border:2px solid rgb(0, 0, 0); border-collapse:collapse; top:50em}
+body{
+    background-image: url("../image/fondo3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 td.pieza{
     background-image:url(../assets/Fotos_mujeres/transparente.png);  
     background-repeat: no-repeat;
@@ -10,3 +17,5 @@ td.pieza{
     cursor:pointer;}
 
 div.posic{ display: none;background:#FFF; padding:5px; border:1px solid #ffffff; width:150px; position:absolute; top:70px; overflow:auto; min-height:5px; max-height:500px}
+
+

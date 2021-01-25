@@ -45,19 +45,16 @@ var rompecabezas = {
 			}
 			tb.appendChild(tr);
 		}
-		if(!rompecabezas._get("div_content")){
+		if(!rompecabezas._get("app")){
 			var cont = document.createElement('div');
 			cont.id = 'div_content';
 			cont.appendChild(tb);
 			cont.appendChild(dp);
 			document.body.appendChild(cont);
 		}else{
-			rompecabezas._get("div_content").innerHTML = '';
-			rompecabezas._get("div_content").appendChild(tb);
-			rompecabezas._get("div_content").appendChild(dp);
-			rompecabezas._get("posiciones").removeClass('posic');
-			rompecabezas._get("posiciones").innerHTML = '';
-			rompecabezas._get("posiciones").className = 'posic';
+			rompecabezas._get("app").innerHTML = '';
+			rompecabezas._get("app").appendChild(tb);
+			rompecabezas._get("app").appendChild(dp);
 		}
 	},
 	_barajar: function(){
