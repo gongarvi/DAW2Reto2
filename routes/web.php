@@ -54,7 +54,8 @@ Route::get("/mujeres",function(){
 })->name("mujeres");
 
 
-
+Route::post("/fotosperfil/{id}",[PerfilController::class,"fotosperfil"])->name("fotosperfil");
+Route::get("/actualizarfoto/{id}/{nombrefoto}",[PerfilController::class,"actualizarfoto"])->name("actualizarfoto");
 Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
 Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
 Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");

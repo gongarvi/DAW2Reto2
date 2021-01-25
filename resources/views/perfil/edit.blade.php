@@ -18,14 +18,18 @@
                     <p>{{$message}}</p>
                 </div>
             @endif
+            <form action="/fotosperfil/{{$usuario->id}}" method="POST">
+                @csrf
+                @method('POST')
+                <div class="form-group">
+                    <img src="{{ (trim($usuario->foto)!=='')?asset('assets/Fotos_mujeres/'.$usuario->foto):asset('image/placeholder-usuario.png')}}" alt="" title="" class="rounded-circle mt-2" style="height: 200px;"/><br>
+                    <button class="btn btn-outline-secondary mt-2" type="submit"> > Cambiar foto</button>
+                </div>
+            </form>
+
             <form action="/actualizarPerfil/{{$usuario->id}}" method="POST">
                 @csrf
 				<input type="hidden" value="datos" name="funcion">
-
-                <div class="form-group">
-                    <img src="{{ (trim($usuario->foto)!=='')?asset('assets/Fotos_mujeres/'.$usuario->foto):asset('image/placeholder-usuario.png')}}" alt="" title="" class="rounded-circle mt-2" style="height: 200px;"/><br>
-                    <button class="btn btn-outline-secondary mt-2"> > Cambiar foto</button>
-                </div>
 
 				<div class="form-group">
                     <label for="name" class="text-light">Nombre: </label>
@@ -43,7 +47,7 @@
 				</div>
                 <input type="reset" class="btn btn-danger mb-2">
                 <input type="submit" value="Actualizar Usuario" class="btn btn-success mb-2">
-			</form>
+            </form>
 
             <form action="/actualizarPerfil/{{$usuario->id}}" method="post">
                 @method('POST')

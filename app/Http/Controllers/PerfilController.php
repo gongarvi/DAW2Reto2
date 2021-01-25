@@ -7,6 +7,22 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class PerfilController extends Controller{
+    public function fotosperfil($id){
+        $mujeres = DB::table('fotosperfil')
+        ->join('mujeres', 'fotosperfil.mujer','=', 'mujeres.id')
+        ->select('fotosperfil.*', 'mujeres.foto')
+        ->where('fotosperfil.usuario', '=', $id)
+        ->get();
+        return view('perfil.fotosperfil',['mujeres'=>$mujeres,'idperfil'=>$id]);
+    }
+    public function actualizarfoto($id, $nombrefoto){
+        $perfil = User::where('id','=',$id)->first();
+        $perfil->foto = $nombrefoto;
+        $perfil->save();
+        $perfil = User::where('id','=',$id)->first();
+        return view("perfil.edit",['usuario'=>$perfil]); 
+    }
+
     public function edit($id){
         $persona = User::all()->find($id);
         return view('perfil.edit',['usuario'=>$persona]);
@@ -15,7 +31,6 @@ class PerfilController extends Controller{
     public function delete($id)
     {
         $persona = User::find($id);
-        
         $persona->delete();
         return redirect('');
     }
