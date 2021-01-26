@@ -1,22 +1,24 @@
 require("./bootstrap.js");
 
 var array= JSON.parse(localStorage.getItem("mujeres"));
-console.log(array);
   let arrayPreguntas = new Array();
+  var pregunta = new Array();
   for (i=0; i<array.length; i++){
     $.ajax({
       url: '/api/preguntas/'+array[i].id,
       success: function(respuesta) {
-        console.log(respuesta);
         arrayPreguntas.push(respuesta);
+        for (i=0; i<arrayPreguntas.length; i++){
+            pregunta = arrayPreguntas[i];
+            
+            console.log(pregunta);
+        }
       },
       error: function() {
             console.log("No se ha podido obtener la información");
         }
     });
   }
-
-alert (arrayPreguntas);
 
 var player = "X"; 
 var ai = "O";

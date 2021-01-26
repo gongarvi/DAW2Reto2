@@ -41,7 +41,6 @@
             <div id="mensaje-victoria">
                 <h3>Felicidades!!!</h3>
                 <h4>Has completado el nivel</h4>
-                <img src="img/felicitar.gif">
                 <button class="btn btn-light btnCerrarMensaje">Otra partida</button>
                 <button class="btn btn-light" id="SalirJuego">Salir</button>
             </div>   
@@ -52,6 +51,10 @@
                 <h4>No has podido completar el nivel, pero Ánimo</h4>
                 <button class="btn btn-light btnCerrarMensaje">Otra partida</button>
             </div>   
+        </div>
+
+        <div id="cuestionario">
+
         </div>
         
 
