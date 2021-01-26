@@ -66,7 +66,8 @@ export default {
 .cuadro-inicial{
     width: 25px;
     height: 25px;
-    background-color: #bdbdbd;
+    /*background-color: #bdbdbd;*/
+    background-color: #595454;
    
     /*border-top: 3px solid #fff ;
     border-left: 3px solid #fff ;
@@ -88,7 +89,7 @@ export default {
     border-style: solid;*/
     /*width: 20px;
     height: 20px;*/
-    border: 1px solid white;
+    border: 1px solid gray;
     cursor: default;
 
 }

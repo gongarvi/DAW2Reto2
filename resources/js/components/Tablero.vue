@@ -1,14 +1,5 @@
 <template>
     <div class="tablero">
-        <div class="niveles">
-            <span>Nivel:</span>
-            <span @click="seleccionarNivel(1)" class="nivel"
-                :class="{'nivel-seleccionado':nivelActual.nivel==1}">1</span>
-            <span @click="seleccionarNivel(2)" class="nivel"
-                :class="{'nivel-seleccionado':nivelActual.nivel==2}">2</span>
-            <span @click="seleccionarNivel(3)" class="nivel"
-                :class="{'nivel-seleccionado':nivelActual.nivel==3}">3</span>
-        </div>
         <div class="panel">
             <div class="marcador minas-restantes">
                 {{minasRestantesCifras}}
@@ -26,9 +17,6 @@
     </div>
 </template>
 <script>
-    //select foto from mujeres order by RAND() limit 1
-    /*var imagen = "./assets/Fotos_mujeres/AnnOakley.jpg";
-   document.getElementsByClassName("matriz").style.backgroundImage = "url(" + imagen + ")";*/
     import Cuadro from './Cuadro.vue';
     export default {
         components: {
@@ -39,23 +27,11 @@
                 cara: '👩',
                 cuadros: [],
                 colores: ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco'],
-                nivelPrincipiante: {
-                    nivel: 1,
-                    filas: 9,
-                    columnas: 9,
-                    minas: 10
-                },
                 nivelIntermedio: {
                     nivel: 2,
                     filas: 16,
                     columnas: 16,
                     minas: 40
-                },
-                nivelExperto: {
-                    nivel: 3,
-                    filas: 16,
-                    columnas: 30,
-                    minas: 99
                 },
                 nivelActual: null,
                 minas: [],
@@ -94,64 +70,48 @@
         },
 
         created() {
-            this.nivelActual = this.nivelPrincipiante
+            this.nivelActual = this.nivelIntermedio
             this.iniciarnivel()
         },
         beforeMount(){
             console.log("Prueba");
             let mujeres=JSON.parse(localStorage.getItem("mujeres"));
             if(mujeres!=null && mujeres.length>0){
-                this.foto=location.protocol+"/"+location.host+"../../../assets/Fotos_mujeres/"+mujeres[0].foto;
+                this.foto=location.protocol+"/"+location.host+" assets/Fotos_mujeres/"+mujeres[0].foto;
+                console.log(this.foto);
             }
             else{
                 console.log("NOT FOUND IMAGE");
             }
         },
         methods: {
-           /* cambiarFoto() {
-                var imagen = "{{ URL::asset('assets/Fotos_mujeres/AnnOakley.jpg)}}";
-                document.getElementById("matrizid").style.backgroundImage = "url(" + imagen + ")";
-                //document.getElementsByClassName('matriz')[0].style.backgroundImage="url("+imagen+")";
-            },*/
+           
 
             detenertiempo() {
                 if (this.timer) {
                     clearInterval(this.timer)
                 }
             },
-            seleccionarNivel(nivel) {
 
-                if (this.nivelActual.nivel == nivel) {
-                    return
-                }
-                if (nivel == 1) {
-                    this.nivelActual = this.nivelPrincipiante
-                } else if (nivel == 2) {
-                    this.nivelActual = this.nivelIntermedio
-                } else if (nivel == 3) {
-                    this.nivelActual = this.nivelExperto
-                }
-                this.iniciarnivel();
-            },
             iniciarnivel() {
                 this.botonIzquierdo = false;
                 this.botonDerecho = false;
                 this.cara = '👩'
                 this.detenertiempo();
 
-                //this.cambiarFoto();
+                
 
-                this.minasRestantes = this.nivelActual.minas;
+                this.minasRestantes = this.nivelIntermedio.minas;
                 this.segundos = 0;
                 this.inicio = false;
 
 
 
-                let filas = this.nivelActual.filas;
-                let columnas = this.nivelActual.columnas;
+                let filas = this.nivelIntermedio.filas;
+                let columnas = this.nivelIntermedio.columnas;
                 let totalcuadros = filas * columnas;
 
-                this.cuadrosRestantes = totalcuadros - this.nivelActual.minas;
+                this.cuadrosRestantes = totalcuadros - this.nivelIntermedio.minas;
 
                 this.cuadros = []
                 let indices = []
@@ -169,7 +129,7 @@
 
                     indices.push(i);
                 }
-                for (let i = 0; i < this.nivelActual.minas; i++) {
+                for (let i = 0; i < this.nivelIntermedio.minas; i++) {
                     let posicion = Math.floor(Math.random() * (indices.length - 1));
                     let indice = indices[posicion];
                     this.cuadros[indice].valor = '💣';
@@ -347,7 +307,8 @@
     .tablero {
         display: grid;
         justify-content: center;
-        background-color: #bdbdbd;
+        /*background-color: #bdbdbd;*/
+        background-color: #595454;
         padding: 10px;
         user-select: none;
     }
