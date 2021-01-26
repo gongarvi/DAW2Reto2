@@ -25,7 +25,7 @@
                         <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a></li>
                     @endif
                     @else
-                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="perfil/{{ Auth::user()->id}}">Perfil de {{ Auth::user()->name }}</a></li>
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route('perfil',Auth::user()->id) }}">Perfil de {{ Auth::user()->name }}</a></li>
                     @endguest
 
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>

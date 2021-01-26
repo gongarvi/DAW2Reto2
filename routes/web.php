@@ -62,8 +62,6 @@ Route::get("/mujeres",function(){
     return view("mujeres");
 })->name("mujeres");
 
-Route::get("/perfil",[GameController::class,"show"])->name("perfil");
-
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
 
@@ -88,4 +86,3 @@ Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
 Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
 Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
 });
-
