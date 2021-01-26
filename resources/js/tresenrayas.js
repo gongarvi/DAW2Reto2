@@ -1,10 +1,16 @@
+require("./bootstrap.js");
+
+var player = "X"; 
+var ai = "O";
+var winner, gameboard, playing;
+
 var player = "X";
 var ai = "O";
 var winner, gameboard, playing;
 
 var mensaje = document.querySelector("#contenedor-mensaje");
 var TituloMensaje = document.getElementById("titulo-mensaje");
-var btnMensaje = document.querySelector(".btnCerrarMensaje");
+var btnMensaje = document.getElementsByClassName("btnCerrarMensaje");
 
 // Muestro el mensaje primero 
 if (mensaje.classList.contains("ocultar-mensaje")) {
@@ -12,14 +18,14 @@ if (mensaje.classList.contains("ocultar-mensaje")) {
   TituloMensaje.innerHTML = "Tu simbolo es X, puedes cambiar si quieres.";
 }
 // al pulssar el boton para cerrar el mensaje
-btnMensaje.onclick = function () {
+btnMensaje[0].onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
   reset();
 }
-btnMensaje.onclick = function () {
+btnMensaje[1].onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
 }
-btnMensaje.onclick = function () {
+btnMensaje[2].onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
 }
 
@@ -32,7 +38,7 @@ window.$("#SalirJuego").click(function(){
 window.$("#symbol-X").click(function () {
   player = "X";
   ai = "O";
-  $("#symbol-O").removeClass("glow");
+  window.$("#symbol-O").removeClass("glow");
   console.log("El jugador es: " + player);
   reset();
 });
@@ -41,7 +47,7 @@ window.$("#symbol-X").click(function () {
 window.$("#symbol-O").click(function () {
   player = "O";
   ai = "X";
-  $("#symbol-X").removeClass("glow");
+  window.$("#symbol-X").removeClass("glow");
   console.log("El jugador es: " + player);
   reset();
 });
@@ -50,15 +56,15 @@ window.$("#symbol-O").click(function () {
 function reset() {
   setTimeout(function () {
     start();
-    $('.square').removeClass("glow");
+    window.$('.square').removeClass("glow");
     console.log("game reset");
-    $('.square').html("");
+    window.$('.square').html("");
   }, 1500);
 };
 
 // los valores iniciales del juego
 function start() {
-  $('#symbol-' + player).addClass('glow');
+  window.$('#symbol-' + player).addClass('glow');
   gameboard = ["", "", "", "", "", "", "", "", ""];
   playing = true;
   winner = "none";
@@ -92,7 +98,7 @@ function aiTurn() {
   var aiIndex = available[Math.floor(Math.random() * available.length)];
   console.log(aiIndex);
   gameboard[aiIndex] = ai;
-  $("#sq" + aiIndex).html(ai);
+  window.$("#sq" + aiIndex).html(ai);
 };
 
 
@@ -117,9 +123,9 @@ function checkForWinner(board) {
     if (board[cond[0]] !== "" && board[cond[0]] === board[cond[1]] && board[cond[1]] === board[cond[2]]) {
       winner = board[cond[0]];
       playing = false;
-      $('#sq' + cond[0]).addClass('glow');
-      $('#sq' + cond[1]).addClass('glow');
-      $('#sq' + cond[2]).addClass('glow');
+      window.$('#sq' + cond[0]).addClass('glow');
+      window.$('#sq' + cond[1]).addClass('glow');
+      window.$('#sq' + cond[2]).addClass('glow');
 
       // gana el jugador
       if (winner == player) {

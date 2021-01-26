@@ -5,9 +5,8 @@
 @endsection
 
 @section("content")
-    <div> 
         <div class="mt-2">
-            <div class="buttons">
+            <div class="buttons text-center">
                 <span id="symbol-X" class="symbol"> X </span>
                 <span id="symbol-O" class="symbol"> O </span>
             </div>
@@ -35,13 +34,14 @@
         <div id="contenedor-mensaje" class="ocultar-mensaje">
             <div id="mensaje">
                 <h3 id="titulo-mensaje"></h3>
-                <a href=""><button class="btn btn-light">OK</button></a>
+                <button class="btn btn-light btnCerrarMensaje">OK</button>
             </div>   
         </div>
         <div id="contenedor-mensaje-victoria" class="ocultar-mensaje">
             <div id="mensaje-victoria">
                 <h3>Felicidades!!!</h3>
                 <h4>Has completado el nivel</h4>
+                <img src="img/felicitar.gif">
                 <button class="btn btn-light btnCerrarMensaje">Otra partida</button>
                 <button class="btn btn-light" id="SalirJuego">Salir</button>
             </div>   
@@ -53,13 +53,8 @@
                 <button class="btn btn-light btnCerrarMensaje">Otra partida</button>
             </div>   
         </div>
+        
 
-        <!-- contenedores de preguntas y respuestas -->
-        <!-- <div id="pregunta"></div>
-        <div id="respuestas"></div> -->
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="{{asset("js/tresenrayas.js")}}"></script>
 
     
