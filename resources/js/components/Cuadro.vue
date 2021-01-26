@@ -88,8 +88,8 @@ export default {
     border-bottom-width: 1px;
     border-style: solid;*/
     /*width: 20px;
-    height: 20px;*/
-    border: 1px solid gray;
+    height: 20px;
+    border: 1px solid gray;*/
     cursor: default;
 
 }
