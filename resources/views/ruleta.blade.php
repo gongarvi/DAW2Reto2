@@ -5,5 +5,9 @@
 @endsection
 
 @section("content")
-    <Ruleta/>
+    <div id="ruleta">
+        <Ruleta/>
+    </div>
+    <script src="{{asset("js/ruleta.js")}}" defer>
+    </script>
 @endsection

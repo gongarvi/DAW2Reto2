@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\HomeController; 
+use App\Http\Controllers\HomeController;
 class HomeController extends Controller{
     /**
      * Create a new controller instance.
@@ -12,7 +12,6 @@ class HomeController extends Controller{
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -21,10 +20,10 @@ class HomeController extends Controller{
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        return view('home');
+        return view('welcome');
     }
     public function panelControl(){
         return view('administracion');
     }
-  
+
 }

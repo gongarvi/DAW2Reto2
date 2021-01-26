@@ -47,10 +47,6 @@
         </div>
     </div>
 
-<script>
-    var mujercitas;
-    mujercitas = <?php echo(json_encode($mujeres))?>
-</script>
 <script src="{{ asset('js/match.js') }}">
 
 </script>
