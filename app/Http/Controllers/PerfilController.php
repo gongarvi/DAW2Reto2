@@ -25,7 +25,7 @@ class PerfilController extends Controller{
 
     public function edit($id){
         $usuario = User::all()->find($id);
-        return view('perfil.edit',compact("usuario"));
+        return view('perfil.edit',['usuario'=>$usuario]);
     }
 
     public function delete($id)

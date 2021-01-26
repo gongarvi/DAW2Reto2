@@ -45,7 +45,7 @@ Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
 
 
-Route::get("/juegos/tresenrayas", function(){ 
+Route::get("/juegos/tresenraya", function(){ 
     return view("tresenrayas");
 })->name("tresenrayas");
 

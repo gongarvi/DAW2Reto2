@@ -45,7 +45,7 @@ class GameController extends Controller
             ),
             array(
                 "id"=>"Final",
-                "nombre"=>"3 en raya",
+                "nombre"=>"tresenraya",
                 "descripcion"=>"En este juego deberas ganar una partida de 3 en raya contra una inteligente maquina",
                 "imagen"=>"assets/Fotos_Juegos/images.png"
             ),

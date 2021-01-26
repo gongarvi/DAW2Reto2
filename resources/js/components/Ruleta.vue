@@ -44,7 +44,7 @@
                 case "Buscaminas":
                     this.cantidadMinima=1;
                     break;
-                case "3 en raya":
+                case "Tresenraya":
                     this.cantidadMinima=3;
                     break;
                 case "Puzzle":

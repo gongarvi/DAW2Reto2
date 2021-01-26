@@ -14,9 +14,9 @@ class CreateFotosperfilTable extends Migration
     public function up()
     {
         Schema::create('fotosperfil', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('usuario');
-            $table->integer('mujer');
+            $table->id()->autoIncrement();
+            $table->unsignedBigInteger('usuario');
+            $table->unsignedBigInteger('mujer');
             $table->foreign('usuario')->references('id')->on('users');
             $table->foreign('mujer')->references('id')->on('mujeres');
             $table->timestamps();

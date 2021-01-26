@@ -146,7 +146,6 @@ class DatabaseSeeder extends Seeder
             }else{
                 $respuesta->correcta=false;
             }
-            echo $respuesta->correcta . "\n";
             $respuesta->save();
 
         }

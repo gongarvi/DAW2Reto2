@@ -20,7 +20,7 @@ class CreateMujeres extends Migration{
             $table->string('fallecido')->nullable();
             $table->string('nacionalidad');
             $table->unsignedBigInteger('especialidad');
-            $table->foreign('especialidad')->references('id')->on('especialidades')->onUpdate("CASCADE")->onDelete("SET NULL");
+            $table->foreign('especialidad')->references('id')->on('especialidades');
             $table->string('foto')->nullable();
             $table->text('descripcion');
             $table->timestamps();
