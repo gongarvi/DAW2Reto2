@@ -67,17 +67,19 @@ Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
 
 
 
-//Rutas para la administracion de los usuarios
-Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
 
-//Rutas para la administracion de las especialidades
-Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
 
 //Administracion
 Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
-    Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
+    //Navegación panel de control
     Route::get('/panelControl', [HomeController::class, 'panelControl'])->name('panel');
+    //Rutas para la administracion de las mujeres
+    Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
+    //Rutas para la administracion de los usuarios
+        Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
 
+    //Rutas para la administracion de las especialidades
+        Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
 });
 
 Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");
