@@ -77,7 +77,7 @@
             console.log("Prueba");
             let mujeres=JSON.parse(localStorage.getItem("mujeres"));
             if(mujeres!=null && mujeres.length>0){
-                this.foto=location.protocol+"/"+location.host+" assets/Fotos_mujeres/"+mujeres[0].foto;
+                this.foto=location.protocol+"/"+location.host+"assets/Fotos_mujeres/"+mujeres[0].foto;
                 console.log(this.foto);
             }
             else{
@@ -86,7 +86,6 @@
         },
         methods: {
            
-
             detenertiempo() {
                 if (this.timer) {
                     clearInterval(this.timer)
