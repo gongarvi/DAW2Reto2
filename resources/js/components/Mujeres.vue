@@ -79,7 +79,6 @@
                     .then(function (response) {
                         me.arraymujeres = response.data;
                         me.arrayMostrarMujeres=response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
                     console.log(error);

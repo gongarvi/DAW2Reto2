@@ -1,5 +1,5 @@
 window.Vue = require('vue');
-
+require("./bootstrap.js");
 Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);

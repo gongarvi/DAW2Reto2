@@ -17,5 +17,7 @@
     <div id="mujeres">
         <mujeres-component></mujeres-component>
     </div>
+
     <script src="{{asset("js/mujeres.js")}}" defer></script>
+
 @endsection
