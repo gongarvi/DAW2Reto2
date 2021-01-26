@@ -24,3 +24,5 @@
 .glow{
     border: 2px solid yellow ;
 }
+.instrucciones{display: flex; flex-direction: column; justify-content: center; margin: 0 auto; }
+.instrucciones ul{margin: 0 auto;}     

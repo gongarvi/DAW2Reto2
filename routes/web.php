@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ControladorUsuarios;
 use App\Http\Controllers\MujeresAPIService;
 use App\Http\Controllers\EspecialidadesController;
 
@@ -61,6 +62,16 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
+
+Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
+
+
+
+//Rutas para la administracion de los usuarios
+Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
+
+//Rutas para la administracion de las especialidades
+Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
 
 //Administracion
 Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){

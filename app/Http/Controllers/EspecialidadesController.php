@@ -14,11 +14,12 @@ class EspecialidadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function inicio()
-    {
-        $especialidades = Especialidad::latest()->paginate(20);
-        return view('especialidades.index', compact('especialidades'))
-            ->with('success', (request()->input('page', 1) - 1) * 20);     
+    public function index()
+    {   
+        $especialidades = Especialidad::latest()->paginate(7);
+        return view('admin.especialidades.index')->with('especialidades',$especialidades)
+             ->with('success', (request()->input('page', 1) - 1) * 5); 
+               
     }
 
     /**
@@ -26,9 +27,9 @@ class EspecialidadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function insertarEsp()
+    public function create()
     {
-        return view('especialidades.create');
+        return view('admin.especialidades.create');
     }
 
     /**
@@ -46,7 +47,7 @@ class EspecialidadesController extends Controller
 
         Especialidad::create($request->all());
 
-        return redirect()->route('inicio')
+        return redirect()->route('especialidades.index')
             ->with('success','Especialidad insertada correctamente');
     }
 
@@ -67,10 +68,11 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function editarEsp($id)
+    public function edit($especialidad_id)
     {
-
-        return view('especialidades.edit')->with('especialidad',Especialidad::all()->find($id));
+        $especialidad = Especialidad::all()->find($especialidad_id);
+        return view('admin.especialidades.edit', compact('especialidad'));
+           
     }
 
     /**
@@ -80,16 +82,19 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function actualizarEsp(Request $request, Especialidad $especialidad)
+    public function update(Request $request,  $especialidad_id)
     {
         $request->validate([
            
-            ]);
+        ]);
     
-            $especialidad->update($request->all());
+        $especialidad = Especialidad::find($especialidad_id);
+        $especialidad->nombre = $request->input('nombre');
+        $especialidad->color = $request->input('color');
+        $especialidad->save();
     
-            return redirect()->route('inicio')
-                ->with('success','Especialidad  se ha modificado correctamente');
+        return redirect()->route('especialidades.index')
+            ->with('success','Especialidad  se ha modificado correctamente');
     }
 
     /**
@@ -98,11 +103,11 @@ class EspecialidadesController extends Controller
      * @param  \App\Models\Especialidad  $especialidad
      * @return \Illuminate\Http\Response
      */
-    public function eliminarEsp($id)
+    public function destroy($id)
     {
         
         Especialidad::all()->find($id)->delete();
-        return redirect()->route('inicio')
+        return redirect()->route('especialidades.index')
             ->with('success','Especialidad  eliminada correctamente');
     }
 }

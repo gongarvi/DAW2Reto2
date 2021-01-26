@@ -46,6 +46,18 @@
             <a href=""><button class="btn btn-primary">Otra partida</button></a>
         </div>
     </div>
+    <div class="container instrucciones">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                <h4>Objetivo</h4>
+                <p>Relacionar cada nombre con su foto correspondiente</p>
+                <h4>Instrucciones del juego</h4>
+                <ul>
+                    <li>Clicar en cualquier carta con interrogante para descubrir el nombre</li>
+                    <li>Clicar en alguna carta con foto que creas corespondiente con el nombre descubierto</li>
+                    <li>En caso de acertar, ambas cartas se marcarán en verde</li>
+                    <li>Si fallamos, el nombre se oculta de nuevo y se nos resta una vida</li>
+                </ul>
 
 <script src="{{ asset('js/match.js') }}">
 

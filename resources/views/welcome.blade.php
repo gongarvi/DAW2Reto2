@@ -29,7 +29,6 @@
                     @endguest
 
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>
-
                     @guest
                     @if (Route::has('login'))
                     <li class="list-group-item border-0 bg-transparent" data-toggle="modal" data-target="#myModal"><a class="btn btn-outline-light w-100">Jugar</a></li>
