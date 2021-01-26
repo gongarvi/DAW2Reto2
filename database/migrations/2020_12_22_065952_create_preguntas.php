@@ -14,10 +14,10 @@ class CreatePreguntas extends Migration
     public function up()
     {
         Schema::create('preguntas', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('pregunta'); 
-            $table->integer('mujer');
-            $table->foreign('mujer')->references('id')->on('mujeres');
+            $table->id()->autoIncrement();
+            $table->string('pregunta');
+            $table->unsignedBigInteger('mujer');
+            $table->foreign('mujer')->references('id')->on('mujeres')->onUpdate("CASCADE")->onDelete("SET NULL");
             $table->timestamps();
         });
     }

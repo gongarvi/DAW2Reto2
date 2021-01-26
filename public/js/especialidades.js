@@ -81,19 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 2:
+/***/ "./resources/js/especialidades.js":
 /*!****************************************!*\
-  !*** multi ./resources/js/matching.js ***!
+  !*** ./resources/js/especialidades.js ***!
   \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function cambioColor(color) {\n  alert(color);\n  var nombre = document.getElementById('#color');\n  nombre[0].style.backgroundColor = color.value;\n  nombre[1].style.borderColor = color.value;\n  nombre[2].style.borderColor = color.value;\n  nombre[3].style.backgroundColor = color.value;\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvZXNwZWNpYWxpZGFkZXMuanM/ODMxZCJdLCJuYW1lcyI6WyJjYW1iaW9Db2xvciIsImNvbG9yIiwiYWxlcnQiLCJub21icmUiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIiwic3R5bGUiLCJiYWNrZ3JvdW5kQ29sb3IiLCJ2YWx1ZSIsImJvcmRlckNvbG9yIl0sIm1hcHBpbmdzIjoiQUFBQSxTQUFTQSxXQUFULENBQXFCQyxLQUFyQixFQUEyQjtBQUN2QkMsT0FBSyxDQUFDRCxLQUFELENBQUw7QUFDQSxNQUFJRSxNQUFNLEdBQUdDLFFBQVEsQ0FBQ0MsY0FBVCxDQUF3QixRQUF4QixDQUFiO0FBQ0FGLFFBQU0sQ0FBQyxDQUFELENBQU4sQ0FBVUcsS0FBVixDQUFnQkMsZUFBaEIsR0FBa0NOLEtBQUssQ0FBQ08sS0FBeEM7QUFDQUwsUUFBTSxDQUFDLENBQUQsQ0FBTixDQUFVRyxLQUFWLENBQWdCRyxXQUFoQixHQUE4QlIsS0FBSyxDQUFDTyxLQUFwQztBQUNBTCxRQUFNLENBQUMsQ0FBRCxDQUFOLENBQVVHLEtBQVYsQ0FBZ0JHLFdBQWhCLEdBQThCUixLQUFLLENBQUNPLEtBQXBDO0FBQ0FMLFFBQU0sQ0FBQyxDQUFELENBQU4sQ0FBVUcsS0FBVixDQUFnQkMsZUFBaEIsR0FBa0NOLEtBQUssQ0FBQ08sS0FBeEM7QUFDSCIsImZpbGUiOiIuL3Jlc291cmNlcy9qcy9lc3BlY2lhbGlkYWRlcy5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImZ1bmN0aW9uIGNhbWJpb0NvbG9yKGNvbG9yKXtcclxuICAgIGFsZXJ0KGNvbG9yKTtcclxuICAgIHZhciBub21icmUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnI2NvbG9yJyk7XHJcbiAgICBub21icmVbMF0uc3R5bGUuYmFja2dyb3VuZENvbG9yID0gY29sb3IudmFsdWU7XHJcbiAgICBub21icmVbMV0uc3R5bGUuYm9yZGVyQ29sb3IgPSBjb2xvci52YWx1ZTtcclxuICAgIG5vbWJyZVsyXS5zdHlsZS5ib3JkZXJDb2xvciA9IGNvbG9yLnZhbHVlO1xyXG4gICAgbm9tYnJlWzNdLnN0eWxlLmJhY2tncm91bmRDb2xvciA9IGNvbG9yLnZhbHVlO1xyXG59Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/especialidades.js\n");
+
+/***/ }),
+
+/***/ 5:
+/*!**********************************************!*\
+  !*** multi ./resources/js/especialidades.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\laravel\\reto\\resources\\js\\matching.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\DAW2Reto2\resources\js\especialidades.js */"./resources/js/especialidades.js");
 
 
 /***/ })

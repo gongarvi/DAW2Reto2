@@ -5,7 +5,11 @@
 @endsection
 
 @section('content')
+<<<<<<< HEAD
 <div class="container ">
+=======
+<div class="container m-5 mx-auto">
+>>>>>>> ed918e5e3d25acb1e6d905ef6c83d55f2fc411e1
     <div class="row justify-content-center">
 		<div class="col-xs-6 col-xs-offset-3">
             <form method="POST" action="{{ route('login') }}">

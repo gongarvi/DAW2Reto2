@@ -21,7 +21,6 @@ class User extends Authenticatable
         'email',
         'password',
         'foto',
-        'progreso',
         'administrador'
     ];
 
@@ -42,5 +41,9 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'administrador'=> 'boolean'
     ];
+    public function isAdmin(){
+        return $this->administrador;
+    }
 }

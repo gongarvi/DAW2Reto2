@@ -12,14 +12,18 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/bootstrap.js', 'public/js')
-    .js('resources/js/match.js', 'public/js')
+    .js('resources/js/jsPuzzle.js','public/js')
+    .js('resources/js/formulario.js', 'public/js')
     .js('resources/js/millonario.js', 'public/js')
+    .js('resources/js/ruleta.js', 'public/js')
     .js('resources/js/mujeres.js', 'public/js')
     .js('resources/js/tresenrayas.js', 'public/js')
+    .js('resources/js/game-page.js', 'public/js')
+    .js('resources/js/match.js', 'public/js')
     .css('resources/css/matching.css','public/css')
     .sourceMaps()
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .css("resources/css/matching.css","public/css");
 /*
 mix.webpackConfig({
     output: {
@@ -27,3 +31,4 @@ mix.webpackConfig({
     },
 });
 */
+

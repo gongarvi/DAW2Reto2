@@ -17,20 +17,26 @@ class PreguntasAPIService extends Controller
 
         if(is_numeric($mujer)){
             $pregunta=Pregunta::getPreguntaAleatoriaMujer($mujer);
-            $respuestas=Respuesta::all()->where("pregunta",$pregunta->id);
-            $respuestasResult=[];
-            foreach ($respuestas as $respuesta){
-                $respuestasResult[]=$respuesta->toJsonArray();
+            if($pregunta!=null){
+                $respuestas=Respuesta::all()->where("pregunta",$pregunta->id);
+                $respuestasResult=[];
+                foreach ($respuestas as $respuesta){
+                    $respuestasResult[]=$respuesta->toJsonArray();
+                }
+                $result[]=
+                    [
+                        "pregunta"=>$pregunta["pregunta"],
+                        "respuestas"=>$respuestasResult
+                    ];
             }
-            $result[]=
-                [
-                    "pregunta"=>$pregunta["pregunta"],
-                    "respuestas"=>$respuestasResult
-                ];
         }
-        if($result!=[]||count($result)==0){
+        if($result!=[]&&count($result)==1){
+            $result = response()->json($result[0]);
+        }
+        elseif($result!=[]&&count($result)==1){
             $result = response()->json($result);
-        }else{
+        }
+        else{
             $result = response("No se han podido devolver datos o no existen",404);
         }
         return $result;

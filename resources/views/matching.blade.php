@@ -1,13 +1,13 @@
 @extends("layouts.page")
 
 @section("head-extras")
-   
+
     <link rel="stylesheet" href="{{asset("css/mujeres.css")}}">
     <link rel="stylesheet" href="{{asset("css/matching.css")}}">
     <link rel="stylesheet" href="{{asset("css/iconos/style.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
     @endsection
 
 
@@ -23,19 +23,19 @@
         <img src="..\image/logo.png" height="30">
         <img src="..\image/logo.png" height="30">
         <img src="..\image/logo.png" height="30">
-                
+
     </div>
     <div class="contenedor">
-        <div class="nombres"></div> 
-        <div class="fotos"></div>          
+        <div class="nombres"></div>
+        <div class="fotos"></div>
     </div>
     <div id="contenedor-mensaje-victoria" class="ocultar-mensaje">
         <div id="mensaje-victoria">
             <h3>Felicidades!!!</h3>
             <h4>Has completado el nivel</h4>
             <img src="..\assets\Fotos_mujeres\felicitar.gif">
-            <a href="http://localhost/DAw2Reto2/public/juegos"><button class="btn btn-success">Seguir Jugando</button></a>
-        </div>   
+            <a href="{{ route('juegos') }}"><button class="btn btn-success">Seguir Jugando</button></a>
+        </div>
     </div>
 
     <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">
@@ -44,16 +44,24 @@
             <h4>No has podido completar el nivel, pero Ánimo</h4>
             <span class="icon-emoji-sad"></span>
             <a href=""><button class="btn btn-primary">Otra partida</button></a>
-        </div>   
+        </div>
     </div>
- 
-<script>
-    var mujercitas;
-    mujercitas = <?php echo(json_encode($mujeres))?>  
-</script>
+    <div class="container instrucciones">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                <h4>Objetivo</h4>
+                <p>Relacionar cada nombre con su foto correspondiente</p>
+                <h4>Instrucciones del juego</h4>
+                <ul>
+                    <li>Clicar en cualquier carta con interrogante para descubrir el nombre</li>
+                    <li>Clicar en alguna carta con foto que creas corespondiente con el nombre descubierto</li>
+                    <li>En caso de acertar, ambas cartas se marcarán en verde</li>
+                    <li>Si fallamos, el nombre se oculta de nuevo y se nos resta una vida</li>
+                </ul>
+
 <script src="{{ asset('js/match.js') }}">
- 
-</script> 
+
+</script>
 <!-- <script src="resources\js\match.js"></script> -->
 @endsection
 

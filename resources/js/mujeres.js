@@ -1,19 +1,18 @@
-$(document).ready(function(){ //Hacia arriba
-    irArriba();
-});
+window.Vue = require('vue');
 
-function irArriba(){
-    $('.ir-arriba').click(function(){ 
-        $('body,html').animate({ scrollTop:'0px' },1000); 
-    });
-    $(window).scroll(function(){
-        if($(this).scrollTop() > 0){ 
-            $('.ir-arriba').slideDown(600); 
-        }else{ 
-            $('.ir-arriba').slideUp(600); 
-        }
-    });
-    $('.ir-abajo').click(function(){ 
-        $('body,html').animate({ scrollTop:'1000px' },1000); 
-    });
-}
+Vue.component('mujeres-component', require('./components/Mujeres.vue').default);
+
+
+const vue = new Vue({
+    el: '#mujeres',
+    methods: {
+        checkImages(event) {
+            console.log(event);
+            event.target.src = "image/placeholder.png"
+        },
+        pulsarboton: function(nombreJuego){
+            var Especialidad = document.getElementById("selectEspecialidad").value;
+            window.location.href = '/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
+        },
+    },
+});
