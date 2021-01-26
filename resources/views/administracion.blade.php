@@ -17,17 +17,19 @@
 <h1>PANEL DE ADMINISTRACION</h1>
 <ul class="panel">
     <li>
-<<<<<<< HEAD
-        <a href="#"><h3>MUJERES</h3></a>
-=======
-        <a href="{{ route('mujeres.index') }}"><h3>Mujeres</h3></a>
->>>>>>> fb6de4c26614efcf5420e55fb72be29e87e91677
+        <a href="{{ route('mujeres.index') }}"><h3>MUJERES</h3></a>
     </li>
     <li>
         <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>
     </li>
     <li>
         <a href="{{ route('usuarios.index') }}"><h3>USUARIOS</h3></a>
+    </li>
+    <li>
+        <a href="{{ route('preguntas.index') }}"><h3>PREGUNTAS</h3></a>
+    </li>
+    <li>
+        <a href="{{ route('respuestas.index') }}"><h3>RESPUESTAS</h3></a>
     </li>
 </ul>
 

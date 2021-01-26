@@ -18,8 +18,8 @@ class Respuesta extends Model
     protected $casts = [
         'correcta' => 'boolean',
     ];
-    public function pregunta(){
-        return $this->belongsTo(Pregunta::class);
+    public function preguntas(){
+        return $this->belongsTo(Pregunta::class,"pregunta","id");
     }
     public function toJsonArray(): array
     {
