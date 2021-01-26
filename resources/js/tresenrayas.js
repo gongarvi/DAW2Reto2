@@ -1,5 +1,23 @@
 require("./bootstrap.js");
 
+var array= JSON.parse(localStorage.getItem("mujeres"));
+console.log(array);
+  let arrayPreguntas = new Array();
+  for (i=0; i<array.length; i++){
+    $.ajax({
+      url: '/api/preguntas/'+array[i].id,
+      success: function(respuesta) {
+        console.log(respuesta);
+        arrayPreguntas.push(respuesta);
+      },
+      error: function() {
+            console.log("No se ha podido obtener la información");
+        }
+    });
+  }
+
+alert (arrayPreguntas);
+
 var player = "X"; 
 var ai = "O";
 var winner, gameboard, playing;
@@ -168,11 +186,17 @@ window.$("#gameboard").click(function (e) {
   var playerPick = (e.target.id).slice(2);
   console.log(playerPick);
   var playerSelector = "#sq" + playerPick;
+
+  
+  
+
+  var respuesta = false;
+  // hay que hacer la pregunta aqui y si responde bien hace el return
   if (gameboard[playerPick] != "") {
-    //player doesn't lose turn if invalid entry 
-    return;
+    //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
+     return;
   };
-  if (gameboard[playerPick] == "") {
+  if (gameboard[playerPick] == "" && respuesta) {
     gameboard[playerPick] = player;
     console.log(gameboard);
     $(playerSelector).html(player);
