@@ -8,8 +8,10 @@ var mujeres = JSON.parse(localStorage.getItem("mujeres"));
 let arrayPreguntas = new Array();
 for (i = 0; i < mujeres.length; i++) {
   $.get("/api/preguntas/" + mujeres[i].id, function (data) {
-    //console.log(data);
+    console.log(data);
     // console.log(data.pregunta);
+    console.log("tamaño de las preguntas "+data);
+    console.log("meto pregunta"+i);
     arrayPreguntas.push(data);
   })
 }
@@ -169,59 +171,50 @@ function checkForWinner(board) {
 window.$("#gameboard").click(function (e) {
   //end game when winner delcared 
   if (!playing) return;
-
-  // el turno del jugador
-  console.log("Turno del jugador");
-
   var playerPick = (e.target.id).slice(2);
   console.log(playerPick);
   var playerSelector = "#sq" + playerPick;
 
-  var respuesta = false;
-  // hay que hacer la pregunta aqui y si responde bien hace el return
-  var numerorandom = Math.floor(Math.random() * arrayPreguntas.length);
-  var preguntaArealizar = arrayPreguntas[numerorandom];
+  if (gameboard[playerPick] != "") {
+    //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
+    return;
+  };
 
-  arrayPreguntas.splice(numerorandom, 1);
-  console.log("hola me llamo alfredo " + preguntaArealizar);
-
-  $("#pregunta").html(preguntaArealizar.pregunta);
-  document.getElementById("respuestas").options.length = 0;
-
-  for (i = 0; i < preguntaArealizar.respuestas.length; i++) {
-    $('#respuestas').append($('<option />', {
-      text: preguntaArealizar.respuestas[i].respuesta,
-      value: preguntaArealizar.respuestas[i].correcta,
-    }));
-  }
-
-  document.getElementById("validar").addEventListener("click", function () {
-    if (document.getElementById("respuestas").value == "true") {
-      alert("hola");
-      if (gameboard[playerPick] != "") {
-        //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
-        return;
-      };
-      if (gameboard[playerPick] == "") {
+  if (gameboard[playerPick] == "") {
+    console.log(arrayPreguntas);
+    //Escojemos la pregunta y se la lanzamos
+    //escojemos la pregunta
+    var numerorandom = Math.floor(Math.random() * arrayPreguntas.length);
+    var pregunta = arrayPreguntas[numerorandom];
+    arrayPreguntas.splice(numerorandom, 1);
+    //Se la lanzamos
+    $("#pregunta").html(pregunta.pregunta);
+    document.getElementById("respuestas").options.length = 0;//Vaciamos las options 
+    //Añadimos las respuestas para la pregunta inicial
+    for (i = 0; i < pregunta.respuestas.length; i++) {
+      $('#respuestas').append($('<option />', {
+        text: pregunta.respuestas[i].respuesta,
+        value: pregunta.respuestas[i].correcta,
+      }));
+    }
+    //Validaremos la respuesta
+    window.$("#validar").click(function (evt) {
+      alert("se ejecuta el click");
+      if (document.getElementById("respuestas").value == "true" ) {
         gameboard[playerPick] = player;
         console.log(gameboard);
         $(playerSelector).html(player);
-      };
-
-    }
-    else {
-      checkForWinner(gameboard);
-
-      if (playing) {
+        if (playing) {
+          aiTurn();
+          checkForWinner(gameboard);
+        }
+      }else {
         aiTurn();
-        console.log("me ejecuto");
         checkForWinner(gameboard);
       }
-    }
-
-  });
-
-
+     evt.stopImmediatePropagation();
+    });
+  };
 });
 
 start();
