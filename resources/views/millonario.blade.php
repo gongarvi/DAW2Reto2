@@ -11,4 +11,6 @@
         </div>
         <millonario/>
     </div>
+    <script src="{{asset("js/millonario.js")}}" defer>
+    </script>
 @endsection

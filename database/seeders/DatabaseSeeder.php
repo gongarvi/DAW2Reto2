@@ -144,7 +144,6 @@ class DatabaseSeeder extends Seeder
             }else{
                 $respuesta->correcta=false;
             }
-            
             $respuesta->save();
 
         }

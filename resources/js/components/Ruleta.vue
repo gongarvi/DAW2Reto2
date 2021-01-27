@@ -3,7 +3,7 @@
         <div v-if="mujeres!=null && mujeres.length!=0" id="ruleta" class="mb-5">
             <h2>Escogiendo mujer aleatoriamente</h2>
             <img id="fotoRuleta" v-for="(mujer,indice) in mujeres"
-                 v-if="indice==index" v-bind:src="'../../../assets/Fotos_mujeres/'+mujer.foto"
+                 v-if="indice==index" v-bind:src="(mujeres[index].foto!=null&&mujeres[index].foto!=='')?'../../../assets/Fotos_mujeres/'+mujer.foto:'../../../imagae/placeholder-usuario'"
                  class="rounded mx-auto d-block border border-dark " width="500px" height="500px">
         </div>
         <div v-if="mujeres!=null && mujeres.length!=0 && index<mujeres.length" id="infoMujer" class="card text-center mx-auto mt-5" style="width: 75%;display: none;">
@@ -44,11 +44,11 @@
                 case "Buscaminas":
                     this.cantidadMinima=1;
                     break;
-                case "3 en raya":
+                case "Tresenraya":
                     this.cantidadMinima=3;
                     break;
                 case "Puzzle":
-                    this.cantidadMinima=3;
+                    this.cantidadMinima=1;
                     break;
                 case "Matching":
                     this.cantidadMinima=6;
@@ -99,8 +99,9 @@
             },
             girarRuleta(){
                 var interval = setInterval(()=>{
-                    this.index+=1;
-                    if(this.index>this.mujeres.length){
+                    if(this.index<this.mujeres.length-1){
+                        this.index++;
+                    }else{
                         this.index=0;
                     }
                 },500);
@@ -115,7 +116,7 @@
                 },2500);
             },
             existeMujer(){
-                if(this.mujeresSeleccionadas.filter(mujer=>mujer.id===this.mujeres[this.index].id).length>0) {
+                if(this.mujeresSeleccionadas.filter(mujer=>mujer.id==this.mujeres[this.index].id).length>0) {
                     return true;
                 }
                 return false;

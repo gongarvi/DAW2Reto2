@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Especialidad;
+use App\Models\Pregunta;
+use App\Models\Respuesta;
 use App\View\Components\GameCard;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +14,8 @@ class GameController extends Controller{
 
     public function __construct(){
         //TODO Eliminar cuando se recoja de la BBDD
+        $this->middleware("auth.basic");
+
         $this->juegos = array(
             array(
                 "id"=>"1",
@@ -42,7 +46,7 @@ class GameController extends Controller{
             ),
             array(
                 "id"=>"Final",
-                "nombre"=>"3 en raya",
+                "nombre"=>"tresenraya",
                 "descripcion"=>"En este juego deberas ganar una partida de 3 en raya contra una inteligente maquina",
                 "imagen"=>"assets/Fotos_Juegos/images.png"
             ),
@@ -89,4 +93,10 @@ class GameController extends Controller{
         $tabla = Especialidad::all();
         return $tabla;
     }
+
+    // public function preguntas($id){
+    //     $preguntas = Pregunta::all();
+    //     $respustas = Respuesta::all();
+    //     $preguntaRecogida = $preguntas->mujer
+    // }
 }

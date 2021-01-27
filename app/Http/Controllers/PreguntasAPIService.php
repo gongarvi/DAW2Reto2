@@ -42,4 +42,5 @@ class PreguntasAPIService extends Controller
         return $result;
     }
     public function destroy(){}
+
 }

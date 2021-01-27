@@ -17,11 +17,11 @@ class CreateMujeres extends Migration{
             $table->unsignedBigInteger('especialidad');
             $table->string('nombre');
             $table->string('apellidos');
-            $table->string('nacimiento');
-            $table->string('fallecido');
+            $table->string('nacimiento')->nullable();
+            $table->string('fallecido')->nullable();
             $table->string('nacionalidad');
             $table->foreign('especialidad')->references('id')->on('especialidades');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->text('descripcion');
             $table->timestamps();
         });

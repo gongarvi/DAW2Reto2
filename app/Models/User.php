@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Usuario extends Authenticatable
+class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -20,6 +20,8 @@ class Usuario extends Authenticatable
         'name',
         'email',
         'password',
+        'foto',
+        'administrador'
     ];
 
     /**
@@ -39,5 +41,9 @@ class Usuario extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'administrador'=> 'boolean'
     ];
+    public function isAdmin(){
+        return $this->administrador;
+    }
 }

@@ -20,7 +20,7 @@
     <nav>
         @include("partials.menu")
     </nav>
-    <main id="app" style="width:100%; height: 100%;">
+    <main style="width:100%; height: 100%;">
         @yield("content")
     </main>
     <footer>
