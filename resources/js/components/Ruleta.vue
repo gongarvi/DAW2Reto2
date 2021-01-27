@@ -34,6 +34,7 @@
             }
         },
         beforeMount() {
+            localStorage.removeItem("mujeres");
             let url=window.location.href.split("/");
             var especialidad=url[5];
             this.juego=url[6];

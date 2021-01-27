@@ -28,14 +28,22 @@
                 </div>
             </div>
         </div>
+        <div id="cuestionario" style="width: 500px; height:500px;">
+            <h4 id="pregunta"></h4>
+            <select id="respuestas">
+			    <option value="" class="respuesta">Selecciona una respuesta</option>
+		    </select>
+            <button class="btn btn-success" id="validar">validar</button>
 
+        </div>  
 
         <!-- Contenedores de mensajes -->
-        <div id="contenedor-mensaje" class="ocultar-mensaje">
+        <div id="contenedor-mensaje" class="ocultar-mensaje text-dark">
             <div id="mensaje">
                 <h3 id="titulo-mensaje"></h3>
-                <button class="btn btn-light btnCerrarMensaje">OK</button>
-            </div>   
+                <button class="btn btn-light btnCerrarMensaje">OK</button> 
+            </div>
+            
         </div>
         <div id="contenedor-mensaje-victoria" class="ocultar-mensaje">
             <div id="mensaje-victoria">
@@ -53,9 +61,6 @@
             </div>   
         </div>
 
-        <div id="cuestionario">
-
-        </div>
         
 
     <script src="{{asset("js/tresenrayas.js")}}"></script>

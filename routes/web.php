@@ -79,10 +79,10 @@ Route::resource("admin/especialidades",EspecialidadesController::class, ["except
 Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
     Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
     Route::get('/panelControl', [HomeController::class, 'panelControl'])->name('panel');
-
+});
 Route::post("/fotosperfil/{id}",[PerfilController::class,"fotosperfil"])->name("fotosperfil");
 Route::get("/actualizarfoto/{id}/{nombrefoto}",[PerfilController::class,"actualizarfoto"])->name("actualizarfoto");
 Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
 Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
 Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
-});
+
