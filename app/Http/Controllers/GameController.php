@@ -93,10 +93,4 @@ class GameController extends Controller{
         $tabla = Especialidad::all();
         return $tabla;
     }
-
-    // public function preguntas($id){
-    //     $preguntas = Pregunta::all();
-    //     $respustas = Respuesta::all();
-    //     $preguntaRecogida = $preguntas->mujer
-    // }
 }
