@@ -516,7 +516,7 @@ eval("/* WEBPACK VAR INJECTION */(function($) {__webpack_require__(/*! ./bootstr
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\jsPuzzle.js */"./resources/js/jsPuzzle.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\jsPuzzle.js */"./resources/js/jsPuzzle.js");
 
 
 /***/ })

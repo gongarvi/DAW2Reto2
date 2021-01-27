@@ -34,12 +34,12 @@ btnMensaje[0].onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
   reset();
 }
-btnMensaje[1].onclick = function () {
-  mensaje.classList.add("ocultar-mensaje");
-}
-btnMensaje[2].onclick = function () {
-  mensaje.classList.add("ocultar-mensaje");
-}
+// btnMensaje[1].onclick = function () {
+//   mensaje.classList.add("ocultar-mensaje");
+// }
+// btnMensaje[2].onclick = function () {
+//   mensaje.classList.add("ocultar-mensaje");
+// }
 
 // boton de salir del juego
 window.$("#SalirJuego").click(function () {
@@ -154,6 +154,10 @@ function checkForWinner(board) {
         if (mensaje.classList.contains("ocultar-mensaje")) {
           mensaje.classList.remove("ocultar-mensaje");
         }
+        window.$(".otrapartida").click(function (evt) {
+          console.log("va ha cerrar");
+          window.location.href = '/juegos';
+        });
         console.log("Has Perdido :(");
       }
 
