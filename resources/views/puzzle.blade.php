@@ -7,7 +7,11 @@
 @endsection
 
 @section("content")   
+<div id='content'>
+        
+    </div>
 <script>
+    
     var cambioImagen;
     cambioImagen = setInterval('cambiarFoto()',100);
     function cambiarFoto(){

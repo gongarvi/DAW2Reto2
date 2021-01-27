@@ -45,16 +45,16 @@ var rompecabezas = {
 			}
 			tb.appendChild(tr);
 		}
-		if(!rompecabezas._get("app")){
+		if(!rompecabezas._get("content")){
 			var cont = document.createElement('div');
 			cont.id = 'div_content';
 			cont.appendChild(tb);
 			cont.appendChild(dp);
 			document.body.appendChild(cont);
 		}else{
-			rompecabezas._get("app").innerHTML = '';
-			rompecabezas._get("app").appendChild(tb);
-			rompecabezas._get("app").appendChild(dp);
+			rompecabezas._get("content").innerHTML = '';
+			rompecabezas._get("content").appendChild(tb);
+			rompecabezas._get("content").appendChild(dp);
 		}
 	},
 	_barajar: function(){
