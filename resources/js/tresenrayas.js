@@ -4,19 +4,15 @@ require("./bootstrap.js");
 var mujeres = new Array();
 var mujeres = JSON.parse(localStorage.getItem("mujeres"));
 
- // creo el array de preguntas para recoger preguntas del api
-  let arrayPreguntas = new Array();
-  for (i=0; i<mujeres.length; i++){
-    $.get("/api/preguntas/"+mujeres[i].id, function(data){
-       //console.log(data);
-      // console.log(data.pregunta);
-      arrayPreguntas.push(data);
-    })
-  }
-  
-var player = "X"; 
-var ai = "O";
-var winner, gameboard, playing;
+// creo el array de preguntas para recoger preguntas del api
+let arrayPreguntas = new Array();
+for (i = 0; i < mujeres.length; i++) {
+  $.get("/api/preguntas/" + mujeres[i].id, function (data) {
+    //console.log(data);
+    // console.log(data.pregunta);
+    arrayPreguntas.push(data);
+  })
+}
 
 var player = "X";
 var ai = "O";
@@ -43,7 +39,8 @@ btnMensaje[2].onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
 }
 
-window.$("#SalirJuego").click(function(){
+// boton de salir del juego
+window.$("#SalirJuego").click(function () {
   window.history.back();
 });
 
@@ -98,7 +95,7 @@ function aiTurn() {
   console.log("computer's turn");
   var available = getEmptySpaces(gameboard);
   console.log(available);
-  //temporary stop if tie game
+  // el juego se para temporalmente si es empate
   if (available.length === 0) {
     //Aqui se empata 
     mensaje = document.querySelector("#contenedor-mensaje");
@@ -115,9 +112,8 @@ function aiTurn() {
   window.$("#sq" + aiIndex).html(ai);
 };
 
-
 function checkForWinner(board) {
-  // Check for win conditions 
+  // comprueba las condiciones de la partida 
   var winCon = [
     // Horizontal
     [0, 1, 2],
@@ -133,7 +129,7 @@ function checkForWinner(board) {
   ];
   for (var i = 0; i < winCon.length; i++) {
     var cond = winCon[i];
-    // If all three are equal and not blank
+    // si une los 3 en raya
     if (board[cond[0]] !== "" && board[cond[0]] === board[cond[1]] && board[cond[1]] === board[cond[2]]) {
       winner = board[cond[0]];
       playing = false;
@@ -170,58 +166,59 @@ function checkForWinner(board) {
   }
 };
 
-
 window.$("#gameboard").click(function (e) {
   //end game when winner delcared 
   if (!playing) return;
-  console.log("players's turn");
 
   // el turno del jugador
-  alert("es tu turno");
+  console.log("Turno del jugador");
 
   var playerPick = (e.target.id).slice(2);
   console.log(playerPick);
   var playerSelector = "#sq" + playerPick;
 
-  
-  
-
   var respuesta = false;
   // hay que hacer la pregunta aqui y si responde bien hace el return
   var numerorandom = Math.floor(Math.random() * arrayPreguntas.length);
   var preguntaArealizar = arrayPreguntas[numerorandom];
-  arrayPreguntas.splice(numerorandom,1);
-  console.log("hola me llamo alfredo "+preguntaArealizar);
+
+  arrayPreguntas.splice(numerorandom, 1);
+  console.log("hola me llamo alfredo " + preguntaArealizar);
+
   $("#pregunta").html(preguntaArealizar.pregunta);
   document.getElementById("respuestas").options.length = 0;
-  for(i=0;i<preguntaArealizar.respuestas.length; i++){
-    
-    $('#respuestas').append($('<option />',{
+
+  for (i = 0; i < preguntaArealizar.respuestas.length; i++) {
+    $('#respuestas').append($('<option />', {
       text: preguntaArealizar.respuestas[i].respuesta,
       value: preguntaArealizar.respuestas[i].correcta,
     }));
   }
-  document.getElementById("validar").addEventListener("click",function(){
-    if(document.getElementById("respuestas").value == "true"){
+
+  document.getElementById("validar").addEventListener("click", function () {
+    if (document.getElementById("respuestas").value == "true") {
       alert("hola");
       if (gameboard[playerPick] != "") {
         //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
-         return;
+        return;
       };
       if (gameboard[playerPick] == "") {
         gameboard[playerPick] = player;
         console.log(gameboard);
         $(playerSelector).html(player);
       };
-    
-    
+
     }
-    checkForWinner(gameboard);
-    console.log("me ejecuto");
-    if (playing) {
-      aiTurn();
+    else {
       checkForWinner(gameboard);
+
+      if (playing) {
+        aiTurn();
+        console.log("me ejecuto");
+        checkForWinner(gameboard);
+      }
     }
+
   });
 
 
