@@ -43,12 +43,8 @@
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content text-dark">
-                                <div class="modal-header">
-                                <h4 class="modal-title"></h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
                                 <div class="modal-body text-center">
-                                    <b>Para poder jugar debe iniciar sesion o registrarse</b>
+                                    <h4><b>Para poder jugar debe iniciar sesion o registrarse</b></h4>
                                     
                                     <a href="{{route("login")}}"><button type="submit" class="btn btn-primary mt-5">Iniciar sesion/Registrarse</button></a>
                                 </div>

@@ -42,7 +42,7 @@
         <div id="contenedor-mensaje" class="ocultar-mensaje text-dark">
             <div id="mensaje">
                 <h3 id="titulo-mensaje"></h3>
-                <button class="btn btn-light btnCerrarMensaje">OK</button> 
+                <button class="btn btn-light" id="btnCerrarMensaje">OK</button> 
             </div>
             
         </div>
