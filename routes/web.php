@@ -63,25 +63,6 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
-<<<<<<< HEAD
-
-//Rutas para la administracion de los usuarios
-Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
-//Rutas para la administracion de las especialidades
-Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
-//Rutas para la administracion de las mujeres
-Route::resource("admin/mujeres",MujeresController::class, ["except"=>["show"]]);
-//Rutas para la administracion de las preguntas
-Route::resource("admin/preguntas",ControladorPreguntas::class, ["except"=>["show"]]);
-//Rutas para la administracion de las respuestas
-Route::resource("admin/respuestas",RespuestasController::class, ["except"=>["show"]]);
-=======
-
-Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
-
-
-
-
 
 //Administracion
 Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
@@ -90,11 +71,13 @@ Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
     //Rutas para la administracion de las mujeres
     Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
     //Rutas para la administracion de los usuarios
-        Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
->>>>>>> c0a688efce8baba94f58c70b828bb5947d3233fc
-
+    Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
     //Rutas para la administracion de las especialidades
-        Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
+    Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
+    //Rutas para la administracion de las preguntas
+    Route::resource("admin/preguntas",ControladorPreguntas::class, ["except"=>["show"]]);
+    //Rutas para la administracion de las respuestas
+    Route::resource("admin/respuestas",RespuestasController::class, ["except"=>["show"]]);
 });
 
 Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");

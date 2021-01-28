@@ -37,7 +37,6 @@
             <a href="{{ route('juegos') }}"><button class="btn btn-success">Seguir Jugando</button></a>
         </div>
     </div>
-
     <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">
         <div id="mensaje-derrota">
             <h3>Lo sentimos!!!</h3>
@@ -46,19 +45,24 @@
             <a href=""><button class="btn btn-primary">Otra partida</button></a>
         </div>
     </div>
-    <div class="container instrucciones">
+    <div class="container inst">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 ">
-                <h4>Objetivo</h4>
+            <div class="col-sm-12 col-md-12 col-lg-12 instrucciones ">
+                <h4>OBJETIVO</h4>
                 <p>Relacionar cada nombre con su foto correspondiente</p>
                 <h4>Instrucciones del juego</h4>
                 <ul>
-                    <li>Clicar en cualquier carta con interrogante para descubrir el nombre</li>
-                    <li>Clicar en alguna carta con foto que creas corespondiente con el nombre descubierto</li>
+                    <li>1._Clicar en cualquier carta con interrogante para descubrir el nombre</li>
+                    <li>2._Clicar en alguna carta con foto que creas corespondiente con el nombre descubierto</li>
                     <li>En caso de acertar, ambas cartas se marcarán en verde</li>
                     <li>Si fallamos, el nombre se oculta de nuevo y se nos resta una vida</li>
                 </ul>
-
+                <ul class="pd">PD:
+                    <li>No clicar antes la carta que contiene la foto</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 <script src="{{ asset('js/match.js') }}">
 
 </script>

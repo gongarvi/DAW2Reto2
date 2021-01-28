@@ -15,30 +15,45 @@
 @section('content')
 
 <h1>PANEL DE ADMINISTRACION</h1>
-<ul class="panel">
-    <li>
-<<<<<<< HEAD
-        <a href="{{ route('mujeres.index') }}"><h3>MUJERES</h3></a>
-=======
-<<<<<<< HEAD
-        <a href="{{ route('mujeres.index') }}"><h3>Mujeres</h3></a>
-=======
-        <a href="#"><h3>MUJERES</h3></a>
->>>>>>> origin/OrdoAlogo
->>>>>>> c0a688efce8baba94f58c70b828bb5947d3233fc
-    </li>
-    <li>
-        <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>
-    </li>
-    <li>
-        <a href="{{ route('usuarios.index') }}"><h3>USUARIOS</h3></a>
-    </li>
-    <li>
-        <a href="{{ route('preguntas.index') }}"><h3>PREGUNTAS</h3></a>
-    </li>
-    <li>
-        <a href="{{ route('respuestas.index') }}"><h3>RESPUESTAS</h3></a>
-    </li>
-</ul>
+<div class="container">
+    <div class="row panel">
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('mujeres.index') }}"><h3>MUJERES</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('usuarios.index') }}"><h3>USUARIOS</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('preguntas.index') }}"><h3>PREGUNTAS</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('respuestas.index') }}"><h3>RESPUESTAS</h3></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 @endsection

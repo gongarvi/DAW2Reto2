@@ -7,7 +7,7 @@
 
     for(i=0; i<mujercitas.length; i++){
 
-        nombresM.push(mujercitas[i].nombre);
+        nombresM.push(mujercitas[i].nombre+" "+mujercitas[i].apellidos);
         fotosM.push(mujercitas[i].foto);
 
     }
@@ -67,7 +67,7 @@
     //Funcion para ejecutar la accion por cada click que hacemos
     clic = function(element){
         try{
-            this.classList.push("glow");
+            
             var cartas_activas = document.querySelectorAll(".sin-fondo-item");
 
             if(cartas_activas.length == 2){
