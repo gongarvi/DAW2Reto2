@@ -1,14 +1,21 @@
 <template>
     <div id="millonario">
-        <Pregunta :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
-        <div id="ayudas" class="text-center m-5">
-          <button id="50" class="btn btn-info mx-4">
-            <span>50/50</span>
-          </button>
-          <button id="publico" class="btn btn-info mx-4">
-            <span>Publico</span>
-          </button>
+        <div id="juego" v-if="!fin">
+            <Pregunta ref="pregunta" v-if="preguntas!=null && preguntas.length>0" :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
+            <div id="ayudas" class="text-center m-5">
+                <button id="50" class="btn btn-info mx-4" @click="botonAyuda50" :disabled="ayudaMitad">
+                    <span>50/50</span>
+                </button>
+                <button id="publico" class="btn btn-info mx-4" @click="botonAyudaPublico" :disabled="publico">
+                    <span>Publico</span>
+                </button>
+            </div>
         </div>
+      <div class="final w-100" v-if="fin">
+        <h2 class="w-100 text-center m-2 p-5">
+          Has conseguido responder correctamente un total de {{acertadas}} de {{preguntas.length}} preguntas.
+        </h2>
+      </div>
     </div>
 </template>
 
@@ -22,75 +29,88 @@ export default {
   },
   data(){
     return{
-      preguntas:[
-        {
-          pregunta:"¿Que novel ha conseguidio?",
-          respuestas:
-            [
-              {
-                respuesta:"matemicas",
-                correcta:true
-              },
-              {
-                respuesta:"paz",
-                correcta:false
-              },
-              {
-                respuesta:"guerra",
-                correcta:false
-              },
-              {
-                respuesta:"literaturas",
-                correcta:false
-              }
-            ]
-        },
-        {
-          pregunta:"¿Cuantos años tiene?",
-          respuestas:
-            [
-              {
-                respuesta:"25",
-                correcta:true
-              },
-              {
-                respuesta:"48",
-                correcta:false
-              },
-              {
-                respuesta:"55",
-                correcta:false
-              },
-              {
-                respuesta:"62",
-                correcta:false
-              }
-            ]
-        }
-      ],
-      respondidas:0,
-      5050:false,
-      public:false
+      mujeres:[],
+      preguntas:[],
+      especializacion:1,
+      ayudaMitad:false,
+      publico:false,
+      fin:false,
+      acertadas:0,
+      respondidas:0
     }
   },
+   beforeMount() {
+      this.mujeres = JSON.parse(localStorage.getItem("mujeres"));
+      if(this.mujeres!=null){
+          this.mujeres.forEach(mujer=>{
+              window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas/"+mujer.id)
+                  .then((response)=>{
+                      this.preguntas.push(response.data);
+                  })
+                  .catch((error)=>{
+
+                  });
+          });
+      }
+
+   },
+
   methods:{
+    preguntasAleatorias(){
+        window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas").then((response)=> {
+            this.data.preguntas=JSON.parse(response.data);
+            console.log("entra");
+        }).catch((error)=>{
+            console.log(error);
+        });
+    },
+    preguntasEspecializacionAleatorias(){
+        window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas/"+this.especializacion)
+        .then((response)=> {
+            this.data.preguntas=JSON.parse(response.data);
+            console.log("entra");
+        }).catch((error)=>{
+            console.log(error);
+        });
+    },
     siguientePregunta(acertada){
+      this.respondidas++;
       if(acertada){
-        this.respondidas++;
-        if(this.respondidas==this.preguntas.length){
-          this.finalizar();
-        }
-      }else{
-        this.reiniciar()
+        this.acertadas++;
+      }
+      if(this.respondidas>=this.preguntas.length){
+          console.log("entra");
+        this.finalizar();
       }
     },
     reiniciar(){
       this.respondidas==0;
     },
     finalizar(){
-      //TODO Hacer la finalizacion del Millonario
+        this.fin=true;
+    },
+    botonAyudaPublico(){
+      if(!this.ayudaPublico){
+        this.publico=true;
+        this.$children[0].ayudaPublico();
+      }
+    },
+    botonAyuda50(){
+      if(!this.ayudaMitad){
+        this.ayudaMitad=true;
+        this.$children[0].ayuda50();
+      }
     }
   }
 }
 </script>
+<style scoped>
+#millonario {
+    background-color: rgb(0, 2, 99);
+}
+  .final{
+      color:white;
+      margin: auto;
+  }
+</style>
 

@@ -1,0 +1,11 @@
+.panel {     margin: 0 auto; width: 40%;  display: flex;  flex-direction: column; justify-content: center; background: white;
+    align-items: center; height: 25vw; margin-top: 5%; background-color: rgba(0,0,0,0.555); padding: 5em !important; border-radius: 10px; }
+.panel li a{ color: white; }
+.panel li{list-style: none; }
+.panel li a h3{font-size: 2rem;}
+
+
+
+
+
+

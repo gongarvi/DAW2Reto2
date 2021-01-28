@@ -5,9 +5,12 @@
 @endsection
 
 @section("content")
-    <div id="juego">
-        <img class="text-center m-auto" src="{{asset("image/logo.png")}}">
+    <div id="app">
+        <div class="logo text-center w-100">
+            <img class="text-center m-auto" src="{{asset("image/logo.png")}}">
+        </div>
         <millonario/>
     </div>
-    <script src="{{asset("js/millonario.js")}}"></script>
+    <script src="{{asset("js/millonario.js")}}" defer>
+    </script>
 @endsection

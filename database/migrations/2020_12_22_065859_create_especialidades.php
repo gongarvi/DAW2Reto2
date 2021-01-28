@@ -14,13 +14,13 @@ class CreateEspecialidades extends Migration{
      */
     public function up(){
         Schema::create('especialidades', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('Nombre');
-            $table->string('Color');
+            $table->id()->autoIncrement();
+            $table->string('nombre');
+            $table->string('color');
             $table->timestamps();
         });
 
-   
+
     }
 
 
@@ -32,5 +32,5 @@ class CreateEspecialidades extends Migration{
     public function down(){
         Schema::dropIfExists('especialidades');
     }
-    
+
 }

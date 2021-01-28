@@ -1,11 +1,9 @@
-
-
-
 window.Vue = require('vue');
 
 Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -13,8 +11,9 @@ Vue.component('respuesta', require('./components/Respuesta').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Definición de vue al proyecto
-const app = new Vue({
-    el: '#juego',
+const app = new window.Vue({
+    el: '#app',
+    methods: {
 
+    },
 });

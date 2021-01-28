@@ -1,7 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/millonario.js": "/js/millonario.js"
-    "/js/matching.js": "/js/matching.js"
-
+    "/js/formulario.js": "/js/formulario.js",
+    "/js/game-page.js": "/js/game-page.js",
+    "/js/jsPuzzle.js": "/js/jsPuzzle.js",
+    "/js/match.js": "/js/match.js",
+    "/js/millonario.js": "/js/millonario.js",
+    "/js/mujeres.js": "/js/mujeres.js",
+    "/js/ruleta.js": "/js/ruleta.js"
 }

@@ -10,7 +10,7 @@
     <p id="logo">Desayunos feministas</p>
 @endsection
 @section("content")
-   
+
     <div class="container container-fluid">
         <div class="row m-auto">
             <div class="col-12 col-lg-4 p-0 text-center">
@@ -20,10 +20,40 @@
             </div>
             <div class="col-12 col-lg-8 p-0 mt-5 m-lg-auto">
                 <ul class="list-group-flush p-0 my-auto">
-                    <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a></li>
+                    @guest
+                    @if (Route::has('login'))
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a></li>
+                    @endif
+                    @else
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="perfil/{{ Auth::user()->id}}">Perfil de {{ Auth::user()->name }}</a></li>
+                    @endguest
+
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>
-                    <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Juego</a></li>
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="list-group-item border-0 bg-transparent" data-toggle="modal" data-target="#myModal"><a class="btn btn-outline-light w-100">Jugar</a></li>
+                    @endif
+                    @else
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Juego</a></li>
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("panel")}}">Administracion</a></li>
+                    @endguest
                 </ul>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content text-dark">
+                                <div class="modal-header">
+                                <h4 class="modal-title"></h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <p class="ml-5">Para poder Jugar debes iniciar sesion o registrate</p>
+                                    <a class="btn btn-outline-dark w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
         <div class="row mt-5">

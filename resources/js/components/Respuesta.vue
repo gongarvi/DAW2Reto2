@@ -1,6 +1,6 @@
 <template>
-    <div @click="responder" class="col-12 col-lg-6 w-100 mb-2 p-1" :class="{'disabled': isDisabled}">
-        <button class="btn w-100">
+    <div @click="responder" class="col-12 col-lg-6 w-100 mb-2 p-1" :class="[{'disabled': isDisabled},{'ayuda':ayuda}]">
+        <button class="btn w-100 h-100">
             {{respuesta}}
         </button>
     </div>
@@ -11,14 +11,16 @@ export default {
     data(){
         return{
             isDisabled:false,
-            interval:null   
-        }        
+            interval:null,
+            ayuda:false
+        }
     },
     props: {
         respuesta:String,
         correcta:Boolean
     },
     methods:{
+        //Evento que se ejecuta al seleccionar la respuesta.
         responder(){
             this.$parent.$data.respondido=true;
             this.$parent.$data.acertado=this.correcta;
@@ -36,6 +38,7 @@ export default {
                 },500);
             }
         },
+        //Verifica si la respuesta era correcta o no
         corregir(){
             var element=this.$el;
             var classes=element.className;
@@ -49,11 +52,19 @@ export default {
                 element.className=classes+" incorrecto";
             }
         },
+        //reinicia los seteos
         reiniciar(){
             this.isDisabled=false;
+            this.ayuda=false;
         },
+        //bloque la respuesta
         bloquear(){
             this.isDisabled=true;
+        },
+        //Ayuda del publico o 50/50
+        ayudar(){
+            console.log("Ayuda desbloqueada");
+            this.ayuda=true;
         }
     }
 }
@@ -71,7 +82,7 @@ button{
 .incorrecto{
     background-color: rgb(255, 59, 59);
 }
-.publico{
-    border: 2px solid yellow;
+.ayuda{
+    border: 4px solid rgb(144, 108, 36);
 }
 </style>
