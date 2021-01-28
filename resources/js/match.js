@@ -1,16 +1,16 @@
  //alert(mujercitas[1].nombre);
     var nombresM = [];
     var fotosM = [];
-    
-    
+
+    var mujercitas=JSON.parse(localStorage.getItem("mujeres"));
+
 
     for(i=0; i<mujercitas.length; i++){
-        
+
         nombresM.push(mujercitas[i].nombre);
         fotosM.push(mujercitas[i].foto);
-        
-    } 
-    
+
+    }
     //Parte del Juego
     var juego;
    juego = (function(){
@@ -19,21 +19,20 @@
         imagenes = new Array();
         arraydescripcion = new Array();
         arraynombres = new Array();
-
         do{
             index = Math.floor(Math.random() * (numElementos-0+1)) + 0;
-            if(imagenes.indexOf(fotosM[index]) == -1){
+            if(index<=numElementos && imagenes.indexOf(fotosM[index]) == -1){
+
                 imagenes.push(fotosM[index]);
                 arraynombres.push(nombresM[index]);
                 arraydescripcion.push(nombresM[index]);
             }
 
         }
-        while(imagenes.length<numElementos)
-
+        while(imagenes.length<numElementos);
     var vidas = 6,
     lista1,lista2;
-        
+
     //Funcion para crear las cartas
     crearCartas = function(){
         try{
@@ -42,7 +41,7 @@
             var nombres = document.querySelector('.nombres');
             var fotos = document.querySelector('.fotos');
             var item_html = '<div class="item" onclick="clic(this)" data-baraja="{baraja}" data-indice="{indice}"></div>';
-          
+
             lista1 = distribuirCartas(arraynombres);
             lista2 = (imagenes);
 
@@ -60,7 +59,7 @@
             //contenedor.innerHTML = cartas_html;
             nombres.innerHTML = cartas_html1;
             fotos.innerHTML = cartas_html2;
-             
+
         }catch(error){
             console.log(error);
         }
@@ -68,9 +67,9 @@
     //Funcion para ejecutar la accion por cada click que hacemos
     clic = function(element){
         try{
-
+            this.classList.push("glow");
             var cartas_activas = document.querySelectorAll(".sin-fondo-item");
-           
+
             if(cartas_activas.length == 2){
                 for(var i = 0; i < cartas_activas.length; i++){
                     cartas_activas[i].classList.remove("sin-fondo-item");
@@ -80,10 +79,10 @@
             }
 
             if(cartas_activas.length == 1){
-               if(cartas_activas[0].dataset.indice == element.dataset.indice 
+               if(cartas_activas[0].dataset.indice == element.dataset.indice
                 && cartas_activas[0].dataset.baraja != element.dataset.baraja ){
-                
-                    element.innerHTML = "<span class='numero-carta'></span>"; 
+
+                    element.innerHTML = "<span class='numero-carta'></span>";
                 cartas_activas[0].classList.remove("sin-fondo-item");
                 cartas_activas[0].classList.add("checked-item");
                 element.classList.add("checked-item");
@@ -95,7 +94,7 @@
             }else{
                 element.classList.add("sin-fondo-item");
                 element.innerHTML = "<span class='numero-carta'>" + element.dataset.indice  + "</span>";
-                   
+
             }
                 //Si todas cartas estan verificadas, nos saca el mensaje de victoria
             if( document.querySelectorAll(".checked-item").length == (arraynombres.length)*2 ){
@@ -103,7 +102,7 @@
                 if(mensaje.classList.contains("ocultar-mensaje")){
                     mensaje.classList.remove("ocultar-mensaje");
                 }
-            
+
             }
 
 
@@ -115,7 +114,7 @@
     restarVidas = function(){
         try{
             if(vidas == 1){
-                
+
                 var mensaje = document.querySelector("#contenedor-mensaje-derrota");
                if(mensaje.classList.contains("ocultar-mensaje")){
                     mensaje.classList.remove("ocultar-mensaje");
@@ -143,10 +142,10 @@
              console.log(error);
         }
      },
-    
+
     init = function(){
         try{
-            
+
             crearCartas();
             var botones = document.querySelectorAll(".btn");
             for(var i = 0; i<botones.length; i++){
@@ -166,6 +165,6 @@
     }
 })();window.onload = juego.init();
 
- 
+
 
 

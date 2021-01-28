@@ -13,6 +13,8 @@ class GameController extends Controller
 
     public function __construct(){
         //TODO Eliminar cuando se recoja de la BBDD
+        $this->middleware("auth.basic");
+
         $this->juegos = array(
             array(
                 "id"=>"1",

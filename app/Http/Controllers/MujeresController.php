@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class MujeresController extends Controller
 {
+
+    public function __construct()
+    {
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,8 +52,7 @@ class MujeresController extends Controller
         if($request->hasFile('foto')){
             $archivo = $request->file('foto');
             $nombre = $archivo->getClientOriginalName();
-            $archivo->move("/assets/Fotos_mujeres",$nombre);
-            
+            $archivo->move("assets/Fotos_mujeres",$nombre);
             $data["foto"]=$nombre;
         }else{
             $data["foto"]="";
@@ -106,8 +111,8 @@ class MujeresController extends Controller
             if($request->hasFile('foto')){
                 $archivo = $request->file('foto');
                 $nombre = $archivo->getClientOriginalName();
-                $path=Storage::disk('public')->put($nombre, $archivo);
-                $data["foto"]=$path;
+                $archivo->move("assets/Fotos_mujeres",$nombre);
+                $data["foto"]=$nombre;
             }else{
                 unset($mujer["foto"]);
             }

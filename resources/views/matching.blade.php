@@ -59,13 +59,6 @@
                     <li>Si fallamos, el nombre se oculta de nuevo y se nos resta una vida</li>
                 </ul>
 
-            </div>
-        </div>
-    </div>
-<script>
-    var mujercitas;
-    mujercitas = <?php echo(json_encode($mujeres))?>
-</script>
 <script src="{{ asset('js/match.js') }}">
 
 </script>

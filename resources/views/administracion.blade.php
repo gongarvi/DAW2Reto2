@@ -17,7 +17,15 @@
 <h1>PANEL DE ADMINISTRACION</h1>
 <ul class="panel">
     <li>
+<<<<<<< HEAD
         <a href="{{ route('mujeres.index') }}"><h3>MUJERES</h3></a>
+=======
+<<<<<<< HEAD
+        <a href="{{ route('mujeres.index') }}"><h3>Mujeres</h3></a>
+=======
+        <a href="#"><h3>MUJERES</h3></a>
+>>>>>>> origin/OrdoAlogo
+>>>>>>> c0a688efce8baba94f58c70b828bb5947d3233fc
     </li>
     <li>
         <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>

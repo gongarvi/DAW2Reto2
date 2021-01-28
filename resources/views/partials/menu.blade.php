@@ -7,7 +7,7 @@
         <ul class="navbar-nav ">
             <li class="nav-ite m-auto mx-lg-0">
                 <a class="navbar-brand m-auto text-light" href="{{route("inicio")}}">
-                    <img class="w-25 h-25 d-block mx-auto" src="{{asset("image/logo.png")}}" alt="Imagen corporativa">
+                    <img class="w-25 d-block mx-auto" src="{{asset("image/logo.png")}}" alt="Imagen corporativa">
                 </a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
@@ -48,15 +48,16 @@
             @guest
             @if (Route::has('login'))
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">Iniciar sesion</a>
+                <a class="nav-link btn btn-outline-secondary mr-2 text-light" href="{{ route('login') }}">Iniciar sesion</a>
             </li>
             @endif
 
             @if (Route::has('register'))
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">Registrar</a>
+                <a class="nav-link btn btn-outline-secondary text-light" href="{{ route('register') }}">Registrar</a>
             </li>
             @endif
+
             <!-- Ha iniciado sesion -->
             @else
             <li class="nav-item dropdown">
@@ -66,9 +67,14 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('perfil') }}">
-                        Editar perfil 
+                    @php
+                    $ruta = $_SERVER["REQUEST_URI"];
+                    @endphp
+                    @if(strpos($ruta, 'perfil') != 1)
+                    <a class="dropdown-item" href="perfil/{{ Auth::user()->id}}">
+                        Editar perfil
                     </a>
+                    @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         Cerrar sesion <i class="fa fa-sign-out text-grey"></i>
                     </a>
@@ -81,21 +87,4 @@
             @endguest
         </ul>
     </div>
-
-
-    <!-- <div class="dropdown position- r-">
-        <a class="nav-link dropdown-toggle" href="#" id="perfilDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="d-block mx-auto" src="{{asset("image/placeholder-usuario.png")}}" alt="Imagen del usuario" style="width: 50px; height: 50px;">
-        </a>
-        @auth
-            <div class="dropdown-menu bg-dark float-right" aria-labelledby="perfilDropDown">
-                <li class="dropdown-item m-auto mx-lg-0">
-                    <a class="nav-link m-auto text-light" href="{{route("perfil")}}">Perfil</a>
-                </li>
-                <li class="dropdown-item m-auto mx-lg-0">
-                    <a class="nav-link text-light" href="{{route("logout")}}">Cerrar Sesión</a>
-                </li>
-            </div>
-        @endauth
-    </div> -->
 </nav>

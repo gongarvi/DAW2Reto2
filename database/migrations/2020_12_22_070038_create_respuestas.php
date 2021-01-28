@@ -16,7 +16,11 @@ class CreateRespuestas extends Migration
         Schema::create('respuestas', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('pregunta');
+<<<<<<< HEAD
             $table->foreign('pregunta')->references('id')->on('preguntas')->onDelete('cascade'); // pregunta de la tabla de pregunta
+=======
+            $table->foreign('pregunta')->references('id')->on('preguntas')->onUpdate("CASCADE")->onDelete("SET NULL");
+>>>>>>> c0a688efce8baba94f58c70b828bb5947d3233fc
             $table->string('respuesta');
             $table->boolean('correcta');
             $table->timestamps();
