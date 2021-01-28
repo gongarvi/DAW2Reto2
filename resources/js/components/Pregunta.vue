@@ -11,7 +11,6 @@
                 :correcta="respuesta.correcta" :respuesta="respuesta.respuesta"
                 v-bind:key="index"/>
         </div>
-        <div></div>
     </div>
 
 </template>
@@ -31,10 +30,6 @@ export default {
         }
     },
     watch:{
-        /*
-        * Cuando el jugador selecciona la respuesta el componente respuesta cambia el
-        * atributo respodido a true y se ejecuta la funcion watch
-        */
         respondido:function(){
             if(this.respondido){
                 this.$children.forEach((respuesta)=>{
@@ -49,30 +44,6 @@ export default {
                     this.$parent.siguientePregunta(this.acertado);
                 },6500);
             }
-        }
-    },
-    methods:{
-        //El publico seleccina una respuesta, puede no ser la correcta
-        ayudaPublico(){
-            console.log("Ayuda publico");
-            this.$children[parseInt(Math.random()*3)].ayudar();
-        },
-        //Respuestas seleccionadas por el 50/50 una tiene que ser si o si la correcta
-        ayuda50(){
-            console.log("Ayuda 50");
-            let correcto=0;
-            let respuestaAleatoria=0;
-            this.respuestas.forEach((respuesta,index)=>{
-                if(respuesta.correcta){
-                    correcto=index;
-                }
-            });
-            do{
-                respuestaAleatoria=parseInt(Math.random()*3);
-            }while(correcto==respuestaAleatoria);
-            console.log("correcto"+correcto+", Aleatorio"+respuestaAleatoria);
-            this.$children[correcto].ayudar();
-            this.$children[respuestaAleatoria].ayudar();
         }
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Storage;
-
 return [
 
     /*
@@ -29,7 +27,6 @@ return [
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
-  
 
     'disks' => [
 
@@ -40,7 +37,9 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path().'\\assets\\Fotos_mujeres',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
         ],
 
         's3' => [
