@@ -131,69 +131,7 @@ class MujeresController extends Controller
     {
 
         Mujer::all()->find($mujer_id)->delete();
-
-<<<<<<< HEAD
         return redirect()->route('mujeres.index')
-=======
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-        $especialidades = Especialidad::get();
-         return view('adminMujeres.createM')->with('especialidades',$especialidades); 
-       
-    }
-
-    public function insercion(Request $request)
-    {
-        $data=$request->all();
-        
-       if($request->hasFile('foto')){
-           $archivo = $request->file('foto');
-           $nombre = $archivo->getClientOriginalName();
-           //Este disk 'public' lo hemos configurado en el archivo 'config\filesystems.php'
-           //es ahi donde indicamos la carpeta donde queremos guardar los archivos cargados
-           $path=Storage::disk('public')->put($nombre, $archivo); 
-           $data["foto"]=$path;
-        } 
-       
-        Mujer::create($data);
-        return redirect()->route('adminMujer')
-            ->with('success','La Mujer ha sido insertada correctamente');
-                  
-        
-    }
-
-    //Para actualizar
-    public function editarMujer($id)
-    {
-
-       return view('adminMujeres.editM')->with(["mujer"=>Mujer::with("especialidades")->where("id",$id)->get()->first(),"especialidades"=>Especialidad::all()]);
-       
-    }
-
-    public function actualizarMujer(Request $request, Mujer $mujer)
-    {
-        echo $mujer;
-        die;
-        Mujer::all()->where("id",$mujer->id)->first()->update($request->all());
-         
-        //$mujer->update($request->all());
-        
-        return redirect()->route('adminMujer')
-            ->with('success','La Mujer  se ha modificado correctamente');
-    }
-        //Para borrar
-    public function eliminarMujer($id)
-    {
-        Mujer::all()->find($id)->delete();
-        
-        return redirect()->route('adminMujer')
->>>>>>> origin/OrdoAlogo
             ->with('success','Mujer eliminada correctamente');
     }
 }
