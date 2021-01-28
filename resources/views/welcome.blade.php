@@ -3,6 +3,7 @@
 @section("head-extras")
 
     <link rel="stylesheet" href="{{asset("css/index.css")}}">
+    <script src="{{asset('js/app.js')}}"></script>
 
 @endsection
 @section("header")

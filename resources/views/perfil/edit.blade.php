@@ -2,6 +2,7 @@
 
 @section("head-extras")
     <link rel="stylesheet" href="{{asset("css/formularios.css")}}">
+    <script src="{{asset('js/app.js')}}"></script>
 @endsection
 
 @section("content")
