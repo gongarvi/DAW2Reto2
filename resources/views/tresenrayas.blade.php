@@ -28,13 +28,14 @@
                 </div>
             </div>
         </div>
-        <div id="cuestionario" style="width: 500px; height:500px;">
+
+        <!-- div cuestionario -->
+        <div id="cuestionario" style="width: 500px; height:500px;" class="ocultar-mensaje">
             <h4 id="pregunta"></h4>
             <select id="respuestas">
 			    <option value="" class="respuesta">Selecciona una respuesta</option>
 		    </select>
             <button class="btn btn-success" id="validar">validar</button>
-
         </div>  
 
         <!-- Contenedores de mensajes -->
