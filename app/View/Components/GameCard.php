@@ -11,7 +11,8 @@ class GameCard extends Component{
      *
      * @return void
      */
-    public function __construct(array $juego){
+    public function __construct(array $juego)
+    {
         $this->juego=$juego;
     }
 

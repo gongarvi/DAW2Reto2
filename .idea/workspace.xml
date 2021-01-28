@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/include.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/include.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/APIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/APIService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Especialidad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Especialidad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Mujer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mujer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pregunta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +149,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -160,15 +159,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\reto\public\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\reto\resources\css" />
-      <recent name="C:\xampp\htdocs\laravel\reto\resources\views\admin\mujeres" />
       <recent name="C:\xampp\htdocs\laravel\reto\resources\js" />
       <recent name="C:\xampp\htdocs\laravel\reto\resources\js\components" />
       <recent name="C:\xampp\htdocs\laravel\reto\resources\views\partials" />
+      <recent name="C:\xampp\htdocs\laravel\reto\resources\views\layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,18 +187,7 @@
       <workItem from="1608274673725" duration="3477000" />
       <workItem from="1608533680201" duration="3814000" />
       <workItem from="1608632983152" duration="8754000" />
-      <workItem from="1610002646090" duration="19177000" />
-      <workItem from="1610348489552" duration="6353000" />
-      <workItem from="1610360415965" duration="2970000" />
-      <workItem from="1610434637665" duration="13948000" />
-      <workItem from="1610609047531" duration="16679000" />
-      <workItem from="1610694060246" duration="11987000" />
-      <workItem from="1610953347247" duration="4934000" />
-      <workItem from="1611047953375" duration="6364000" />
-      <workItem from="1611133030839" duration="12325000" />
-      <workItem from="1611224648449" duration="6385000" />
-      <workItem from="1611557606195" duration="14514000" />
-      <workItem from="1611644097308" duration="3470000" />
+      <workItem from="1610002646090" duration="10946000" />
     </task>
     <servers />
   </component>

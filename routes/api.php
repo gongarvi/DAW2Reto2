@@ -2,9 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\PreguntasAPIService;
-use \App\Http\Controllers\EspecializacionesAPIService;
-use \App\Http\Controllers\MujeresAPIService;
+use \App\Http\Controllers\APIService;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource("preguntas",PreguntasAPIService::class);
-Route::apiResource("especialidades",EspecializacionesAPIService::class);
-Route::get("mujeres",[MujeresAPIService::class,"index"]);
-Route::get("mujeres/{cantidad}/{especializacion}",[MujeresAPIService::class,"show"]);
-//Route::apiResource("mujeres",MujeresAPIService::class);
-
+Route::apiResource("preguntas",APIService::class);
