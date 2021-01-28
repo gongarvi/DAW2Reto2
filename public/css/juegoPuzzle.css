@@ -19,4 +19,25 @@ td.pieza{
 
 div.posic{ display: none;background:#FFF; padding:5px; border:1px solid #ffffff; width:150px; position:absolute; top:70px; overflow:auto; min-height:5px; max-height:500px}
 
-
+#contenedor-mensaje-victoria,  #contenedor-mensaje-derrota,#cuestionario{
+    position: fixed;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    background: #000000ad;
+  } 
+  #mensaje-victoria,#mensaje-derrota,#cuestionario{
+     min-height: 400px; 
+     top: 15%; 
+     position: relative; 
+     max-width: 600px; 
+     margin: 0 auto;
+     display: flex; 
+     flex-direction: column; 
+     justify-content: center; 
+     align-items: center; 
+     border-radius: 20px;
+     background-color: darkgrey; 
+  }
+  .ocultar-mensaje{display: none;}

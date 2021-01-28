@@ -76,7 +76,7 @@ body{
   text-align: center;
 }
 
-#contenedor-mensaje, #contenedor-mensaje-victoria,  #contenedor-mensaje-derrota{
+#contenedor-mensaje, #contenedor-mensaje-victoria,  #contenedor-mensaje-derrota, #cuestionario{
   position: fixed; 
   top: 0; 
   bottom: 0;
@@ -84,7 +84,7 @@ body{
   right: 0; 
   background: #000000ad;
 } 
-#mensaje, #mensaje-victoria,#mensaje-derrota{
+#mensaje, #mensaje-victoria,#mensaje-derrota, #cuestionario{
    min-height: 400px; 
    top: 20%; 
    position: relative; 

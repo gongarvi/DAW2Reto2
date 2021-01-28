@@ -22,7 +22,7 @@ var winner, gameboard, playing;
 
 var mensaje = document.querySelector("#contenedor-mensaje");
 var TituloMensaje = document.getElementById("titulo-mensaje");
-var btnMensaje = window.$(".btnCerrarMensaje");
+var btnMensaje = document.getElementById("btnCerrarMensaje");
 
 // Muestro el mensaje primero 
 if (mensaje.classList.contains("ocultar-mensaje")) {
@@ -173,10 +173,7 @@ function checkForWinner(board) {
 };
 
 window.$("#gameboard").click(function (e) {
-   mensaje = window.$("#cuestionario");
-    if (mensaje.classList.contains("ocultar-mensaje")) {
-      mensaje.classList.remove("ocultar-mensaje");
-    }
+ 
   //end game when winner delcared 
   if (!playing) return;
   var playerPick = (e.target.id).slice(2);
@@ -189,7 +186,12 @@ window.$("#gameboard").click(function (e) {
   };
 
   if (gameboard[playerPick] == "") {
+
     console.log(arrayPreguntas);
+    console.log("has clickado el cuadro");
+    mensaje = document.querySelector("#cuestionario");
+    mensaje.style.display = "block";
+
     //Escojemos la pregunta y se la lanzamos
     //escojemos la pregunta
     var numerorandom = Math.floor(Math.random() * arrayPreguntas.length);
@@ -208,8 +210,10 @@ window.$("#gameboard").click(function (e) {
     }
     //Validaremos la respuesta
     window.$("#validar").click(function (evt) {
+      
       console.log("se ejecuta el click");
-      mensaje.classList.add("ocultar-mensaje");
+      mensaje.style.display = "none";
+
       if (document.getElementById("respuestas").value == "true" ) {
         gameboard[playerPick] = player;
         console.log(gameboard);

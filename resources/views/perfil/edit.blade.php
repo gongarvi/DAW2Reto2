@@ -71,10 +71,10 @@
                 <input type="submit" value="Actualizar contraseña" class="btn btn-success mb-2">
 			</form>
 
+            <button class="btn btn-danger mt-5" data-toggle="modal" data-target="#myModal">Eliminar mi cuenta</button>
             <form action="/eliminarPerfil/{{$usuario->id}}" method="post">
                 @method('POST')
                 @csrf
-                <button class="btn btn-danger mt-5" type="reset" data-toggle="modal" data-target="#myModal">Eliminar mi cuenta</button>
 
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog">
