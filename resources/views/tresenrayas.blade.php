@@ -28,31 +28,39 @@
                 </div>
             </div>
         </div>
+        <div id="cuestionario" style="width: 500px; height:500px;">
+            <h4 id="pregunta"></h4>
+            <select id="respuestas">
+			    <option value="" class="respuesta">Selecciona una respuesta</option>
+		    </select>
+            <button class="btn btn-success" id="validar">validar</button>
 
+        </div>  
 
         <!-- Contenedores de mensajes -->
-        <div id="contenedor-mensaje" class="ocultar-mensaje">
+        <div id="contenedor-mensaje" class="ocultar-mensaje text-dark">
             <div id="mensaje">
                 <h3 id="titulo-mensaje"></h3>
-                <button class="btn btn-light btnCerrarMensaje">OK</button>
-            </div>   
+                <button class="btn btn-light btnCerrarMensaje">OK</button> 
+            </div>
+            
         </div>
         <div id="contenedor-mensaje-victoria" class="ocultar-mensaje">
             <div id="mensaje-victoria">
                 <h3>Felicidades!!!</h3>
                 <h4>Has completado el nivel</h4>
-                <img src="img/felicitar.gif">
-                <button class="btn btn-light btnCerrarMensaje">Otra partida</button>
-                <button class="btn btn-light" id="SalirJuego">Salir</button>
+                <button class="btn btn-success otrapartida">Otra partida</button>
+                <button class="btn btn-danger" id="SalirJuego">Salir</button>
             </div>   
         </div>
         <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">
             <div id="mensaje-derrota">
                 <h3>Has perdido!!!</h3>
                 <h4>No has podido completar el nivel, pero Ánimo</h4>
-                <button class="btn btn-light btnCerrarMensaje">Otra partida</button>
+                <button class="btn btn-danger otrapartida">Volver al menu de juegos</button>
             </div>   
         </div>
+
         
 
     <script src="{{asset("js/tresenrayas.js")}}"></script>

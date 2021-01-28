@@ -45,11 +45,13 @@ Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
 
 
-Route::get("/juegos/tresenrayas", function(){ 
+Route::get("/juegos/tresenraya", function(){ 
     return view("tresenrayas");
 })->name("tresenrayas");
 
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
+
+Route::get("/juegos/puzzle",[GameController::class,"puzzle"])->name("Puzzle");
 
 Route::get("/juegos/UltimoNivel", function(){
     return view("UltimoNivel");
@@ -79,10 +81,10 @@ Route::resource("admin/especialidades",EspecialidadesController::class, ["except
 Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
     Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
     Route::get('/panelControl', [HomeController::class, 'panelControl'])->name('panel');
-
+});
 Route::post("/fotosperfil/{id}",[PerfilController::class,"fotosperfil"])->name("fotosperfil");
 Route::get("/actualizarfoto/{id}/{nombrefoto}",[PerfilController::class,"actualizarfoto"])->name("actualizarfoto");
 Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
 Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
 Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
-});
+

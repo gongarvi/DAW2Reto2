@@ -2,14 +2,322 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MujeresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MujeresController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mujeres.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mujeres.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/CxampphtdocsDAW2Reto2storagelogs/laravel.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/transparente.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/app.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PerfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PerfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PreguntasAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PreguntasAPIService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065859_create_especialidades.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065859_create_especialidades.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065924_create_mujeres.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065924_create_mujeres.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_065952_create_preguntas.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_065952_create_preguntas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_070038_create_respuestas.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_070038_create_respuestas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_25_070707_create_fotosperfil_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_25_070707_create_fotosperfil_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/preguntas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/Preguntas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/respuestas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/respuestas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/150px-VirginiaSatir.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/150px-VirginiaSatir.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/200px-Olympe_de_Gouges.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/200px-Olympe_de_Gouges.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Dr_Reina.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Dr_Reina.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Madame_de_Staël.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Madame_de_Staël.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Margaret_Murray.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Margaret_Murray.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Vina_Mazumdar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/220px-Vina_Mazumdar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Aliceclark.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Aliceclark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/AlmaRosaSanchez.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/AlmaRosaSanchez.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Alpers_Svetlana.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Alpers_Svetlana.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Alva_Myrdal.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Alva_Myrdal.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Amaki_Amalia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Amalia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Amelia_Valcarcel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Amelia_Valcarcel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Amparo_Tomé.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Amparo_Tomé.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ana_Silvia_Monzón.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ana_Silvia_Monzón.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Angela-Mcrobbie-photo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Angela-Mcrobbie-photo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/AnnOakley.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/AnnOakley.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ann_fabian.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ann_fabian.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anna_Freud_1957.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anna_Freud_1957.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anna_J._Cooper.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anna_J._Cooper.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anna_Schwartz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anna_Schwartz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anne-Conway.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anne-Conway.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anne_Marion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anne_Marion.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anneliese Michel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anneliese Michel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anneliese_Bulling.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Anneliese_Bulling.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Asli Demirguc-Kunt_.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Asli Demirguc-Kunt_.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Aspasie.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Aspasie.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ban_Zhao.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ban_Zhao.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Banner, Lois.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Banner, Lois.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Barbara-Fredrickson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Barbara-Fredrickson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Beatrice_Webb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Beatrice_Webb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/BeckerBertha.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/BeckerBertha.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Benedict_Ruth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Benedict_Ruth.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Betty_Friedan_1960.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Betty_Friedan_1960.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Boddy_Janice.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Boddy_Janice.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Brenda_Milner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Brenda_Milner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/CapitolinaDiaz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/CapitolinaDiaz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Carmen_M._Reinhart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Carmen_M._Reinhart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Carol Berkin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Carol Berkin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Catherinenci.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Catherinenci.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Celia_Amorós.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Celia_Amorós.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Chant, Sylvia.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Chant, Sylvia.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Chantal_Delsol.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Chantal_Delsol.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Charlotte_Erickson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Charlotte_Erickson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Charlotte_Perkins_Gilman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Charlotte_Perkins_Gilman.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christina_Romer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christina_Romer.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christine_Delphyjpeg.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christine_Delphyjpeg.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christine_Ladd-Franklin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christine_Ladd-Franklin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christine_de_Pisanjpg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Christine_de_Pisanjpg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Clara-Collet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Clara-Collet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Claudia_Goldin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Claudia_Goldin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dambisa_Moyo3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dambisa_Moyo3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dame Olwen Hufton.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dame Olwen Hufton.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Deirdre_McCloskey.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Deirdre_McCloskey.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/DianeElson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/DianeElson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Donna_Haraway.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Donna_Haraway.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Donna_Haraway_and_Cayenne.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Donna_Haraway_and_Cayenne.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Doreen_Massey.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Doreen_Massey.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Doria_Shafik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Doria_Shafik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dr._Margaret_MacMillan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dr._Margaret_MacMillan.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dr._Vandana_Shiva_DS.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dr._Vandana_Shiva_DS.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dra.-Consuelo-Meza-Marquez.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Dra.-Consuelo-Meza-Marquez.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Drew_Faust.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Drew_Faust.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/DublinCore.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/DublinCore.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Edith-Penrose.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Edith-Penrose.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Edith_Abbott.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Edith_Abbott.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Eleanor Shipley.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Eleanor Shipley.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Eleonora_Menicucci.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Eleonora_Menicucci.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elina_González_Acha_de_Correa_Morales.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elina_González_Acha_de_Correa_Morales.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/ElinorOstrom.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/ElinorOstrom.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elisabeth_of_Bohemia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elisabeth_of_Bohemia.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elizabeth_Loftus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elizabeth_Loftus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ellen-Churchill-Semple.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ellen-Churchill-Semple.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elsie_Worthington_Clews_Parsons.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Elsie_Worthington_Clews_Parsons.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ester_Boserup.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ester_Boserup.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Esther_Duflo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Esther_Duflo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Esther_Pineda.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Esther_Pineda.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/EstivalizdeMiguelCalvo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/EstivalizdeMiguelCalvo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/EvaAltermanBlay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/EvaAltermanBlay.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/FabianAnn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/FabianAnn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/FatimaMernissi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/FatimaMernissi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Frances_Densmore.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Frances_Densmore.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Frank_Gelya.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Frank_Gelya.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Georgina_Jiménez_de_López.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Georgina_Jiménez_de_López.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Gerda_Lerner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Gerda_Lerner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Gina_Vargas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Gina_Vargas.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/HARPER.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/HARPER.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hannah_Arendt.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hannah_Arendt.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Harriet_Chalmers_Adams.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Harriet_Chalmers_Adams.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Harriet_Martineau.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Harriet_Martineau.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Harriet_Mill.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Harriet_Mill.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hasia Diner 3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hasia Diner 3.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hasia_Diner.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hasia_Diner.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/HenriettaMoore.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/HenriettaMoore.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/HildaJohnstone.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/HildaJohnstone.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hipparchia_of_Maroneia_Villa_Farnesina.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hipparchia_of_Maroneia_Villa_Farnesina.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hurston-Zora-Neale.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hurston-Zora-Neale.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hypatia_portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Hypatia_portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Indira_Huilca_Flores.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Indira_Huilca_Flores.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ines_Alberdi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ines_Alberdi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Inmaculada_Mujika_Flores.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Inmaculada_Mujika_Flores.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Irma_Adelman.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Irma_Adelman.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Jane_Addams.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Jane_Addams.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Janet_D._spector.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Janet_D._spector.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Janet_Yellen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Janet_Yellen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/JenniferSaul.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/JenniferSaul.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan Evans.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan Evans.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan_Evans.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan_Evans.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan_Robinson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan_Robinson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan_scott.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joan_scott.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joanne Meyerowitz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Joanne Meyerowitz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Josefina_Gómez_Mendoza.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Josefina_Gómez_Mendoza.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/JudithButler.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/JudithButler.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Julia Roberts.jpgjpg/087ocpqFDbSrbNctFolVW9HDgPH9oUzzSGnxsYXo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Julia_Kristeva.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Julia_Kristeva.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kaberry_Phillis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kaberry_Phillis.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Karen_Horney_1938.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Karen_Horney_1938.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kate Winslet.jpgjpg/lRh7vjPETnusrRAudUcVXIQVoDfMiXUqqoKRgEp1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kathleen_Barry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kathleen_Barry.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kessler-Harris.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kessler-Harris.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kimberlé_Crenshaw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Kimberlé_Crenshaw.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lake, Marilyn .jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lake, Marilyn .jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lamphere_Louise.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lamphere_Louise.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Laurel_Thatcher_Ulrich.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Laurel_Thatcher_Ulrich.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Leakey_Mary.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Leakey_Mary.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Leda_Cosmides_.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Leda_Cosmides_.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Leela_dube.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Leela_dube.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lila_Abu-Lughod.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lila_Abu-Lughod.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/LisaAdkins.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/LisaAdkins.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lizabeth_Cohen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Lizabeth_Cohen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/LuzGabrielaarango.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/LuzGabrielaarango.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MCalkins.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MCalkins.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MarcelaLagarde.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MarcelaLagarde.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margaret_Floy_Washburn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margaret_Floy_Washburn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margaret_conkey.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margaret_conkey.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margarete_Bieber.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margarete_Bieber.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margery_Wolf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Margery_Wolf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MariaAntoniaGarcialeon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MariaAntoniaGarcialeon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Maria_Czaplicka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Maria_Czaplicka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Maria_Ossowska.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Maria_Ossowska.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marianne-Bertrand_.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marianne-Bertrand_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MarianneWeber.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MarianneWeber.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marielle_Franco.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marielle_Franco.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MarilynWaring2012.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MarilynWaring2012.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marina_Subirats.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marina_Subirats.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marjorie_tipping.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marjorie_tipping.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Maroneia_Villa_Farnesina.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Maroneia_Villa_Farnesina.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary Dorothy George.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary Dorothy George.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MaryPayMArshall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MaryPayMArshall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Cover_Jones.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Cover_Jones.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Lucas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Lucas.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Midgley.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Midgley.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Nash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Nash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Paley_Marshall.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Paley_Marshall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Warnock.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Warnock.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Wollstonecraft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mary_Wollstonecraft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marydorothy_george.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Marydorothy_george.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/María_Angeles_Durán_Heras.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/María_Angeles_Durán_Heras.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/María_Zambrano.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/María_Zambrano.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Matilda_Coxe_Stevenson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Matilda_Coxe_Stevenson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mead_Margaret.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mead_Margaret.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Melanie_Klein.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Melanie_Klein.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mia Bay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mia Bay.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MichelleRosaldo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/MichelleRosaldo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mildred_Trotter.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Mildred_Trotter.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Millicent_Fawcett.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Millicent_Fawcett.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/NancyChodorow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/NancyChodorow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/NancyFraser.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/NancyFraser.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Nancy_Folbre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Nancy_Folbre.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Natalie_Zemon_Davis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Natalie_Zemon_Davis.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/OrlandinedeOliveira.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/OrlandinedeOliveira.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Patricia_Churchland.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Patricia_Churchland.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Pearl_Primus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Pearl_Primus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Pinar_Selek.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Pinar_Selek.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/RachelBotsman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/RachelBotsman.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Riane-Eisler.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Riane-Eisler.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Rita Maria Radl Philipp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Rita Maria Radl Philipp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Rita_Segato.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Rita_Segato.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Rosa_Luxemburg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Rosa_Luxemburg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/RosalindMoss.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/RosalindMoss.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/RosalindMoss.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/RosalindMoss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ruth_Shady.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Ruth_Shady.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/SOSIPATRA.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/SOSIPATRA.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sabina_Spielrein.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sabina_Spielrein.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sandra.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sandra.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sarah Holloway.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sarah Holloway.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Simone-Weil-.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Simone-Weil-.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Simone_de_Beauvoir2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Simone_de_Beauvoir2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Soledad_Murillo_de_la_Vega.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Soledad_Murillo_de_la_Vega.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sophiedecondorcet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sophiedecondorcet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Susan-Hanson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Susan-Hanson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Susan_Sontag.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Susan_Sontag.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Susanne_Langer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Susanne_Langer.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sylvia-Walby.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Sylvia-Walby.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Teresa_de_Jesús.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Teresa_de_Jesús.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Teresita_de_Barbieri.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Teresita_de_Barbieri.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/TriciaRose.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/TriciaRose.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/VanesaCejudopng.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/VanesaCejudopng.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/VeronicaStrong.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/VeronicaStrong.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/VickiLynnRuiz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/VickiLynnRuiz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Wheelwright_Mary_Cabot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Wheelwright_Mary_Cabot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Zaida_Fernández_Pérez_.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Zaida_Fernández_Pérez_.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Zelia_Nuttall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/Zelia_Nuttall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_Ayn_Rand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_Ayn_Rand.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_Lourdes_Pastor.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_Lourdes_Pastor.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_Luisa_Posada.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_Luisa_Posada.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_ljubinka-nikolic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/_ljubinka-nikolic.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/amalia_amaki.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/amalia_amaki.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/aretacirene.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/aretacirene.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/bahriyeucok.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/bahriyeucok.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/barbaraRansby.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/barbaraRansby.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/blancafernandezvigueraA.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/blancafernandezvigueraA.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/bulkeley-h.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/bulkeley-h.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/carol_berkin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/carol_berkin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/catherine_hall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/catherine_hall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/cindi_katz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/cindi_katz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/cohen.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/cohen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/conkey2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/conkey2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/diana_russell.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/diana_russell.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/diane-elson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/diane-elson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/eleanor_ducket.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/eleanor_ducket.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/emaccoby.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/emaccoby.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/erminnie-smith.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/erminnie-smith.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/gargi-vachaknavi.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/gargi-vachaknavi.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/grose.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/grose.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/hagemann.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/hagemann.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/hollingworthleta.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/hollingworthleta.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/honeyman_katrina.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/honeyman_katrina.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/irene_doelling.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/irene_doelling.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/janetCurrie.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/janetCurrie.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/joan.gero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/joan.gero.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/joanKelly.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/joanKelly.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/joan_gero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/joan_gero.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/judith_bennett.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/judith_bennett.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/judithastelarra.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/judithastelarra.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/julieta_kirkwood.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/julieta_kirkwood.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/karen_hagemann.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/karen_hagemann.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/kay-trimberger.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/kay-trimberger.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/komarovsky49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/komarovsky49.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/laura-perls.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/laura-perls.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/linda_gordon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/linda_gordon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/lindagordon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/lindagordon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/lmcdowell.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/lmcdowell.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/lois_banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/lois_banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/magdalena_leon_gomez.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/magdalena_leon_gomez.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mamie-phipps-clark-wide.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mamie-phipps-clark-wide.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/maria_mies_pic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/maria_mies_pic.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mariarostworowski.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mariarostworowski.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mary-ainsworth.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mary-ainsworth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mary-paley-marshall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mary-paley-marshall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/meike_hoffmann.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/meike_hoffmann.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mia_bay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/mia_bay.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/nancy-f-cott.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/nancy-f-cott.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/nancy-f.-cott.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/nancy-f.-cott.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/photo_1008252.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/photo_1008252.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/php4E3.tmp/suOn4iIcXjFDkVCwoUEqZ5i1UFd9xIGupVTsSk53.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/roberta-gilchrist.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/roberta-gilchrist.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/roberta_gilchrist.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/roberta_gilchrist.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/rosalind_moss.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/rosalind_moss.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/rosedirectorfriedman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/rosedirectorfriedman.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/sarahwhatmore.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/sarahwhatmore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/schleif.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/schleif.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/sinfoto.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/sinfoto.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/svetlana_alpers.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/svetlana_alpers.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/valentine_gill.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/valentine_gill.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/verificado.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/verificado.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/woolleyhelenthompson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/woolleyhelenthompson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Fotos_mujeres/xGrice-Hutchinson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Fotos_mujeres/xGrice-Hutchinson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/juegoPuzzle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/juegoPuzzle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/especialidades.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/formulario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/formulario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/mujeres/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/mujeres/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/administracion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/administracion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/game-card-controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/game-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jsPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jsPuzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/millonario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/millonario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mujeres.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/ruleta.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruleta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/ruletaMujeres.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/tresenrayas.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tresenrayas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/juegoPuzzle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/juegoPuzzle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Mujeres.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/mujeres.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/game-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/game-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/jsPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/jsPuzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/tresenrayas.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/tresenrayas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/game-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/game-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/puzzle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/puzzle.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tresenrayas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tresenrayas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +515,7 @@
       <workItem from="1611557606195" duration="14514000" />
       <workItem from="1611644097308" duration="1655000" />
       <workItem from="1611659430181" duration="1200000" />
-      <workItem from="1611817621567" duration="176000" />
+      <workItem from="1611817621567" duration="261000" />
     </task>
     <servers />
   </component>

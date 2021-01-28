@@ -1,8 +1,20 @@
 require("./bootstrap.js");
 
-var player = "X"; 
-var ai = "O";
-var winner, gameboard, playing;
+// recoge los datos de localstorage
+var mujeres = new Array();
+var mujeres = JSON.parse(localStorage.getItem("mujeres"));
+
+// creo el array de preguntas para recoger preguntas del api
+let arrayPreguntas = new Array();
+for (i = 0; i < mujeres.length; i++) {
+  $.get("/api/preguntas/" + mujeres[i].id, function (data) {
+    console.log(data);
+    // console.log(data.pregunta);
+    console.log("tamaño de las preguntas "+data);
+    console.log("meto pregunta"+i);
+    arrayPreguntas.push(data);
+  })
+}
 
 var player = "X";
 var ai = "O";
@@ -22,14 +34,15 @@ btnMensaje[0].onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
   reset();
 }
-btnMensaje[1].onclick = function () {
-  mensaje.classList.add("ocultar-mensaje");
-}
-btnMensaje[2].onclick = function () {
-  mensaje.classList.add("ocultar-mensaje");
-}
+// btnMensaje[1].onclick = function () {
+//   mensaje.classList.add("ocultar-mensaje");
+// }
+// btnMensaje[2].onclick = function () {
+//   mensaje.classList.add("ocultar-mensaje");
+// }
 
-window.$("#SalirJuego").click(function(){
+// boton de salir del juego
+window.$("#SalirJuego").click(function () {
   window.history.back();
 });
 
@@ -84,7 +97,7 @@ function aiTurn() {
   console.log("computer's turn");
   var available = getEmptySpaces(gameboard);
   console.log(available);
-  //temporary stop if tie game
+  // el juego se para temporalmente si es empate
   if (available.length === 0) {
     //Aqui se empata 
     mensaje = document.querySelector("#contenedor-mensaje");
@@ -101,9 +114,8 @@ function aiTurn() {
   window.$("#sq" + aiIndex).html(ai);
 };
 
-
 function checkForWinner(board) {
-  // Check for win conditions 
+  // comprueba las condiciones de la partida 
   var winCon = [
     // Horizontal
     [0, 1, 2],
@@ -119,7 +131,7 @@ function checkForWinner(board) {
   ];
   for (var i = 0; i < winCon.length; i++) {
     var cond = winCon[i];
-    // If all three are equal and not blank
+    // si une los 3 en raya
     if (board[cond[0]] !== "" && board[cond[0]] === board[cond[1]] && board[cond[1]] === board[cond[2]]) {
       winner = board[cond[0]];
       playing = false;
@@ -142,6 +154,10 @@ function checkForWinner(board) {
         if (mensaje.classList.contains("ocultar-mensaje")) {
           mensaje.classList.remove("ocultar-mensaje");
         }
+        window.$(".otrapartida").click(function (evt) {
+          console.log("va ha cerrar");
+          window.location.href = '/juegos';
+        });
         console.log("Has Perdido :(");
       }
 
@@ -156,33 +172,53 @@ function checkForWinner(board) {
   }
 };
 
-
 window.$("#gameboard").click(function (e) {
   //end game when winner delcared 
   if (!playing) return;
-  console.log("players's turn");
-
-  // el turno del jugador
-  alert("es tu turno");
-
   var playerPick = (e.target.id).slice(2);
   console.log(playerPick);
   var playerSelector = "#sq" + playerPick;
+
   if (gameboard[playerPick] != "") {
-    //player doesn't lose turn if invalid entry 
+    //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
     return;
   };
-  if (gameboard[playerPick] == "") {
-    gameboard[playerPick] = player;
-    console.log(gameboard);
-    $(playerSelector).html(player);
-  };
 
-  checkForWinner(gameboard);
-  if (playing) {
-    aiTurn();
-    checkForWinner(gameboard);
-  }
+  if (gameboard[playerPick] == "") {
+    console.log(arrayPreguntas);
+    //Escojemos la pregunta y se la lanzamos
+    //escojemos la pregunta
+    var numerorandom = Math.floor(Math.random() * arrayPreguntas.length);
+    var pregunta = arrayPreguntas[numerorandom];
+    arrayPreguntas.splice(numerorandom, 1);
+    //Se la lanzamos
+    $("#pregunta").html(pregunta.pregunta);
+    document.getElementById("respuestas").options.length = 0;//Vaciamos las options 
+    //Añadimos las respuestas para la pregunta inicial
+    for (i = 0; i < pregunta.respuestas.length; i++) {
+      $('#respuestas').append($('<option />', {
+        text: pregunta.respuestas[i].respuesta,
+        value: pregunta.respuestas[i].correcta,
+      }));
+    }
+    //Validaremos la respuesta
+    window.$("#validar").click(function (evt) {
+      alert("se ejecuta el click");
+      if (document.getElementById("respuestas").value == "true" ) {
+        gameboard[playerPick] = player;
+        console.log(gameboard);
+        $(playerSelector).html(player);
+        if (playing) {
+          aiTurn();
+          checkForWinner(gameboard);
+        }
+      }else {
+        aiTurn();
+        checkForWinner(gameboard);
+      }
+     evt.stopImmediatePropagation();
+    });
+  };
 });
 
 start();

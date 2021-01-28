@@ -1,6 +1,7 @@
 
 window.Vue = require('vue');
 require("./bootstrap.js");
+
 const app = new Vue({
     el: '#app',
     methods: {

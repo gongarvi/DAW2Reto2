@@ -59,6 +59,7 @@
 </template>
 
 <script>
+    Vue.config.productionTip = false;
     export default {
         data(){
             return {

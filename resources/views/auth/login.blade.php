@@ -11,7 +11,7 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 				<h2>Iniciar sesion</h2>
-
+					
 				<div class="form-group">
 					<label for="email">Correo electronico:</label>
 					<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
@@ -22,7 +22,7 @@
                         </span>
                     @enderror
                 </div>
-
+					
 				<div class="form-group">
 					<label for="password">Contraseña:</label>
 					<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"/>
@@ -47,7 +47,7 @@
                         ¿Has olvidado la contraseña?
                     </a>
                 @endif
-
+					
 			</form>
 		</div>
 	</div>

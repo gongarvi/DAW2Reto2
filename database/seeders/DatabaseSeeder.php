@@ -25,9 +25,8 @@ class DatabaseSeeder extends Seeder
     }
 
     // los datos para la tabla de especialidades
-     private function especialidades(){
-
-        $file = fopen('public\assets\CSVs\Especialidades.csv', "r");
+    private function especialidades(){
+        $file = fopen('public/assets/CSVs/Especialidades.csv', "r");
         $data = array();
         $i = 0;
         while (($filedata = fgetcsv($file, 1000, ";")) !== FALSE) {
@@ -58,7 +57,7 @@ class DatabaseSeeder extends Seeder
     // los datos para la tabla de mujeres
     private function mujeres(){
 
-        $file = fopen('public\assets\CSVs\mujeres.csv', "r");
+        $file = fopen('public/assets/CSVs/mujeres.csv', "r");
         $data = array();
         $i = 0;
         while (($filedata = fgetcsv($file, 1000, ';')) !== FALSE) {
@@ -88,10 +87,9 @@ class DatabaseSeeder extends Seeder
             $mujer->nacionalidad=$importData[7];
             $mujer->save();
         }
-
     }
     private function preguntas(){
-        $file = fopen('public\assets\CSVs\preguntas.csv', "r");
+        $file = fopen('public/assets/CSVs/preguntas.csv', "r");
         $data = array();
         $i = 0;
         while (($filedata = fgetcsv($file, 1000, ';')) !== FALSE) {
@@ -118,7 +116,7 @@ class DatabaseSeeder extends Seeder
         }
     }
     private function respuestas(){
-        $file = fopen('public\assets\CSVs\respuestas.csv', "r");
+        $file = fopen('public/assets/CSVs/respuestas.csv', "r");
         $data = array();
         $i = 0;
         while (($filedata = fgetcsv($file, 1000, ';')) !== FALSE) {
@@ -146,7 +144,6 @@ class DatabaseSeeder extends Seeder
             }else{
                 $respuesta->correcta=false;
             }
-            echo $respuesta->correcta . "\n";
             $respuesta->save();
 
         }

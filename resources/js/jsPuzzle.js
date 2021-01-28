@@ -1,8 +1,12 @@
+require("./bootstrap.js");
 var select = false;
 var c = "inc";
 var pos_s = "";
 var id_s = "";
-
+let arrayPreguntas = new Array();
+$.get("/api/preguntas/" + mujer[0].id, function (data) {
+    arrayPreguntas.push(data);
+  })
 var rompecabezas = {
   _arr_pos_r : new Array(),
   _arr_pos_a : new Array(), 
@@ -19,7 +23,7 @@ var rompecabezas = {
 		dp.className = 'posic';
 		var ar = Math.sqrt(piezas);
 		var c = 0;
-		var tam_img = 300;
+		var tam_img = 500;
 		var pos_img = tam_img / ar;
 		for(var fil=1;fil<=ar;fil++){
 			var tr = document.createElement('tr');
@@ -45,19 +49,16 @@ var rompecabezas = {
 			}
 			tb.appendChild(tr);
 		}
-		if(!rompecabezas._get("div_content")){
+		if(!rompecabezas._get("content")){
 			var cont = document.createElement('div');
 			cont.id = 'div_content';
 			cont.appendChild(tb);
 			cont.appendChild(dp);
 			document.body.appendChild(cont);
 		}else{
-			rompecabezas._get("div_content").innerHTML = '';
-			rompecabezas._get("div_content").appendChild(tb);
-			rompecabezas._get("div_content").appendChild(dp);
-			rompecabezas._get("posiciones").removeClass('posic');
-			rompecabezas._get("posiciones").innerHTML = '';
-			rompecabezas._get("posiciones").className = 'posic';
+			rompecabezas._get("content").innerHTML = '';
+			rompecabezas._get("content").appendChild(tb);
+			rompecabezas._get("content").appendChild(dp);
 		}
 	},
 	_barajar: function(){
@@ -132,6 +133,22 @@ var rompecabezas = {
     setTimeout(function(){
       if(fin){
 			  alert("LO RESOLVISTE COMPADRE!!")
+			  document.getElementById("content").innerHTML+= "<div><h4>"+arrayPreguntas[0].pregunta+"</h4><br> <select id='respuestas'><option>Seleccione una respuesta</option></select><button id='validar'>Validar</button></div>";
+			  for (i = 0; i < arrayPreguntas[0].respuestas.length; i++) {
+				$('#respuestas').append($('<option />', {
+				  text: arrayPreguntas[0].respuestas[i].respuesta,
+				  value: arrayPreguntas[0].respuestas[i].correcta,
+				}));
+			  }
+			  window.$("#validar").click(function (evt) {
+				if (document.getElementById("respuestas").value == "true" ) {
+					//Sube la pava al base de datos mujeres pasadas para fotoperfil
+					window.location.href = '/juegos';
+				}else{
+					//Mensaje has perdido y redireccion
+				}
+			});
+				  
 		  }
     },600);
 	},
