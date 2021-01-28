@@ -2,38 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MujeresAPIService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PreguntasAPIService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PreguntasAPIService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/fotosperfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FotosperfilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Pregunta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pregunta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/Preguntas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/Preguntas.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/CSVs/respuestas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CSVs/respuestas.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/game-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/game-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/juegoPuzzle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/juegoPuzzle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/mujeres.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mujeres.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/tresenrayas.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/tresenrayas.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/formulario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/game-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/jsPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jsPuzzle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/match.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/millonario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/millonario.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mujeres.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/ruleta.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruleta.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/tresenrayas.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tresenrayas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Millonario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Millonario.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/mujeres.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/mujeres.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/millonario.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/millonario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/jsPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/jsPuzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/tresenrayas.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/tresenrayas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/perfil/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/perfil/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/puzzle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/puzzle.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ruleta.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ruleta.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tresenrayas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tresenrayas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

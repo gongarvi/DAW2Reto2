@@ -28,20 +28,28 @@
                 </div>
             </div>
         </div>
-        <div id="cuestionario" style="width: 500px; height:500px;">
-            <h4 id="pregunta"></h4>
-            <select id="respuestas">
-			    <option value="" class="respuesta">Selecciona una respuesta</option>
-		    </select>
-            <button class="btn btn-success" id="validar">validar</button>
 
+        <!-- div cuestionario -->
+        <div id="cuestionario" class="justify-content-center p-5 text-dark" style="display: none; position: fixed;  height:500px">
+            <h2>Responde la pregunta para seguir avanzando.</h2>
+            <h4 id="pregunta"></h4>
+            <div class="row">
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <select class="selectpicker form-control" id="respuestas">
+			                <option value="" class="respuesta">Selecciona una respuesta</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success" id="validar">validar</button>
         </div>  
 
         <!-- Contenedores de mensajes -->
         <div id="contenedor-mensaje" class="ocultar-mensaje text-dark">
             <div id="mensaje">
                 <h3 id="titulo-mensaje"></h3>
-                <button class="btn btn-light btnCerrarMensaje">OK</button> 
+                <button class="btn btn-light" id="btnCerrarMensaje">OK</button> 
             </div>
             
         </div>
@@ -56,7 +64,7 @@
         <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">
             <div id="mensaje-derrota">
                 <h3>Has perdido!!!</h3>
-                <h4>No has podido completar el nivel, pero Ánimo</h4>
+                <h4>No has podido completar el nivel, vuelve a intentarlo</h4>
                 <button class="btn btn-danger otrapartida">Volver al menu de juegos</button>
             </div>   
         </div>

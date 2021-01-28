@@ -19,25 +19,6 @@
             <li class="nav-item m-auto mx-lg-0">
                 <a class="nav-link text-light" href="{{route("juegos")}}">Modo Historia</a>
             </li>
-           <!-- Aqui controlamos si el usuario está logeado y si es administrador
-                para mostrar la opcion de administracion en el menu -->
-        <!--  @php 
-                $logeado = Route::has('login');
-                $administrador = 0;
-            @endphp
-
-            @if($logeado == 1)
-                 @php
-                    $administrador = isset(Auth::user()->administrador);
-                  
-                @endphp 
-                    
-                    @if ( $administrador == 1 )
-                        <li class="nav-item m-auto mx-lg-0">
-                            <a class="nav-link text-light" href="{{route("panel")}}">Administrar</a>
-                        </li>        
-                    @endif
-            @endif  -->
         </ul>
     </div>
 
@@ -72,7 +53,7 @@
                     @endphp
                     @if(strpos($ruta, 'perfil') != 1)
                     <a class="dropdown-item" href="perfil/{{ Auth::user()->id}}">
-                        Editar perfil
+                        Editar perfil <i class="fa fa-edit text-grey"></i>
                     </a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">

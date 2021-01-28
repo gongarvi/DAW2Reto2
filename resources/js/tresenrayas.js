@@ -22,7 +22,7 @@ var winner, gameboard, playing;
 
 var mensaje = document.querySelector("#contenedor-mensaje");
 var TituloMensaje = document.getElementById("titulo-mensaje");
-var btnMensaje = document.getElementsByClassName("btnCerrarMensaje");
+var btnMensaje = document.getElementById("btnCerrarMensaje");
 
 // Muestro el mensaje primero 
 if (mensaje.classList.contains("ocultar-mensaje")) {
@@ -30,7 +30,7 @@ if (mensaje.classList.contains("ocultar-mensaje")) {
   TituloMensaje.innerHTML = "Tu simbolo es X, puedes cambiar si quieres.";
 }
 // al pulssar el boton para cerrar el mensaje
-btnMensaje[0].onclick = function () {
+btnMensaje.onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
   reset();
 }
@@ -173,6 +173,7 @@ function checkForWinner(board) {
 };
 
 window.$("#gameboard").click(function (e) {
+ 
   //end game when winner delcared 
   if (!playing) return;
   var playerPick = (e.target.id).slice(2);
@@ -185,7 +186,12 @@ window.$("#gameboard").click(function (e) {
   };
 
   if (gameboard[playerPick] == "") {
+
     console.log(arrayPreguntas);
+    console.log("has clickado el cuadro");
+    mensaje = document.querySelector("#cuestionario");
+    mensaje.style.display = "block";
+
     //Escojemos la pregunta y se la lanzamos
     //escojemos la pregunta
     var numerorandom = Math.floor(Math.random() * arrayPreguntas.length);
@@ -194,6 +200,7 @@ window.$("#gameboard").click(function (e) {
     //Se la lanzamos
     $("#pregunta").html(pregunta.pregunta);
     document.getElementById("respuestas").options.length = 0;//Vaciamos las options 
+   
     //Añadimos las respuestas para la pregunta inicial
     for (i = 0; i < pregunta.respuestas.length; i++) {
       $('#respuestas').append($('<option />', {
@@ -203,7 +210,10 @@ window.$("#gameboard").click(function (e) {
     }
     //Validaremos la respuesta
     window.$("#validar").click(function (evt) {
-      alert("se ejecuta el click");
+      
+      console.log("se ejecuta el click");
+      mensaje.style.display = "none";
+
       if (document.getElementById("respuestas").value == "true" ) {
         gameboard[playerPick] = player;
         console.log(gameboard);

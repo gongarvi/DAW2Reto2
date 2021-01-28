@@ -3,6 +3,11 @@ var select = false;
 var c = "inc";
 var pos_s = "";
 var id_s = "";
+window.$(".otrapartida").click(function (evt) {
+	console.log("va ha cerrar");
+	window.location.href = '/juegos';
+});
+
 let arrayPreguntas = new Array();
 $.get("/api/preguntas/" + mujer[0].id, function (data) {
     arrayPreguntas.push(data);
@@ -133,7 +138,9 @@ var rompecabezas = {
     setTimeout(function(){
       if(fin){
 			  alert("LO RESOLVISTE COMPADRE!!")
-			  document.getElementById("content").innerHTML+= "<div><h4>"+arrayPreguntas[0].pregunta+"</h4><br> <select id='respuestas'><option>Seleccione una respuesta</option></select><button id='validar'>Validar</button></div>";
+			  mensaje = document.querySelector("#cuestionario");
+			  mensaje.style.display = "block";
+			  document.getElementById("pregunta").innerHTML=arrayPreguntas[0].pregunta;
 			  for (i = 0; i < arrayPreguntas[0].respuestas.length; i++) {
 				$('#respuestas').append($('<option />', {
 				  text: arrayPreguntas[0].respuestas[i].respuesta,
@@ -141,11 +148,25 @@ var rompecabezas = {
 				}));
 			  }
 			  window.$("#validar").click(function (evt) {
+				mensaje.style.display = "none";
 				if (document.getElementById("respuestas").value == "true" ) {
 					//Sube la pava al base de datos mujeres pasadas para fotoperfil
-					window.location.href = '/juegos';
+					mensaje = document.querySelector("#contenedor-mensaje-victoria");
+					if (mensaje.classList.contains("ocultar-mensaje")) {
+					mensaje.classList.remove("ocultar-mensaje");
+					}
+					// salir de juego
 				}else{
 					//Mensaje has perdido y redireccion
+					mensaje = document.querySelector("#contenedor-mensaje-derrota");
+					if (mensaje.classList.contains("ocultar-mensaje")) {
+					  mensaje.classList.remove("ocultar-mensaje");
+					}
+					window.$(".otrapartida").click(function (evt) {
+					  console.log("va ha cerrar");
+					  window.location.href = '/juegos';
+					});
+					console.log("Has Perdido :(");
 				}
 			});
 				  
