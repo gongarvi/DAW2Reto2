@@ -36,10 +36,12 @@ export default {
       publico:false,
       fin:false,
       acertadas:0,
-      respondidas:0
+      respondidas:0,
+      csrf_token:""
     }
   },
    beforeMount() {
+
       this.mujeres = JSON.parse(localStorage.getItem("mujeres"));
       if(this.mujeres!=null){
           this.mujeres.forEach(mujer=>{
@@ -54,54 +56,60 @@ export default {
       }
 
    },
-
-  methods:{
-    preguntasAleatorias(){
-        window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas").then((response)=> {
-            this.data.preguntas=JSON.parse(response.data);
-            console.log("entra");
-        }).catch((error)=>{
-            console.log(error);
-        });
-    },
-    preguntasEspecializacionAleatorias(){
-        window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas/"+this.especializacion)
-        .then((response)=> {
-            this.data.preguntas=JSON.parse(response.data);
-            console.log("entra");
-        }).catch((error)=>{
-            console.log(error);
-        });
-    },
-    siguientePregunta(acertada){
-      this.respondidas++;
-      if(acertada){
-        this.acertadas++;
-      }
-      if(this.respondidas>=this.preguntas.length){
-          console.log("entra");
-        this.finalizar();
-      }
-    },
-    reiniciar(){
-      this.respondidas==0;
-    },
-    finalizar(){
-        this.fin=true;
-    },
-    botonAyudaPublico(){
-      if(!this.ayudaPublico){
-        this.publico=true;
-        this.$children[0].ayudaPublico();
-      }
-    },
-    botonAyuda50(){
-      if(!this.ayudaMitad){
-        this.ayudaMitad=true;
-        this.$children[0].ayuda50();
-      }
+    methods:{
+        preguntasAleatorias(){
+            window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas").then((response)=> {
+                this.data.preguntas=JSON.parse(response.data);
+            }).catch((error)=>{
+                console.log(error);
+            });
+        },
+        preguntasEspecializacionAleatorias(){
+            window.axios.get(window.location.protocol+"//"+window.location.host+"/api/preguntas/"+this.especializacion)
+            .then((response)=> {
+                this.data.preguntas=JSON.parse(response.data);
+            }).catch((error)=>{
+                console.log(error);
+            });
+        },
+        siguientePregunta(acertada){
+          this.respondidas++;
+          if(acertada){
+            this.acertadas++;
+          }
+          if(this.respondidas>=this.preguntas.length){
+              console.log("entra");
+            this.finalizar();
+          }
+        },
+        reiniciar(){
+          this.respondidas==0;
+        },
+        finalizar(){
+            this.fin=true;
+            if(this.acertadas==this.respondidas){
+                this.mujeres.forEach(mujer=>{
+                    window.axios.get(window.location.protocol+"//"+window.location.host+"/api/mujeres/desbloquear/").then((response)=> {
+                        if(response.data.desbloqueada){
+                            console.log(mujer.nombre+" desbloqueada");
+                        }
+                    });
+                });
+            }
+        },
+        botonAyudaPublico(){
+          if(!this.ayudaPublico){
+            this.publico=true;
+            this.$children[0].ayudaPublico();
+          }
+        },
+        botonAyuda50(){
+          if(!this.ayudaMitad){
+            this.ayudaMitad=true;
+            this.$children[0].ayuda50();
+          }
+        }
     }
-  }
 }
 </script>
 <style scoped>
