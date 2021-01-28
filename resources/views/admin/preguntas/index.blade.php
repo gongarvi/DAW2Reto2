@@ -38,11 +38,16 @@
                 <td>{{$pregunta->pregunta}}</td>
                 <td>{{$pregunta->mujeres->nombre}} {{$pregunta->mujeres->apellidos}}</td>
                 <td>
+                
                     <form action="{{ route('preguntas.destroy', $pregunta->id) }}" method="post">
-                        @csrf
+                        
                         @method('DELETE')
+                        @csrf
                         <a href="{{ route('preguntas.edit', $pregunta->id) }}" class="btn btn-primary" title="show"><span class="icon-edit"></span></a>
-                        <button type="submit" title="delete" class="btn btn-danger"><span class="icon-trash"></span></button>
+                        <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
+                        
+                        
+
                     </form>
                 </td>
             </tr>
