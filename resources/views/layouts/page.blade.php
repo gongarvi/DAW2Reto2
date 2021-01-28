@@ -24,7 +24,7 @@
         @yield("content")
     </main>
     <footer>
-
+        
     </footer>
 </body>
 </html>
