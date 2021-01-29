@@ -46,8 +46,6 @@
                         <a href="{{ route('preguntas.edit', $pregunta->id) }}" class="btn btn-primary" title="show"><span class="icon-edit"></span></a>
                         <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
                         
-                        
-
                     </form>
                 </td>
             </tr>
