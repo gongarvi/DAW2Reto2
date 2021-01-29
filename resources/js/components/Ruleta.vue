@@ -1,12 +1,12 @@
 <template>
     <section>
-        <div v-if="mujeres!=null && mujeres.length!=0" id="ruleta" class="mb-5">
-            <h2>Escogiendo mujer aleatoriamente</h2>
+        <div v-if="mujeres!=null && mujeres.length!=0" id="ruleta" class="mb-5 text-center p-2">
+            <h2 class="text-light">Escogiendo mujer aleatoriamente</h2>
             <img id="fotoRuleta" v-for="(mujer,indice) in mujeres"
                  v-if="indice==index" v-bind:src="(mujeres[index].foto!=null&&mujeres[index].foto!=='')?'../../../assets/Fotos_mujeres/'+mujer.foto:'../../../imagae/placeholder-usuario'"
-                 class="rounded mx-auto d-block border border-dark " width="500px" height="500px">
+                 class="rounded mx-auto d-block border border-dark " width="400px" height="400px">
         </div>
-        <div v-if="mujeres!=null && mujeres.length!=0 && index<mujeres.length" id="infoMujer" class="card text-center mx-auto mt-5" style="width: 75%;display: none;">
+        <div v-if="mujeres!=null && mujeres.length!=0 && index<mujeres.length" id="infoMujer" class="card text-center mx-auto" style="width: 75%;display: none;">
             <div class="card-body">
                 <h5 class="card-title">{{mujeres[index].nombre}} {{mujeres[index].apellidos}}</h5>
                 <h6 class="card-title">{{mujeres[index].nacionalidad}}</h6>
@@ -34,6 +34,7 @@
             }
         },
         beforeMount() {
+            localStorage.removeItem("mujeres");
             let url=window.location.href.split("/");
             var especialidad=url[5];
             this.juego=url[6];
@@ -44,8 +45,8 @@
                 case "Buscaminas":
                     this.cantidadMinima=1;
                     break;
-                case "3 en raya":
-                    this.cantidadMinima=3;
+                case "Tresenraya":
+                    this.cantidadMinima=10;
                     break;
                 case "Puzzle":
                     this.cantidadMinima=1;

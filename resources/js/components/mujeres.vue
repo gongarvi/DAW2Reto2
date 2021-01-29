@@ -18,7 +18,7 @@
                     <div v-for="especialidad in arrayespecialidades" :key="especialidad.id" >
                         <button v-bind:style="{ backgroundColor: especialidad.color }" class="btn w-100 mt-2 text-light" @click="filtrarMujeres(especialidad.nombre)"> {{  especialidad.nombre }}</button>
                     </div>
-                    <button class="btn btn-light w-100 mt-2" onclick="location.reload()">Todo</button>
+                    <button class="btn btn-light w-100 mt-2" @click="filtrarMujeres('')">Todo</button>
 
                 </div>
 
@@ -42,12 +42,12 @@
                             <h4 class="modal-title"></h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <div class="modal-body">
-                                <img id="foto-modal" alt="Foto">
-                                <p id="vida-mujer"></p>
-                                <p id="nacionalidad-mujer"></p>
-                                <p id="especialidad-mujer"></p>
-                                <p id="descripcion-mujer"></p>
+                            <div class="modal-body text-center">
+                                <img id="foto-modal" class="margin-auto" alt="Foto">
+                                <p id="vida-mujer" class="text-center"></p>
+                                <p id="nacionalidad-mujer" class="text-center"></p>
+                                <p id="especialidad-mujer" class="text-center"></p>
+                                <p id="descripcion-mujer" class="text-justify"></p>
                             </div>
                         </div>
                     </div>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+    Vue.config.productionTip = false;
     export default {
         data(){
             return {
@@ -79,7 +80,6 @@
                     .then(function (response) {
                         me.arraymujeres = response.data;
                         me.arrayMostrarMujeres=response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
                     console.log(error);
@@ -132,9 +132,9 @@
                 $('.ir-abajo').click(function(){
                     $('body,html').animate({ scrollTop:'1000px' },1000);
                 });
-    }
+            }
 
-    },
+        },
         computed: {
 
         },
@@ -174,5 +174,15 @@
         -webkit-box-shadow: 0 8px 6px -6px black;
 	    -moz-box-shadow: 0 8px 6px -6px black;
 	    box-shadow: 0 8px 6px -6px black;
+    }
+    .modal img{
+        width: 20em;
+        height: auto;
+    }
+    @media screen and (max-width: 600px) {
+        .modal img{
+            width: 15em;
+            height: auto;
+        }
     }
 </style>

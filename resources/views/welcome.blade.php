@@ -3,6 +3,7 @@
 @section("head-extras")
 
     <link rel="stylesheet" href="{{asset("css/index.css")}}">
+    <script src="{{asset('js/app.js')}}"></script>
 
 @endsection
 @section("header")
@@ -25,7 +26,7 @@
                         <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a></li>
                     @endif
                     @else
-                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="perfil/{{ Auth::user()->id}}">Perfil de {{ Auth::user()->name }}</a></li>
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("perfil",Auth::user()->id)}}">Perfil de {{ Auth::user()->name }}</a></li>
                     @endguest
 
                     <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>
@@ -43,13 +44,10 @@
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content text-dark">
-                                <div class="modal-header">
-                                <h4 class="modal-title"></h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
                                 <div class="modal-body text-center">
-                                    <p class="ml-5">Para poder Jugar debes iniciar sesion o registrate</p>
-                                    <a class="btn btn-outline-dark w-100" href="{{route("login")}}">Iniciar sesión / Registrarse</a>
+                                    <h4><b>Para poder jugar debe iniciar sesion o registrarse</b></h4>
+                                    
+                                    <a href="{{route("login")}}"><button type="submit" class="btn btn-primary mt-5">Iniciar sesion/Registrarse</button></a>
                                 </div>
                             </div>
                         </div>

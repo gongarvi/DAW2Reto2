@@ -2,12 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92dd3d55-f91a-4150-8e10-bbd7478cd11c" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/include.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/include.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/game-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/game-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/juegoPuzzle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/juegoPuzzle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/mujeres.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mujeres.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/tresenrayas.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/tresenrayas.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jsPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jsPuzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/millonario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/millonario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/mujeres.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mujeres.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/ruleta.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruleta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/tresenrayas.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tresenrayas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Ruleta.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/mujeres.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/mujeres.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/jsPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/jsPuzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/tresenrayas.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/tresenrayas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/perfil/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/perfil/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/puzzle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/puzzle.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ruleta.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ruleta.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tresenrayas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tresenrayas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+>>>>>>> 51bf1c69a884857fb87f65d39b761e40a5312c4d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +230,13 @@
       <workItem from="1611133030839" duration="12325000" />
       <workItem from="1611224648449" duration="6385000" />
       <workItem from="1611557606195" duration="14514000" />
+<<<<<<< HEAD
       <workItem from="1611644097308" duration="3470000" />
+=======
+      <workItem from="1611644097308" duration="1655000" />
+      <workItem from="1611659430181" duration="1200000" />
+      <workItem from="1611817621567" duration="261000" />
+>>>>>>> 51bf1c69a884857fb87f65d39b761e40a5312c4d
     </task>
     <servers />
   </component>

@@ -7,11 +7,11 @@
         <ul class="navbar-nav ">
             <li class="nav-ite m-auto mx-lg-0">
                 <a class="navbar-brand m-auto text-light" href="{{route("inicio")}}">
-                    <img class="w-25 d-block mx-auto" src="{{asset("image/logo.png")}}" alt="Imagen corporativa">
+                    <img class="w-25 d-block mx-auto" src="{{asset("image/feminina.png")}}" alt="Imagen corporativa">
                 </a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link m-auto text-light" href="{{route("home")}}">Inicio</a>
+                <a class="nav-link m-auto text-light" href="{{route("inicio")}}">Inicio</a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
                 <a class="nav-link text-light" href="{{route("mujeres")}}">Mujeres</a>
@@ -19,25 +19,6 @@
             <li class="nav-item m-auto mx-lg-0">
                 <a class="nav-link text-light" href="{{route("juegos")}}">Modo Historia</a>
             </li>
-           <!-- Aqui controlamos si el usuario está logeado y si es administrador
-                para mostrar la opcion de administracion en el menu -->
-        <!--  @php 
-                $logeado = Route::has('login');
-                $administrador = 0;
-            @endphp
-
-            @if($logeado == 1)
-                 @php
-                    $administrador = isset(Auth::user()->administrador);
-                  
-                @endphp 
-                    
-                    @if ( $administrador == 1 )
-                        <li class="nav-item m-auto mx-lg-0">
-                            <a class="nav-link text-light" href="{{route("panel")}}">Administrar</a>
-                        </li>        
-                    @endif
-            @endif  -->
         </ul>
     </div>
 
@@ -61,7 +42,7 @@
             <!-- Ha iniciado sesion -->
             @else
             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <img src="{{ (trim(Auth::user()->foto)!=='')?asset('assets/Fotos_mujeres/'.Auth::user()->foto):asset('image/placeholder-usuario.png')}}" alt="" title="" class="rounded-circle" style="height: 50px;" />
                     {{ Auth::user()->name }}
                 </a>
@@ -71,8 +52,8 @@
                     $ruta = $_SERVER["REQUEST_URI"];
                     @endphp
                     @if(strpos($ruta, 'perfil') != 1)
-                    <a class="dropdown-item" href="perfil/{{ Auth::user()->id}}">
-                        Editar perfil
+                    <a class="dropdown-item" href="/perfil/{{ Auth::user()->id}}">
+                        Editar perfil <i class="fa fa-edit text-grey"></i>
                     </a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">

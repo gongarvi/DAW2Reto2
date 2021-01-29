@@ -14,13 +14,13 @@ class CreateMujeres extends Migration{
     {
         Schema::create('mujeres', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->unsignedBigInteger('especialidad');
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('nacimiento')->nullable();
             $table->string('fallecido')->nullable();
             $table->string('nacionalidad');
-            $table->unsignedBigInteger('especialidad');
-            $table->foreign('especialidad')->references('id')->on('especialidades')->onUpdate("CASCADE")->onDelete("SET NULL");
+            $table->foreign('especialidad')->references('id')->on('especialidades');
             $table->string('foto')->nullable();
             $table->text('descripcion');
             $table->timestamps();

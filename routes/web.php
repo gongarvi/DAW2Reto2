@@ -10,7 +10,7 @@ use App\Http\Controllers\MujeresController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\modoHistoriaController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -46,11 +46,17 @@ Route::get('/juegos/ruleta/{id}/{juego}', [GameController::class,"ruleta"]);
 
 
 
+Route::get("/juegos/tresenraya", function(){ 
+    return view("tresenrayas");
+})->name("tresenrayas");
+
 Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
-Route::get("/juegos/UltimoNivel", function(){
-    return view("UltimoNivel");
-})->name("UltimoNivel");
+Route::get("/juegos/puzzle",[GameController::class,"puzzle"])->name("Puzzle");
+
+Route::get("/juegos/tresenrayasdiablo", function(){
+    return view("tresenrayasdiablo");
+})->name("tresenrayasdiablo");
 
 
 Route::get("/juegos/Puzzle",[GameController::class,"puzzle"])->name("Puzzle");
@@ -58,8 +64,6 @@ Route::get("/juegos/Puzzle",[GameController::class,"puzzle"])->name("Puzzle");
 Route::get("/mujeres",function(){
     return view("mujeres");
 })->name("mujeres");
-
-Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
@@ -79,7 +83,10 @@ Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
     //Rutas para la administracion de las respuestas
     Route::resource("admin/respuestas",RespuestasController::class, ["except"=>["show"]]);
 });
+Route::post("/fotosperfil/{id}",[PerfilController::class,"fotosperfil"])->name("fotosperfil");
+Route::get("/actualizarfoto/{id}/{nombrefoto}",[PerfilController::class,"actualizarfoto"])->name("actualizarfoto");
+Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
+Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
+Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
 
-Route::get("/perfil/{id}",[UserController::class,"edit"])->name("perfil");
-Route::post("/actualizar/{id}",[UserController::class,"update"])->name("actualizar");
-
+Route::get("/guardarmujerperfil/{array}",[MujeresAPIService::class,"fotoPerfilMujer"])->name("guardarmujerperfil");

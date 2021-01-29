@@ -79,3 +79,83 @@ pregunta;respuesta;correcta
 20;Investigacion del BCE;false
 20;Investigacion del Banco Mundial;true
 20;La NGDO ;false
+21;Investigadora;false
+21;Academica;false
+21;Profesora;true
+21;Magistrada;false
+22;Economia;false
+22;Derecho;false
+22;Historia;true
+22;Astrología;false
+23;España;false
+23;Filipinas;false
+23;Norteamericana;true
+23;Suecia;false
+24;Estudios de Género en la FED Acatlán;false
+24;Estudios de Género en la CIA;false
+24;Estudios de Género en la FES Acatlán;true
+24;Estudios de Género en Oxford;false
+25;Panamá;false
+25;Colombia;false
+25;Suecia;true
+25;Venezula;false
+26;Economia;false
+26;Geografia;false
+26;Historia;true
+26;Filosofia;false
+27;Ideario de Pedagogia;false
+27;Ideario Socialista;false
+27;Ideario Feminista;true
+27;Ideario de Psicologia;false
+28;Universidad Autónoma de Valencia;false
+28;Universidad Autónoma de Pais Vasco;false
+28;Universidad Autónoma de Barcelona;true
+28;Universidad Autónoma de Murcia;false
+29;1997;false
+29;1983;false
+29;1993;true
+29;1995;false
+30;Medica;false
+30;Filosofa;false
+30;Sociologa;true
+30;Economista;false
+31;1940;false
+31;1950;false
+31;1949;true
+31;1930;false
+32;Pedagoga;false
+32;Economista;false
+32;Sociologa;true
+32;Filosofa;false
+33;1985;false
+33;1970;false
+33;1982;true
+33;1990;false
+34;2005;false
+34;2020;false
+34;2012;true
+34;2015;false
+35;Venezula;false
+35;Colombia;false
+35;Estados Unidos;true
+35;Panamá;false
+36;1946;false
+36;1933;false
+36;1946;true
+36;1936;false
+37;Derecho;false
+37;Geografia;false
+37;Historia;true
+37;Filosofia;false
+38;Derecho;false
+38;Geografia;false
+38;Sociologa;true
+38;Filosofia;false
+39;Escuela Moderna;false
+39;Escuela de arte;false
+39;Escuela cirenaica;true
+39;Escuela de Actuacion;false
+40;Derecho;false
+40;Sociologia;false
+40;Economia;true
+40;Medicina;false

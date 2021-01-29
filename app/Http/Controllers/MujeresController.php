@@ -131,6 +131,7 @@ class MujeresController extends Controller
     {
 
         Mujer::all()->find($mujer_id)->delete();
-
+        return redirect()->route('mujeres.index')
+            ->with('success','Mujer eliminada correctamente');
     }
 }

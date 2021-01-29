@@ -33,7 +33,7 @@ class PreguntasAPIService extends Controller
         if($result!=[]&&count($result)==1){
             $result = response()->json($result[0]);
         }
-        elseif($result!=[]&&count($result)==1){
+        elseif($result!=[]&&count($result)>=1){
             $result = response()->json($result);
         }
         else{
@@ -42,4 +42,5 @@ class PreguntasAPIService extends Controller
         return $result;
     }
     public function destroy(){}
+
 }

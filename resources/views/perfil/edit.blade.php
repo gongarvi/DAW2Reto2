@@ -1,6 +1,8 @@
 @extends("layouts.page")
 
 @section("head-extras")
+    <link rel="stylesheet" href="{{asset("css/formularios.css")}}">
+    <script src="{{asset('js/app.js')}}"></script>
 @endsection
 
 @section("content")
@@ -9,90 +11,90 @@
         <p>{{$error}}</p>
     @endforeach
 @endif
-    <div class="container container-fluid">
-        <div style="background-color:rgba(0,0,0,0.555);">
-            <div class="m-5"> 
+<div class="container">
+    <div class="row w-100 justify-content-center">
+		<div class="col-md-8">
             @if($message =Session::get('success'))
                 <div class="alert alter-success">
                     <p>{{$message}}</p>
                 </div>
             @endif
-                <form action="/actualizar/{{$usuario->id}}" method="POST">
+            <form action="/fotosperfil/{{$usuario->id}}" method="POST">
                 @csrf
-                    <fieldset class="form-group">
-                        <legend class="col-form-label col-sm-2 pt-0">Modificar datos</legend>
-                        <input type="hidden" value="datos" name="funcion">
-                        <img src="{{ (trim($usuario->foto)!=='')?asset('assets/Fotos_mujeres/'.$usuario->foto):asset('image/placeholder-usuario.png')}}" alt="" title="" class="rounded-circle mt-2" style="height: 200px;"/><br>
-                        <button class="btn btn-light m-2">Cambiar foto</button>
-                        <div class="d-flex flex-column">
-                            <div class="form-group"> 
-                                <div class="col-md-4 inputGroupContainer">
-                                <label for="name" class="text-light">Nombre: </label>
-                                    <div class="input-group">
-                                        <input  name="name" value="{{$usuario->name}}" class="form-control"  type="text">
-                                    </div>
-                                </div>
-                            </div>
+                @method('POST')
+                <div class="form-group">
+                    <img src="{{ (trim($usuario->foto)!=='')?asset('assets/Fotos_mujeres/'.$usuario->foto):asset('image/placeholder-usuario.png')}}" alt="" title="" class="rounded-circle mt-2" style="height: 200px;"/><br>
+                    <button class="btn btn-outline-secondary mt-2" type="submit"> > Cambiar foto</button>
+                </div>
+            </form>
 
-                            <div class="form-group"> 
-                                <div class="col-md-4 inputGroupContainer">
-                                <label for="email" class="text-light">Correo: </label>
-                                    <div class="input-group">
-                                        <input readonly name="email" placeholder="{{$usuario->email}}" class="form-control"  type="email">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group"> 
-                                <div class="col-md-4 inputGroupContainer">
-                                <label for="password" class="text-warning">Escribe tu contraseña para confirmar</label>
-                                    <div class="input-group">
-                                        <input  name="password" placeholder="Contraseña" class="form-control"  type="password">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="reset" class="btn btn-danger mb-2">
-                        <input type="submit" value="Actualizar Usuario" class="btn btn-primary mb-2">
-                    </fieldset>
-                </form>
+            <form action="/actualizarPerfil/{{$usuario->id}}" method="POST">
+                @csrf
+				<input type="hidden" value="datos" name="funcion">
 
-                <form action="/actualizar/{{$usuario->id}}" method="post">
+				<div class="form-group">
+                    <label for="name" class="text-light">Nombre: </label>
+                    <input  name="name" value="{{$usuario->name}}" class="form-control"  type="text">
+                </div>
+					
+				<div class="form-group">
+                    <label for="email" class="text-light">Correo: </label>            
+                    <input readonly name="email" placeholder="{{$usuario->email}}" class="form-control"  type="email">
+				</div>
+
+                <div class="form-group">
+                    <label for="password" class="text-warning">Escribe tu contraseña para confirmar</label>            
+                    <input  name="password" placeholder="Contraseña" class="form-control"  type="password">
+				</div>
+                <input type="reset" class="btn btn-danger mb-2">
+                <input type="submit" value="Actualizar Usuario" class="btn btn-success mb-2">
+            </form>
+
+            <form action="/actualizarPerfil/{{$usuario->id}}" method="post">
                 @method('POST')
                 @csrf
-                    <fieldset class="form-group">
-                        <legend class="col-form-label col-sm-2 pt-0">Cambiar contraseña</legend>
-                        <input type="hidden" value="contrasena" name="funcion">
-                        <div class="d-flex flex-column">
-                            <div class="form-group"> 
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <input  name="password_actual" placeholder="Contraseña actual" class="form-control"  type="password">
-                                    </div>
-                                </div>
-                            </div>
+                <h2 class="mt-5">Cambiar contraseña</h2>
+				<input type="hidden" value="contrasena" name="funcion">
+					
+				<div class="form-group">
+                    <input  name="actual_password" placeholder="Contraseña actual" class="form-control"  type="password">
+                </div>
+					
+				<div class="form-group">
+                    <input  name="new_password" placeholder="Contraseña nueva" class="form-control"  type="password">
+				</div>
 
-                            <div class="form-group"> 
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <input  name="password_nueva" placeholder="Contraseña nueva" class="form-control"  type="password">
-                                    </div>
-                                </div>
-                            </div>
+                <div class="form-group">
+                    <input  name="confirm_password" placeholder="Confirmar contraseña nueva" class="form-control"  type="password">
+				</div>
+                <input type="reset" class="btn btn-danger mb-2">
+                <input type="submit" value="Actualizar contraseña" class="btn btn-success mb-2">
+			</form>
 
-                            <div class="form-group"> 
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <input  name="password_confirmar" placeholder="Confirmar contraseña nueva" class="form-control"  type="password">
-                                    </div>
-                                </div>
+            <button class="btn btn-danger mt-5" data-toggle="modal" data-target="#myModal">Eliminar mi cuenta</button>
+            <form action="/eliminarPerfil/{{$usuario->id}}" method="post">
+                @method('POST')
+                @csrf
+
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                            <h4 class="modal-title">Mensaje de confirmacion</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <b>¿Esta seguro que desea eliminar su usuario?</b>
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
                             </div>
                         </div>
-                        <input type="reset" class="btn btn-danger mb-2">
-                        <input type="submit" value="Actualizar contraseña" class="btn btn-primary mb-2">
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
+                    </div>
+                </div>
+            </form>
+
+		</div>
+	</div>
+</div>
     
 @endsection

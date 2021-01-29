@@ -1,18 +1,25 @@
-window.Vue = require('vue');
+window.onload=(function(){
+    require("./bootstrap.js");
 
-Vue.component('mujeres-component', require('./components/Mujeres.vue').default);
+    window.Vue = require('vue');
+
+    Vue.component('mujeres-component', require('./components/Mujeres.vue').default);
 
 
-const vue = new Vue({
-    el: '#mujeres',
-    methods: {
-        checkImages(event) {
-            console.log(event);
-            event.target.src = "image/placeholder.png"
+    const mujeres = new Vue({
+        el: '#mujeres',
+        methods: {
+            checkImages(event) {
+                console.log(event);
+                event.target.src = "image/placeholder.png"
+            },
+            pulsarboton: function(nombreJuego){
+                var Especialidad = document.getElementById("selectEspecialidad").value;
+                window.location.href = '/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
+            },
         },
-        pulsarboton: function(nombreJuego){
-            var Especialidad = document.getElementById("selectEspecialidad").value;
-            window.location.href = '/juegos/ruleta/'+Especialidad+"/"+nombreJuego;
-        },
-    },
+    });
+
+
 });
+
