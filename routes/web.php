@@ -88,3 +88,4 @@ Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
 Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
 Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
 
+Route::get("/guardarmujerperfil/{array}",[MujeresAPIService::class,"fotoPerfilMujer"])->name("guardarmujerperfil");

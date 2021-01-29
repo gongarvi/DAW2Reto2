@@ -155,6 +155,10 @@ var rompecabezas = {
 					if (mensaje.classList.contains("ocultar-mensaje")) {
 					mensaje.classList.remove("ocultar-mensaje");
 					}
+					$arrayMujeresAGuardar = new Array();
+					$arrayMujeresAGuardar.push(mujer[0].id);
+					
+					window.location.href = '/guardarmujerperfil/'+$arrayMujeresAGuardar;
 					// salir de juego
 				}else{
 					//Mensaje has perdido y redireccion

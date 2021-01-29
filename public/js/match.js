@@ -104,7 +104,7 @@ eval("//alert(mujercitas[1].nombre);\nvar nombresM = [];\nvar fotosM = [];\nvar 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\match.js */"./resources/js/match.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\match.js */"./resources/js/match.js");
 
 
 /***/ })
