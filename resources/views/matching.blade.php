@@ -34,7 +34,7 @@
             <h3>Felicidades!!!</h3>
             <h4>Has completado el nivel</h4>
             <img src="..\assets\Fotos_mujeres\felicitar.gif">
-            <a href="{{ route('juegos') }}"><button class="btn btn-success">Seguir Jugando</button></a>
+            <button class="btn btn-success" id="guardar">Seguir Jugando</button>
         </div>
     </div>
     <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">

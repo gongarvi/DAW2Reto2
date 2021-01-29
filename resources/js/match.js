@@ -102,6 +102,18 @@
                 if(mensaje.classList.contains("ocultar-mensaje")){
                     mensaje.classList.remove("ocultar-mensaje");
                 }
+                window.$("#guardar").click(function (evt) {
+                    console.log("va ha cerrar");
+                    window.location.href = '/juegos';
+          
+                    $arrayMujeresAGuardar = new Array();
+                    for (var i = 0; mujercitas.length > i; i++) {
+                      $arrayMujeresAGuardar.push(mujercitas[i].id);
+                      console.log("puseando mujer");
+                    }
+                    window.location.href = '/guardarmujerperfil/' + $arrayMujeresAGuardar;
+                    console.log("¡¡HAS GANADO!!");
+                  });
 
             }
 

@@ -159,7 +159,7 @@ var rompecabezas = {
 
 							window.location.href = '/guardarmujerperfil/' + $arrayMujeresAGuardar;
 
-							window.location.href = '/juegos';
+							
 						});
 						// salir de juego
 					} else {
