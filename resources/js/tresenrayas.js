@@ -171,15 +171,16 @@ function checkForWinner(board) {
     reset();
   }
 };
-
+var playerSelector;
 window.$("#gameboard").click(function (e) {
  
   //end game when winner delcared 
   if (!playing) return;
   var playerPick = (e.target.id).slice(2);
+  playerSelector = "#sq" + playerPick;
   console.log(playerPick);
-  var playerSelector = "#sq" + playerPick;
-
+  
+  alert(playerSelector);
   if (gameboard[playerPick] != "") {
     //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
     return;
@@ -213,10 +214,11 @@ window.$("#gameboard").click(function (e) {
       
       console.log("se ejecuta el click");
       mensaje.style.display = "none";
-
+      alert("dentro "+" #sq" + playerPick);
       if (document.getElementById("respuestas").value == "true" ) {
         gameboard[playerPick] = player;
-        console.log(gameboard);
+        console.log("pos  actual "+gameboard[playerPick]);
+        alert("playerselector "+playerSelector)
         $(playerSelector).html(player);
         if (playing) {
           aiTurn();
