@@ -53,9 +53,9 @@ Route::get("/juegos",[GameController::class,"show"])->name("juegos");
 
 Route::get("/juegos/puzzle",[GameController::class,"puzzle"])->name("Puzzle");
 
-Route::get("/juegos/UltimoNivel", function(){
-    return view("UltimoNivel");
-})->name("UltimoNivel");
+Route::get("/juegos/tresenrayasdiablo", function(){
+    return view("tresenrayasdiablo");
+})->name("tresenrayasdiablo");
 
 
 Route::get("/juegos/Puzzle",[GameController::class,"puzzle"])->name("Puzzle");
@@ -88,3 +88,4 @@ Route::get("/perfil/{id}",[PerfilController::class,"edit"])->name("perfil");
 Route::post("/actualizarPerfil/{id}",[PerfilController::class,"update"])->name("actualizarPerfil");
 Route::post("/eliminarPerfil/{id}",[PerfilController::class,"delete"])->name("eliminarPerfil");
 
+Route::get("/guardarmujerperfil/{array}",[MujeresAPIService::class,"fotoPerfilMujer"])->name("guardarmujerperfil");

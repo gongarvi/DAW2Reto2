@@ -1,262 +1,188 @@
 <template>
-  <div>
     <div class="container-fluid">
-      <div class="row">
-        <aside class="col-sm-4 col-md-4 col-lg-2 text-white text-center">
-          <div class="make-me-sticky mt-2">
-            <div class="input-group md-form form-sm form-2 pl-0">
-              <input
-                class="form-control my-0 py-1 amber-border"
-                type="search"
-                v-model="busqueda"
-                placeholder="Buscar.."
-                aria-label="Buscar"
-              />
-              <div class="input-group-append">
-                <span class="input-group-text amber lighten-3" id="basic-text1"
-                  ><i class="fa fa-search text-grey" aria-hidden="true"></i
-                ></span>
-              </div>
-            </div>
 
-            <div
-              v-for="especialidad in arrayespecialidades"
-              :key="especialidad.id"
-            >
-              <button
-                v-bind:style="{ backgroundColor: especialidad.color }"
-                class="btn w-100 mt-2 text-light"
-                @click="filtrarMujeres(especialidad.nombre)"
-              >
-                {{ especialidad.nombre }}
-              </button>
-            </div>
-            <button
-              class="btn btn-light w-100 mt-2"
-              onclick="location.reload()"
-            >
-              Todo
-            </button>
-          </div>
-        </aside>
-        <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
-          <div
-            class="card m-2"
-            style="width: 18rem"
-            v-for="mujer in arrayMostrarMujeres"
-            :key="mujer.id"
-            v-bind:style="{ backgroundColor: mujer.especialidad.color }"
-            @click="
-              MostrarMujer(
-                mujer.nombre,
-                mujer.apellidos,
-                mujer.nacimiento,
-                mujer.fallecido,
-                mujer.nacionalidad,
-                mujer.especialidad.nombre,
-                mujer.descripcion,
-                mujer.foto
-              )
-            "
-            data-toggle="modal"
-            data-target="#myModal"
-            title="Saber mas."
-          >
-            <img
-              class="card-img-top img-mujeres"
-              style="height: 18rem"
-              alt="foto"
-              v-bind:src="
-                mujer.foto != null && mujer.foto !== ''
-                  ? 'assets/Fotos_mujeres/' + mujer.foto
-                  : 'image/placeholder-usuario.png'
-              "
-            />
-            <div class="card-body">
-              <h4 class="card-title">{{ mujer.nombre }}</h4>
-              <h5 class="card-text">{{ mujer.apellidos }}</h5>
-            </div>
-          </div>
+        <div class="row">
 
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content text-dark">
-                <div class="modal-header">
-                  <h4 class="modal-title"></h4>
-                  <button type="button" class="close" data-dismiss="modal">
-                    &times;
-                  </button>
+            <aside class="col-sm-4 col-md-4 col-lg-2 text-white text-center">
+
+                <div class="make-me-sticky mt-2">
+
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1 amber-border" type="search" v-model="busqueda"  placeholder="Buscar.." aria-label="Buscar">
+                        <div class="input-group-append">
+                            <span class="input-group-text amber lighten-3" id="basic-text1"><i class="fa fa-search text-grey"
+                                aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    <div v-for="especialidad in arrayespecialidades" :key="especialidad.id" >
+                        <button v-bind:style="{ backgroundColor: especialidad.color }" class="btn w-100 mt-2 text-light" @click="filtrarMujeres(especialidad.nombre)"> {{  especialidad.nombre }}</button>
+                    </div>
+                    <button class="btn btn-light w-100 mt-2" @click="filtrarMujeres('')">Todo</button>
+
                 </div>
-                <div class="modal-body">
-                  <img id="foto-modal" alt="Foto" />
-                  <p id="vida-mujer"></p>
-                  <p id="nacionalidad-mujer"></p>
-                  <p id="especialidad-mujer"></p>
-                  <p id="descripcion-mujer"></p>
+
+            </aside>
+            <main class="col-sm-8 col-md-8 col-lg-10 d-flex flex-wrap">
+
+                <div class="card m-2" style="width: 18rem;" v-for="mujer in arrayMostrarMujeres" :key="mujer.id" v-bind:style="{ backgroundColor: mujer.especialidad.color }" @click="MostrarMujer(mujer.nombre, mujer.apellidos,mujer.nacimiento, mujer.fallecido, mujer.nacionalidad, mujer.especialidad.nombre, mujer.descripcion, mujer.foto)" data-toggle="modal" data-target="#myModal" title="Saber mas.">
+                    <img class="card-img-top img-mujeres" style="height: 18rem;" alt="foto" v-bind:src="(mujer.foto!=null&&mujer.foto!=='')?'assets/Fotos_mujeres/' + mujer.foto:'image/placeholder-usuario.png'" />
+                    <div class="card-body">
+                        <h4 class="card-title">{{mujer.nombre}}</h4>
+                        <h5 class="card-text">{{mujer.apellidos}}</h5>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
-    <footer class="bg-dark text-light">
-        <div class="m-5">
-            <div>
-                <h4>Desayunos Feministas:</h4>
-                <p class="">
-                    Una vez al mes, un grupo de personas y varias tazas de café nos reunimos para comentar y analizar la realidad del mundo que nos rodea 
-                    desde la perspectiva de los derechos de las mujeres. De estas inquietudes dominicales poco a poco surgió la necesidad, también al amparo 
-                    del flujo de personas que iba asistiendo a los encuentros, de alzar nuestra voz más allá de nuestro círculo inmediato de acción........ 
-                    <a class="btn btn-primary" href="https://desayunosfeministascantabria.wordpress.com/entradas/">Saber mas</a>
-                </p>
-            </div>
-           
-            <div>
-                <a  class="btn btn-light" href="https://twitter.com/intent/tweet?via=wordpressdotcom&text=Entradas%20qui%C3%A9nes%20somos&url=https%3A%2F%2Fdesayunosfeministascantabria.wordpress.com%2Fentradas%2F">Twitter <i class="fa fa-twitter"></i></a>
-                <a  class="btn btn-light" href="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fdesayunosfeministascantabria.wordpress.com%252Fentradas%252F%26t%3DEntradas%2Bqui%25C3%25A9nes%2Bsomos&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=es_ES">Facebook <i class="fa fa-facebook"></i></a>
-            </div>
+
+                 <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                            <h4 class="modal-title"></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img id="foto-modal" class="margin-auto" alt="Foto">
+                                <p id="vida-mujer" class="text-center"></p>
+                                <p id="nacionalidad-mujer" class="text-center"></p>
+                                <p id="especialidad-mujer" class="text-center"></p>
+                                <p id="descripcion-mujer" class="text-justify"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
         </div>
-    </footer>
-  </div>
+    </div>
 </template>
 
 <script>
-Vue.config.productionTip = false;
-export default {
-  data() {
-    return {
-      busqueda: "",
-      nombre: "",
-      arraymujeres: [],
-      arrayespecialidades: [],
-      especialidadSeleccionada: "",
-      arrayMostrarMujeres: [],
-    };
-  },
-  methods: {
-    cargarMujeres() {
-      let me = this;
-      let url = "api/mujeres";
-      window.axios
-        .get(url)
-        .then(function (response) {
-          me.arraymujeres = response.data;
-          me.arrayMostrarMujeres = response.data;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
-    cargarEspecialidades() {
-      let me = this;
-      let url = "api/especialidades";
-      window.axios
-        .get(url)
-        .then(function (response) {
-          me.arrayespecialidades = response.data;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
-    filtrarMujeres(especialdidad) {
-      this.especialidadSeleccionada = especialdidad;
-    },
-    MostrarMujer(
-      nombre,
-      apellidos,
-      nacimiento,
-      fallecido,
-      nacionalidad,
-      especialidad,
-      descripcion,
-      foto
-    ) {
-      document.getElementsByClassName("modal-title")[0].innerHTML =
-        nombre + " " + apellidos;
-      document.getElementById("vida-mujer").innerHTML =
-        nacimiento + " - " + fallecido;
-      document.getElementById("foto-modal").src =
-        "assets/Fotos_mujeres/" + foto;
-      document.getElementById("nacionalidad-mujer").innerHTML =
-        "<b>Nacionalidad:</b> " + nacionalidad;
-      document.getElementById("especialidad-mujer").innerHTML =
-        "<b>Especialidad:</b> " + especialidad;
-      document.getElementById("descripcion-mujer").innerHTML =
-        "<b>Descripcion:</b> " + descripcion;
-    },
-    buscarMujer() {
-      if (this.especialidadSeleccionada != "") {
-        this.arrayMostrarMujeres = this.arraymujeres.filter(
-          (mujer) =>
-            (mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) ||
-              mujer.apellidos
-                .toUpperCase()
-                .includes(this.busqueda.toUpperCase())) &&
-            mujer.especialidad.nombre === this.especialidadSeleccionada
-        );
-      } else {
-        this.arrayMostrarMujeres = this.arraymujeres.filter(
-          (mujer) =>
-            mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) ||
-            mujer.apellidos.toUpperCase().includes(this.busqueda.toUpperCase())
-        );
-      }
-    },
-    irArriba() {
-      $(".ir-arriba").click(function () {
-        $("body,html").animate({ scrollTop: "0px" }, 1000);
-      });
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-          $(".ir-arriba").slideDown(600);
-        } else {
-          $(".ir-arriba").slideUp(600);
+    Vue.config.productionTip = false;
+    export default {
+        data(){
+            return {
+                busqueda: '',
+                nombre: '',
+                arraymujeres:[],
+                arrayespecialidades:[],
+                especialidadSeleccionada:"",
+                arrayMostrarMujeres:[]
+            };
+        },
+        methods:{
+            cargarMujeres() {
+                let me = this;
+                let url = "api/mujeres";
+                window.axios
+                    .get(url)
+                    .then(function (response) {
+                        me.arraymujeres = response.data;
+                        me.arrayMostrarMujeres=response.data;
+                    })
+                    .catch(function (error) {
+                    console.log(error);
+                    });
+            },
+            cargarEspecialidades() {
+                let me = this;
+                let url = "api/especialidades";
+                window.axios
+                    .get(url)
+                    .then(function (response) {
+                    me.arrayespecialidades = response.data;
+                    })
+                    .catch(function (error) {
+                    console.log(error);
+                    });
+            },
+            filtrarMujeres(especialdidad) {
+                this.especialidadSeleccionada=especialdidad;
+            },
+            MostrarMujer(nombre, apellidos, nacimiento, fallecido, nacionalidad, especialidad, descripcion, foto){
+                document.getElementsByClassName("modal-title")[0].innerHTML=nombre+" "+apellidos;
+                document.getElementById("vida-mujer").innerHTML=nacimiento+" - "+fallecido;
+                document.getElementById("foto-modal").src ="assets/Fotos_mujeres/"+foto;
+                document.getElementById("nacionalidad-mujer").innerHTML="<b>Nacionalidad:</b> "+nacionalidad;
+                document.getElementById("especialidad-mujer").innerHTML="<b>Especialidad:</b> "+especialidad;
+                document.getElementById("descripcion-mujer").innerHTML="<b>Descripcion:</b> "+descripcion;
+            },
+            buscarMujer() {
+                if(this.especialidadSeleccionada!=""){
+                    this.arrayMostrarMujeres=this.arraymujeres.filter((mujer) =>
+                        (mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) || mujer.apellidos.toUpperCase().includes(this.busqueda.toUpperCase()))
+                        && mujer.especialidad.nombre===this.especialidadSeleccionada);
+                }
+                else{
+                    this.arrayMostrarMujeres = this.arraymujeres.filter((mujer) => mujer.nombre.toUpperCase().includes(this.busqueda.toUpperCase()) || mujer.apellidos.toUpperCase().includes(this.busqueda.toUpperCase()));
+                }
+            },
+            irArriba(){
+                $('.ir-arriba').click(function(){
+                    $('body,html').animate({ scrollTop:'0px' },1000);
+                });
+                $(window).scroll(function(){
+                    if($(this).scrollTop() > 0){
+                        $('.ir-arriba').slideDown(600);
+                    }else{
+                        $('.ir-arriba').slideUp(600);
+                    }
+                });
+                $('.ir-abajo').click(function(){
+                    $('body,html').animate({ scrollTop:'1000px' },1000);
+                });
+            }
+
+        },
+        computed: {
+
+        },
+        watch:{
+            especialidadSeleccionada:function(){
+                this.buscarMujer();
+            },
+            busqueda:function(){
+                this.buscarMujer();
+            }
+        },
+        mounted() {
+            this.cargarMujeres();
+            this.cargarEspecialidades();
+            this.irArriba();
+
         }
-      });
-      $(".ir-abajo").click(function () {
-        $("body,html").animate({ scrollTop: "1000px" }, 1000);
-      });
-    },
-  },
-  computed: {},
-  watch: {
-    especialidadSeleccionada: function () {
-      this.buscarMujer();
-    },
-    busqueda: function () {
-      this.buscarMujer();
-    },
-  },
-  mounted() {
-    this.cargarMujeres();
-    this.cargarEspecialidades();
-    this.irArriba();
-  },
-};
+    }
 </script>
 <style>
-/* *{
+    /* *{
         font-family: 'Times New Roman', Times, serif;
     } */
-.make-me-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 0 0px;
-}
-.card {
-  transition: all 1s;
-}
-.card:hover {
-  box-shadow: 2px 2px 5px 5px #808080;
-}
-.img-mujeres {
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  -moz-box-shadow: 0 8px 6px -6px black;
-  box-shadow: 0 8px 6px -6px black;
-}
+    .make-me-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 0 0px;
+    }
+    .card{
+        transition: all 1s;
+    }
+    .card:hover{
+        box-shadow: 2px 2px 5px 5px #808080;
+    }
+    .img-mujeres{
+        -webkit-box-shadow: 0 8px 6px -6px black;
+	    -moz-box-shadow: 0 8px 6px -6px black;
+	    box-shadow: 0 8px 6px -6px black;
+    }
+    .modal img{
+        width: 20em;
+        height: auto;
+    }
+    @media screen and (max-width: 600px) {
+        .modal img{
+            width: 15em;
+            height: auto;
+        }
+    }
 </style>

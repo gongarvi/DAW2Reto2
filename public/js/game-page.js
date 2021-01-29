@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -554,14 +554,14 @@ eval("window.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.
 
 /***/ }),
 
-/***/ 7:
+/***/ 8:
 /*!*****************************************!*\
   !*** multi ./resources/js/game-page.js ***!
   \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ik_2dw3\Desktop\reto\resources\js\game-page.js */"./resources/js/game-page.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\game-page.js */"./resources/js/game-page.js");
 
 
 /***/ })

@@ -46,7 +46,7 @@
                     this.cantidadMinima=1;
                     break;
                 case "Tresenraya":
-                    this.cantidadMinima=3;
+                    this.cantidadMinima=10;
                     break;
                 case "Puzzle":
                     this.cantidadMinima=1;
