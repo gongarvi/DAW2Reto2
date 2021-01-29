@@ -232,7 +232,6 @@
             cambiarMinasRestantes(cuadro) {
                 if (this.jugando) {
                     cuadro.bandera = !cuadro.bandera;
-
                 }
                 this.minasRestantes += cuadro.bandera ? -1 : 1;
             },

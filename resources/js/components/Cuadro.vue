@@ -43,8 +43,6 @@ export default {
         bandera(){
             if(this.info.inicial){
                 this.$emit('onCambiarMinasRestantes',this.info)
-                
-                
             }
         },
         activar(){
