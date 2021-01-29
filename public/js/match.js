@@ -104,11 +104,7 @@ eval("//alert(mujercitas[1].nombre);\nvar nombresM = [];\nvar fotosM = [];\nvar 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\ik_2dw3\Desktop\reto\resources\js\match.js */"./resources/js/match.js");
-=======
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\DAW2Reto2\resources\js\match.js */"./resources/js/match.js");
->>>>>>> fee1ee9842f23cc1e4a897c3055bdd980a4d2b93
 
 
 /***/ })
