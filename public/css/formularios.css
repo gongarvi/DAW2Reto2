@@ -15,6 +15,9 @@ main>div{
     padding: 5em !important;
 
 }
+#fotosperfil{
+    height: 500px;
+}
 .container{
     margin-top:2% !important;
 }

@@ -9,7 +9,7 @@ body{
 }
 
 td.pieza{
-    background-image:url(../assets/Fotos_mujeres/transparente.png);  
+    background-image:url(../assets/Fotos_mujeres/sinfoto.jpg);  
     background-repeat: no-repeat;
     transition:.3s ease-in-out; 
     -moz-transition:.3s ease-in-out; 

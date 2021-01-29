@@ -78,6 +78,9 @@ class MujeresAPIService extends Controller
         $usuario = Auth::user();
         $idUsuario=$usuario->id;
         for($i=0;$i<count($arraycompleto);$i++){
+            Fotosperfil::where('mujer',"=" ,$arraycompleto[$i])
+            ->where('usuario',"=" ,$idUsuario)
+            ->delete();
             $fotoPerfil = new Fotosperfil();
             $fotoPerfil->usuario = $idUsuario;
             $fotoPerfil->mujer = $arraycompleto[$i];

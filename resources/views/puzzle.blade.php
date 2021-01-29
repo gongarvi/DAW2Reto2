@@ -11,6 +11,7 @@
 
 <!-- div cuestionario -->
 <div id="cuestionario" class="text-center p-5 text-dark" style="display: none; position: fixed; height:500px">
+    <h2>Responde la pregunta para seguir avanzando.</h2><hr>
     <h4 id="pregunta"></h4>
     <div class="row">
         <div class="col-sm-10">
@@ -28,14 +29,14 @@
     <div id="mensaje-victoria">
         <h3>Felicidades!!!</h3>
         <h4>Has completado el nivel</h4>
-        <button class="btn btn-success otrapartida">Salir</button>
+        <button class="btn btn-success" id="guardar">Salir</button>
     </div>
 </div>
 <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">
     <div id="mensaje-derrota">
         <h3>Has perdido!!!</h3>
         <h4>No has podido completar el nivel, vuelve a intentarlo</h4>
-        <button class="btn btn-danger otrapartida">Volver al menu de juegos</button>
+        <button class="btn btn-danger" id="otrapartida">Volver al menu de juegos</button>
     </div>
 </div>
 

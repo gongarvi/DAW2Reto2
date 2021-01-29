@@ -10,8 +10,8 @@ for (i = 0; i < mujeres.length; i++) {
   $.get("/api/preguntas/" + mujeres[i].id, function (data) {
     console.log(data);
     // console.log(data.pregunta);
-    console.log("tamaño de las preguntas "+data);
-    console.log("meto pregunta"+i);
+    console.log("tamaño de las preguntas " + data);
+    console.log("meto pregunta" + i);
     arrayPreguntas.push(data);
   })
 }
@@ -34,18 +34,6 @@ btnMensaje.onclick = function () {
   mensaje.classList.add("ocultar-mensaje");
   reset();
 }
-// btnMensaje[1].onclick = function () {
-//   mensaje.classList.add("ocultar-mensaje");
-// }
-// btnMensaje[2].onclick = function () {
-//   mensaje.classList.add("ocultar-mensaje");
-// }
-
-// boton de salir del juego
-window.$("#SalirJuego").click(function () {
-  window.history.back();
-});
-
 
 // cuando el simbolo elegido es X
 window.$("#symbol-X").click(function () {
@@ -141,11 +129,24 @@ function checkForWinner(board) {
 
       // gana el jugador
       if (winner == player) {
+        // muestra el mensaje
         mensaje = document.querySelector("#contenedor-mensaje-victoria");
         if (mensaje.classList.contains("ocultar-mensaje")) {
           mensaje.classList.remove("ocultar-mensaje");
         }
-        console.log("¡¡HAS GANADO!!");
+        // ejecuta el boton de 
+        window.$("#guardar").click(function (evt) {
+          console.log("va ha cerrar");
+          window.location.href = '/juegos';
+
+          $arrayMujeresAGuardar = new Array();
+          for (var i = 0; mujeres.length > i; i++) {
+            $arrayMujeresAGuardar.push(mujeres[i].id);
+            console.log("puseando mujer");
+          }
+          window.location.href = '/guardarmujerperfil/' + $arrayMujeresAGuardar;
+          console.log("¡¡HAS GANADO!!");
+        });
       }
 
       // gana el BOT
@@ -154,11 +155,13 @@ function checkForWinner(board) {
         if (mensaje.classList.contains("ocultar-mensaje")) {
           mensaje.classList.remove("ocultar-mensaje");
         }
-        window.$(".otrapartida").click(function (evt) {
+
+        console.log("Has Perdido :(");
+        // opcion de click en el boton 
+        window.$("#otrapartida").click(function (evt) {
           console.log("va ha cerrar");
           window.location.href = '/juegos';
         });
-        console.log("Has Perdido :(");
       }
 
       console.log(winner + " Wins!");
@@ -172,15 +175,16 @@ function checkForWinner(board) {
   }
 };
 var playerSelector;
+var playerPick;
 window.$("#gameboard").click(function (e) {
- 
+
   //end game when winner delcared 
   if (!playing) return;
-  var playerPick = (e.target.id).slice(2);
+  playerPick = (e.target.id).slice(2);
   playerSelector = "#sq" + playerPick;
   console.log(playerPick);
-  
-  alert(playerSelector);
+
+  console.log(playerSelector);
   if (gameboard[playerPick] != "") {
     //Aqui el usuario pierde el turno si ha pulsado en la casilla de AI
     return;
@@ -201,7 +205,7 @@ window.$("#gameboard").click(function (e) {
     //Se la lanzamos
     $("#pregunta").html(pregunta.pregunta);
     document.getElementById("respuestas").options.length = 0;//Vaciamos las options 
-   
+
     //Añadimos las respuestas para la pregunta inicial
     for (i = 0; i < pregunta.respuestas.length; i++) {
       $('#respuestas').append($('<option />', {
@@ -211,24 +215,28 @@ window.$("#gameboard").click(function (e) {
     }
     //Validaremos la respuesta
     window.$("#validar").click(function (evt) {
-      
+
       console.log("se ejecuta el click");
       mensaje.style.display = "none";
-      alert("dentro "+" #sq" + playerPick);
-      if (document.getElementById("respuestas").value == "true" ) {
+      console.log("dentro " + " #sq" + playerPick);
+      if (document.getElementById("respuestas").value == "true") {
         gameboard[playerPick] = player;
-        console.log("pos  actual "+gameboard[playerPick]);
-        alert("playerselector "+playerSelector)
+        console.log("pos  actual " + gameboard[playerPick]);
+        console.log("playerselector " + playerSelector)
         $(playerSelector).html(player);
         if (playing) {
           aiTurn();
+          console.log(gameboard);
+          console.log("hago el checkforwinner");
           checkForWinner(gameboard);
         }
-      }else {
+      }
+      else {
         aiTurn();
+        console.log("hago el checkforwinner");
         checkForWinner(gameboard);
       }
-     evt.stopImmediatePropagation();
+      evt.stopImmediatePropagation();
     });
   };
 });

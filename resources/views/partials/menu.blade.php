@@ -52,7 +52,7 @@
                     $ruta = $_SERVER["REQUEST_URI"];
                     @endphp
                     @if(strpos($ruta, 'perfil') != 1)
-                    <a class="dropdown-item" href="perfil/{{ Auth::user()->id}}">
+                    <a class="dropdown-item" href="/perfil/{{ Auth::user()->id}}">
                         Editar perfil <i class="fa fa-edit text-grey"></i>
                     </a>
                     @endif
