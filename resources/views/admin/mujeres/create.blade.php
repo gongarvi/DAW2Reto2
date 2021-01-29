@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="">
-    <h2>Nueva Mujer</h2>
+    <h2 class="text-center">Nueva Mujer</h2>
 </div>
 
 <div class="row">
@@ -33,28 +33,28 @@
         @csrf
         <div class="row">
             <div class="col-12">
-                <p class="text-light">Nombre:</p>
-                <input type="text" name="nombre" class="form-control">
+                <p class="text-light">Nombre: *</p>
+                <input type="text" name="nombre" class="form-control" required>
             </div>
             <div class="col-12">
-                <p class="text-light">Apellidos:</p>
-                <input type="text" name="apellidos" class="form-control">
+                <p class="text-light">Apellidos: *</p>
+                <input type="text" name="apellidos" class="form-control" required>
             </div>
             <div class="col-12">
-                <p class="text-light">Nacimiento:</p>
-                <input type="text" name="nacimiento" class="form-control">
+                <p class="text-light">Nacimiento: *</p>
+                <input type="text" name="nacimiento" class="form-control" required>
             </div>
             <div class="col-12">
-                <p class="text-light">Fallecimiento:</p>
+                <p class="text-light">Fallecimiento: </p>
                 <input type="text" name="fallecido" class="form-control">
             </div>
             <div class="col-12">
-                <p class="text-light">Nacionalidad:</p>
-                <input type="text" name="nacionalidad" class="form-control">
+                <p class="text-light">Nacionalidad: *</p>
+                <input type="text" name="nacionalidad" class="form-control" required>
             </div>
             <div class="col-12">
-                <p class="text-light">Especialidad:</p>
-                <select name="especialidad" id="" class="form-control">
+                <p class="text-light">Especialidad: *</p>
+                <select name="especialidad" id="" class="form-control" required>
                 <option value="" selected>Seleccione Especialidad</option>
                    @foreach($especialidades as $especialidad)
                    <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-12">
                 <p class="text-light">Foto:</p>
-                <input type="file" name="foto" class="form-control" accept="image/*">
+                <input type="file" name="foto" class="form-control" accept="image/*" >
             </div>
             <div class="col-12">
                 <p class="text-light">Descripción:</p>
