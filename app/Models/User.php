@@ -44,6 +44,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'administrador'=> 'boolean'
     ];
+    //Funcion para saber si un usuario es administrador o no
     public function isAdmin(){
         return $this->administrador;
     }

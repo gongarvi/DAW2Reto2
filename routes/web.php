@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\RespuestasController;
 use App\Http\Controllers\ControladorUsuarios;
 use App\Http\Controllers\MujeresAPIService;
 use App\Http\Controllers\EspecialidadesController;
-
+use App\Http\Controllers\ControladorPreguntas;
 use App\Http\Controllers\MujeresController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
@@ -70,20 +71,20 @@ Route::get("/perfil",[GameController::class,"show"])->name("perfil");
 Route::get("/logout",[GameController::class,"show"])->name("logout");
 
 
-Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
-
-
-
-//Rutas para la administracion de los usuarios
-Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
-
-//Rutas para la administracion de las especialidades
-Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
-
 //Administracion
 Route::group(["middleware"=>["auth.basic","auth.admin"]],function(){
-    Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
+    //Navegación panel de control
     Route::get('/panelControl', [HomeController::class, 'panelControl'])->name('panel');
+    //Rutas para la administracion de las mujeres
+    Route::resource("admin/mujeres",MujeresController::class,["except"=>["show"]]);
+    //Rutas para la administracion de los usuarios
+    Route::resource("admin/usuarios",ControladorUsuarios::class, ["except"=>["show"]]);
+    //Rutas para la administracion de las especialidades
+    Route::resource("admin/especialidades",EspecialidadesController::class, ["except"=>["show"]]);
+    //Rutas para la administracion de las preguntas
+    Route::resource("admin/preguntas",ControladorPreguntas::class, ["except"=>["show"]]);
+    //Rutas para la administracion de las respuestas
+    Route::resource("admin/respuestas",RespuestasController::class, ["except"=>["show"]]);
 });
 Route::post("/fotosperfil/{id}",[PerfilController::class,"fotosperfil"])->name("fotosperfil");
 Route::get("/actualizarfoto/{id}/{nombrefoto}",[PerfilController::class,"actualizarfoto"])->name("actualizarfoto");

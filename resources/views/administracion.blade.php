@@ -15,16 +15,45 @@
 @section('content')
 
 <h1>PANEL DE ADMINISTRACION</h1>
-<ul class="panel">
-    <li>
-        <a href="{{ route('mujeres.index') }}"><h3>MUJERES</h3></a>
-    </li>
-    <li>
-        <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>
-    </li>
-    <li>
-        <a href="{{ route('usuarios.index') }}"><h3>USUARIOS</h3></a>
-    </li>
-</ul>
+<div class="container">
+    <div class="row panel">
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('mujeres.index') }}"><h3>MUJERES</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{route('especialidades.index')}}"><h3>ESPECIALIDADES</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('usuarios.index') }}"><h3>USUARIOS</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('preguntas.index') }}"><h3>PREGUNTAS</h3></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <ul>
+                <li>
+                    <a href="{{ route('respuestas.index') }}"><h3>RESPUESTAS</h3></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 @endsection

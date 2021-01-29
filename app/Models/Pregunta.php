@@ -14,8 +14,11 @@ class Pregunta extends Model
         'mujer'
     ];
 
-    public function mujer(){
-        return $this->belongsTo(Mujer::class);
+    public function mujeres(){
+        return $this->belongsTo(Mujer::class,"mujer","id");
+    }
+    public function respuestas(){
+        return $this->hasMany(Respuesta::class,"pregunta");
     }
 
     public static function getPreguntaAleatoriaMujer($id_mujer){
