@@ -26,7 +26,7 @@
             return {
                 cara: '👩',
                 cuadros: [],
-                colores: ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco'],
+                colores: ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco','seis'],
                 nivelIntermedio: {
                     nivel: 2,
                     filas: 16,
@@ -74,7 +74,6 @@
             this.iniciarnivel()
         },
         beforeMount(){
-            console.log("Prueba");
             let mujeres=JSON.parse(localStorage.getItem("mujeres"));
             if(mujeres!=null && mujeres.length>0){
                 this.foto=location.protocol+"/"+location.host+"../../../assets/Fotos_mujeres/"+mujeres[0].foto;
@@ -301,6 +300,9 @@
 
     .cinco {
         color: yellow;
+    }
+    .seis{
+        color:hotpink;
     }
 
     .tablero {

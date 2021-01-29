@@ -11,7 +11,7 @@ export default {
         valor(){
             if(this.info.inicial){
                 if(this.info.bandera){
-                    return '🚩';
+                    return '🚩' ;       
                 }
                 else{
                     return '';
@@ -25,6 +25,7 @@ export default {
             if(this.info.inicial){
                 if(this.info.bandera){
                     return 'bandera';
+                    
                 }
                 else{
                     return '';
@@ -42,6 +43,8 @@ export default {
         bandera(){
             if(this.info.inicial){
                 this.$emit('onCambiarMinasRestantes',this.info)
+                
+                
             }
         },
         activar(){
@@ -53,6 +56,7 @@ export default {
 <style >
 .bandera{
     font-size: 12px;
+    
 }
 .bandera-falsa{
     font-size: 18px;
@@ -66,30 +70,13 @@ export default {
 .cuadro-inicial{
     width: 25px;
     height: 25px;
-    /*background-color: #bdbdbd;*/
     background-color: #595454;
-   
-    /*border-top: 3px solid #fff ;
-    border-left: 3px solid #fff ;
-    border-right: 3px solid #9b9b9b;
-    border-bottom: 3px solid #9b9b9b;*/
     border: 1px solid gray;
     cursor: pointer;
 }
 .cuadro-vacio{
     width: 25px;
     height: 25px;
-   /* background-color: #bdbdbd;*/
-   /*border-right-color:  #7b7b7b;
-    border-bottom-color:  #7b7b7b;
-    border-top-width: 0;
-    border-left-width: 0;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-style: solid;*/
-    /*width: 20px;
-    height: 20px;
-    border: 1px solid gray;*/
     cursor: default;
 
 }

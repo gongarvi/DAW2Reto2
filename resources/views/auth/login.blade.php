@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @extends('layouts.page')
-=======
-@extends("layouts.page")
->>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
 
 @section('content')
 <div class="container m-5 mx-auto">
