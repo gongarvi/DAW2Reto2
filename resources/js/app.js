@@ -25,6 +25,9 @@ Vue.component('millonario', require('./components/Millonario').default);
 Vue.component('pregunta', require('./components/Pregunta').default);
 Vue.component('respuesta', require('./components/Respuesta').default);
 Vue.component('ruleta', require('./components/Ruleta').default);
+Vue.component('buscaminas', require('./components/App').default);
+Vue.component('tablero', require('./components/Tablero').default);
+Vue.component('cuadro', require('./components/Cuadro').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -86,6 +86,7 @@
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -534,6 +535,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 4a18bf154757362e44e3c312b4fc46d3568ae060
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -881,6 +886,10 @@ eval("window.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+>>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
+>>>>>>> 4a18bf154757362e44e3c312b4fc46d3568ae060
 /***/ 3:
 /*!******************************************!*\
   !*** multi ./resources/js/millonario.js ***!
@@ -888,7 +897,15 @@ eval("window.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\ik_2dw3\Desktop\reto\resources\js\millonario.js */"./resources/js/millonario.js");
+=======
+<<<<<<< HEAD
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\laravel\\reto\\resources\\js\\millonario.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+=======
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\millonario.js */"./resources/js/millonario.js");
+>>>>>>> 2041ed01e7620fa8958077b361f1927d8ffc3ebd
+>>>>>>> 4a18bf154757362e44e3c312b4fc46d3568ae060
 
 
 /***/ })
