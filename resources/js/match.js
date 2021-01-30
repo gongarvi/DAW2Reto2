@@ -7,7 +7,7 @@
 
     for(i=0; i<mujercitas.length; i++){
 
-        nombresM.push(mujercitas[i].nombre);
+        nombresM.push(mujercitas[i].nombre+" "+mujercitas[i].apellidos);
         fotosM.push(mujercitas[i].foto);
 
     }
@@ -67,7 +67,7 @@
     //Funcion para ejecutar la accion por cada click que hacemos
     clic = function(element){
         try{
-            this.classList.push("glow");
+            
             var cartas_activas = document.querySelectorAll(".sin-fondo-item");
 
             if(cartas_activas.length == 2){
@@ -102,6 +102,18 @@
                 if(mensaje.classList.contains("ocultar-mensaje")){
                     mensaje.classList.remove("ocultar-mensaje");
                 }
+                window.$("#guardar").click(function (evt) {
+                    console.log("va ha cerrar");
+                    window.location.href = '/juegos';
+          
+                    $arrayMujeresAGuardar = new Array();
+                    for (var i = 0; mujercitas.length > i; i++) {
+                      $arrayMujeresAGuardar.push(mujercitas[i].id);
+                      console.log("puseando mujer");
+                    }
+                    window.location.href = '/guardarmujerperfil/' + $arrayMujeresAGuardar;
+                    console.log("¡¡HAS GANADO!!");
+                  });
 
             }
 

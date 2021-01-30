@@ -44,6 +44,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
+                                
                     </form>
                 </td>
             </tr>
@@ -69,4 +70,5 @@
     </div>
  
 </div>
+
 @endsection

@@ -6,11 +6,8 @@
 
 // Introducción de bootstrap al proyecto
 require('./bootstrap');
-//registrar el $ 
-import $ from 'jquery';
-window.$ = window.jQuery = $;
+
 window.Vue = require('vue');
-$.noConflict()
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

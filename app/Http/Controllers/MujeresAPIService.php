@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Mujer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Fotosperfil;
 
 class MujeresAPIService extends Controller
 {
@@ -45,7 +46,9 @@ class MujeresAPIService extends Controller
             } else {
                 $array = Mujer::getMujeresAleatorias();
             }
-            $array = $array->random($cantidad);
+            if(count($array)>$cantidad){
+                $array = $array->random($cantidad);
+            }
             foreach ($array as $item) {
                 $especialidad = array(
                     "nombre" => $item->especialidades->nombre,
@@ -71,6 +74,21 @@ class MujeresAPIService extends Controller
             }
             return $result;
         }
+    }
+    public function fotoPerfilMujer($array){
+        $arraycompleto =  explode(",", $array);
+        $usuario = Auth::user();
+        $idUsuario=$usuario->id;
+        for($i=0;$i<count($arraycompleto);$i++){
+            Fotosperfil::where('mujer',"=" ,$arraycompleto[$i])
+            ->where('usuario',"=" ,$idUsuario)
+            ->delete();
+            $fotoPerfil = new Fotosperfil();
+            $fotoPerfil->usuario = $idUsuario;
+            $fotoPerfil->mujer = $arraycompleto[$i];
+            $fotoPerfil->save();
+        }
+        return redirect('/juegos');
     }
 
 }

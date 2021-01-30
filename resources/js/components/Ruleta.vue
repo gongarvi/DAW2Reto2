@@ -1,7 +1,7 @@
 <template>
     <section>
         <div v-if="mujeres!=null && mujeres.length!=0" id="ruleta" class="mb-5 text-center p-2">
-            <h2 class="text-light">Escogiendo mujer aleatoriamente</h2>
+            <h2 class="text-light">Escogiendo mujer, espere...</h2>
             <img id="fotoRuleta" v-for="(mujer,indice) in mujeres"
                  v-if="indice==index" v-bind:src="(mujeres[index].foto!=null&&mujeres[index].foto!=='')?'../../../assets/Fotos_mujeres/'+mujer.foto:'../../../imagae/placeholder-usuario'"
                  class="rounded mx-auto d-block border border-dark " width="400px" height="400px">
@@ -30,7 +30,8 @@
                 cantidadMinima:0,
                 especialidad:0,
                 mujeresSeleccionadas:[],
-                juego:""
+                juego:"",
+                vueltas:0
             }
         },
         beforeMount() {
@@ -46,7 +47,7 @@
                     this.cantidadMinima=1;
                     break;
                 case "Tresenraya":
-                    this.cantidadMinima=10;
+                    this.cantidadMinima=6;
                     break;
                 case "Puzzle":
                     this.cantidadMinima=1;
@@ -55,7 +56,7 @@
                     this.cantidadMinima=6;
                     break;
             }
-            if(isNaN(especialidad) && especialidad>0 && especialidad<9){
+            if(!isNaN(especialidad) && especialidad>0 && especialidad<=9){
                 this.especialidad=especialidad;
             }
         },
@@ -112,6 +113,12 @@
                         this.mujeresSeleccionadas.push(this.mujeres[this.index]);
                         $("#infoMujer").show();
                     }else{
+                        if(this.vueltas>5 && this.especialidad!=0){
+                            alert("No hay mas muejeres para poder completar el juego. Se ha cambiado la especializacion a todas");
+                            this.especialidad=0;
+                        }else{
+                            this.vueltas++;
+                        }
                         this.obtenerMujeres();
                     }
                 },2500);

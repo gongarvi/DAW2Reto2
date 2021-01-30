@@ -29,3 +29,5 @@ Route::post("mujeres/desbloquear/{mujer}",[FotosperfilController::class,"desbloq
 Route::get("mujeres/{cantidad}/{especializacion}",[MujeresAPIService::class,"show"]);
 //Route::apiResource("mujeres",MujeresAPIService::class);
 
+
+
