@@ -561,7 +561,7 @@ eval("__webpack_require__(/*! ./bootstrap.js */ \"./resources/js/bootstrap.js\")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\formulario.js */"./resources/js/formulario.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\formulario.js */"./resources/js/formulario.js");
 
 
 /***/ })

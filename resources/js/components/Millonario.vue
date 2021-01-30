@@ -113,9 +113,7 @@ export default {
 }
 </script>
 <style scoped>
-#millonario {
-    background-color: rgb(0, 2, 99);
-}
+  
   .final{
       color:white;
       margin: auto;

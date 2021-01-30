@@ -36,7 +36,9 @@
                     @endif
                     @else
                         <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Juego</a></li>
+                        @if (Auth::user()->administrador ==1)                  
                         <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("panel")}}">Administracion</a></li>
+                        @endif
                     @endguest
                 </ul>
                     <!-- Modal -->
