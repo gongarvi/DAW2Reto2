@@ -13,18 +13,20 @@
 
 @section('content')
 <div class="">
-    <h2>Editar Especialidad</h2>
+    <h2>Editar Especialidad</h2>    
 </div>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="volver">
-            <a class="btn btn-primary" href="{{ route('especialidades.index')}}">Volver</a>
+            
         </div>
     </div>
 </div>
+
+<div class="datos">
 @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="alert alert-danger w-100">
         <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
         <ul>
             @foreach($errors->all() as $error)
@@ -33,8 +35,6 @@
         </ul>
     </div>
 @endif
-
-<div class="datos">
 <form action="{{route('especialidades.update', $especialidad)}}" method="post">
         
         @csrf
@@ -53,6 +53,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 guardar">
                 <button type="submit" class="btn btn-success">Guardar</button>
+                <a class="btn btn-primary ml-2" href="{{ route('especialidades.index')}}">Volver</a>
         </div>
     </form>
 </div>

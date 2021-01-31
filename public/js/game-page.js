@@ -561,7 +561,7 @@ eval("window.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\game-page.js */"./resources/js/game-page.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\game-page.js */"./resources/js/game-page.js");
 
 
 /***/ })

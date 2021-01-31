@@ -14,17 +14,15 @@
 @section('content')
 <div class="">
     <h2>Gestion de Usuarios</h2>
-
 </div>
 
 
+<div class="datos">
 @if($message = Session::get('success'))
-    <div class="alert alert-success mensaje">
+    <div class="alert alert-success mensaje w-100">
         <p>{{$message}}</p>
     </div>
 @endif
-
-<div class="datos">
 <a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-info">Volver al panel</button></a>
   <table>
     <tr>

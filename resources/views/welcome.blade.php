@@ -29,15 +29,15 @@
                         <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("perfil",Auth::user()->id)}}">Perfil de {{ Auth::user()->name }}</a></li>
                     @endguest
 
-                    <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Mujeres</a></li>
+                    <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("mujeres")}}">Galeria</a></li>
                     @guest
                     @if (Route::has('login'))
                     <li class="list-group-item border-0 bg-transparent" data-toggle="modal" data-target="#myModal"><a class="btn btn-outline-light w-100">Jugar</a></li>
                     @endif
                     @else
-                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Juego</a></li>
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("juegos")}}">Jugar</a></a></li>
                         @if (Auth::user()->administrador ==1)                  
-                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("panel")}}">Administracion</a></li>
+                        <li class="list-group-item border-0 bg-transparent"><a class="btn btn-outline-light w-100" href="{{route("panel")}}">Administrar</a></li>
                         @endif
                     @endguest
                 </ul>
@@ -58,10 +58,10 @@
         </div>
         <div class="row mt-5">
             <div class="col-12 text-justify">
-                <p>Usted usuario, queremos darte la bienvenida a nuestro sitio web, suponiendo que es la primera vez que entras aquí y no sabes de qué trata la web y quiénes somos, no te preocupes en seguida te lo aclaramos.</p>
-                <p>Cabe destacar de inicio que somos una asociación feminista (Desayunos Feministas) ubicada en Santander, una de nuestras misiones es recopilar información sobre las mujeres que han trabajado en varios ámbitos y han destacado por sus ideologías, carácter…y que a nivel social son poco conocidas.</p>
-                <p>Y a raíz de esto hemos creado este sitio web para dar visibilidad a esas mujeres, la web incluye una variedad juegos con la información de las damas.</p>
-                <p>Que lo disfrutes</p>
+                <p>Queremos darte la bienvenida a nuestro sitio web, suponiendo que es la primera vez que entras aquí y no sabes de qué trata la web y quiénes somos, no te preocupes en seguida te lo aclaramos.</p>
+                <p>Cabe destacar de inicio que somos una asociación feminista (Desayunos Feministas) ubicada en Santander, una de nuestras misiones es recopilar información sobre las mujeres que han trabajado en varios ámbitos y han destacado por sus ideologías, carácter…y que a nivel social son poco conocidas.
+                 y a raíz de esto hemos creado este sitio web para dar visibilidad a esas mujeres, la web incluye una variedad juegos con la información de las damas.</p>
+                <p>Que lo disfrutes.</p>
             </div>
         </div>
     </div>

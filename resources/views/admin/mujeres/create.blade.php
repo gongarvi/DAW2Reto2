@@ -2,33 +2,27 @@
 
 @section("head-extras")
     <link rel="stylesheet" href="{{asset("css/admin.css")}}">
+    <link rel="stylesheet" href="{{asset("css/matching.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
 @section('content')
 <div class="">
-    <h2 class="text-center">Nueva Mujer</h2>
+    <h1 class="text-center">Nueva Mujer</h1>
 </div>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="volver">
-            <a class="btn btn-primary" href="{{ route('mujeres.index')}}">Volver</a>
-        </div>
-    </div>
-</div>
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <div class="datos">
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('mujeres.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
@@ -72,6 +66,7 @@
             </div>
             <div class="col-xs-12 guardar">
                 <button type="submit" class="btn btn-success">Añadir</button>
+                <a class="btn btn-primary ml-2" href="{{ route('mujeres.index')}}">Volver</a>
             </div>
         </div>
     </form>

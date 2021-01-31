@@ -516,7 +516,7 @@ eval("__webpack_require__(/*! ./bootstrap.js */ \"./resources/js/bootstrap.js\")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\tresenrayasdiablo.js */"./resources/js/tresenrayasdiablo.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\DAW2Reto2\resources\js\tresenrayasdiablo.js */"./resources/js/tresenrayasdiablo.js");
 
 
 /***/ })

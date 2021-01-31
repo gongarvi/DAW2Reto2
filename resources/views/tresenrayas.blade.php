@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-        <div class="mt-2">
+        <div class="mt-2 d-flex justify-content-start align-items-center">
             <div class="buttons text-center">
                 <span id="symbol-X" class="symbol"> X </span>
                 <span id="symbol-O" class="symbol"> O </span>
@@ -48,7 +48,7 @@
         <!-- Contenedores de mensajes -->
         <div id="contenedor-mensaje" class="ocultar-mensaje text-dark">
             <div id="mensaje">
-                <h3 id="titulo-mensaje"></h3>
+                <h3 id="titulo-mensaje" class="p-5"></h3>
                 <button class="btn btn-light" id="btnCerrarMensaje">OK</button> 
             </div>
             
