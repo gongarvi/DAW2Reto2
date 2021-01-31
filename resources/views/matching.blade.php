@@ -12,10 +12,7 @@
 
 
 @section('content')
-<h1>DESAYUNOS FEMINISTAS </h1>
 <h2>Juego del Matching</h2>
-
-
     <div class="puntos">
         <img src="..\image/logo.png" height="30">
         <img src="..\image/logo.png" height="30">
@@ -40,7 +37,7 @@
     <div id="contenedor-mensaje-derrota" class="ocultar-mensaje">
         <div id="mensaje-derrota">
             <h3>Lo sentimos!!!</h3>
-            <h4>No has podido completar el nivel, pero Ánimo</h4>
+            <h4>No has podido completar el nivel, vuelve a intentarlo.</h4>
             <span class="icon-emoji-sad"></span>
             <a href=""><button class="btn btn-primary">Otra partida</button></a>
         </div>

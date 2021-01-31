@@ -14,29 +14,21 @@
 @section('content')
 
 <div class="">
-    <h2>Editar Mujer</h2>
+    <h2>Editar pregunta</h2>
 </div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <div class="volver">
-            <a class="btn btn-primary" href="{{ route('preguntas.index')}}">Volver</a>
-        </div>
-    </div>
-</div>
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 <div class="datos">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{route("preguntas.update",$pregunta)}}" method="post">
         @csrf
         @method('PUT')
@@ -44,7 +36,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <p>Pregunta:</p>
-                    <input type="text" name="pregunta" value="{{$pregunta->pregunta}}" class="form-control">
+                    <input type="text" name="pregunta" value="{{$pregunta->pregunta}}" class="form-control" required>
                 </div>
             </div>
             
@@ -67,6 +59,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 guardar">
                 <button type="submit" class="btn btn-success">Guardar</button>
+                <a class="btn btn-primary ml-2" href="{{ route('preguntas.index')}}">Volver</a>
             </div>
         </div>
     </form>

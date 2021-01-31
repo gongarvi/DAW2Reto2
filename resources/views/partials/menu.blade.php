@@ -11,14 +11,26 @@
                 </a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link m-auto text-light" href="{{route("inicio")}}">Inicio</a>
+                <a class="nav-link m-auto text-light" href="{{route("inicio")}}"><i class="fa fa-home fa-2x"></i></a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link text-light" href="{{route("mujeres")}}">Mujeres</a>
+                <a class="nav-link text-light" href="{{route("mujeres")}}"><i class="fa fa-picture-o fa-1x"></i> Galeria</a>
             </li>
             <li class="nav-item m-auto mx-lg-0">
-                <a class="nav-link text-light" href="{{route("juegos")}}">Modo Historia</a>
+                <a class="nav-link text-light" href="{{route("juegos")}}"><i class="fa fa-gamepad fa-1x"></i> Jugar</a>
             </li>
+            @guest
+                @if (Route::has('login'))
+                    <li></li>
+                @endif
+                @else
+                    
+                @if (Auth::user()->administrador ==1)                  
+                    <li class="nav-item m-auto mx-lg-0">
+                        <a class="nav-link text-light" href="{{route("panel")}}"><i class="fa fa-pencil fa-1x"></i> Administrar</a>
+                    </li>
+                @endif
+            @endguest
         </ul>
     </div>
 

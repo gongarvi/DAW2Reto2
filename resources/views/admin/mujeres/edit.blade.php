@@ -4,34 +4,28 @@
 
     <link rel="stylesheet" href="{{asset("css/admin.css")}}">
     <link rel="stylesheet" href="{{asset("css/iconos/style.css")}}">
+    <link rel="stylesheet" href="{{asset("css/matching.css")}}">
 
 @endsection
 
 @section('content')
+
 <div class="">
-    <h2>Editar Mujer</h2>
+    <h1>Editar mujer</h1>
 </div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <div class="volver">
-            <a class="btn btn-primary" href="{{ route('mujeres.index')}}">Volver</a>
-        </div>
-    </div>
-</div>
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 <div id="formulario" class="datos">
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route("mujeres.update",$mujer)}}" method="post">
         @csrf
         @method('PUT')
@@ -98,6 +92,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 guardar">
                 <button type="submit" class="btn btn-success">Guardar</button>
+                <a class="btn btn-primary ml-2" href="{{ route('mujeres.index')}}">Volver</a>
             </div>
         </div>
     </form>
