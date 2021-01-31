@@ -550,7 +550,7 @@ eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodas
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./bootstrap.js */ \"./resources/js/bootstrap.js\");\n\nwindow.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.common.js\");\nvar vue = new Vue({\n  el: '#formulario',\n  methods: {\n    submitMujeres: function submitMujeres(event) {}\n  },\n  computed: {}\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvZm9ybXVsYXJpby5qcz8zYTg3Il0sIm5hbWVzIjpbInJlcXVpcmUiLCJ3aW5kb3ciLCJWdWUiLCJ2dWUiLCJlbCIsIm1ldGhvZHMiLCJzdWJtaXRNdWplcmVzIiwiZXZlbnQiLCJjb21wdXRlZCJdLCJtYXBwaW5ncyI6IkFBQ0FBLG1CQUFPLENBQUMsbURBQUQsQ0FBUDs7QUFHQUMsTUFBTSxDQUFDQyxHQUFQLEdBQWFGLG1CQUFPLENBQUMsa0RBQUQsQ0FBcEI7QUFHQSxJQUFNRyxHQUFHLEdBQUcsSUFBSUQsR0FBSixDQUFRO0FBQ2hCRSxJQUFFLEVBQUUsYUFEWTtBQUVoQkMsU0FBTyxFQUFFO0FBQ0xDLGlCQURLLHlCQUNTQyxLQURULEVBQ2UsQ0FFbkI7QUFISSxHQUZPO0FBT2hCQyxVQUFRLEVBQUM7QUFQTyxDQUFSLENBQVoiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvZm9ybXVsYXJpby5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5yZXF1aXJlKFwiLi9ib290c3RyYXAuanNcIik7XHJcblxyXG5cclxud2luZG93LlZ1ZSA9IHJlcXVpcmUoJ3Z1ZScpO1xyXG5cclxuXHJcbmNvbnN0IHZ1ZSA9IG5ldyBWdWUoe1xyXG4gICAgZWw6ICcjZm9ybXVsYXJpbycsXHJcbiAgICBtZXRob2RzOiB7XHJcbiAgICAgICAgc3VibWl0TXVqZXJlcyhldmVudCl7XHJcblxyXG4gICAgICAgIH1cclxuICAgIH0sXHJcbiAgICBjb21wdXRlZDp7XHJcblxyXG4gICAgfVxyXG59KTtcclxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/formulario.js\n");
+eval("__webpack_require__(/*! ./bootstrap.js */ \"./resources/js/bootstrap.js\");\n\nwindow.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.common.js\");\nvar vue = new Vue({\n  el: '#formulario',\n  methods: {\n    submitMujeres: function submitMujeres(event) {}\n  },\n  computed: {}\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvZm9ybXVsYXJpby5qcz8zYTg3Il0sIm5hbWVzIjpbInJlcXVpcmUiLCJ3aW5kb3ciLCJWdWUiLCJ2dWUiLCJlbCIsIm1ldGhvZHMiLCJzdWJtaXRNdWplcmVzIiwiZXZlbnQiLCJjb21wdXRlZCJdLCJtYXBwaW5ncyI6IkFBQ0FBLG1CQUFPLENBQUMsbURBQUQsQ0FBUDs7QUFHQUMsTUFBTSxDQUFDQyxHQUFQLEdBQWFGLG1CQUFPLENBQUMsa0RBQUQsQ0FBcEI7QUFHQSxJQUFNRyxHQUFHLEdBQUcsSUFBSUQsR0FBSixDQUFRO0FBQ2hCRSxJQUFFLEVBQUUsYUFEWTtBQUVoQkMsU0FBTyxFQUFFO0FBQ0xDLGlCQURLLHlCQUNTQyxLQURULEVBQ2UsQ0FFbkI7QUFISSxHQUZPO0FBT2hCQyxVQUFRLEVBQUM7QUFQTyxDQUFSLENBQVoiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvZm9ybXVsYXJpby5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxucmVxdWlyZShcIi4vYm9vdHN0cmFwLmpzXCIpO1xuXG5cbndpbmRvdy5WdWUgPSByZXF1aXJlKCd2dWUnKTtcblxuXG5jb25zdCB2dWUgPSBuZXcgVnVlKHtcbiAgICBlbDogJyNmb3JtdWxhcmlvJyxcbiAgICBtZXRob2RzOiB7XG4gICAgICAgIHN1Ym1pdE11amVyZXMoZXZlbnQpe1xuXG4gICAgICAgIH1cbiAgICB9LFxuICAgIGNvbXB1dGVkOntcblxuICAgIH1cbn0pO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/formulario.js\n");
 
 /***/ }),
 
@@ -561,7 +561,7 @@ eval("__webpack_require__(/*! ./bootstrap.js */ \"./resources/js/bootstrap.js\")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\reto2evaluacionm\DAW2Reto2\resources\js\formulario.js */"./resources/js/formulario.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\RETO2\resources\js\formulario.js */"./resources/js/formulario.js");
 
 
 /***/ })

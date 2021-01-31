@@ -28,7 +28,7 @@
                 </div>
             </form>
 
-            <form action="/actualizarPerfil/{{$usuario->id}}" method="POST">
+            <form @submit="actualizarDatosPerfil()" action="/actualizarPerfil/{{$usuario->id}}" method="POST">
                 @csrf
 				<input type="hidden" value="datos" name="funcion">
 
@@ -36,30 +36,30 @@
                     <label for="name" class="text-light">Nombre: </label>
                     <input  name="name" value="{{$usuario->name}}" class="form-control"  type="text">
                 </div>
-					
+
 				<div class="form-group">
-                    <label for="email" class="text-light">Correo: </label>            
+                    <label for="email" class="text-light">Correo: </label>
                     <input readonly name="email" placeholder="{{$usuario->email}}" class="form-control"  type="email">
 				</div>
 
                 <div class="form-group">
-                    <label for="password" class="text-warning">Escribe tu contraseña para confirmar</label>            
+                    <label for="password" class="text-warning">Escribe tu contraseña para confirmar</label>
                     <input  name="password" placeholder="Contraseña" class="form-control"  type="password">
 				</div>
                 <input type="reset" class="btn btn-danger mb-2">
                 <input type="submit" value="Actualizar Usuario" class="btn btn-success mb-2">
             </form>
 
-            <form action="/actualizarPerfil/{{$usuario->id}}" method="post">
+            <form @click="actualizarPassword()" action="/actualizarPerfil/{{$usuario->id}}" method="post">
                 @method('POST')
                 @csrf
                 <h2 class="mt-5">Cambiar contraseña</h2>
 				<input type="hidden" value="contrasena" name="funcion">
-					
+
 				<div class="form-group">
                     <input  name="actual_password" placeholder="Contraseña actual" class="form-control"  type="password">
                 </div>
-					
+
 				<div class="form-group">
                     <input  name="new_password" placeholder="Contraseña nueva" class="form-control"  type="password">
 				</div>
@@ -96,5 +96,6 @@
 		</div>
 	</div>
 </div>
-    
+<script src="{{asset('js/formulario.js')}}">
+</script>
 @endsection
