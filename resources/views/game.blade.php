@@ -14,7 +14,7 @@
                 <select class="form-control" id="selectEspecialidad" name="combo">
                     <option value="0">Todos</option>
                     @foreach($especialidades as $especialidad)
-                    <option value="{{$especialidad->id}}" style="background-color:{{$especialidad->color}};" class="text-light m-2">{{$especialidad->nombre}}</option>
+                    <option value="{{$especialidad->id}}">{{$especialidad->nombre}}</option>
                     @endforeach
                 </select>
         </div>
