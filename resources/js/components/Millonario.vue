@@ -1,7 +1,9 @@
 <template>
     <div id="millonario">
         <div id="juego" v-if="!fin">
-            <Pregunta ref="pregunta" v-if="preguntas!=null && preguntas.length>0" :pregunta="preguntas[respondidas].pregunta" :respuestas="preguntas[respondidas].respuestas"/>
+            <Pregunta ref="pregunta" v-if="preguntas!=null && preguntas.length>0"
+                      :pregunta="preguntas[respondidas].pregunta"
+                      :respuestas="preguntas[respondidas].respuestas"/>
             <div id="ayudas" class="text-center m-5">
                 <button id="50" class="btn btn-info mx-4" @click="botonAyuda50" :disabled="ayudaMitad">
                     <span>50/50</span>
@@ -113,7 +115,7 @@ export default {
 }
 </script>
 <style scoped>
-  
+
   .final{
       color:white;
       margin: auto;
