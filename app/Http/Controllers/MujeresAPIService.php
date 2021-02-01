@@ -46,7 +46,9 @@ class MujeresAPIService extends Controller
             } else {
                 $array = Mujer::getMujeresAleatorias();
             }
-            $array = $array->random($cantidad);
+            if(count($array)>$cantidad){
+                $array = $array->random($cantidad);
+            }
             foreach ($array as $item) {
                 $especialidad = array(
                     "nombre" => $item->especialidades->nombre,

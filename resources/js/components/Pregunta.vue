@@ -79,8 +79,8 @@ export default {
 </script>
 <style scoped>
 .pregunta{
-    background-color: rgb(0, 2, 99);
-}
+    background-color: rgba(0,0,0,0.555) ;
+    }
 h3{
     color: white;
 }

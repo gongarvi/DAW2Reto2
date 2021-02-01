@@ -27,7 +27,7 @@ var btnMensaje = document.getElementById("btnCerrarMensaje");
 // Muestro el mensaje primero 
 if (mensaje.classList.contains("ocultar-mensaje")) {
   mensaje.classList.remove("ocultar-mensaje");
-  TituloMensaje.innerHTML = "Tu simbolo es X, puedes cambiar si quieres.";
+  TituloMensaje.innerHTML = "Tu simbolo es X, puedes cambiar si quieres. <b>Instrucciones: </b> Cada vez que vayas a tirar te hara una pregunta, si la respuesta esta mal perderas el turno.";
 }
 // al pulssar el boton para cerrar el mensaje
 btnMensaje.onclick = function () {

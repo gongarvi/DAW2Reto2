@@ -16,15 +16,9 @@
     <h2>Editar Usuario</h2>
 </div>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="volver">
-            <a class="btn btn-primary" href="{{ route('usuarios.index')}}">Volver</a>
-        </div>
-    </div>
-</div>
+<div class="datos">
 @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="alert alert-danger w-100">
         <strong>Atencion</strong>Has dejado algun campo vacio<br><br>
         <ul>
             @foreach($errors->all() as $error)
@@ -33,8 +27,6 @@
         </ul>
     </div>
 @endif
-
-<div class="datos">
     <h3 style="display: flex; justify-content:center;">Modificar los permisos de {{$user->name}}</h3>
     <form action="{{route('usuarios.update', $user)}}" method="post">
         @method('PATCH')
@@ -43,16 +35,17 @@
         <div  class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 @if($user->administrador)
-                    <input type="checkbox" name="administrador" value="0">
+                    <input type="checkbox" name="administrador" value="0" required>
                     <label for="">No Administrador</label>
                 @else
-                    <input type="checkbox" name="administrador" value="1">
+                    <input type="checkbox" name="administrador" value="1" required>
                     <label for="">Administrador</label>
                 @endif
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 guardar">
                 <button type="submit" class="btn btn-success">Guardar</button>
+                <a class="btn btn-primary ml-2" href="{{ route('usuarios.index')}}">Volver</a>
         </div>
     </form>
 </div>

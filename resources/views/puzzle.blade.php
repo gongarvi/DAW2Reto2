@@ -42,7 +42,6 @@
 
 <script>
     var mujer = JSON.parse(localStorage.getItem("mujeres"));
-    alert(mujer[0].foto);
     var cambioImagen;
     cambioImagen = setInterval('cambiarFoto()', 100);
 

@@ -1,6 +1,6 @@
 @font-face{
     font-family: logo;
-    src: url('Bleeding_Cowboys.ttf');
+    src: url('Qwigley-Regular.ttf');
 }
 body{
     background-image: url("../image/fondo3.jpg");
@@ -11,13 +11,13 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 main>div{
-    background-color: rgba(0,0,0,0.555) ;
+    background-color: rgba(0, 0, 0, 0.555);
     padding: 5em !important;
 
 }
 #logo{
     font-family: logo;
-    font-size: 4em;
+    font-size: 6em;
 }
 a{
     font-size: 25px !important;

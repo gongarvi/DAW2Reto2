@@ -41,7 +41,6 @@ class Mujer extends Model
         $mujeres = $mujeres->filter(function ($mujer) {
             return count($mujer["preguntas"]) > 0;
         });
-        echo count($mujeres);
         return $mujeres;
     }
 

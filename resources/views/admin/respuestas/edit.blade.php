@@ -20,7 +20,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="volver">
-            <a class="btn btn-primary" href="{{ route('respuestas.index')}}">Volver</a>
+            
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="">Pregunta</label>
-                   <select name="" id="">
+                   <select name="" id="" class="form-control">
                         <option value="{{$pregunta->id}}" selected>{{$pregunta->pregunta}}</option>
                    </select>
                 </div>
@@ -65,15 +65,15 @@
                     @else
                         <label for="">Respuesta incorrecta</label>
                     @endif
-                        <input type="text" name="respuestas[{{$respuesta->id}}]" class="form-control" value="{{$respuesta->respuesta}}">
+                        <input type="text" name="respuestas[{{$respuesta->id}}]" class="form-control" value="{{$respuesta->respuesta}}" required>
                     </div>                    
             @endforeach
             </div>
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <input type="submit" class="form-control btn btn-primary" value="Guardar">
-                </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 guardar">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a class="btn btn-primary ml-2" href="{{ route('respuestas.index')}}">Volver</a>
             </div>
+          
         </div>
     </form>
 </div>

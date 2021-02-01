@@ -17,7 +17,7 @@ class CreatePreguntas extends Migration
             $table->id()->autoIncrement();
             $table->string('pregunta'); 
             $table->unsignedBigInteger('mujer');
-            $table->foreign('mujer')->references('id')->on('mujeres');
+            $table->foreign('mujer')->references('id')->on('mujeres')->onDelete('cascade');;
             $table->timestamps();
         });
     }

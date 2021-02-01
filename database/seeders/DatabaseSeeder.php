@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
         }
     }
     private function preguntas(){
-        $file = fopen('public/assets/CSVs/preguntas.csv', "r");
+        $file = fopen('public/assets/CSVs/Preguntas.csv', "r");
         $data = array();
         $i = 0;
         while (($filedata = fgetcsv($file, 1000, ';')) !== FALSE) {

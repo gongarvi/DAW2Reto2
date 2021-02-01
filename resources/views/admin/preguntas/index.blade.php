@@ -16,14 +16,12 @@
     <h2>Gestion de Preguntas</h2>
 </div>
 
-
+<div class="datos container">
 @if($message = Session::get('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success w-100">
         <p>{{$message}}</p>
     </div>
 @endif
-
-<div class="datos container">
 <a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-info">Volver al panel</button></a>
     <table>
         <tr>

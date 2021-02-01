@@ -16,15 +16,12 @@
     <h2>Gestion de Respuestas</h2>
 </div>
 
-
-@if($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{$message}}</p>
-    </div>
-@endif
-
 <div class="datos container">
-
+    @if($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{$message}}</p>
+        </div>
+    @endif
     <a href="{{ route ('panel')}}" style="display:flex; justify-content:center; text-decoration:none; "><button class="btn btn-info">Volver al panel</button></a>
     <table>
         <thead>
