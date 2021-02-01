@@ -28,7 +28,7 @@
     </div>
     <div id="contenedor-mensaje-victoria" class="ocultar-mensaje">
         <div id="mensaje-victoria">
-            <h3>Felicidades!!!</h3>
+            <h3>Felicidades!!</h3>
             <h4>Has completado el nivel</h4>
             <img src="..\assets\Fotos_mujeres\felicitar.gif">
             <button class="btn btn-success" id="guardar">Seguir Jugando</button>
