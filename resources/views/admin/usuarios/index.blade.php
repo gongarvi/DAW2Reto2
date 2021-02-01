@@ -32,19 +32,21 @@
         <th>Operaciones</th>
     </tr>
     @foreach($usuarios as $usuario)
-        <tr>
-            <td>{{$usuario->name}}</td>
-            <td>{{$usuario->email}}</td>
-            <td>{{$usuario->administrador}}</td>
-            <td>
-                <form action="{{ route('usuarios.destroy', $usuario->id)}}" method="post">
-                    <a href="{{ route('usuarios.edit',$usuario)}}" class="btn btn-info"><span class="icon-edit"></span></a>
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
-                </form>  
-            </td>
-        </tr>
+        @if($usuario->name!='Admin')
+            <tr>
+                <td>{{$usuario->name}}</td>
+                <td>{{$usuario->email}}</td>
+                <td>{{$usuario->administrador}}</td>
+                <td>
+                    <form action="{{ route('usuarios.destroy', $usuario->id)}}" method="post">
+                        <a href="{{ route('usuarios.edit',$usuario)}}" class="btn btn-info"><span class="icon-edit"></span></a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger"><span class="icon-trash"></span></button>
+                    </form>  
+                </td>
+            </tr>
+        @endif
     @endforeach
   </table>
   <div class="row">

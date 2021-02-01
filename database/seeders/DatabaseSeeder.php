@@ -6,6 +6,9 @@ use App\Models\Especialidad;
 use App\Models\Mujer;
 use App\Models\Pregunta;
 use App\Models\Respuesta;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->mujeres();
         $this->preguntas();
         $this->respuestas();
+        $this->usuarios();
     }
 
     // los datos para la tabla de especialidades
@@ -147,5 +151,14 @@ class DatabaseSeeder extends Seeder
             $respuesta->save();
 
         }
+    }
+    private function usuarios(){
+        $admin = new User();
+        $admin->name="Admin";
+        $admin->email="admin@gmail.com";
+        $admin->password=Hash::make("admin123456");
+        $admin->administrador=1;
+        $admin->progreso=0;
+        $admin->save();
     }
 }
