@@ -58,8 +58,10 @@
         </div>
         <div class="row mt-5">
             <div class="col-12 text-justify">
-                <p>Queremos darte la bienvenida a nuestro sitio web, suponiendo que es la primera vez que entras aquí y no sabes de qué trata la web y quiénes somos, no te preocupes en seguida te lo aclaramos.</p>
-                <p>Cabe destacar de inicio que somos una asociación feminista (Desayunos Feministas) ubicada en Santander, una de nuestras misiones es recopilar información sobre las mujeres que han trabajado en varios ámbitos y han destacado por sus ideologías, carácter…y que a nivel social son poco conocidas.
+                <p>Queremos darte la bienvenida a nuestro sitio web. </p> 
+                <p>Suponiendo que es la primera vez que entras aquí y no sabes de qué trata la web y quiénes somos, no te preocupes en seguida te lo aclaramos.</p>
+                <p>Cabe destacar de inicio que somos una asociación feminista (Desayunos Feministas) ubicada en Santander.</p> 
+                <p> Una de nuestras misiones es recopilar información sobre las mujeres que han trabajado en varios ámbitos y han destacado por sus ideologías, carácter…y que a nivel social son poco conocidas.
                  y a raíz de esto hemos creado este sitio web para dar visibilidad a esas mujeres, la web incluye una variedad juegos con la información de las damas.</p>
                 <p>Que lo disfrutes.</p>
             </div>
