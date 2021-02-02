@@ -1,5 +1,5 @@
 <template>
-    <div @click="responder" class="col-12 col-lg-6 w-100 mb-2 p-1" :class="[{'disabled': isDisabled},{'ayuda':ayuda}]">
+        <div @click="responder" class="col-12 col-lg-6 w-100 mb-2 p-1" :class="[{'disabled': isDisabled},{'ayuda':ayuda}]">
         <button class="btn w-100 h-100">
             {{respuesta}}
         </button>

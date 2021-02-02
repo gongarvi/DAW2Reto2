@@ -2,7 +2,6 @@
 
 @section("head-extras")
     <link rel="stylesheet" href="{{asset("css/formularios.css")}}">
-    <script src="{{asset('js/app.js')}}"></script>
 @endsection
 
 @section("content")
@@ -11,7 +10,7 @@
         <p>{{$error}}</p>
     @endforeach
 @endif
-<div class="container">
+<div id="formulario" class="container">
     <div class="row w-100 justify-content-center">
 		<div class="col-md-8">
             @if($message =Session::get('success'))
@@ -19,7 +18,7 @@
                     <p>{{$message}}</p>
                 </div>
             @endif
-            
+
             <form action="/fotosperfil/{{$usuario->id}}" method="POST">
                 @csrf
                 @method('POST')
@@ -30,7 +29,7 @@
                 </div>
             </form>
 
-            <form @submit="actualizarDatosPerfil()" action="/actualizarPerfil/{{$usuario->id}}" method="POST">
+            <form @submit="actualizarDatosPerfil($event)" action="/actualizarPerfil/{{$usuario->id}}" method="POST">
                 @csrf
                 <input type="hidden" value="datos" name="funcion">
                 <h2>Cambiar nombre:</h2>
@@ -52,7 +51,7 @@
                 <input type="submit" value="Actualizar Usuario" class="btn btn-success mb-2">
             </form>
 
-            <form @click="actualizarPassword()" action="/actualizarPerfil/{{$usuario->id}}" method="post">
+            <form @submit="actualizarPassword($event)" action="/actualizarPerfil/{{$usuario->id}}" method="post">
                 @method('POST')
                 @csrf
                 <h2 class="mt-5">Cambiar contraseña:</h2>
@@ -63,7 +62,7 @@
                 </div>
 
 				<div class="form-group">
-                    <input  name="new_password" placeholder="Contraseña nueva" class="form-control"  type="password">
+                    <input name="new_password" placeholder="Contraseña nueva" class="form-control"  type="password">
 				</div>
 
                 <div class="form-group">
@@ -97,6 +96,7 @@
 		</div>
 	</div>
 </div>
-<script src="{{asset('js/formulario.js')}}">
-</script>
+<script src="{{asset('js/app.js')}}"></script>
+
+<script src="{{asset('js/formulario.js')}}"></script>
 @endsection
