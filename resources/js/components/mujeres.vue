@@ -43,7 +43,7 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body text-center">
-                                <img id="foto-modal" class="margin-auto" alt="Foto">
+                                <img id="foto-modal" class="margin-auto rounded" alt="Foto">
                                 <p id="vida-mujer" class="text-center"></p>
                                 <p id="nacionalidad-mujer" class="text-center"></p>
                                 <p id="especialidad-mujer" class="text-center"></p>
