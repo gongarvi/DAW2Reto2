@@ -158,7 +158,6 @@ class DatabaseSeeder extends Seeder
         $admin->email="admin@gmail.com";
         $admin->password=Hash::make("admin123456");
         $admin->administrador=1;
-        $admin->progreso=0;
         $admin->save();
     }
 }

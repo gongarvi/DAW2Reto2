@@ -516,7 +516,7 @@ eval("__webpack_require__(/*! ./bootstrap.js */ \"./resources/js/bootstrap.js\")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\reto\resources\js\tresenrayas.js */"./resources/js/tresenrayas.js");
+module.exports = __webpack_require__(/*! C:\Users\ik_2dw3\Desktop\reto\resources\js\tresenrayas.js */"./resources/js/tresenrayas.js");
 
 
 /***/ })

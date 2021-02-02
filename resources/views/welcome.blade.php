@@ -66,5 +66,17 @@
                 <p>Que lo disfrutes.</p>
             </div>
         </div>
+       <div class="container">
+       <h3 style="margin: 0 auto; text-align:center">DESARROLLADORES</h3><hr>
+        <div class="row">
+               
+               <div class="col-2">Sayeeda Azad Shirin</div>
+               <div class="col-2">David Chacon</div>
+               <div class="col-3">Unai Martin</div>
+               <div class="col-3">Ordoño Ndong</div>
+               <div class="col-2">Jon Ander Aristimuño</div>
+              
+        </div>
+       </div>
     </div>
 @endsection

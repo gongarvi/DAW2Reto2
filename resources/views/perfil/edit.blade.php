@@ -58,15 +58,15 @@
 				<input type="hidden" value="contrasena" name="funcion">
 
 				<div class="form-group">
-                    <input  name="actual_password" placeholder="Contraseña actual" class="form-control"  type="password">
+                    <input  name="password_actual" placeholder="Contraseña actual" class="form-control"  type="password">
                 </div>
 
 				<div class="form-group">
-                    <input name="new_password" placeholder="Contraseña nueva" class="form-control"  type="password">
+                    <input name="password_nueva" placeholder="Contraseña nueva" class="form-control"  type="password">
 				</div>
 
                 <div class="form-group">
-                    <input  name="confirm_password" placeholder="Confirmar contraseña nueva" class="form-control"  type="password">
+                    <input  name="password_confirmar" placeholder="Confirmar contraseña nueva" class="form-control"  type="password">
 				</div>
                 <input type="reset" class="btn btn-danger mb-2">
                 <input type="submit" value="Actualizar contraseña" class="btn btn-success mb-2">

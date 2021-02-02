@@ -8,7 +8,7 @@
 <div id="formulario" class="container">
     <div class="row justify-content-center">
 		<div class="col-md-8">
-            <form @submit="registerPerfil($event)" method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}">
                 @csrf
 				<h2 class="md-5">Registrar</h2>
 				<div class="form-group">
